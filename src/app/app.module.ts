@@ -84,6 +84,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -96,8 +97,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     AppBreadcrumbComponent,
     AppFooterComponent,
     AppMainComponent,
-    DashboardComponent
-   
+    DashboardComponent,
+
+
   ],
   imports: [
     BrowserModule,
@@ -172,7 +174,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
         TreeTableModule,
         VirtualScrollerModule,
         FontAwesomeModule
-        
+
   ],
   providers: [],
   bootstrap: [AppComponent]
