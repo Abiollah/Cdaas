@@ -5,7 +5,11 @@
   "projects": {
     "halg-kp-front": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+      }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -21,12 +25,17 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/upload.php"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss",
+              "./node_modules/primeflex/primeflex.css"
+            
             ],
-            "scripts": []
+            "scripts": [ "node_modules/prismjs/prism.js",
+              "node_modules/prismjs/components/prism-typescript.js"],
+              "allowedCommonJsDependencies": ["@fullcalendar/daygrid","@fullcalendar/timegrid","@fullcalendar/interaction","chart.js"]
           },
           "configurations": {
             "production": {
@@ -87,7 +96,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss",
+              "./node_modules/primeflex/primeflex.css"
             ],
             "scripts": []
           }
