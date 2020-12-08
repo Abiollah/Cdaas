@@ -80,6 +80,7 @@ import { AppFooterComponent } from './app.footer.component';
 import { AppMainComponent } from './app.main.component';
 import { DashboardComponent } from './report/view/dashboard.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { PatientComponent } from './patient/patient.registration.component';
 
 
 
@@ -98,6 +99,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     AppFooterComponent,
     AppMainComponent,
     DashboardComponent,
+    PatientComponent
 
 
   ],

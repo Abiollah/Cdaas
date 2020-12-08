@@ -25,7 +25,7 @@ export class AppMenuComponent implements OnInit {
       {
           label: 'Patient', icon: 'pi pi-fw pi-star', routerLink: ['/uikit'],
           items: [
-              {label: 'Register KP', icon: 'pi pi-fw pi-id-card', routerLink: ['/uikit/formlayout']},
+              {label: 'Register KP', icon: 'pi pi-fw pi-id-card', routerLink: ['/registration']},
               {label: 'Initiate Appointment', icon: 'pi pi-fw pi-check-square', routerLink: ['/uikit/input']},
               {label: 'Visit History', icon: 'pi pi-fw pi-bookmark', routerLink: ['/uikit/floatlabel']},
               {label: 'KP Portal', icon: 'pi pi-fw pi-mobile', routerLink: ['/uikit/button'], class: 'rotated-icon'}
@@ -65,10 +65,10 @@ export class AppMenuComponent implements OnInit {
           {label: 'Support', icon: 'pi pi-fw pi-sign-in', routerLink: ['/login']}
       ]
   }
-    
-     
+
+
   ];
 }
-  
+
 
 }
