@@ -80,7 +80,12 @@ import { AppFooterComponent } from './app.footer.component';
 import { AppMainComponent } from './app.main.component';
 import { DashboardComponent } from './report/view/dashboard.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+<<<<<<< HEAD
 import { HttpClientModule } from '@angular/common/http';
+=======
+import { PatientComponent } from './patient/patient.registration.component';
+
+>>>>>>> 53b53603771d1af0cff913cd4ca7e011dca8e70a
 
 
 
@@ -97,8 +102,10 @@ import { HttpClientModule } from '@angular/common/http';
     AppBreadcrumbComponent,
     AppFooterComponent,
     AppMainComponent,
-    DashboardComponent
-   
+    DashboardComponent,
+    PatientComponent
+
+
   ],
   imports: [
     BrowserModule,
@@ -174,7 +181,7 @@ import { HttpClientModule } from '@angular/common/http';
         TreeTableModule,
         VirtualScrollerModule,
         FontAwesomeModule
-        
+
   ],
   providers: [],
   bootstrap: [AppComponent]

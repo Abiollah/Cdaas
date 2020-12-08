@@ -8,7 +8,7 @@
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
-      }
+        }
       },
       "root": "",
       "sourceRoot": "src",
@@ -31,11 +31,17 @@
             "styles": [
               "src/styles.scss",
               "./node_modules/primeflex/primeflex.css"
-            
             ],
-            "scripts": [ "node_modules/prismjs/prism.js",
-              "node_modules/prismjs/components/prism-typescript.js"],
-              "allowedCommonJsDependencies": ["@fullcalendar/daygrid","@fullcalendar/timegrid","@fullcalendar/interaction","chart.js"]
+            "scripts": [
+              "node_modules/prismjs/prism.js",
+              "node_modules/prismjs/components/prism-typescript.js"
+            ],
+            "allowedCommonJsDependencies": [
+              "@fullcalendar/daygrid",
+              "@fullcalendar/timegrid",
+              "@fullcalendar/interaction",
+              "chart.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -130,5 +136,8 @@
       }
     }
   },
-  "defaultProject": "halg-kp-front"
+  "defaultProject": "halg-kp-front",
+  "cli": {
+    "analytics": false
+  }
 }
