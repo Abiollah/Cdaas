@@ -80,8 +80,10 @@ import { AppFooterComponent } from './app.footer.component';
 import { AppMainComponent } from './app.main.component';
 import { DashboardComponent } from './report/view/dashboard.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HttpClientModule } from '@angular/common/http';
 import { PatientComponent } from './patient/patient.registration.component';
-
+import { SettingListComponent } from './administration/view/setting-list.component'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -97,13 +99,15 @@ import { PatientComponent } from './patient/patient.registration.component';
     AppFooterComponent,
     AppMainComponent,
     DashboardComponent,
-    PatientComponent
+    PatientComponent,
+    SettingListComponent
 
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     BrowserModule,
         FormsModule,
         AppRoutingModule,
@@ -128,6 +132,7 @@ import { PatientComponent } from './patient/patient.registration.component';
         FileUploadModule,
         FullCalendarModule,
         GalleriaModule,
+        HttpClientModule,
         InplaceModule,
         InputNumberModule,
         InputMaskModule,

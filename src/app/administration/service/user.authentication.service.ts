@@ -12,15 +12,16 @@ import { UserData } from '../domain/users.data';
 })
 export class UserAuthenticationService {
 
-  apiBaseUrl = "http://localhost:8080/api/";
+  apiBaseUrl = "http://localhost:4040/api/v1/";
 
   constructor(private http: HttpClient) { }
 
-getUserByUsernamePassword(){
-  return this.http.get<UserData>(this.apiBaseUrl+'usersParam')
-  .pipe(retry(3),
+getUserByUsernamePassword(username:string,password:string): Observable<any> {
+  console.log("Got username as "+username);
+  return this.http.get<UserData>(this.apiBaseUrl+'userlogin?username='+username+'&password='+password);
+  /*.pipe(retry(3),
   catchError(this.handleError)
-  );
+  );*/
   
 }
 

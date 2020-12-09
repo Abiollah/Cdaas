@@ -2,13 +2,13 @@
     <div class="login-wrapper">
         <div class="login-panel">
             <a [routerLink]="['/login']" class="logo">
-                <img src="../../assets/layout/images/kplogo.png" alt="KP" width="200" height="350"/>
+                <img src="../../assets/layout/images/kplogo-dark.png" alt="KP" width="200" height="350"/>
             </a>
             <div class="login-form">
                 <h2>Login To KP MIS</h2>
                 <p>You don't have an account? <a href="#"> Sign up</a></p>
-                <input type="text" autocomplete="off" pInputText placeholder="Username">
-                <input type="password" autocomplete="off" pInputText placeholder="Password">
+                <input type="text" autocomplete="off" pInputText [(ngModel)]="userdata.username" placeholder="Username">
+                <input type="password"  autocomplete="off" pInputText [(ngModel)]="userdata.password"  placeholder="Password">
                 <button pButton pRipple label="LOGIN" type="button" (click)="userLogin()"></button>
                 
             </div>
