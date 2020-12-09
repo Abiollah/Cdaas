@@ -80,12 +80,10 @@ import { AppFooterComponent } from './app.footer.component';
 import { AppMainComponent } from './app.main.component';
 import { DashboardComponent } from './report/view/dashboard.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-<<<<<<< HEAD
 import { HttpClientModule } from '@angular/common/http';
-=======
 import { PatientComponent } from './patient/patient.registration.component';
-
->>>>>>> 53b53603771d1af0cff913cd4ca7e011dca8e70a
+import { SettingListComponent } from './administration/view/setting-list.component'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -103,13 +101,15 @@ import { PatientComponent } from './patient/patient.registration.component';
     AppFooterComponent,
     AppMainComponent,
     DashboardComponent,
-    PatientComponent
+    PatientComponent,
+    SettingListComponent
 
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     BrowserModule,
         FormsModule,
         AppRoutingModule,
