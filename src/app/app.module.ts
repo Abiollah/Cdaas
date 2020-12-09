@@ -84,8 +84,6 @@ import { PatientComponent } from './patient/patient.registration.component';
 
 
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -176,6 +174,7 @@ import { PatientComponent } from './patient/patient.registration.component';
         TreeTableModule,
         VirtualScrollerModule,
         FontAwesomeModule
+
 
   ],
   providers: [],

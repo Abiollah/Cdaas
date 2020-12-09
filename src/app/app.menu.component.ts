@@ -23,20 +23,21 @@ export class AppMenuComponent implements OnInit {
           ]
       },
       {
-          label: 'Patient', icon: 'pi pi-fw pi-star', routerLink: ['/uikit'],
+          label: 'Patient', icon: 'fa fa-user-md fa-5x', routerLink: ['/uikit'],
           items: [
-              {label: 'Register KP', icon: 'pi pi-fw pi-id-card', routerLink: ['/registration']},
-              {label: 'Initiate Appointment', icon: 'pi pi-fw pi-check-square', routerLink: ['/uikit/input']},
-              {label: 'Visit History', icon: 'pi pi-fw pi-bookmark', routerLink: ['/uikit/floatlabel']},
-              {label: 'KP Portal', icon: 'pi pi-fw pi-mobile', routerLink: ['/uikit/button'], class: 'rotated-icon'}
+              {label: 'Register KP', icon: 'pi pi-fw pi-user-plus', routerLink: ['/registration']},
+              {label: 'Initiate Appointment', icon: 'fa fa-medkit fa-5x', routerLink: ['/uikit/input']},
+              {label: 'Visit History', icon: 'fa fa-ambulance fa-5x', routerLink: ['/uikit/floatlabel']},
+              {label: 'KP Portal', icon: 'fa fa-heartbeat fa-5x', routerLink: ['/uikit/button'], }
           ]
       },
+
       {
-          label: 'Laboratory', icon: 'pi pi-fw pi-compass', routerLink: ['utilities'],
+          label: 'Laboratory', icon: 'fa fa-stethoscope fa-5x', routerLink: ['utilities'],
           items: [
-              {label: 'Stats', icon: 'pi pi-fw pi-desktop', routerLink: ['utilities/display']},
-              {label: 'Lab Tests', icon: 'pi pi-fw pi-external-link', routerLink: ['utilities/elevation']},
-              {label: 'Report', icon: 'pi pi-fw pi-directions', routerLink: ['utilities/flexbox']}
+              {label: 'Stats', icon: 'pi pi-fw pi-chart-bar', routerLink: ['utilities/display']},
+              {label: 'Lab Tests', icon: 'fa fa-lungs-virus fa-5x', routerLink: ['utilities/elevation']},
+              {label: 'Report', icon: 'fa fa-book-medical fa-5x', routerLink: ['utilities/flexbox']}
           ]
       },
       {
