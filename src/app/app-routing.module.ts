@@ -4,8 +4,9 @@ import { AppMainComponent } from './app.main.component';
 import {UserLoginComponent} from './login/login.component';
 import { DashboardComponent } from './report/view/dashboard.component';
 import { PatientComponent } from './patient/patient.registration.component'
-import  {SettingListComponent } from './administration/view/setting-list.component'
-
+import  {SettingListComponent } from './administration/view/setting.list.component'
+import {ManageUsersComponent} from './administration/view/add.users.component'
+import {UserlistComponent} from './administration/view/userlist.component'
 const routes: Routes = [
     {path: '', component: UserLoginComponent},
     {path: 'login', component: UserLoginComponent},
@@ -13,7 +14,9 @@ const routes: Routes = [
     children: [
     {path: 'dashboard', component: DashboardComponent},
     {path: 'registration', component: PatientComponent},
-    {path: 'setting', component: SettingListComponent}
+    {path: 'setting', component: SettingListComponent},
+    {path: 'addUser', component: ManageUsersComponent},
+    {path: 'userlist', component: UserlistComponent}
 ]
 },
 

@@ -82,9 +82,10 @@ import { DashboardComponent } from './report/view/dashboard.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
 import { PatientComponent } from './patient/patient.registration.component';
-import { SettingListComponent } from './administration/view/setting-list.component'
+import { SettingListComponent } from './administration/view/setting.list.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import {ManageUsersComponent} from './administration/view/add.users.component';
+import { UserlistComponent } from './administration/view/userlist.component'
 
 
 
@@ -102,7 +103,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppMainComponent,
     DashboardComponent,
     PatientComponent,
-    SettingListComponent
+    SettingListComponent,
+    ManageUsersComponent,
+    UserlistComponent
 
 
   ],
