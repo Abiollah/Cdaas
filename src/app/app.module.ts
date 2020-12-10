@@ -84,13 +84,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { PatientComponent } from './patient/patient.registration.component';
 import { SettingListComponent } from './administration/view/setting.list.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-<<<<<<< HEAD
-import { AddUserRoleComponent } from './administration/service/settings/add-user-role.component';
-=======
+import { AddUserRoleComponent } from './administration/view/add-user-role.component';
 import {ManageUsersComponent} from './administration/view/add.users.component';
-import { UserlistComponent } from './administration/view/userlist.component'
-
->>>>>>> fbf8aba359734df406193fe082c0c310ed3201aa
+import { UserlistComponent } from './administration/view/userlist.component';
+import { ManageUserRoleService } from './administration/service/manage.user.role.service';
+import { UserRoleListComponent } from './administration/view/user-role-list.component'
 
 
 @NgModule({
@@ -108,12 +106,12 @@ import { UserlistComponent } from './administration/view/userlist.component'
     DashboardComponent,
     PatientComponent,
     SettingListComponent,
-<<<<<<< HEAD
-    AddUserRoleComponent
-=======
+    AddUserRoleComponent,
     ManageUsersComponent,
-    UserlistComponent
->>>>>>> fbf8aba359734df406193fe082c0c310ed3201aa
+    UserlistComponent,
+    ManageUserRoleService,
+    UserRoleListComponent
+
 
 
   ],

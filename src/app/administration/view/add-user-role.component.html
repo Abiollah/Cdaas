@@ -2,26 +2,32 @@
 <div class="p-col-11">
   <h5 style="margin-left: 4%">Add User Role</h5>
   <div class="card">
-    <br>
-<div style="margin-left: 4%" >
-    <button type="button" pButton  label="Save" class="p-button-info p-mr-2 p-mb-2" icon="pi pi-save"></button>
+    <br><div style="margin-left: 4%">
+    <p-toolbar styleClass="p-mb-4" >
+      <ng-template pTemplate="left">
+          <button pButton pRipple label="Save" icon="pi pi-plus" class="p-mr-2 p-mb-2"
+          (click)="addUserRole()"></button>
+          <button pButton pRipple label="Clear" icon="pi pi-trash" class="p-mb-2"></button>
+      </ng-template>
 
-    <button pButton pRipple type="button" label="Back" class="p-button-info p-mr-2 p-mb-2" icon="pi pi-chevron-left"></button>
-</div>
-<br><br>
+      <ng-template pTemplate="right">
+          <button pButton pRipple label="Back" (click)="goBack()" icon="pi pi-chevron-left" class="p-button-help p-mb-2"></button>
+      </ng-template>
+  </p-toolbar></div>
+<br>
        <div class="p-fluid p-formgrid p-grid" style="margin-left: 4%">
       <div class="p-field p-col-12 p-md-5" >
         <label for="name">Name</label>
-        <input id="name" type="text" pInputText>
+        <input id="name" type="text" pInputText [(ngModel)]="userrolecreatedata.name" aria-describedby="username-help">
       </div>
       <div class="p-field p-col-12 p-md-5">
         <label for="code">Code</label>
-        <input id="code" type="text" pInputText>
+        <input id="code" type="text" pInputText [(ngModel)]="userrolecreatedata.code" aria-describedby="username-help">
       </div></div><br>
       <div class="p-fluid p-formgrid p-grid"style="margin-left: 4%">
       <div class="p-field p-col-10">
         <label for="description">Description</label>
-        <textarea id="address" type="text" rows="4" pInputTextarea></textarea>
+        <textarea id="description" type="text" rows="4" pInputText [(ngModel)]="userrolecreatedata.description" aria-describedby="username-help"></textarea>
       </div>
    </div>
   </div>
