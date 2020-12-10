@@ -11,14 +11,14 @@ import {MessageService} from 'primeng/api';
   providers: [MessageService]
 })
 export class ManageUsersComponent implements OnInit {
-  
-usercreatedata: UserData = {
+  usercreatedata?: UserData ;
+/*usercreatedata: UserData = {
   username: '',
   password: '',
   loginstatus: false,
   user_type_id: 0,
   userid:0
-};
+};*/
 
   constructor(private messageService: MessageService,private location: Location,private manageuserService:ManageUsersService, private breadcrumbService: AppBreadcrumbService) { 
     this.breadcrumbService.setItems([
@@ -33,7 +33,7 @@ usercreatedata: UserData = {
 
 addUser(){
   
-this.manageuserService.createUser(this.usercreatedata).subscribe(
+this.manageuserService.createUpdateUser(this.usercreatedata).subscribe(
   response => {console.log(response);
     this.addSuccess("Success!","User added successfully");
     

@@ -1,17 +1,17 @@
 export interface UserData{
-    username: string;
-    password: string;
-    loginstatus: boolean;
-    userid:number;
-    user_type_id: number;
+    username?: string;
+    password?: string;
+    loginstatus?: boolean;
+    userid?:number;
+    user_type_id?: number;
 }
 
-export interface UserData{
+/*export interface UserData{
     username: string;
     password: string;
     loginstatus: boolean;
     user_type_id: number;
-}
+}*/
 
 export interface UserDataCreate{
     username: string;

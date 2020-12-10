@@ -14,7 +14,7 @@ export class ManageUsersService {
 
   constructor(private http: HttpClient) { }
 
-  createUser(data): Observable<any>{
+  createUpdateUser(data): Observable<any>{
     console.log(data);
     return this.http.post<UserData>(apiBaseUrl+'postusers',data);
   }
@@ -22,4 +22,15 @@ export class ManageUsersService {
   getUsers():Observable<any>{
     return this.http.get<UserData>(apiBaseUrl+'listusers');
   }
+
+  updateUser(data){
+    return this.http.post<UserData>(apiBaseUrl+'postusers',data);
+  }
+
+  getUser() {
+    return this.http.get<any>(apiBaseUrl+'listusers')
+    .toPromise()
+    .then(res => res.data as UserData)
+    .then(data => data);
+}
 }
