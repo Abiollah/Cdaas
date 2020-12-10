@@ -3,9 +3,11 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import {ButtonModule} from 'primeng/button';
 import { UserData } from '../administration/domain/users.data';
 import { UserAuthenticationService } from '../administration/service/user.authentication.service';
+import {MessageService} from 'primeng/api';
 @Component({
   selector: 'app-user-login',
-  templateUrl: './login.component.html'
+  templateUrl: './login.component.html',
+  providers: [MessageService]
 })
 export class UserLoginComponent implements OnInit {
   error: any;
@@ -22,7 +24,7 @@ export class UserLoginComponent implements OnInit {
   }
    
 
-  constructor(private authservice: UserAuthenticationService, private route: ActivatedRoute,
+  constructor(private messageService: MessageService, private authservice: UserAuthenticationService, private route: ActivatedRoute,
     private router: Router ) { }
 
   ngOnInit(): void {
@@ -46,10 +48,19 @@ export class UserLoginComponent implements OnInit {
       }
       if(!this.userdata.loginstatus){
         this.router.navigate(['']);
+
+        this.addError("Login Failed.","Invalid username/password");
        
-        alert("Invalid username/password. "+ this.userdata.loginstatus);
+       // alert("Invalid username/password. "+ this.userdata.loginstatus);
         
       }
+  }
+
+  addSuccess(title:string,message:string) {
+    this.messageService.add({severity:'success', summary:title, detail:message});
+  }
+  addError(title:string,message:string) {
+    this.messageService.add({severity:'error', summary:title, detail:message});
   }
 
 }
