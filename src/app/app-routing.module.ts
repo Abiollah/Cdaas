@@ -5,6 +5,7 @@ import {UserLoginComponent} from './login/login.component';
 import { DashboardComponent } from './report/view/dashboard.component';
 import { PatientComponent } from './patient/patient.registration.component'
 import  {SettingListComponent } from './administration/view/setting-list.component'
+import  {AddUserRoleComponent } from './administration/service/settings/add-user-role.component'
 
 const routes: Routes = [
     {path: '', component: UserLoginComponent},
@@ -13,7 +14,8 @@ const routes: Routes = [
     children: [
     {path: 'dashboard', component: DashboardComponent},
     {path: 'registration', component: PatientComponent},
-    {path: 'setting', component: SettingListComponent}
+    {path: 'setting', component: SettingListComponent},
+    {path: 'userrole', component: AddUserRoleComponent}
 ]
 },
 

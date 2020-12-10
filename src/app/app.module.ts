@@ -84,6 +84,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PatientComponent } from './patient/patient.registration.component';
 import { SettingListComponent } from './administration/view/setting-list.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AddUserRoleComponent } from './administration/service/settings/add-user-role.component';
 
 
 @NgModule({
@@ -100,7 +101,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppMainComponent,
     DashboardComponent,
     PatientComponent,
-    SettingListComponent
+    SettingListComponent,
+    AddUserRoleComponent
 
 
   ],
