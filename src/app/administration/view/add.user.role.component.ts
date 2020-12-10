@@ -5,7 +5,7 @@ import {ManageUserRoleService} from '../service/manage.user.role.service';
 import { Location } from '@angular/common';
 @Component({
   selector: 'app-add-user-role',
-  templateUrl: './add-user-role.component.html',
+  templateUrl: './add.user.role.component.html',
 //  styleUrls: ['./add-user-role.component.scss']
 })
 export class AddUserRoleComponent implements OnInit {
@@ -16,7 +16,7 @@ export class AddUserRoleComponent implements OnInit {
     code: '',
     description: '',
     created_by: '',
-    created_date: ''
+    created_date: new Date()
   };
 
   constructor(private location: Location,private manageuserroleService:ManageUserRoleService, private breadcrumbService: AppBreadcrumbService) {
