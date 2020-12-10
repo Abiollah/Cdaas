@@ -109,7 +109,7 @@ import { UserRoleListComponent } from './administration/view/user-role-list.comp
     AddUserRoleComponent,
     ManageUsersComponent,
     UserlistComponent,
-    ManageUserRoleService,
+   // ManageUserRoleService,
     UserRoleListComponent
 
 

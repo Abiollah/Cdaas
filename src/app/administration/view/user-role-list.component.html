@@ -34,28 +34,30 @@
                     <th pSortableColumn="name">Name<p-sortIcon field="name"></p-sortIcon></th>
                     <th pSortableColumn="code">Code <p-sortIcon field="code"></p-sortIcon></th>
                     <th pSortableColumn="description">Description <p-sortIcon field="description">
-                    <th pSortableColumn="description">Description <p-sortIcon field="description"></p-sortIcon>
+                    <th pSortableColumn="created_by">Created by <p-sortIcon field="created_by">
+                      <th pSortableColumn="created_date">Created Date <p-sortIcon field="created_date"></p-sortIcon>
+                    </p-sortIcon>
                     </p-sortIcon></th>
 
                     <th>Action</th>
                 </tr>
             </ng-template>
-            <ng-template pTemplate="body" let-user>
+            <ng-template pTemplate="body" let-userrole>
                 <tr>
                     <td>
                         <p-tableCheckbox [value]="user"></p-tableCheckbox>
                     </td>
                     <td><span class="p-column-title"></span>
-                        {{user.user_type_id}}
+                        {{userrole.userrole_id}}
                     </td>
                     <td><span class="p-column-title"></span>
-                        {{user.username}}
+                        {{userrole.name}}
                     </td>
                     <td><span class="p-column-title"></span>
-                        {{user.loginstatus}}
+                        {{userrole.code}}
                     </td>
                     <td><span class="p-column-title"></span>
-                        {{user.user_type_id}}
+                        {{userrole.description}}
                     </td>
                     <td>
                         <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="editProduct(product)"></button>

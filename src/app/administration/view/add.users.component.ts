@@ -9,19 +9,16 @@ import { Location } from '@angular/common';
   templateUrl: './add.users.component.html'
 })
 export class ManageUsersComponent implements OnInit {
-<<<<<<< HEAD
+
 
 usercreatedata: UserData = {
-=======
-  usercreatedata?: UserData ;
-/*usercreatedata: UserData = {
->>>>>>> 5a56dda4bb13ade4b24308a6af71b98c1b91b7e6
+
   username: '',
   password: '',
   loginstatus: false,
   user_type_id: 0,
   userid:0
-};*/
+};
 
   constructor(private location: Location,private manageuserService:ManageUsersService, private breadcrumbService: AppBreadcrumbService) {
     this.breadcrumbService.setItems([
@@ -35,13 +32,11 @@ usercreatedata: UserData = {
   }
 
 addUser(){
-<<<<<<< HEAD
 
-this.manageuserService.createUser(this.usercreatedata).subscribe(
-=======
-  
+
+
 this.manageuserService.createUpdateUser(this.usercreatedata).subscribe(
->>>>>>> 5a56dda4bb13ade4b24308a6af71b98c1b91b7e6
+
   response => {console.log(response);
 
 },
