@@ -3,7 +3,7 @@ import {MegaMenuItem, MenuItem} from 'primeng/api';
 import {AppBreadcrumbService} from '../../app.breadcrumb.service';
 @Component({
   selector: 'app-setting-list',
-  templateUrl: './setting-list.component.html',
+  templateUrl: './setting.list.component.html',
   encapsulation: ViewEncapsulation.None
 })
 export class SettingListComponent implements OnInit {
@@ -32,7 +32,7 @@ export class SettingListComponent implements OnInit {
               {
                   label: 'Add/Manage Users',
                   icon: 'pi pi-fw pi-plus',
-                  routerLink: '/dashboard'
+                  routerLink: '/userlist'
               },
               {
                   label: 'Add/Manage User Groups',

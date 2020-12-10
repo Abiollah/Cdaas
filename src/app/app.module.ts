@@ -82,9 +82,15 @@ import { DashboardComponent } from './report/view/dashboard.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
 import { PatientComponent } from './patient/patient.registration.component';
-import { SettingListComponent } from './administration/view/setting-list.component'
+import { SettingListComponent } from './administration/view/setting.list.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+<<<<<<< HEAD
 import { AddUserRoleComponent } from './administration/service/settings/add-user-role.component';
+=======
+import {ManageUsersComponent} from './administration/view/add.users.component';
+import { UserlistComponent } from './administration/view/userlist.component'
+
+>>>>>>> fbf8aba359734df406193fe082c0c310ed3201aa
 
 
 @NgModule({
@@ -102,7 +108,12 @@ import { AddUserRoleComponent } from './administration/service/settings/add-user
     DashboardComponent,
     PatientComponent,
     SettingListComponent,
+<<<<<<< HEAD
     AddUserRoleComponent
+=======
+    ManageUsersComponent,
+    UserlistComponent
+>>>>>>> fbf8aba359734df406193fe082c0c310ed3201aa
 
 
   ],
