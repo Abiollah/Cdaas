@@ -10,14 +10,14 @@ export class SettingListComponent implements OnInit {
 
   breadcrumbItems: MenuItem[];
 
-    
+
 
     usersManagement: MenuItem[];
     formsManagement: MenuItem[];
     reportsManagement: MenuItem[];
 
 
-  constructor(private breadcrumbService: AppBreadcrumbService) { 
+  constructor(private breadcrumbService: AppBreadcrumbService) {
     this.breadcrumbService.setItems([
       { label: 'Dashboard', routerLink: ['/dashboard'] },
       { label: 'Access Control Management', routerLink: ['/setting'] }
@@ -45,7 +45,8 @@ export class SettingListComponent implements OnInit {
           items: [
               {
                   label: 'Add/Manage Roles',
-                  icon: 'pi pi-fw pi-list'
+                  icon: 'pi pi-fw pi-list',
+                  routerLink: '/userrole'
               },
               {
                   label: 'Add/Manage Permission Roles',
@@ -54,7 +55,7 @@ export class SettingListComponent implements OnInit {
 
           ]
       },
-      
+
   ];
   this.formsManagement = [
     {
@@ -84,7 +85,7 @@ export class SettingListComponent implements OnInit {
 
         ]
     },
-    
+
 ];
 this.reportsManagement = [
   {
@@ -115,7 +116,7 @@ this.reportsManagement = [
 
       ]
   },
-  
+
 ];
   }
 
