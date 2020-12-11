@@ -85,7 +85,12 @@ import { PatientComponent } from './patient/patient.registration.component';
 import { SettingListComponent } from './administration/view/setting.list.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {ManageUsersComponent} from './administration/view/add.users.component';
-import { UserlistComponent } from './administration/view/userlist.component'
+import { UserlistComponent } from './administration/view/userlist.component';
+import { ManageAllergiesComponent } from './administration/view/add.allergies.component';
+import { AllergieslistComponent } from './administration/view/allergieslist.component';
+import { ManageLaboratoriesComponent } from './administration/view/add.laboratories.component';
+import { LaboratorieslistComponent } from './administration/view/laboratorieslist.component';
+
 
 
 
@@ -105,7 +110,12 @@ import { UserlistComponent } from './administration/view/userlist.component'
     PatientComponent,
     SettingListComponent,
     ManageUsersComponent,
-    UserlistComponent
+    UserlistComponent,
+    ManageAllergiesComponent,
+    AllergieslistComponent,
+    ManageLaboratoriesComponent,
+    LaboratorieslistComponent
+    
 
 
   ],
