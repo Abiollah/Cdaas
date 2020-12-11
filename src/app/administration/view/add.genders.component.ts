@@ -12,7 +12,7 @@ import {MessageService} from 'primeng/api';
 })
 export class AddGendersComponent implements OnInit {
 
-  usercreatedata: GenderData = {
+  gendercreatedata: GenderData = {
     name: '',
     description: '',
     gender_id: 0,
@@ -32,7 +32,7 @@ export class AddGendersComponent implements OnInit {
   
   addGender(){
     
-  this.managegenderService.createGender(this.usercreatedata).subscribe(
+  this.managegenderService.createGender(this.gendercreatedata).subscribe(
     response => {console.log(response);
       this.addSuccess("Success!","User added successfully");
       

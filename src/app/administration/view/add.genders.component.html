@@ -16,68 +16,25 @@
 
         <div class="p-grid p-formgrid p-fluid">
            
-        <div class="p-col-4 p-field">
-            <label for="username">Username</label>
-            <input id="username" type="username" pInputText [(ngModel)]="usercreatedata.username" aria-describedby="username-help" 
-            placeholder="Enter username">
+        <div class="p-col-6 p-field">
+            <label for="name">Name</label>
+            <input id="name" type="name" pInputText [(ngModel)]="gendercreatedata.name" aria-describedby="username-help" 
+            placeholder="Enter name">
 
         </div>
 
-        <div class="p-col-4 p-field">
-            <label for="password">Password</label>
-            <input id="password" type="password" pInputText [(ngModel)]="usercreatedata.password" aria-describedby="password-help" placeholder="Enter password">
+        <div class="p-col-6 p-field">
+            <label for="code">Code</label>
+            <input id="code" type="code" pInputText [(ngModel)]="gendercreatedata.code" aria-describedby="password-help" placeholder="Enter code">
 
         </div>
-        <div class="p-col-4 p-field">
-            <label for="retypepassword">Retype Password</label>
-            <input id="retypepassword" type="password" pInputText [(ngModel)]="usercreatedata.password" aria-describedby="password-help" placeholder="Re-enter password">
-
-        </div>
+        
     </div>
+   
         <div class="p-grid p-formgrid p-fluid">
-            
-            <div class="p-col-4 p-field">
-                <label for="lastname">Lastname</label>
-                <input id="lastname" type="lastname" pInputText aria-describedby="lastname-help" 
-                placeholder="Enter lastname" required>
-                <!--small id="lastname-help">Enter your Surname/Lastname.</small-->
-            </div>
-            <div class="p-col-4 p-field">
-                <label for="firstname">Firstname</label>
-                <input id="firstname" type="firstname" pInputText  aria-describedby="firstname-help" 
-                placeholder="Enter firstname" required>
-				<!--small id="lastname-help">Enter your firstname.</small-->
-            </div>
-            <div class="p-col-4 p-field">
-                <label for="othername">Othername</label>
-                <input id="othername" type="othername" pInputText  aria-describedby="firstname-help" 
-                placeholder="Enter othername">
-				<!--small id="lastname-help">Enter your othername.</small-->
-            </div>
-
-            
-        </div>
-        <div class="p-grid p-formgrid p-fluid">
-            
-            <div class="p-col-4 p-field">
-                <label for="phonenumber">Phone Number</label>
-                <input id="phonenumber" type="phonenumber" pInputText  aria-describedby="phonenumber-help" 
-                placeholder="Enter phone number">
-                <!--small id="phonenumber-help">Enter your phone number.</small-->
-            </div>
-            <div class="p-col-4 p-field">
-                <label for="email">Email</label>
-                <input id="email" type="email" pInputText  aria-describedby="email-help" 
-                placeholder="Enter email" >
-				<!--small id="lastname-help">Enter your email.</small-->
-            </div>
-            <div class="p-col-4 p-field">
-            <label for="status">Status</label>
-            <p-toggleButton onLabel="Active" offLabel="Not Active" [style]="{'width': '10em'}" [(ngModel)]="usercreatedata.loginstatus"></p-toggleButton>
-        </div>
             <div class="p-col-8 p-field">
-                <label for="streetaddress">Street Address</label>
-                <textarea rows="5" cols="30" placeholder="Street address" pInputTextarea ></textarea>
+                <label for="description">Description</label>
+                <textarea rows="5" cols="30" placeholder="Description" pInputTextarea ></textarea>
             </div>
 
         </div>
