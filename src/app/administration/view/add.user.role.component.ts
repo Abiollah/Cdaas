@@ -29,7 +29,7 @@ export class AddUserRoleComponent implements OnInit {
   ngOnInit(): void {
   }
 addUserRole(){
-  this.manageuserroleService.createUserRole(this.userrolecreatedata).subscribe(
+  this.manageuserroleService.createUpdateUserRole(this.userrolecreatedata).subscribe(
     response => {console.log(response);
     },
 
@@ -41,3 +41,7 @@ goBack(){
   }
 
   }
+
+
+
+

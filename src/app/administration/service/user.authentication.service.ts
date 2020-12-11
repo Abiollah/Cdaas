@@ -5,14 +5,14 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { UserData } from '../domain/users.data';
 
- 
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserAuthenticationService {
 
-  apiBaseUrl = "http://localhost:4040/api/v1/";
+  apiBaseUrl = "http://192.168.1.149:8080/api/v1/";
 
   constructor(private http: HttpClient) { }
 
@@ -22,7 +22,7 @@ getUserByUsernamePassword(username:string,password:string): Observable<any> {
   /*.pipe(retry(3),
   catchError(this.handleError)
   );*/
-  
+
 }
 
 private handleError(error: HttpErrorResponse) {

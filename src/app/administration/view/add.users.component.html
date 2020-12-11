@@ -4,7 +4,7 @@
     <div class="card">
         <p-toolbar styleClass="p-mb-4">
             <ng-template pTemplate="left">
-                <button pButton pRipple label="Save" icon="pi pi-plus" class="p-mr-2 p-mb-2" 
+                <button pButton pRipple label="Save" icon="pi pi-plus" class="p-mr-2 p-mb-2"
                 (click)="addUser()"></button>
                 <button pButton pRipple label="Clear" icon="pi pi-trash" class="p-mb-2"></button>
             </ng-template>
@@ -15,10 +15,10 @@
         </p-toolbar>
 
         <div class="p-grid p-formgrid p-fluid">
-           
+
         <div class="p-col-4 p-field">
             <label for="username">Username</label>
-            <input id="username" type="username" pInputText [(ngModel)]="usercreatedata.username" aria-describedby="username-help" 
+            <input id="username" type="username" pInputText [(ngModel)]="usercreatedata.username" aria-describedby="username-help"
             placeholder="Enter username">
 
         </div>
@@ -35,39 +35,39 @@
         </div>
     </div>
         <div class="p-grid p-formgrid p-fluid">
-            
+
             <div class="p-col-4 p-field">
                 <label for="lastname">Lastname</label>
-                <input id="lastname" type="lastname" pInputText aria-describedby="lastname-help" 
+                <input id="lastname" type="lastname" pInputText aria-describedby="lastname-help"
                 placeholder="Enter lastname" required>
                 <!--small id="lastname-help">Enter your Surname/Lastname.</small-->
             </div>
             <div class="p-col-4 p-field">
                 <label for="firstname">Firstname</label>
-                <input id="firstname" type="firstname" pInputText  aria-describedby="firstname-help" 
+                <input id="firstname" type="firstname" pInputText  aria-describedby="firstname-help"
                 placeholder="Enter firstname" required>
 				<!--small id="lastname-help">Enter your firstname.</small-->
             </div>
             <div class="p-col-4 p-field">
                 <label for="othername">Othername</label>
-                <input id="othername" type="othername" pInputText  aria-describedby="firstname-help" 
+                <input id="othername" type="othername" pInputText  aria-describedby="firstname-help"
                 placeholder="Enter othername">
 				<!--small id="lastname-help">Enter your othername.</small-->
             </div>
 
-            
+
         </div>
         <div class="p-grid p-formgrid p-fluid">
-            
+
             <div class="p-col-4 p-field">
                 <label for="phonenumber">Phone Number</label>
-                <input id="phonenumber" type="phonenumber" pInputText  aria-describedby="phonenumber-help" 
+                <input id="phonenumber" type="phonenumber" pInputText  aria-describedby="phonenumber-help"
                 placeholder="Enter phone number">
                 <!--small id="phonenumber-help">Enter your phone number.</small-->
             </div>
             <div class="p-col-4 p-field">
                 <label for="email">Email</label>
-                <input id="email" type="email" pInputText  aria-describedby="email-help" 
+                <input id="email" type="email" pInputText  aria-describedby="email-help"
                 placeholder="Enter email" >
 				<!--small id="lastname-help">Enter your email.</small-->
             </div>
