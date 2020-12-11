@@ -4,6 +4,7 @@ import { UserData, UserDataCreate } from '../domain/users.data';
 import {ManageUsersService} from '../service/manage.users.service';
 import { Location } from '@angular/common';
 import {MessageService} from 'primeng/api';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-manage-users',
@@ -12,7 +13,7 @@ import {MessageService} from 'primeng/api';
   
 })
 export class ManageUsersComponent implements OnInit {
-
+  
 
 usercreatedata: UserData = {
 
@@ -23,7 +24,7 @@ usercreatedata: UserData = {
   userid:0,
 };
 
-  constructor(private location: Location,private manageuserService:ManageUsersService, private breadcrumbService: AppBreadcrumbService) {
+  constructor(private router: Router,private messageService: MessageService,private location: Location,private manageuserService:ManageUsersService, private breadcrumbService: AppBreadcrumbService) {
     this.breadcrumbService.setItems([
       { label: 'Dashboard', routerLink: ['/dashboard'] },
       { label: 'Access Control Management', routerLink: ['/setting'] },
@@ -31,24 +32,34 @@ usercreatedata: UserData = {
   }
 
   ngOnInit(): void {
-
+    if(sessionStorage.getItem('username') == null){
+      this.addError("Session Expired.","Your current session has expired. Re-login.");
+      this.router.navigate(['']);
+    }
   }
 
 addUser(){
 
-this.manageuserService.createUpdateUser(this.usercreatedata).subscribe(
-
-  response => {console.log(response);
-
-},
-error => {console.log(error)});
-
+this.manageuserService.createUpdateUser(this.usercreatedata)
+.subscribe(
+data => {
+  this.addSuccess("Success.","User "+data.username+' created successfully.');
+  },
+error => {
+this.addError("Unsuccessful.","Could not create user.");
 }
 
-
-
+);
+}
 goBack(){
 this.location.back();
+}
+
+addSuccess(title:string,message:string) {
+  this.messageService.add({severity:'success', summary:title, detail:message});
+}
+addError(title:string,message:string) {
+  this.messageService.add({severity:'error', summary:title, detail:message});
 }
 
 }

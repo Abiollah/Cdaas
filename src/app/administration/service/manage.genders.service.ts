@@ -17,11 +17,11 @@ export class ManageGendersService {
 
   createGender(data): Observable<any>{
     console.log(data);
-    return this.http.post<GenderData>(this.getBaseApiUrl+'postgenders',data);
+    return this.http.post<GenderData>(this.getBaseApiUrl()+'postgenders',data);
   }
 
   getGenders():Observable<any>{
-    return this.http.get<GenderData>(this.getBaseApiUrl+'listgenders');
+    return this.http.get<GenderData>(this.getBaseApiUrl()+'listgenders');
   }
   private getBaseApiUrl(): string {
     return isDevMode ? environment.apiBaseUrl : environment.apiBaseUrl;

@@ -18,10 +18,10 @@ import { AddGendersComponent } from './administration/view/add.genders.component
 import { ManagePharmaciesComponent } from './administration/view/add.pharmacies.component';
 import { PharmacieslistComponent } from './administration/view/pharmacieslist.component';
 import {ClientPortalListComponent} from './client/view/client.portal.list.component';
+import {AuthGuardService} from './administration/service/auth-guard.service';
 
 const routes: Routes = [
     {path: '', component: UserLoginComponent},
-    {path: 'login', component: UserLoginComponent},
     {path: '', component: AppMainComponent,
     children: [
     {path: 'dashboard', component: DashboardComponent},
