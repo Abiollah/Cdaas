@@ -17,7 +17,7 @@ export class ManageLaboratoriesComponent implements OnInit {
     name: '',
     code: '',
     description: '',
-    contact_phone_no: '',
+    contact_phone_number: '',
     created_by: '',
     
   };

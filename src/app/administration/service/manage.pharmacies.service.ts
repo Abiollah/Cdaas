@@ -3,22 +3,21 @@ import { HttpClient } from '@angular/common/http';
 import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
-import { AllergiesData } from '../domain/allergies.data';
+import { PharmaciesData } from '../domain/pharmacies.data';
 
-const apiBaseUrl = "http://192.168.1.149:8080/api/v1/";
+const apiBaseUrl = "http://localhost:4040/api/v1/";
 @Injectable({
   providedIn: 'root'
 })
-export class ManageAllergiesService {
+export class ManagePharmaciesService {
 
   constructor(private http: HttpClient) { }
-  createAllergies(data): Observable<any>{
+  createPhamacies(data): Observable<any>{
     console.log(data);
-    return this.http.post<AllergiesData>(apiBaseUrl+'postallergies',data);
+    return this.http.post<PharmaciesData>(apiBaseUrl+'postpharmacies',data);
   }
 
-  getAllergies():Observable<any>{
-    return this.http.get<AllergiesData>(apiBaseUrl+'listallergies');
+  getPharmacies():Observable<any>{
+    return this.http.get<PharmaciesData>(apiBaseUrl+'listpharmacies');
   }
 }
-

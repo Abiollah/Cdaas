@@ -96,7 +96,9 @@ import { MetadataListComponent } from './administration/view/metadata.list.compo
 import { GenderlistComponent } from './administration/view/genderlist.component';
 import { AddGendersComponent } from './administration/view/add.genders.component';
 import { ManageUserRoleService } from './administration/service/manage.user.role.service';
-import { UserRoleListComponent } from './administration/view/user-role-list.component'
+import { UserRoleListComponent } from './administration/view/user-role-list.component';
+import { ManagePharmaciesComponent } from './administration/view/add.pharmacies.component';
+import { PharmacieslistComponent } from './administration/view/pharmacieslist.component'
 
 
 
@@ -126,7 +128,9 @@ import { UserRoleListComponent } from './administration/view/user-role-list.comp
     MetadataListComponent,
     GenderlistComponent,
     AddGendersComponent,
-    UserRoleListComponent
+    UserRoleListComponent,
+    ManagePharmaciesComponent,
+    PharmacieslistComponent
 
 
 

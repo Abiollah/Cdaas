@@ -17,6 +17,7 @@ export class AddGendersComponent implements OnInit {
     description: '',
     gender_id: 0,
     code: 0,
+    
   };
   
     constructor(private messageService: MessageService,private location: Location,private managegenderService:ManageGendersService, private breadcrumbService: AppBreadcrumbService) { 

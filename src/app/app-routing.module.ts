@@ -16,7 +16,8 @@ import  {AddUserRoleComponent } from './administration/view/add.user.role.compon
 import {MetadataListComponent} from './administration/view/metadata.list.component';
 import { GenderlistComponent } from './administration/view/genderlist.component';
 import { AddGendersComponent } from './administration/view/add.genders.component';
-
+import { ManagePharmaciesComponent } from './administration/view/add.pharmacies.component';
+import { PharmacieslistComponent } from './administration/view/pharmacieslist.component';
 
 const routes: Routes = [
     {path: '', component: UserLoginComponent},
@@ -36,8 +37,9 @@ const routes: Routes = [
     {path: 'metadatalist', component: MetadataListComponent},
     {path: 'genderlist', component: GenderlistComponent},
     {path: 'addGender', component: AddGendersComponent},
-    {path: 'userlist', component: UserlistComponent}
-
+    {path: 'userlist', component: UserlistComponent},
+    {path: 'addPharmacies', component: ManagePharmaciesComponent},
+    {path: 'pharmacieslist', component: PharmacieslistComponent}
 ]
 },
 

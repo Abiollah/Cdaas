@@ -4,22 +4,22 @@
         <div class="card">
 			<p-toolbar styleClass="p-mb-4">
 				<ng-template pTemplate="left">
-					<button pButton pRipple label="Add Laboratories" icon="pi pi-plus" class="p-mr-2 p-mb-2" (click)="goToAddLaboratories()"></button>
-					<button pButton pRipple label="Delete Laboratories" icon="pi pi-trash" class="p-mb-2" (click)="deleteSelectedProducts()" [disabled]="!selectedProducts || !selectedProducts.length"></button>
+					<button pButton pRipple label="Add Pharmacies" icon="pi pi-plus" class="p-mr-2 p-mb-2" (click)="goToAddPharmacies()"></button>
+					<button pButton pRipple label="Delete Pharmacies" icon="pi pi-trash" class="p-mb-2" (click)="deleteSelectedProducts()" [disabled]="!selectedProducts || !selectedProducts.length"></button>
 				</ng-template>
 
 				<ng-template pTemplate="right">
 					<button pButton pRipple label="Back" icon="pi pi-chevron-left" class="p-button-help p-mb-2" (click)="goBack()"></button>
 				</ng-template>
             </p-toolbar>
-            <p-table #dt [value]="laboratoriesList" [rows]="10" [paginator]="true" [globalFilterFields]="['laboratories','']"
+            <p-table #dt [value]="pharmaciesList" [rows]="10" [paginator]="true" [globalFilterFields]="['pharmacies','']"
          [rowHover]="true" dataKey="id"
             styleClass="p-datatable-customers"
             currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
    
             <ng-template pTemplate="caption">
                 <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between table-header">
-                    <h5 class="p-m-0">Laboratories Listing</h5>
+                    <h5 class="p-m-0">Pharmacies Listing</h5>
                     <span class="p-input-icon-left">
                     <i class="pi pi-search"></i>
                     <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')" placeholder="Search..." />
@@ -31,7 +31,7 @@
                     <th style="width: 3rem">
                         <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
                     </th>
-                    <th pSortableColumn="facility_id">Facility id <p-sortIcon field="facility_id"></p-sortIcon></th>
+                    <th pSortableColumn="pharmacy_id">Pharmacy id <p-sortIcon field="pharmacy_id"></p-sortIcon></th>
                     <th pSortableColumn="name"> Name<p-sortIcon field="name"></p-sortIcon></th>
                     <th pSortableColumn="code "> Code <p-sortIcon field="code"></p-sortIcon></th>
                     <th pSortableColumn="description">  Description <p-sortIcon field="description"></p-sortIcon></th>
@@ -41,16 +41,16 @@
                     <th>Action</th>
                 </tr>
             </ng-template>
-            <ng-template pTemplate="body" let-laboratories>
+            <ng-template pTemplate="body" let-pharmacies>
                 <tr>
                     <td>
                         <p-tableCheckbox [value]="laboratories"></p-tableCheckbox>
                     </td>
                     <td><span class="p-column-title"></span>
-                        {{laboratories.facility_id}}
+                        {{pharmacies.pharmacy_id}}
                     </td>
                     <td><span class="p-column-title"></span>
-                        {{laboratories.name}}
+                        {{pharmacies.name}}
                     </td>
                     <td><span class="p-column-title"></span>
                         {{laboratories.code}}
