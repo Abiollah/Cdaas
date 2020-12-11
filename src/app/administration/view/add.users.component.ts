@@ -19,7 +19,7 @@ usercreatedata: UserData = {
   password: '',
   loginstatus: false,
   user_type_id: 0,
-  userid:0
+  userid:0,
 };
 
   constructor(private messageService: MessageService, private location: Location,private manageuserService:ManageUsersService, private breadcrumbService: AppBreadcrumbService) {
