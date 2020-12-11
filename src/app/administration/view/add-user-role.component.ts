@@ -16,7 +16,7 @@ export class AddUserRoleComponent implements OnInit {
     code: '',
     description: '',
     created_by: '',
-    created_date: ''
+    created_date: new Date()
   };
 
   constructor(private location: Location,private manageuserroleService:ManageUserRoleService, private breadcrumbService: AppBreadcrumbService) {
