@@ -84,13 +84,22 @@ import { HttpClientModule } from '@angular/common/http';
 import { PatientComponent } from './patient/patient.registration.component';
 import { SettingListComponent } from './administration/view/setting.list.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AddUserRoleComponent } from './administration/view/add.user.role.component';
 import {ManageUsersComponent} from './administration/view/add.users.component';
 import { UserlistComponent } from './administration/view/userlist.component';
+<<<<<<< HEAD
 import { ManageAllergiesComponent } from './administration/view/add.allergies.component';
 import { AllergieslistComponent } from './administration/view/allergieslist.component';
 import { ManageLaboratoriesComponent } from './administration/view/add.laboratories.component';
 import { LaboratorieslistComponent } from './administration/view/laboratorieslist.component';
 
+=======
+import { MetadataListComponent } from './administration/view/metadata.list.component';
+import { GenderlistComponent } from './administration/view/genderlist.component';
+import { AddGendersComponent } from './administration/view/add.genders.component';
+import { ManageUserRoleService } from './administration/service/manage.user.role.service';
+import { UserRoleListComponent } from './administration/view/user-role-list.component'
+>>>>>>> 945b8fd5c81b25b86acd1b50a1800ebd35df4964
 
 
 
@@ -109,13 +118,21 @@ import { LaboratorieslistComponent } from './administration/view/laboratorieslis
     DashboardComponent,
     PatientComponent,
     SettingListComponent,
+    AddUserRoleComponent,
     ManageUsersComponent,
     UserlistComponent,
+<<<<<<< HEAD
     ManageAllergiesComponent,
     AllergieslistComponent,
     ManageLaboratoriesComponent,
     LaboratorieslistComponent
     
+=======
+    MetadataListComponent,
+    GenderlistComponent,
+    AddGendersComponent,
+    UserRoleListComponent
+>>>>>>> 945b8fd5c81b25b86acd1b50a1800ebd35df4964
 
 
   ],
@@ -194,6 +211,7 @@ import { LaboratorieslistComponent } from './administration/view/laboratorieslis
         TreeTableModule,
         VirtualScrollerModule,
         FontAwesomeModule
+
 
   ],
   providers: [],
