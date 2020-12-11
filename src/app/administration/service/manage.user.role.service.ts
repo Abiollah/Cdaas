@@ -11,8 +11,7 @@ const apiBaseUrl = "http://localhost:4040/api/v1/";
 })
 export class ManageUserRoleService {
 
-  constructor(
-    private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
   createUserRole(data): Observable<any>{
     console.log(data);
     return this.http.post<UserRoleData>(apiBaseUrl+'postuserrole',data);

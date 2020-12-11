@@ -5,7 +5,7 @@ import {ManageUserRoleService} from '../service/manage.user.role.service';
 import { Location } from '@angular/common';
 @Component({
   selector: 'app-add-user-role',
-  templateUrl: './add-user-role.component.html',
+  templateUrl: './add.user.role.component.html',
 //  styleUrls: ['./add-user-role.component.scss']
 })
 export class AddUserRoleComponent implements OnInit {

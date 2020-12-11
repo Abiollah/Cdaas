@@ -84,7 +84,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PatientComponent } from './patient/patient.registration.component';
 import { SettingListComponent } from './administration/view/setting.list.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AddUserRoleComponent } from './administration/view/add-user-role.component';
+import { AddUserRoleComponent } from './administration/view/add.user.role.component';
 import {ManageUsersComponent} from './administration/view/add.users.component';
 import { UserlistComponent } from './administration/view/userlist.component';
 import { ManageUserRoleService } from './administration/service/manage.user.role.service';
