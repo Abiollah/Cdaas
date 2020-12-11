@@ -85,7 +85,10 @@ import { PatientComponent } from './patient/patient.registration.component';
 import { SettingListComponent } from './administration/view/setting.list.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {ManageUsersComponent} from './administration/view/add.users.component';
-import { UserlistComponent } from './administration/view/userlist.component'
+import { UserlistComponent } from './administration/view/userlist.component';
+import { MetadataListComponent } from './administration/view/metadata.list.component';
+import { GenderlistComponent } from './administration/view/genderlist.component';
+import { AddGendersComponent } from './administration/view/add.genders.component';
 
 
 
@@ -105,7 +108,10 @@ import { UserlistComponent } from './administration/view/userlist.component'
     PatientComponent,
     SettingListComponent,
     ManageUsersComponent,
-    UserlistComponent
+    UserlistComponent,
+    MetadataListComponent,
+    GenderlistComponent,
+    AddGendersComponent,
 
 
   ],

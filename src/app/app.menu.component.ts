@@ -60,7 +60,7 @@ export class AppMenuComponent implements OnInit {
       label: 'Administration', icon: 'pi pi-fw pi-clone', routerLink: ['/pages'],
       items: [
           {label: 'Settings', icon: 'pi pi-fw pi-pencil', routerLink: ['/setting']},
-          {label: 'Metadata', icon: 'pi pi-fw pi-calendar-plus', routerLink: ['/pages/calendar']},
+          {label: 'Metadata', icon: 'pi pi-fw pi-calendar-plus', routerLink: ['/metadatalist']},
           {label: 'Interoperability', icon: 'pi pi-fw pi-globe', url: 'assets/pages/landing.html', target: '_blank'},
           {label: 'Support', icon: 'pi pi-fw pi-sign-in', routerLink: ['/login']}
       ]
