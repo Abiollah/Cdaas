@@ -81,7 +81,7 @@ import { AppMainComponent } from './app.main.component';
 import { DashboardComponent } from './report/view/dashboard.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
-import { PatientComponent } from './patient/patient.registration.component';
+import { PatientComponent } from './client/patient.registration.component';
 import { SettingListComponent } from './administration/view/setting.list.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AddUserRoleComponent } from './administration/view/add.user.role.component';
@@ -91,7 +91,8 @@ import { MetadataListComponent } from './administration/view/metadata.list.compo
 import { GenderlistComponent } from './administration/view/genderlist.component';
 import { AddGendersComponent } from './administration/view/add.genders.component';
 import { ManageUserRoleService } from './administration/service/manage.user.role.service';
-import { UserRoleListComponent } from './administration/view/user-role-list.component'
+import { UserRoleListComponent } from './administration/view/user-role-list.component';
+import { ClientPortalListComponent } from './client/view/client.portal.list.component'
 
 
 
@@ -116,7 +117,8 @@ import { UserRoleListComponent } from './administration/view/user-role-list.comp
     MetadataListComponent,
     GenderlistComponent,
     AddGendersComponent,
-    UserRoleListComponent
+    UserRoleListComponent,
+    ClientPortalListComponent
 
 
   ],

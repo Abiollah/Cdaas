@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppMainComponent } from './app.main.component';
 import {UserLoginComponent} from './login/login.component';
 import { DashboardComponent } from './report/view/dashboard.component';
-import { PatientComponent } from './patient/patient.registration.component'
+import { PatientComponent } from './client/patient.registration.component'
 import  {AddUserRoleComponent } from './administration/view/add.user.role.component'
 import  {SettingListComponent } from './administration/view/setting.list.component'
 import {ManageUsersComponent} from './administration/view/add.users.component'
@@ -11,6 +11,8 @@ import {UserlistComponent} from './administration/view/userlist.component'
 import {MetadataListComponent} from './administration/view/metadata.list.component';
 import { GenderlistComponent } from './administration/view/genderlist.component';
 import { AddGendersComponent } from './administration/view/add.genders.component';
+import { ClientPortalListComponent } from './client/view/client.portal.list.component'
+
 
 const routes: Routes = [
     {path: '', component: UserLoginComponent},
@@ -26,7 +28,9 @@ const routes: Routes = [
     {path: 'metadatalist', component: MetadataListComponent},
     {path: 'genderlist', component: GenderlistComponent},
     {path: 'addGender', component: AddGendersComponent},
-    {path: 'userlist', component: UserlistComponent}
+    {path: 'userlist', component: UserlistComponent},
+    {path: '##/kpportal', component: ClientPortalListComponent}
+
 ]
 },
 
