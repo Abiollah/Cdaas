@@ -3,6 +3,7 @@ import {AppBreadcrumbService} from '../../app.breadcrumb.service';
 import {ManageUserRoleService} from '../service/manage.user.role.service';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Location } from '@angular/common';
+import { UserRoleData } from '../domain/user.role.data';
 @Component({
   selector: 'app-user-role-list',
   templateUrl: './user-role-list.component.html',
@@ -10,6 +11,8 @@ import { Location } from '@angular/common';
 })
 export class UserRoleListComponent implements OnInit {
 userRoleList: any;
+selectedUserRole: UserRoleData;
+userRoleDialog: boolean;
   constructor(private router: Router,private location: Location,private manageuserroleService:ManageUserRoleService, private breadcrumbService: AppBreadcrumbService) {
     this.breadcrumbService.setItems([
       { label: 'Dashboard', routerLink: ['/dashboard'] },
@@ -34,5 +37,11 @@ goToAddUserRole(){
 goBack(){
   this.location.back();
 }
+
+editUserRole(userRole: UserRoleData){
+ this.selectedUserRole = {...userRole};
+ this.userRoleDialog=true;
+}
+
 }
 
