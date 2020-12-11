@@ -87,12 +87,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AddUserRoleComponent } from './administration/view/add.user.role.component';
 import {ManageUsersComponent} from './administration/view/add.users.component';
 import { UserlistComponent } from './administration/view/userlist.component';
+
+import { ManageAllergiesComponent } from './administration/view/add.allergies.component';
+import { AllergieslistComponent } from './administration/view/allergieslist.component';
+import { ManageLaboratoriesComponent } from './administration/view/add.laboratories.component';
+import { LaboratorieslistComponent } from './administration/view/laboratorieslist.component';
 import { MetadataListComponent } from './administration/view/metadata.list.component';
 import { GenderlistComponent } from './administration/view/genderlist.component';
 import { AddGendersComponent } from './administration/view/add.genders.component';
 import { ManageUserRoleService } from './administration/service/manage.user.role.service';
 import { UserRoleListComponent } from './administration/view/user-role-list.component';
-import { ClientPortalListComponent } from './client/view/client.portal.list.component'
+import { ManagePharmaciesComponent } from './administration/view/add.pharmacies.component';
+import { PharmacieslistComponent } from './administration/view/pharmacieslist.component'
+
 
 
 
@@ -114,11 +121,17 @@ import { ClientPortalListComponent } from './client/view/client.portal.list.comp
     AddUserRoleComponent,
     ManageUsersComponent,
     UserlistComponent,
+    ManageAllergiesComponent,
+    AllergieslistComponent,
+    ManageLaboratoriesComponent,
+    LaboratorieslistComponent,
     MetadataListComponent,
     GenderlistComponent,
     AddGendersComponent,
     UserRoleListComponent,
-    ClientPortalListComponent
+    ManagePharmaciesComponent,
+    PharmacieslistComponent
+
 
 
   ],

@@ -13,18 +13,33 @@ import { environment } from '../../../environments/environment';
 export class ManageUserRoleService {
 
   constructor(private http: HttpClient) { }
+
+  createUpdateUserRole(data): Observable<any>{
+    console.log(data);
+    return this.http.post<UserRoleData>(this.getBaseApiUrl()+'postuserrole',data);
+  }
   createUserRole(data): Observable<any>{
     console.log(data);
     return this.http.post<UserRoleData>(this.getBaseApiUrl()+'postuserrole',data);
   }
 
   getUserRole():Observable<any>{
-    return this.http.get<UserRoleData>(this.getBaseApiUrl+'listuserrole');
+    return this.http.get<UserRoleData>(this.getBaseApiUrl()+'listuserrole');
   }
 
   private getBaseApiUrl(): string {
     return isDevMode ? environment.apiBaseUrl : environment.apiBaseUrl;
     }
+  updateUserRole(data){
+    return this.http.post<UserRoleData>(this.getBaseApiUrl()+'postuserrole',data);
+  }
+
+  getUserRoles() {
+    return this.http.get<any>(this.getBaseApiUrl()+'listuserrole')
+    .toPromise()
+    .then(res => res.data as UserRoleData)
+    .then(data => data);
+}
 }
 
 
