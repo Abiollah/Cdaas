@@ -28,7 +28,7 @@ export class AppMenuComponent implements OnInit {
           ]
       },
       {
-          label: 'Patient', icon: 'fa fa-user-md fa-5x', routerLink: ['/uikit'],
+          label: 'KP Client', icon: 'fa fa-user-md fa-5x', routerLink: ['/uikit'],
           items: [
               {label: 'Register KP', icon: 'pi pi-fw pi-user-plus', routerLink: ['/registration']},
               {label: 'Initiate Appointment', icon: 'fa fa-medkit fa-5x', routerLink: ['/uikit/input']},
@@ -66,12 +66,12 @@ export class AppMenuComponent implements OnInit {
     {
       label: 'Administration', icon: 'pi pi-fw pi-users', routerLink: ['/pages'],
       items: [
-          {label: 'Settings', icon: 'pi pi-fw pi-pencil', routerLink: ['/setting']},
+
           {label: 'Metadata', icon: 'pi pi-fw pi-calendar-plus', routerLink: ['/metadatalist']},
-          {label: 'Interoperability', icon: 'pi pi-fw pi-globe', url: 'assets/pages/landing.html', target: '_blank'},
-          {label: 'Support', icon: 'pi pi-fw pi-sign-in', routerLink: ['/login']},
+
+
           {label: 'Settings', icon: 'pi pi-fw pi-cog', routerLink: ['/setting']},
-          {label: 'Metadata', icon: 'pi pi-fw pi-sitemap', routerLink: ['/pages/calendar']},
+
           {label: 'Interoperability', icon: 'pi pi-fw pi-share-alt', url: 'assets/pages/landing.html', target: '_blank'},
           {label: 'Support', icon: 'pi pi-fw pi-thumbs-up', routerLink: ['/login']}
       ]

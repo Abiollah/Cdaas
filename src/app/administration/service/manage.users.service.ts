@@ -5,12 +5,12 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { UserData } from '../domain/users.data';
 
-const apiBaseUrl = "http://localhost:4040/api/v1/";
+const apiBaseUrl = "http://192.168.1.149:8080/api/v1/";
 @Injectable({
   providedIn: 'root'
 })
 export class ManageUsersService {
-  
+
 
   constructor(private http: HttpClient) { }
 

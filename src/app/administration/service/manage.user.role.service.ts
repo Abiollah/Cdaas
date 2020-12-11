@@ -12,6 +12,11 @@ const apiBaseUrl = "http://localhost:4040/api/v1/";
 export class ManageUserRoleService {
 
   constructor(private http: HttpClient) { }
+
+  createUpdateUserRole(data): Observable<any>{
+    console.log(data);
+    return this.http.post<UserRoleData>(apiBaseUrl+'postuserrole',data);
+  }
   createUserRole(data): Observable<any>{
     console.log(data);
     return this.http.post<UserRoleData>(apiBaseUrl+'postuserrole',data);
@@ -20,6 +25,16 @@ export class ManageUserRoleService {
   getUserRole():Observable<any>{
     return this.http.get<UserRoleData>(apiBaseUrl+'listuserrole');
   }
+  updateUserRole(data){
+    return this.http.post<UserRoleData>(apiBaseUrl+'postuserrole',data);
+  }
+
+  getUserRoles() {
+    return this.http.get<any>(apiBaseUrl+'listuserrole')
+    .toPromise()
+    .then(res => res.data as UserRoleData)
+    .then(data => data);
+}
 }
 
 
