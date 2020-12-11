@@ -17,12 +17,7 @@ export class ManageUserRoleService {
     console.log(data);
     return this.http.post<UserRoleData>(apiBaseUrl+'postuserrole',data);
   }
-  createUserRole(data): Observable<any>{
-    console.log(data);
-    return this.http.post<UserRoleData>(apiBaseUrl+'postuserrole',data);
-  }
-
-  getUserRole():Observable<any>{
+   getUserRole():Observable<any>{
     return this.http.get<UserRoleData>(apiBaseUrl+'listuserrole');
   }
   updateUserRole(data){
@@ -36,5 +31,7 @@ export class ManageUserRoleService {
     .then(data => data);
 }
 }
+
+
 
 
