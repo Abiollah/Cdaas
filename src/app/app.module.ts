@@ -91,7 +91,8 @@ import { MetadataListComponent } from './administration/view/metadata.list.compo
 import { GenderlistComponent } from './administration/view/genderlist.component';
 import { AddGendersComponent } from './administration/view/add.genders.component';
 import { ManageUserRoleService } from './administration/service/manage.user.role.service';
-import { UserRoleListComponent } from './administration/view/user-role-list.component'
+import { UserRoleListComponent } from './administration/view/user-role-list.component';
+import { MaritalStatuslistComponent } from './administration/view/marital-statuslist.component'
 
 
 
@@ -116,7 +117,8 @@ import { UserRoleListComponent } from './administration/view/user-role-list.comp
     MetadataListComponent,
     GenderlistComponent,
     AddGendersComponent,
-    UserRoleListComponent
+    UserRoleListComponent,
+    MaritalStatuslistComponent
 
 
   ],

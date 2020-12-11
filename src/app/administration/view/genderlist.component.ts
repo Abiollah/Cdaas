@@ -4,15 +4,20 @@ import { GenderData, GenderDataCreate } from '../domain/gender.data';
 import {ManageGendersService} from '../service/manage.genders.service';
 import { Location } from '@angular/common';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import {MessageService,Message} from 'primeng/api';
 
 @Component({
   selector: 'app-genderlist',
   templateUrl: './genderlist.component.html',
-  styleUrls: ['./genderlist.component.scss']
+  styleUrls: ['./genderlist.component.scss'],
+  providers: [MessageService]
 })
 export class GenderlistComponent implements OnInit {
   genderList:any;
-  constructor(private router: Router, private location: Location, private managegenderService:ManageGendersService, private breadcrumbService: AppBreadcrumbService) {
+  selectedGender: GenderData;
+  genderDialog: boolean;
+
+  constructor(private messageService: MessageService, private router: Router, private location: Location, private managegenderService:ManageGendersService, private breadcrumbService: AppBreadcrumbService) {
     this.breadcrumbService.setItems([
       { label: 'Dashboard', routerLink: ['/dashboard'] },
       { label: 'METADATA', routerLink: ['/metadata'] },
@@ -37,5 +42,37 @@ export class GenderlistComponent implements OnInit {
     goBack(){
       this.location.back();
     }
+
+    editGender(gender: GenderData){
+      this.selectedGender = {...gender};
+      this.genderDialog=true;
+     }
+
+     updateGender(){
+      this.managegenderService.createGender(this.selectedGender).subscribe(
+        response => {console.log(response);
+          this.genderList.push(this.selectedGender);
+          this.ngOnInit();
+          this.addSuccess("Success!","User updated successfully");
+          
+          
+      }, 
+
+     error => {console.log(error)});
+      this.addError("Failed!","User creation failed.");
+
+      this.genderDialog = false;
+    }
+
+    addSuccess(title:string,message:string) {
+      this.messageService.add({severity:'success', summary:title, detail:message});
+      
+    
+    }
+    addError(title:string,message:string) {
+      this.messageService.add({severity:'error', summary:title, detail:message});
+      
+    }
+
 
 }

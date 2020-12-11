@@ -5,7 +5,7 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { GenderData } from '../domain/gender.data';
 
-const apiBaseUrl = "http://localhost:4040/api/v1/";
+const apiBaseUrl = "http://localhost:8080/api/v1/";
 @Injectable({
   providedIn: 'root'
 })
@@ -22,4 +22,15 @@ export class ManageGendersService {
   getGenders():Observable<any>{
     return this.http.get<GenderData>(apiBaseUrl+'listgenders');
   }
+
+  updateGender(data){
+    return this.http.post<GenderData>(apiBaseUrl+'postgenders',data);
+  }
+
+  getGender() {
+    return this.http.get<any>(apiBaseUrl+'listgenders')
+    .toPromise()
+    .then(res => res.data as GenderData)
+    .then(data => data);
+}
 }

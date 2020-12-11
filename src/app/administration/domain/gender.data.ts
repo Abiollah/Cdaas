@@ -3,6 +3,7 @@ export interface GenderData{
     description: string;
     code: number;
     gender_id:number;
+    created_by:number;
 }
 
 export interface GenderDataCreate{
@@ -10,4 +11,5 @@ export interface GenderDataCreate{
     description: string;
     code: boolean;
     gender_id: number;
+    created_by:number;
 }

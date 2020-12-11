@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AppBreadcrumbService} from '../../app.breadcrumb.service';
 import { GenderData, GenderDataCreate } from '../domain/gender.data';
 import {ManageGendersService} from '../service/manage.genders.service';
+import { GenderlistComponent } from '../view/genderlist.component';
 import { Location } from '@angular/common';
 import {MessageService} from 'primeng/api';
 
@@ -12,13 +13,17 @@ import {MessageService} from 'primeng/api';
 })
 export class AddGendersComponent implements OnInit {
 
+  
+
   gendercreatedata: GenderData = {
     name: '',
     description: '',
     gender_id: 0,
     code: 0,
+    created_by: 0,
   };
-  
+
+
     constructor(private messageService: MessageService,private location: Location,private managegenderService:ManageGendersService, private breadcrumbService: AppBreadcrumbService) { 
       this.breadcrumbService.setItems([
         { label: 'Dashboard', routerLink: ['/dashboard'] },
@@ -35,7 +40,7 @@ export class AddGendersComponent implements OnInit {
   this.managegenderService.createGender(this.gendercreatedata).subscribe(
     response => {console.log(response);
       this.addSuccess("Success!","User added successfully");
-      
+           
   }, 
   error => {console.log(error)});
   this.addError("Failed!","User creation failed.");
