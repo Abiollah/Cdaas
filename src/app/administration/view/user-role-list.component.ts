@@ -5,10 +5,11 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Location } from '@angular/common';
 import { UserRoleData } from '../domain/user.role.data';
 import {MessageService,Message} from 'primeng/api';
+
 @Component({
   selector: 'app-user-role-list',
   templateUrl: './user-role-list.component.html',
-  //styleUrls: ['./user-role-list.component.scss']
+  providers: [MessageService]
 })
 export class UserRoleListComponent implements OnInit {
 userRoleList: any;
@@ -34,7 +35,7 @@ userRoleDialog: boolean;
 
   }
 goToAddUserRole(){
-  this.router.navigate(['adduserrole']);
+  this.router.navigate(['userrole']);
 }
 goBack(){
   this.location.back();

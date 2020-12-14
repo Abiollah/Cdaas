@@ -1,12 +1,27 @@
 <a [routerLink]="['/registration']"></a>
 <div class="card">
-  <h5>New Client</h5>
+  <p-fieldset legend="New Client">
+
+
   <p-tabView orientation="left" >
       <p-tabPanel header="Patient Demographic" leftIcon="pi pi-user-plus">
+        <p-toolbar styleClass="p-mb-4">
+          <ng-template pTemplate="left">
+              <button pButton pRipple label="Edit" icon="pi pi-plus" class="p-mr-2 p-mb-2"
+              (click)="addUser()"></button>
+              <button pButton pRipple label="Delete" icon="pi pi-trash" class="p-mb-2"></button>
+          </ng-template>
+
+          <ng-template pTemplate="right">
+              <button pButton pRipple label="Continue" (click)="goBack()" icon="pi pi-angle-right" class="p-button-help p-mb-2"></button>
+          </ng-template>
+      </p-toolbar>
         <div class="p-fluid p-formgrid p-grid">
           <div class="p-field p-col-12 p-md-4" >
-            <label for="patient_id">Patient Id</label>
-            <input id="patient_id" type="text" pInputText>
+            <label for="clientcode">Client's Code</label>
+            <p-inputMask inputId="clientcode" mask="9999/99/99" ></p-inputMask>
+
+
           </div><br>
           <div class="p-field p-col-12 p-md-3" style="margin-left: 2%">
             <label for="RegistrationDate">Registration Date</label>
@@ -33,26 +48,27 @@
       </div>
     </div>
     <div class="p-fluid p-formgrid p-grid">
-      <div class="p-field p-col-12 p-md-4">
-        <label for="occupation">Occupation</label>
-       <p-dropdown inputId="occupation" ></p-dropdown>
+    <div class="p-field p-col-12 p-md-4">
+    <label for="maritalStatus">Marital Status</label>
+    <p-dropdown inputId="maritalStatus" ></p-dropdown>
 
-    </div><br>
+      </div>
+     <br>
     <div class="p-field p-col-12 p-md-3" style="margin-left: 2%">
-      <label for="nationality">Nationality</label>
-            <p-dropdown inputId="nationality" ></p-dropdown>
+      <label for="gender">Gender</label>
+            <p-dropdown inputId="gender" ></p-dropdown>
 
   </div>
   <div class="p-field p-col-12 p-md-3" style="margin-left: 2%">
-    <label for="StateOfOrigin">State of Origin</label>
-           <p-dropdown inputId="StateOfOrigin" ></p-dropdown>
+    <label for="emailaddress">Email Address</label>
+        <input id="emailaddress" type="email" pInputText>
 
 </div>
     </div>
     <div class="p-fluid p-formgrid p-grid">
       <div class="p-field p-col-12 p-md-4" >
-        <label for="lga">L.G.A.</label>
-              <p-dropdown inputId="lga"></p-dropdown>
+        <label for="address">Residential Address</label>
+      <input id="address" type="text" pInputText>
 
     </div><br>
     <div class="p-field p-col-12 p-md-3" style="margin-left: 2%">
@@ -68,8 +84,8 @@
 
    <div class="p-fluid p-formgrid p-grid">
     <div class="p-field p-col-12 p-md-4">
-      <label for="gender">Gender</label>
-     <p-dropdown inputId="gender" ></p-dropdown>
+      <label for="occupation">Occupation</label>
+     <p-dropdown inputId="occupation" ></p-dropdown>
 
   </div><br>
   <div class="p-field p-col-12 p-md-3" style="margin-left: 2%">
@@ -78,53 +94,65 @@
 
 </div>
 <div class="p-field p-col-12 p-md-3" style="margin-left: 2%">
-  <label for="maritalStatus">Marital Status</label>
-         <p-dropdown inputId="maritalStatus" ></p-dropdown>
+  <label for="referredFrom">Referred From</label>
+         <p-dropdown inputId="referredFrom" ></p-dropdown>
 
 </div>
+
   </div>
+
     <div class="p-fluid p-formgrid p-grid">
       <div class="p-field p-col-12 p-md-4" >
-        <label for="referredFrom">Referred From</label>
-        <input id="referredFrom" type="text" pInputText>
+        <label for="nationality">Nationality</label>
+        <p-dropdown inputId="nationality" ></p-dropdown>
       </div><br>
       <div class="p-field p-col-12 p-md-3" style="margin-left: 2%">
-        <label for="emailaddress">Email Address</label>
-        <input id="emailaddress" type="email" pInputText>
+        <label for="stateOfOrigin">State of Origin</label>
+        <p-dropdown inputId="stateOfOrigin" ></p-dropdown>
 
     </div>
     <div class="p-field p-col-12 p-md-3" style="margin-left: 2%" >
-      <label for="address">Residential Address</label>
-      <input id="address" type="text" pInputText>
+      <label for="lga">Local Govt. Area</label>
+      <p-dropdown inputId="lga" ></p-dropdown>
     </div>
     </div><br>
-    <p-button label="Continue" class="p-mr-2 p-mb-2"></p-button>
+
 
       </p-tabPanel>
       <p-tabPanel header="Next of Kin Information" leftIcon="pi pi-user">
+
         <div class="p-fluid p-formgrid p-grid">
-          <div class="p-field p-col-12 p-md-5">
+          <div class="p-field p-col-12 p-md-4">
             <label for="next_of_kin_surname">Surname</label>
             <input id="next_of_kin_surname" type="text" pInputText>
           </div><br>
-          <div class="p-field p-col-12 p-md-5">
+          <div class="p-field p-col-12 p-md-3">
             <label for="next_of_kin_firstname">First Name</label>
             <input id="next_of_kin_firstname" type="text" pInputText>
 
         </div>
+        <div class="p-field p-col-12 p-md-3" >
+          <label for="next_of_kin_othername">Other Name</label>
+          <input id="next_of_kin_othername" type="text" pInputText>
         </div>
-        <br>
+        </div>
+
         <div class="p-fluid p-formgrid p-grid">
-          <div class="p-field p-col-12 p-md-5" >
-            <label for="next_of_kin_othername">Other Name</label>
-            <input id="next_of_kin_othername" type="text" pInputText>
+          <div class="p-field p-col-12 p-md-4" >
+            <label for="next_of_kin_gender">Gender</label>
+            <p-dropdown inputId="next_of_kin_gender"></p-dropdown>
           </div><br>
-          <div class="p-field p-col-12 p-md-5" >
+          <div class="p-field p-col-12 p-md-3" >
             <label for="next_of_kin_phone_number">Phone Number</label>
             <input id="next_of_kin_phone_number" type="text" pInputText>
 
         </div>
-        </div><br>
+        <div class="p-field p-col-12 p-md-3" >
+          <label for="next_of_kin_alt_phone_number">Alt. Phone Number</label>
+          <input id="next_of_kin_alt_phone_number" type="text" pInputText>
+
+      </div>
+        </div>
         <div class="p-fluid p-formgrid p-grid">
           <div class="p-field p-col-12 p-md-5" >
             <label for="next_of_kin_address">Address</label>
@@ -139,7 +167,8 @@
         <p-button label="SAVE" class="p-mr-2 p-mb-2"></p-button>
       </p-tabPanel>
       </p-tabView>
-</div>
+    </p-fieldset>
+    </div>
 
 
 

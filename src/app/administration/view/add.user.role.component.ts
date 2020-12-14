@@ -3,10 +3,11 @@ import {AppBreadcrumbService} from '../../app.breadcrumb.service';
 import { UserRoleData } from '../domain/user.role.data';
 import {ManageUserRoleService} from '../service/manage.user.role.service';
 import { Location } from '@angular/common';
+import {MessageService} from 'primeng/api';
 @Component({
   selector: 'app-add-user-role',
   templateUrl: './add.user.role.component.html',
-//  styleUrls: ['./add-user-role.component.scss']
+  providers: [MessageService]
 })
 export class AddUserRoleComponent implements OnInit {
 

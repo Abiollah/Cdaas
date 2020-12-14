@@ -18,6 +18,7 @@ import { AddGendersComponent } from './administration/view/add.genders.component
 import { ManagePharmaciesComponent } from './administration/view/add.pharmacies.component';
 import { PharmacieslistComponent } from './administration/view/pharmacieslist.component';
 import {ClientPortalListComponent} from './client/view/client.portal.list.component';
+import {UserRoleListComponent} from './administration/view/user-role-list.component';
 
 const routes: Routes = [
     {path: '', component: UserLoginComponent},
@@ -37,7 +38,7 @@ const routes: Routes = [
     {path: 'metadatalist', component: MetadataListComponent},
     {path: 'genderlist', component: GenderlistComponent},
     {path: 'addGender', component: AddGendersComponent},
-    {path: 'userlist', component: UserlistComponent},
+    {path: 'userrolelist', component: UserRoleListComponent},
     {path: '##/kpportal', component: ClientPortalListComponent},
     {path: 'addPharmacies', component: ManagePharmaciesComponent},
     {path: 'pharmacieslist', component: PharmacieslistComponent}
