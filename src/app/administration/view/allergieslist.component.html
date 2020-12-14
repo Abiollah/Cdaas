@@ -69,11 +69,43 @@
                 </div>
             </ng-template>
         </p-table>   
-            
-            
-
-            
             </div>
+
+            <p-dialog [(visible)]="allergiesDialog" [style]="{width: '650px'}" header="Allergies Details" [modal]="true" styleClass="p-fluid">
+           
+                <ng-template pTemplate="content">
+                    <div class="p-col-12 p-fluid p-formgrid p-grid">
+                    <div class="p-col-12 p-field">
+                        <label for="name">Name</label>
+                        <input id="name" pInputText [(ngModel)]="selectedAllergies.name">
+                    </div>
+                    <div class="p-col-6 p-field">
+                        <label for="code">Code</label>
+                        <input id="code" pInputText [(ngModel)]="selectedAllergies.code">
+                    </div>
+                    <div class="p-col-6 p-field">
+                        <label for="contact_phone_number">Contact Phone Number</label>
+                        <input id="contact_phone_number" pInputText [(ngModel)]="selectedAllergies.contact_phone_number">
+                    </div>
+            
+            <div class="p-col-6 p-field">
+                <label for="created_by">Created By</label>
+                <input id="created_by" pInputText [(ngModel)]="selectedAllergies.created_by">
+            </div>
+           
+            <div class="p-col-12 p-field">
+                <label for="description">Description </label>
+                <textarea id="description" pInputText [(ngModel)]="selectedAllergies.description" required rows="3" cols="20"></textarea>
+            </div>
+                    </div>
+                    </ng-template>
+    
+                    <ng-template pTemplate="footer">
+                        <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="hideAllergiesDialog()"></button>
+                        <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="updateAllergies()"></button>
+                    </ng-template>
+                    </p-dialog>
+    
 
 
         </div>

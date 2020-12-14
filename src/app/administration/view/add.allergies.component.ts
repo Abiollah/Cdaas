@@ -35,7 +35,7 @@ export class ManageAllergiesComponent implements OnInit {
 
 
 
-    this.manageallergiesService.createAllergies(this.allergiescreatedata).subscribe(
+    this.manageallergiesService.createUpdateAllergies(this.allergiescreatedata).subscribe(
       response => {console.log(response);
         this.addSuccess("Success!","Allergies added successfully");
         

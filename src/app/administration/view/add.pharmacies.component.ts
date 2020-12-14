@@ -34,7 +34,7 @@ export class ManagePharmaciesComponent implements OnInit {
 
   addPharmacies(){
   
-    this.managephamaciesService.createPhamacies(this.pharmaciescreatedata).subscribe(
+    this.managephamaciesService.createUpdatePhamarcies(this.pharmaciescreatedata).subscribe(
       response => {console.log(response);
         this.addSuccess("Success!","Pharmacies added successfully");
         

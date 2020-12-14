@@ -12,12 +12,23 @@ const apiBaseUrl = "http://localhost:4040/api/v1/";
 export class ManagePharmaciesService {
 
   constructor(private http: HttpClient) { }
-  createPhamacies(data): Observable<any>{
+  createUpdatePhamarcies(data): Observable<any>{
     console.log(data);
     return this.http.post<PharmaciesData>(apiBaseUrl+'postpharmacies',data);
   }
 
-  getPharmacies():Observable<any>{
+  getPharmacciess():Observable<any>{
     return this.http.get<PharmaciesData>(apiBaseUrl+'listpharmacies');
   }
+
+  updatePharmacies(data){
+    return this.http.post<PharmaciesData>(apiBaseUrl+'postpharmacies',data);
+  }
+
+  getPharmacies() {
+    return this.http.get<any>(apiBaseUrl+'listpharmacies')
+    .toPromise()
+    .then(res => res.data as PharmaciesData)
+    .then(data => data);
+}
 }

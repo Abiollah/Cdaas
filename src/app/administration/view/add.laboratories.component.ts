@@ -35,7 +35,7 @@ export class ManageLaboratoriesComponent implements OnInit {
 
   addLaboratories(){
   
-    this.managelaboratoriesService.createLaboratories(this.laboratoriescreatedata).subscribe(
+    this.managelaboratoriesService.createUpdateLaboratories(this.laboratoriescreatedata).subscribe(
       response => {console.log(response);
         this.addSuccess("Success!","Laboratories added successfully");
         

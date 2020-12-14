@@ -12,13 +12,25 @@ const apiBaseUrl = "http://192.168.1.149:8080/api/v1/";
 export class ManageAllergiesService {
 
   constructor(private http: HttpClient) { }
-  createAllergies(data): Observable<any>{
+
+  createUpdateAllergies(data): Observable<any>{
     console.log(data);
     return this.http.post<AllergiesData>(apiBaseUrl+'postallergies',data);
   }
 
-  getAllergies():Observable<any>{
+  getAllergiess():Observable<any>{
     return this.http.get<AllergiesData>(apiBaseUrl+'listallergies');
   }
+
+  updateAllergies(data){
+    return this.http.post<AllergiesData>(apiBaseUrl+'postallergies',data);
+  }
+
+  getAllergies() {
+    return this.http.get<any>(apiBaseUrl+'listallergies')
+    .toPromise()
+    .then(res => res.data as AllergiesData)
+    .then(data => data);
+}
 }
 
