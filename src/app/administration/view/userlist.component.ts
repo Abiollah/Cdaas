@@ -50,17 +50,15 @@ export class UserlistComponent implements OnInit {
     }
     updateUser(){
       this.manageuserService.createUpdateUser(this.selectedUser).subscribe(
-        response => {console.log(response);
-          this.userList.push(this.selectedUser);
-          this.ngOnInit();
-          this.addSuccess("Success!","User updated successfully");
-          
+        data => {
+          this.addSuccess("Success!","User information updated successfully.");
           
       }, 
-      error => {console.log(error)});
-      this.addError("Failed!","User creation failed.");
-
-      this.userDialog = false;
+      error => {
+        this.addError("Failed!","Could not update user information.");
+        this.userDialog = false;
+      });
+      
     }
 
     addSuccess(title:string,message:string) {

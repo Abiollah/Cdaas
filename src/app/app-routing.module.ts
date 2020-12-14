@@ -3,8 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppMainComponent } from './app.main.component';
 import {UserLoginComponent} from './login/login.component';
 import { DashboardComponent } from './report/view/dashboard.component';
-
-import { PatientComponent } from './patient/patient.registration.component';
+import { PatientComponent } from './client/patient.registration.component';
 import  {SettingListComponent } from './administration/view/setting.list.component'
 import {ManageUsersComponent} from './administration/view/add.users.component'
 import {UserlistComponent} from './administration/view/userlist.component'
@@ -18,10 +17,11 @@ import { GenderlistComponent } from './administration/view/genderlist.component'
 import { AddGendersComponent } from './administration/view/add.genders.component';
 import { ManagePharmaciesComponent } from './administration/view/add.pharmacies.component';
 import { PharmacieslistComponent } from './administration/view/pharmacieslist.component';
+import {ClientPortalListComponent} from './client/view/client.portal.list.component';
+import {AuthGuardService} from './administration/service/auth-guard.service';
 
 const routes: Routes = [
     {path: '', component: UserLoginComponent},
-    {path: 'login', component: UserLoginComponent},
     {path: '', component: AppMainComponent,
     children: [
     {path: 'dashboard', component: DashboardComponent},
@@ -38,6 +38,7 @@ const routes: Routes = [
     {path: 'genderlist', component: GenderlistComponent},
     {path: 'addGender', component: AddGendersComponent},
     {path: 'userlist', component: UserlistComponent},
+    {path: '##/kpportal', component: ClientPortalListComponent},
     {path: 'addPharmacies', component: ManagePharmaciesComponent},
     {path: 'pharmacieslist', component: PharmacieslistComponent}
 ]
