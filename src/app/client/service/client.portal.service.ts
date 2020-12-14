@@ -14,14 +14,10 @@ export class ClientPortalService {
 
   constructor(private http: HttpClient) { }
 
-  getUser() {
-    return this.http.get<any>(this.getBaseApiUrl()+'listusers')
-    .toPromise()
-    .then(res => res.data as ClientExtendedInfo[])
-    .then(data => data);
+
+getClientExtendedInfo():Observable<any>{
+  return this.http.get<ClientExtendedInfo>(this.getBaseApiUrl()+'listclinicalregistrations');
 }
-
-
 
 
   private getBaseApiUrl(): string {

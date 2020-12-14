@@ -13,7 +13,7 @@
 					<button pButton pRipple label="Back" icon="pi pi-chevron-left" class="p-button-help p-mb-2" (click)="goBack()"></button>
 				</ng-template>
             </p-toolbar>
-            <p-table #dt [value]="userList" [rows]="10" [paginator]="true" [globalFilterFields]="['username','loginstatus']"
+    <p-table #dt [value]="userList" [rows]="10" [paginator]="true" [globalFilterFields]="['username','loginstatus']"
          [rowHover]="true" dataKey="id"
             styleClass="p-datatable-customers"
             currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">

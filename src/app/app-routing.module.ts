@@ -20,6 +20,7 @@ import { PharmacieslistComponent } from './administration/view/pharmacieslist.co
 import {ClientPortalListComponent} from './client/view/client.portal.list.component';
 import {AuthGuardService} from './administration/service/auth-guard.service';
 import { MaritalStatuslistComponent } from './administration/view/marital-statuslist.component';
+import { ClientPortalDetailComponent } from './client/view/client-portal-detail.component';
 
 const routes: Routes = [
     {path: '', component: UserLoginComponent},
@@ -39,10 +40,11 @@ const routes: Routes = [
     {path: 'genderlist', component: GenderlistComponent},
     {path: 'addGender', component: AddGendersComponent},
     {path: 'userlist', component: UserlistComponent},
-    {path: '##/kpportal', component: ClientPortalListComponent},
     {path: 'addPharmacies', component: ManagePharmaciesComponent},
     {path: 'pharmacieslist', component: PharmacieslistComponent},
-    {path: 'maritalstatuslist', component: MaritalStatuslistComponent}
+    {path: 'maritalstatuslist', component: MaritalStatuslistComponent},
+    {path: 'cportal', component: ClientPortalListComponent},
+    {path: '##/cportald', component: ClientPortalDetailComponent}
 ]
 },
 
