@@ -20,8 +20,8 @@ export class GenderlistComponent implements OnInit {
   constructor(private messageService: MessageService, private router: Router, private location: Location, private managegenderService:ManageGendersService, private breadcrumbService: AppBreadcrumbService) {
     this.breadcrumbService.setItems([
       { label: 'Dashboard', routerLink: ['/dashboard'] },
-      { label: 'METADATA', routerLink: ['/metadata'] },
-      { label: 'GENDER', routerLink: ['/gender'] }    ]);
+      { label: 'METADATA', routerLink: ['/metadatalist'] },
+      { label: 'GENDER', routerLink: ['/genderlist'] }    ]);
    }
 
   ngOnInit(): void {

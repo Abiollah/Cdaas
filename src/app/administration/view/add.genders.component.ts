@@ -6,6 +6,7 @@ import { GenderlistComponent } from '../view/genderlist.component';
 import { Location } from '@angular/common';
 import {MessageService} from 'primeng/api';
 
+
 @Component({
   selector: 'app-add.genders',
   templateUrl: './add.genders.component.html',
@@ -14,7 +15,8 @@ import {MessageService} from 'primeng/api';
 
 export class AddGendersComponent implements OnInit {
 
-  
+  //private genderlistcomponent:GenderlistComponent = new GenderlistComponent();
+      
 
   gendercreatedata: GenderData = {
     name: '',
@@ -30,11 +32,12 @@ export class AddGendersComponent implements OnInit {
     constructor(private messageService: MessageService,private location: Location,private managegenderService:ManageGendersService, private breadcrumbService: AppBreadcrumbService) { 
       this.breadcrumbService.setItems([
         { label: 'Dashboard', routerLink: ['/dashboard'] },
-        { label: 'METADATA', routerLink: ['/metadata'] },
-        { label: 'GENDER', routerLink: ['/gender'] }    ]);
+        { label: 'METADATA', routerLink: ['/metadatalist'] },
+        { label: 'GENDER', routerLink: ['/genderlist'] }    ]);
     }
   
     ngOnInit(): void {
+    
       
     }
   

@@ -19,6 +19,7 @@ import { ManagePharmaciesComponent } from './administration/view/add.pharmacies.
 import { PharmacieslistComponent } from './administration/view/pharmacieslist.component';
 import {ClientPortalListComponent} from './client/view/client.portal.list.component';
 import {AuthGuardService} from './administration/service/auth-guard.service';
+import { MaritalStatuslistComponent } from './administration/view/marital-statuslist.component';
 
 const routes: Routes = [
     {path: '', component: UserLoginComponent},
@@ -40,7 +41,8 @@ const routes: Routes = [
     {path: 'userlist', component: UserlistComponent},
     {path: '##/kpportal', component: ClientPortalListComponent},
     {path: 'addPharmacies', component: ManagePharmaciesComponent},
-    {path: 'pharmacieslist', component: PharmacieslistComponent}
+    {path: 'pharmacieslist', component: PharmacieslistComponent},
+    {path: 'maritalstatuslist', component: MaritalStatuslistComponent}
 ]
 },
 

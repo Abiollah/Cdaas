@@ -131,9 +131,9 @@ import { MaritalStatuslistComponent } from './administration/view/marital-status
     GenderlistComponent,
     AddGendersComponent,
     UserRoleListComponent,
-    MaritalStatuslistComponent,
     ManagePharmaciesComponent,
-    PharmacieslistComponent
+    PharmacieslistComponent,
+    MaritalStatuslistComponent,
 
 
 

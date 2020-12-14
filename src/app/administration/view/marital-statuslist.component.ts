@@ -1,37 +1,40 @@
 import { Component, OnInit } from '@angular/core';
 import {AppBreadcrumbService} from '../../app.breadcrumb.service';
-import { GenderData, GenderDataCreate } from '../domain/gender.data';
-import {ManageGendersService} from '../service/manage.genders.service';
+import { MaritalStatusData, MaritalStatusDataCreate } from '../domain/maritalstatus.data';
+import {ManageMaritalstatusService} from '../service/manage.maritalstatus.service';
 import { Location } from '@angular/common';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import {MessageService,Message} from 'primeng/api';
 
 @Component({
   selector: 'app-marital-statuslist',
   templateUrl: './marital-statuslist.component.html',
-  styleUrls: ['./marital-statuslist.component.scss']
+  styleUrls: ['./marital-statuslist.component.scss'],
+  providers: [MessageService]
 })
+
 export class MaritalStatuslistComponent implements OnInit {
-  genderList:any;
-  constructor(private router: Router, private location: Location, private managegenderService:ManageGendersService, private breadcrumbService: AppBreadcrumbService) {
+  maritalStatusList:any;
+  constructor(private router: Router, private location: Location, private manageMaritalstatusService:ManageMaritalstatusService, private breadcrumbService: AppBreadcrumbService) {
     this.breadcrumbService.setItems([
       { label: 'Dashboard', routerLink: ['/dashboard'] },
-      { label: 'METADATA', routerLink: ['/metadata'] },
-      { label: 'GENDER', routerLink: ['/gender'] }    ]);
+      { label: 'metadata', routerLink: ['/metadatalist'] },
+      { label: 'maritalstatus', routerLink: ['/maritalstatuslist'] }    ]);
    }
 
   ngOnInit(): void {
-    this.GenderList();
+    this.MaritalStatusList();
   }
-   GenderList():void{
-    this.managegenderService.getGenders().subscribe(data => {
-      this.genderList = data;
+  MaritalStatusList():void{
+    this.manageMaritalstatusService.getMaritalStatuss().subscribe(data => {
+      this.maritalStatusList = data;
       console.log(data);
     }
     );
     }
 
-    goToAddGender(){
-      this.router.navigate(['addGender']);
+    goToAddMaritalStatus(){
+      this.router.navigate(['addMaritalStatus']);
     }
 
     goBack(){

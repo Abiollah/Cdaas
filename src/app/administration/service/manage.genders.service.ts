@@ -6,8 +6,6 @@ import { catchError, retry } from 'rxjs/operators';
 import { GenderData } from '../domain/gender.data';
 import { environment } from '../../../environments/environment';
 
-
-const apiBaseUrl = "http://localhost:8080/api/v1/";
 @Injectable({
   providedIn: 'root'
 })
@@ -26,11 +24,11 @@ export class ManageGendersService {
   }
 
   updateGender(data){
-    return this.http.post<GenderData>(apiBaseUrl+'postgenders',data);
+    return this.http.post<GenderData>(this.getBaseApiUrl() +'postgenders',data);
   }
 
   getGender() {
-    return this.http.get<any>(apiBaseUrl+'listgenders')
+    return this.http.get<any>(this.getBaseApiUrl()+'listgenders')
     .toPromise()
     .then(res => res.data as GenderData)
     .then(data => data);
