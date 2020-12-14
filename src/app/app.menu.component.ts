@@ -33,7 +33,7 @@ export class AppMenuComponent implements OnInit {
               {label: 'Register KP', icon: 'pi pi-fw pi-user-plus', routerLink: ['/registration']},
               {label: 'Initiate Appointment', icon: 'fa fa-medkit fa-5x', routerLink: ['/uikit/input']},
               {label: 'Visit History', icon: 'fa fa-user-md fa-5x', routerLink: ['/uikit/floatlabel']},
-              {label: 'KP Portal', icon: 'fa fa-heartbeat fa-5x', routerLink: ['/##/kpportal']}
+              {label: 'KP Portal', icon: 'fa fa-heartbeat fa-5x', routerLink: ['/cportal']}
           ]
       },
 

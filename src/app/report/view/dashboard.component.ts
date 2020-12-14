@@ -24,6 +24,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     if(sessionStorage.getItem('username') == null){
+      //user must login to use the application, else s/he gets bounced out
       this.addError("Session Expired.","Your current session has expired. Re-login.");
       this.router.navigate(['']);
     }

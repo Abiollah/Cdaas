@@ -34,7 +34,7 @@ export class UserLoginComponent implements OnInit {
   }
 
   userLogin(): void {
-    this.authservice.getUserByUsernamePassword(this.userdata.username,this.userdata.password)
+    this.authservice.userLogin(this.userdata)
     .subscribe(
     data => {
       if(!data.loginstatus){

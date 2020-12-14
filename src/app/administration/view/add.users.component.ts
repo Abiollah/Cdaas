@@ -40,7 +40,7 @@ usercreatedata: UserData = {
   }
 
 addUser(){
-
+this.usercreatedata.created_date =  Date.now();
 this.manageuserService.createUpdateUser(this.usercreatedata)
 .subscribe(
 data => {
