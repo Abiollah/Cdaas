@@ -4,6 +4,7 @@ export interface UserData{
     loginstatus?: boolean;
     userid?:number;
     user_type_id?: number;
+    created_date?: number;
     
 }
 

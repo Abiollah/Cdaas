@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {AppBreadcrumbService} from '../../app.breadcrumb.service';
-import { UserData, UserDataCreate } from '../domain/users.data';
+import { UserData } from '../domain/users.data';
 import {ManageUsersService} from '../service/manage.users.service';
 import { Location } from '@angular/common';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import {MessageService,Message} from 'primeng/api';
+import { Router } from '@angular/router';
+import {MessageService} from 'primeng/api';
 
 
 @Component({
@@ -50,17 +50,15 @@ export class UserlistComponent implements OnInit {
     }
     updateUser(){
       this.manageuserService.createUpdateUser(this.selectedUser).subscribe(
-        response => {console.log(response);
-          this.userList.push(this.selectedUser);
-          this.ngOnInit();
-          this.addSuccess("Success!","User updated successfully");
-          
+        () => {
+          this.addSuccess("Success!","User information updated successfully.");
           
       }, 
-      error => {console.log(error)});
-      this.addError("Failed!","User creation failed.");
-
-      this.userDialog = false;
+      () => {
+        this.addError("Failed!","Could not update user information.");
+        this.userDialog = false;
+      });
+      
     }
 
     addSuccess(title:string,message:string) {

@@ -13,7 +13,7 @@
 					<button pButton pRipple label="Back" icon="pi pi-chevron-left" class="p-button-help p-mb-2" (click)="goBack()"></button>
 				</ng-template>
             </p-toolbar>
-            <p-table #dt [value]="userList" [rows]="10" [paginator]="true" [globalFilterFields]="['username','loginstatus']"
+    <p-table #dt [value]="userList" [rows]="10" [paginator]="true" [globalFilterFields]="['username','loginstatus']"
          [rowHover]="true" dataKey="id"
             styleClass="p-datatable-customers"
             currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
@@ -66,7 +66,7 @@
             </ng-template>
             <ng-template pTemplate="summary">
                 <div class="p-d-flex p-ai-center p-jc-between">
-                    In total there are {{products ? products.length : 0 }} products.
+                    In total there are {{userList ? userList.length : 0 }} users.
                 </div>
             </ng-template>
         </p-table>   

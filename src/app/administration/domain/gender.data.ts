@@ -1,15 +1,21 @@
+import { Time } from '@angular/common';
+
 export interface GenderData{
     name: string;
     description: string;
-    code: number;
+    code: string;
     gender_id:number;
+    created_by: number;
+   // created_date: Date;
     
 }
 
 export interface GenderDataCreate{
     name: string;
     description: string;
-    code: boolean;
+    code: string;
     gender_id: number;
+    created_by: number;
+   // created_date: Date;
     
 }

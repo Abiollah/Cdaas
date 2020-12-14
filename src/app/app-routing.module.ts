@@ -18,11 +18,15 @@ import { AddGendersComponent } from './administration/view/add.genders.component
 import { ManagePharmaciesComponent } from './administration/view/add.pharmacies.component';
 import { PharmacieslistComponent } from './administration/view/pharmacieslist.component';
 import {ClientPortalListComponent} from './client/view/client.portal.list.component';
+<<<<<<< HEAD
 import {UserRoleListComponent} from './administration/view/user-role-list.component';
+=======
+import {AuthGuardService} from './administration/service/auth-guard.service';
+import { ClientPortalDetailComponent } from './client/view/client-portal-detail.component';
+>>>>>>> 1eed02e9e3f590c07208f4dd4826e3d3f65ab959
 
 const routes: Routes = [
     {path: '', component: UserLoginComponent},
-    {path: 'login', component: UserLoginComponent},
     {path: '', component: AppMainComponent,
     children: [
     {path: 'dashboard', component: DashboardComponent},
@@ -38,10 +42,16 @@ const routes: Routes = [
     {path: 'metadatalist', component: MetadataListComponent},
     {path: 'genderlist', component: GenderlistComponent},
     {path: 'addGender', component: AddGendersComponent},
+<<<<<<< HEAD
     {path: 'userrolelist', component: UserRoleListComponent},
     {path: '##/kpportal', component: ClientPortalListComponent},
+=======
+    {path: 'userlist', component: UserlistComponent},
+>>>>>>> 1eed02e9e3f590c07208f4dd4826e3d3f65ab959
     {path: 'addPharmacies', component: ManagePharmaciesComponent},
-    {path: 'pharmacieslist', component: PharmacieslistComponent}
+    {path: 'pharmacieslist', component: PharmacieslistComponent},
+    {path: 'cportal', component: ClientPortalListComponent},
+    {path: '##/cportald', component: ClientPortalDetailComponent}
 ]
 },
 

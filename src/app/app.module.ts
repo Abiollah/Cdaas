@@ -99,6 +99,8 @@ import { ManageUserRoleService } from './administration/service/manage.user.role
 import { UserRoleListComponent } from './administration/view/user-role-list.component';
 import { ManagePharmaciesComponent } from './administration/view/add.pharmacies.component';
 import { PharmacieslistComponent } from './administration/view/pharmacieslist.component'
+import { ClientPortalListComponent } from './client/view/client.portal.list.component';
+import { ClientPortalDetailComponent } from './client/view/client-portal-detail.component';
 
 
 
@@ -130,7 +132,9 @@ import { PharmacieslistComponent } from './administration/view/pharmacieslist.co
     AddGendersComponent,
     UserRoleListComponent,
     ManagePharmaciesComponent,
-    PharmacieslistComponent
+    PharmacieslistComponent,
+    ClientPortalListComponent,
+    ClientPortalDetailComponent
 
 
 

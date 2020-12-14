@@ -7,11 +7,13 @@ import {MessageService} from 'primeng/api';
 @Component({
   selector: 'app-user-login',
   templateUrl: './login.component.html',
-  providers: [MessageService]
+  providers: [MessageService],
+  
 })
 export class UserLoginComponent implements OnInit {
   error: any;
   headers: string[];
+  loggedIn: boolean = false;
   
   userdata: UserData = {
     username: '',
@@ -31,36 +33,41 @@ export class UserLoginComponent implements OnInit {
    
   }
 
-  userLogin() : void {
-    /*const data = {
-      username: this.userdata.username,
-      password: this.userdata.password
-    };*/
-    this.authservice.getUserByUsernamePassword(this.userdata.username,this.userdata.password)
-    .subscribe((data: UserData) => this.userdata = {...data}, 
-    response => {
-      console.log(response)
-    },
-    
-     );
-    if(this.userdata.loginstatus){
-      this.router.navigate(['dashboard']);
-      }
-      if(!this.userdata.loginstatus){
+  userLogin(): void {
+    this.authservice.userLogin(this.userdata)
+    .subscribe(
+    data => {
+      if(!data.loginstatus){
+        this.addError("Authentication Failed.","You are not authorized to use the application.");
         this.router.navigate(['']);
-
-        this.addError("Login Failed.","Invalid username/password");
-       
-       // alert("Invalid username/password. "+ this.userdata.loginstatus);
-        
+        this.loggedIn = false;
       }
+      else{
+      this.loadInitParam(data);
+      this.router.navigate(['dashboard']);
+      this.loggedIn = true;
+      }
+      
+    },
+    error => {
+      this.addError("Authentication Failed.","Invalid username/password");
+      this.loggedIn = false;
+    }
+    );
   }
+
+  
 
   addSuccess(title:string,message:string) {
     this.messageService.add({severity:'success', summary:title, detail:message});
   }
   addError(title:string,message:string) {
     this.messageService.add({severity:'error', summary:title, detail:message});
+  }
+
+  loadInitParam(data){
+      sessionStorage.setItem('username', data.username);
+      sessionStorage.setItem('userid', data.userid);
   }
 
 }

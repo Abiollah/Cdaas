@@ -1,5 +1,5 @@
 import { Injectable, isDevMode } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
@@ -14,9 +14,15 @@ export class UserAuthenticationService {
   constructor(private http: HttpClient) { }
 
 getUserByUsernamePassword(username:string,password:string): Observable<any> {
-
+ //  const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
   return this.http.get<UserData>(this.getBaseApiUrl()+'userlogin?username='+username+'&password='+password);
 }
+userLogin(data): Observable<any>{
+  console.log(data);
+  return this.http.post<UserData>(this.getBaseApiUrl()+'ulogin',data);
+}
+
+
 
 private handleError(error: HttpErrorResponse) {
   if (error.error instanceof ErrorEvent) {

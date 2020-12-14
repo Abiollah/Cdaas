@@ -16,7 +16,9 @@ export class AddGendersComponent implements OnInit {
     name: '',
     description: '',
     gender_id: 0,
-    code: 0,
+    code: '',
+    created_by: 0,
+   // created_date: null
     
   };
   
@@ -32,17 +34,18 @@ export class AddGendersComponent implements OnInit {
     }
   
   addGender(){
-    
+  this.gendercreatedata.created_by = +sessionStorage.getItem('userid');
+  //this.gendercreatedata.created_date= new Date();
   this.managegenderService.createGender(this.gendercreatedata).subscribe(
-    response => {console.log(response);
-      this.addSuccess("Success!","User added successfully");
-      
+    data => {
+      this.addSuccess("Success!","Gender added successfully.");
   }, 
-  error => {console.log(error)});
-  this.addError("Failed!","User creation failed.");
+  error => {
+  this.addError("Failed!","Could not add gender.");
   }
   
-  
+  );
+}
   
   goBack(){
   this.location.back();
