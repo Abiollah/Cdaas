@@ -12,7 +12,7 @@
 					<button pButton pRipple label="Back" icon="pi pi-chevron-left" class="p-button-help p-mb-2" (click)="goBack()"></button>
 				</ng-template>
             </p-toolbar>
-            <p-table #dt [value]="genderList" [rows]="10" [paginator]="true" [globalFilterFields]="['username','loginstatus']"
+            <p-table #dt [value]="genderList" [rows]="10" [paginator]="true" [globalFilterFields]="['name','code']"
          [rowHover]="true" dataKey="id"
             styleClass="p-datatable-customers"
             currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
@@ -39,7 +39,7 @@
                     
                 </tr>
             </ng-template>
-            <ng-template pTemplate="body" let-user>
+            <ng-template pTemplate="body" let-gender>
                 <tr>
                     <td>
                         <p-tableCheckbox [value]="gender"></p-tableCheckbox>
@@ -58,7 +58,7 @@
                     </td>
                     
                     <td>
-                        <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="editProduct(product)"></button>
+                        <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="editGender(gender)"></button>
                         <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="deleteProduct(product)"></button>
                     </td>
                 </tr>
@@ -70,13 +70,13 @@
             </ng-template>
         </p-table>   
             
-            
-
-            
             </div>
 
+             
+        </div>
+        </div>
 
-        </div>
-        </div>
+
+
 
 

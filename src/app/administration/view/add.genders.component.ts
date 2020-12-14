@@ -11,6 +11,7 @@ import {MessageService} from 'primeng/api';
   templateUrl: './add.genders.component.html',
   providers: [MessageService]
 })
+
 export class AddGendersComponent implements OnInit {
 
   
