@@ -12,7 +12,7 @@
 					<button pButton pRipple label="Back" icon="pi pi-chevron-left" class="p-button-help p-mb-2" (click)="goBack()"></button>
 				</ng-template>
             </p-toolbar>
-            <p-table #dt [value]="genderList" [rows]="10" [paginator]="true" [globalFilterFields]="['name','code']"
+            <p-table #dt [value]="genderList" [rows]="10" [paginator]="true" [globalFilterFields]="['name','code','description']"
          [rowHover]="true" dataKey="id"
             styleClass="p-datatable-customers"
             currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
@@ -31,7 +31,7 @@
                     <th style="width: 3rem">
                         <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
                     </th>
-                    <th pSortableColumn="name">id <p-sortIcon field="gender_id"></p-sortIcon></th>
+                    <th pSortableColumn="gender_id">id <p-sortIcon field="gender_id"></p-sortIcon></th>
                     <th pSortableColumn="name">Name<p-sortIcon field="name"></p-sortIcon></th>
                     <th pSortableColumn="code">Code <p-sortIcon field="code"></p-sortIcon></th>
                     <th pSortableColumn="description">Description <p-sortIcon field="description"></p-sortIcon></th>
@@ -65,7 +65,7 @@
             </ng-template>
             <ng-template pTemplate="summary">
                 <div class="p-d-flex p-ai-center p-jc-between">
-                    In total there are {{products ? products.length : 0 }} products.
+                    In total there are {{genderList ? genderList.length : 0 }} genders.
                 </div>
             </ng-template>
         </p-table>   

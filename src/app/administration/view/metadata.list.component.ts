@@ -97,17 +97,17 @@ this.clinicalManagement = [
           {
               label: 'Add/Manage Allergies',
               icon: 'pi pi-fw pi-plus',
-              routerLink: '/allergies'
+              routerLink: '/allergieslist'
           },
           {
               label: 'Add/Manage Laboratories',
               icon: 'pi pi-fw pi-user-edit',
-              routerLink: '/laboratories'
+              routerLink: '/laboratorieslist'
           },
           {
               label: 'Add/Manage Pharmacies',
               icon: 'pi pi-fw pi-user-edit',
-              routerLink: '/pharmacies'
+              routerLink: '/pharmacieslist'
           }
       ]
   },
