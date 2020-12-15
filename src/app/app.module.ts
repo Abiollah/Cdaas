@@ -102,6 +102,7 @@ import { PharmacieslistComponent } from './administration/view/pharmacieslist.co
 import { MaritalStatuslistComponent } from './administration/view/marital-statuslist.component';
 import { ClientPortalListComponent } from './client/view/client.portal.list.component';
 import { ClientPortalDetailComponent } from './client/view/client-portal-detail.component';
+import { AddMaritalstatusComponent } from './administration/view/add.maritalstatus.component';
 
 
 
@@ -137,6 +138,7 @@ import { ClientPortalDetailComponent } from './client/view/client-portal-detail.
     MaritalStatuslistComponent,
     ClientPortalListComponent,
     ClientPortalDetailComponent,
+    AddMaritalstatusComponent,
 
 
 

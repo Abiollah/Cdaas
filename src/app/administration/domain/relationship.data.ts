@@ -1,22 +1,21 @@
 import { Time } from '@angular/common';
 
-export interface MaritalStatusData{
+export interface RelationshipData{
     name: string;
     description: string;
     code: string;
-    marital_status_id:number;
+    relationship_id:number;
     created_by: number;
-    created_date: Date;
-   
+   // created_date: Date;
     
 }
 
-export interface MaritalStatusDataCreate{
+export interface RelationshipDataCreate{
     name: string;
     description: string;
     code: string;
-    marital_status_id: number;
+    relationship_id: number;
     created_by: number;
-    created_date: Date;
+   // created_date: Date;
     
 }

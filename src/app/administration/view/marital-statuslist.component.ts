@@ -34,7 +34,7 @@ export class MaritalStatuslistComponent implements OnInit {
     }
 
     goToAddMaritalStatus(){
-      this.router.navigate(['addMaritalStatus']);
+      this.router.navigate(['addmaritalstatus']);
     }
 
     goBack(){

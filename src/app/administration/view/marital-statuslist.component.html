@@ -12,7 +12,7 @@
 					<button pButton pRipple label="Back" icon="pi pi-chevron-left" class="p-button-help p-mb-2" (click)="goBack()"></button>
 				</ng-template>
             </p-toolbar>
-            <p-table #dt [value]="maritalStatusList" [rows]="10" [paginator]="true" [globalFilterFields]="['id','code, description']"
+            <p-table #dt [value]="maritalStatusList" [rows]="10" [paginator]="true" [globalFilterFields]="['username','code, description']"
          [rowHover]="true" dataKey="id"
             styleClass="p-datatable-customers"
             currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
@@ -45,10 +45,10 @@
                         <p-tableCheckbox [value]="gender"></p-tableCheckbox>
                     </td>
                     <td><span class="p-column-title"></span>
-                        {{maritalstatus.maritalStatus_id}}
+                        {{maritalstatus.gender_id}}
                     </td>
                     <td><span class="p-column-title"></span>
-                        {{maritalstatus.name}}
+                     {{maritalstatus.name}}
                     </td>
                     <td><span class="p-column-title"></span>
                         {{maritalstatus.code}}
