@@ -21,6 +21,12 @@ getUserByUsernamePassword(username:string,password:string): Observable<any> {
   );*/
   
 }
+userLogin(data): Observable<any>{
+  console.log(data);
+  return this.http.post<UserData>(this.getBaseApiUrl()+'ulogin',data);
+}
+
+
 
 private handleError(error: HttpErrorResponse) {
   if (error.error instanceof ErrorEvent) {
