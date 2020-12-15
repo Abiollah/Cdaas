@@ -53,7 +53,7 @@ export class LaboratorieslistComponent implements OnInit {
       this.laboratoriesDialog=true;
      }
      updateLaboratories(){
-       this.managelaboratoriesService.createUpdateLaboratories(this.selectedLaboratories).subscribe(
+       this.managelaboratoriesService.createLaboratories(this.selectedLaboratories).subscribe(
          response => {console.log(response);
            this.laboratoriesList.push(this.selectedLaboratories);
            this.ngOnInit();

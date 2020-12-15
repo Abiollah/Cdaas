@@ -46,18 +46,15 @@ export class AllergieslistComponent implements OnInit {
       this.selectedAllergies = {...allergies};
       this.allergiesDialog=true;
      }
-     updateLaboratories(){
-       this.manageallergiesService.createUpdateAllergies(this.selectedAllergies).subscribe(
-         response => {console.log(response);
-           this.allergiesList.push(this.selectedAllergies);
-           this.ngOnInit();
-           this.addSuccess("Success!","Allergy updated successfully");
+     updateAllergies(){
+       this.manageallergiesService.updateAllergies(this.selectedAllergies).subscribe(
+        data => {
+          this.addSuccess("Success!","Allergies information updated successfully.");
            
            
        }, 
        error => {console.log(error)});
        this.addError("Failed!","Allergy creation failed.");
- 
        this.allergiesDialog = false;
      }
  

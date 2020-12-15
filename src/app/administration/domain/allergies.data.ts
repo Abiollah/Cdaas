@@ -1,8 +1,9 @@
 export interface AllergiesData{
-    allergies_id?: number;
-    name?: string;
-    code?: string;
-    description?: string;
+    allergies_id: number;
+    name: string;
+    code: string;
+    description: string;
+    created_by: number;
     
 }
 
@@ -11,5 +12,6 @@ export interface AllergiesDataCreate{
     name: string;
     code: string;
     description: string;
+    created_by: number;
    
-}
+}   

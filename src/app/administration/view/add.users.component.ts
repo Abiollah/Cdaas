@@ -3,22 +3,15 @@ import {AppBreadcrumbService} from '../../app.breadcrumb.service';
 import { UserData, UserDataCreate } from '../domain/users.data';
 import {ManageUsersService} from '../service/manage.users.service';
 import { Location } from '@angular/common';
-<<<<<<< HEAD
-import { MessageService } from 'primeng/api';
-=======
 import {MessageService} from 'primeng/api';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
->>>>>>> ac67ab56cf2de5b73812ee152e0accfa4cdaa5b2
 
 @Component({
   selector: 'app-manage-users',
   templateUrl: './add.users.component.html',
   providers: [MessageService]
-<<<<<<< HEAD
-=======
   
->>>>>>> ac67ab56cf2de5b73812ee152e0accfa4cdaa5b2
 })
 export class ManageUsersComponent implements OnInit {
   

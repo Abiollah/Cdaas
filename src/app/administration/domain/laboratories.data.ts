@@ -4,7 +4,7 @@ export interface LaboratoriesData{
     code: string;
     description: string;
     contact_phone_number: string;
-    created_by: string;
+    created_by: number;
 }
 
 export interface LaboratoriesDataCreate{
@@ -13,5 +13,5 @@ export interface LaboratoriesDataCreate{
     code: string;
     description: string;
     contact_phone_number: string;
-    created_by: string;
+    created_by: number;
 }
