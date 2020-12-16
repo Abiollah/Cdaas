@@ -13,7 +13,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
   providers: [MessageService]
 })
 export class ManageUsersComponent implements OnInit {
-  
+
 
 usercreatedata: UserData = {
 
@@ -24,11 +24,7 @@ usercreatedata: UserData = {
   userid:0,
 };
 
-<<<<<<< HEAD
-  constructor(private messageService: MessageService, private location: Location,private manageuserService:ManageUsersService, private breadcrumbService: AppBreadcrumbService) {
-=======
   constructor(private router: Router,private messageService: MessageService,private location: Location,private manageuserService:ManageUsersService, private breadcrumbService: AppBreadcrumbService) {
->>>>>>> 1eed02e9e3f590c07208f4dd4826e3d3f65ab959
     this.breadcrumbService.setItems([
       { label: 'Dashboard', routerLink: ['/dashboard'] },
       { label: 'Access Control Management', routerLink: ['/setting'] },
