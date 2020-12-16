@@ -20,6 +20,7 @@ export class ManageLaboratoriesComponent implements OnInit {
     description: '',
     contact_phone_number: '',
     created_by: 0,
+    created_date: null,
     
   };
 
@@ -40,8 +41,8 @@ export class ManageLaboratoriesComponent implements OnInit {
 
   addLaboratories(){
   
-    this.laboratoriescreatedata.created_by  = +sessionStorage.getItem('userid')
-    //this.gendercreatedata.created_date= new Date();
+    this.laboratoriescreatedata.created_by  = +sessionStorage.getItem('userid');
+   // this.laboratoriescreatedata.created_date= new Date();
     this.managelaboratoriesService.createLaboratories(this.laboratoriescreatedata).subscribe(
       data => {
         this.addSuccess("Success!","Laboratory added successfully.");

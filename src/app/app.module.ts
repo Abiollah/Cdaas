@@ -101,6 +101,10 @@ import { ManagePharmaciesComponent } from './administration/view/add.pharmacies.
 import { PharmacieslistComponent } from './administration/view/pharmacieslist.component'
 import { ClientPortalListComponent } from './client/view/client.portal.list.component';
 import { ClientPortalDetailComponent } from './client/view/client-portal-detail.component';
+import { ManageOccupationComponent } from './administration/view/add.occupation.component';
+import { OccupationlistComponent } from './administration/view/occupationlist.component';
+import { ManageQualificationComponent } from './administration/view/add.qualification.component';
+import { QualificationlistComponent } from './administration/view/qualificationlist.component';
 
 
 
@@ -134,7 +138,11 @@ import { ClientPortalDetailComponent } from './client/view/client-portal-detail.
     ManagePharmaciesComponent,
     PharmacieslistComponent,
     ClientPortalListComponent,
-    ClientPortalDetailComponent
+    ClientPortalDetailComponent,
+    ManageOccupationComponent,
+    OccupationlistComponent,
+    ManageQualificationComponent,
+    QualificationlistComponent
 
 
 

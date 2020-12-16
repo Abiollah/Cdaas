@@ -51,18 +51,16 @@ export class PharmacieslistComponent implements OnInit {
      }
      updateUser(){
        this.managepharmaciesService.createUpdatePhamarcies(this.selectedPharmacies).subscribe(
-         response => {console.log(response);
-           this.pharmaciesList.push(this.selectedPharmacies);
-           this.ngOnInit();
+        () => {
            this.addSuccess("Success!","Pharmacy updated successfully");
            
            
        }, 
-       error => {console.log(error)});
+       () => {
        this.addError("Failed!","User creation failed.");
- 
        this.pharmaciesDialog = false;
-     }
+     });
+    }
  
      addSuccess(title:string,message:string) {
        this.messageService.add({severity:'success', summary:title, detail:message});

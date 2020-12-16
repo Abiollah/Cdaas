@@ -3,36 +3,39 @@ import { HttpClient } from '@angular/common/http';
 import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
-import { PharmaciesData } from '../domain/pharmacies.data';
+import { OccupationData } from '../domain/occupation.data';
 import { environment } from '../../../environments/environment';
-
 
 @Injectable({
   providedIn: 'root'
 })
-export class ManagePharmaciesService {
+export class ManageOccupationService {
 
   constructor(private http: HttpClient) { }
-  createUpdatePhamarcies(data): Observable<any>{
+
+  createUpdateOccupation(data): Observable<any>{
     console.log(data);
-    return this.http.post<PharmaciesData>(this.getBaseApiUrl()+'postpharmacies',data);
+    return this.http.post<OccupationData>(this.getBaseApiUrl()+'postoccupations',data);
   }
 
-  getPharmacciess():Observable<any>{
-    return this.http.get<PharmaciesData>(this.getBaseApiUrl()+'listpharmacies');
+  getOccupations():Observable<any>{
+    return this.http.get<OccupationData>(this.getBaseApiUrl()+'listoccupations');
   }
 
-  updatePharmacies(data){
-    return this.http.post<PharmaciesData>(this.getBaseApiUrl()+'postpharmacies',data);
+  updateOccupation(data){
+    return this.http.post<OccupationData>(this.getBaseApiUrl()+'postoccupations',data);
   }
 
-  getPharmacies() {
-    return this.http.get<any>(this.getBaseApiUrl()+'listpharmacies')
+  getOccupation() {
+    return this.http.get<any>(this.getBaseApiUrl()+'listoccupations')
     .toPromise()
-    .then(res => res.data as PharmaciesData)
+    .then(res => res.data as OccupationData)
     .then(data => data);
 }
+
 private getBaseApiUrl(): string {
   return isDevMode ? environment.apiBaseUrl : environment.apiBaseUrl;
   }
 }
+
+

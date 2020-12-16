@@ -23,6 +23,7 @@ allergiescreatedata: AllergiesData = {
   code: '',
   description: '',
   created_by:0,
+  created_date: null,
   
 };
 
@@ -41,9 +42,9 @@ allergiescreatedata: AllergiesData = {
   }
 
 addAllergies(){
-
-  this.allergiescreatedata.created_by = +sessionStorage.getItem('userid');
-  this.manageallergiesService.createAllergies(this.allergiescreatedata).subscribe(
+  this.allergiescreatedata.created_by = +sessionStorage.getItem("userid");
+  this.allergiescreatedata.created_date = new Date();
+  this.manageallergiesService.createUpdateAllergies(this.allergiescreatedata).subscribe(
     data => {
       this.addSuccess("Success!","Allergy added successfully.");
   }, 

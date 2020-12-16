@@ -5,6 +5,7 @@ export interface LaboratoriesData{
     description: string;
     contact_phone_number: string;
     created_by: number;
+    created_date: null,
 }
 
 export interface LaboratoriesDataCreate{
@@ -14,4 +15,5 @@ export interface LaboratoriesDataCreate{
     description: string;
     contact_phone_number: string;
     created_by: number;
+    created_date: null,
 }

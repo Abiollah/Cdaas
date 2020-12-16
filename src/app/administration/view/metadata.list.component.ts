@@ -50,12 +50,12 @@ export class MetadataListComponent implements OnInit {
               {
                   label: 'Add/Manage Occupation',
                   icon: 'pi pi-fw pi-user-edit',
-                  routerLink: '/occupation'
+                  routerLink: '/occupationlist'
               },
               {
                   label: 'Add/Manage Qualification',
                   icon: 'pi pi-fw pi-user-edit',
-                  routerLink: '/qualification'
+                  routerLink: '/qualificationlist'
               },
               {
                   label: 'Add/Manage Religion',

@@ -20,6 +20,10 @@ import { PharmacieslistComponent } from './administration/view/pharmacieslist.co
 import {ClientPortalListComponent} from './client/view/client.portal.list.component';
 import {AuthGuardService} from './administration/service/auth-guard.service';
 import { ClientPortalDetailComponent } from './client/view/client-portal-detail.component';
+import { ManageOccupationComponent } from './administration/view/add.occupation.component';
+import { OccupationlistComponent } from './administration/view/occupationlist.component';
+import { ManageQualificationComponent } from './administration/view/add.qualification.component';
+import { QualificationlistComponent } from './administration/view/qualificationlist.component';
 
 const routes: Routes = [
     {path: '', component: UserLoginComponent},
@@ -42,7 +46,11 @@ const routes: Routes = [
     {path: 'addPharmacies', component: ManagePharmaciesComponent},
     {path: 'pharmacieslist', component: PharmacieslistComponent},
     {path: 'cportal', component: ClientPortalListComponent},
-    {path: '##/cportald', component: ClientPortalDetailComponent}
+    {path: '##/cportald', component: ClientPortalDetailComponent},
+    {path: 'addOccupation', component: ManageOccupationComponent},
+    {path: 'occupationlist', component: OccupationlistComponent},
+    {path: 'addQualification', component: ManageQualificationComponent},
+    {path: 'qualificationlist', component: QualificationlistComponent},
 ]
 },
 

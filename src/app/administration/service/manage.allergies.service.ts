@@ -16,7 +16,7 @@ export class ManageAllergiesService {
 
   constructor(private http: HttpClient) { }
 
-  createAllergies(data): Observable<any>{
+  createUpdateAllergies(data): Observable<any>{
     console.log(data);
     return this.http.post<AllergiesData>(this.getBaseApiUrl()+'postallergies',data);
   }
