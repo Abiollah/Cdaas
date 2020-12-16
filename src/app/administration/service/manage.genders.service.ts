@@ -6,7 +6,6 @@ import { catchError, map, retry } from 'rxjs/operators';
 import { GenderData } from '../domain/gender.data';
 import { environment } from '../../../environments/environment';
 
-
 @Injectable({
   providedIn: 'root'
 })

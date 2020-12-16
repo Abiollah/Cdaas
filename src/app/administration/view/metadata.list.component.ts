@@ -16,7 +16,7 @@ export class MetadataListComponent implements OnInit {
   clinicalManagement: MenuItem[];
 
 
-  constructor(private breadcrumbService: AppBreadcrumbService) { 
+  constructor(private breadcrumbService: AppBreadcrumbService) {
     this.breadcrumbService.setItems([
       { label: 'Administration', routerLink: ['/administration'] },
       { label: 'Metadata', routerLink: ['/metadata'] }
@@ -35,7 +35,7 @@ export class MetadataListComponent implements OnInit {
               {
                   label: 'Add/Manage Marital Status',
                   icon: 'pi pi-fw pi-user-edit',
-                  routerLink: '/maritalstatus'
+                  routerLink: '/maritalstatuslist'
               },
               {
                   label: 'Add/Manage Relationships',
@@ -50,12 +50,12 @@ export class MetadataListComponent implements OnInit {
               {
                   label: 'Add/Manage Occupation',
                   icon: 'pi pi-fw pi-user-edit',
-                  routerLink: '/occupation'
+                  routerLink: '/occupationlist'
               },
               {
                   label: 'Add/Manage Qualification',
                   icon: 'pi pi-fw pi-user-edit',
-                  routerLink: '/qualification'
+                  routerLink: '/qualificationlist'
               },
               {
                   label: 'Add/Manage Religion',
@@ -111,7 +111,7 @@ this.clinicalManagement = [
           }
       ]
   },
-  
+
 ];
   }
 

@@ -1,0 +1,82 @@
+<div class="p-grid">
+	<div class="p-col-12">
+
+        <div class="card">
+			<p-toolbar styleClass="p-mb-4">
+				<ng-template pTemplate="left">
+					<button pButton pRipple label="Add Religion" icon="pi pi-plus" class="p-mr-2 p-mb-2" (click)="goToAddReligion()"></button>
+					<button pButton pRipple label="Delete Religion" icon="pi pi-trash" class="p-mb-2" (click)="deleteSelectedProducts()" [disabled]="!selectedProducts || !selectedProducts.length"></button>
+				</ng-template>
+
+				<ng-template pTemplate="right">
+					<button pButton pRipple label="Back" icon="pi pi-chevron-left" class="p-button-help p-mb-2" (click)="goBack()"></button>
+				</ng-template>
+            </p-toolbar>
+            <p-table #dt [value]="religionList" [rows]="10" [paginator]="true" [globalFilterFields]="['name','code','description']"
+         [rowHover]="true" dataKey="id"
+            styleClass="p-datatable-customers"
+            currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
+
+            <ng-template pTemplate="caption">
+                <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between table-header">
+                    <h5 class="p-m-0">Religion Listing</h5>
+                    <span class="p-input-icon-left">
+                    <i class="pi pi-search"></i>
+                    <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')" placeholder="Search..." />
+                </span>
+                </div>
+            </ng-template>
+            <ng-template pTemplate="header">
+                <tr>
+                    <th style="width: 3rem">
+                        <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                    </th>
+                    <th pSortableColumn="religion_id">id <p-sortIcon field="religion_id"></p-sortIcon></th>
+                    <th pSortableColumn="name">Name<p-sortIcon field="name"></p-sortIcon></th>
+                    <th pSortableColumn="code">Code <p-sortIcon field="code"></p-sortIcon></th>
+                    <th pSortableColumn="description">Description <p-sortIcon field="description"></p-sortIcon></th>
+                    <th pSortableColumn="action">Action <p-sortIcon field="action"></p-sortIcon></th>
+
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-religion>
+                <tr>
+                    <td>
+                        <p-tableCheckbox [value]="religion"></p-tableCheckbox>
+                    </td>
+                    <td><span class="p-column-title"></span>
+                        {{religion.religion_id}}
+                    </td>
+                    <td><span class="p-column-title"></span>
+                        {{religion.name}}
+                    </td>
+                    <td><span class="p-column-title"></span>
+                        {{religion.code}}
+                    </td>
+                    <td><span class="p-column-title"></span>
+                        {{religion.description}}
+                    </td>
+
+                    <td>
+                        <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="editProduct(product)"></button>
+                        <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="deleteProduct(product)"></button>
+                    </td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="summary">
+                <div class="p-d-flex p-ai-center p-jc-between">
+                    In total there are {{religionList ? religionList.length : 0 }} religion.
+                </div>
+            </ng-template>
+        </p-table>
+
+
+
+
+            </div>
+
+
+        </div>
+        </div>
+
+

@@ -46,7 +46,7 @@ export class SettingListComponent implements OnInit {
               {
                   label: 'Add/Manage Roles',
                   icon: 'pi pi-fw pi-list',
-                  routerLink: '/userrole'
+                  routerLink: '/userrolelist'
               },
               {
                   label: 'Add/Manage Permission Roles',

@@ -11,7 +11,6 @@ import {ButtonModule} from 'primeng/button';
 import {CalendarModule} from 'primeng/calendar';
 import {CardModule} from 'primeng/card';
 import {CarouselModule} from 'primeng/carousel';
-//import {ChartModule} from 'primeng/chart';
 import {CheckboxModule} from 'primeng/checkbox';
 import {ChipsModule} from 'primeng/chips';
 import {CodeHighlighterModule} from 'primeng/codehighlighter';
@@ -81,7 +80,6 @@ import { AppMainComponent } from './app.main.component';
 import { DashboardComponent } from './report/view/dashboard.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
-import { PatientComponent } from './client/patient.registration.component';
 import { SettingListComponent } from './administration/view/setting.list.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AddUserRoleComponent } from './administration/view/add.user.role.component';
@@ -95,12 +93,19 @@ import { LaboratorieslistComponent } from './administration/view/laboratorieslis
 import { MetadataListComponent } from './administration/view/metadata.list.component';
 import { GenderlistComponent } from './administration/view/genderlist.component';
 import { AddGendersComponent } from './administration/view/add.genders.component';
-import { ManageUserRoleService } from './administration/service/manage.user.role.service';
 import { UserRoleListComponent } from './administration/view/user-role-list.component';
 import { ManagePharmaciesComponent } from './administration/view/add.pharmacies.component';
-import { PharmacieslistComponent } from './administration/view/pharmacieslist.component'
+import { PharmacieslistComponent } from './administration/view/pharmacieslist.component';
+import { MaritalStatuslistComponent } from './administration/view/marital-statuslist.component';
 import { ClientPortalListComponent } from './client/view/client.portal.list.component';
 import { ClientPortalDetailComponent } from './client/view/client-portal-detail.component';
+<<<<<<< HEAD
+import { PatientComponent } from './client/view/patient.registration.component';
+import { AddReligionComponent } from './administration/view/add-religion.component';
+import { ReligionListComponent } from './administration/view/religion.list.component';
+=======
+import { AddMaritalstatusComponent } from './administration/view/add.maritalstatus.component';
+>>>>>>> a7458218f357857ca5d740dabd4dfec8128be7f5
 
 
 
@@ -118,8 +123,7 @@ import { ClientPortalDetailComponent } from './client/view/client-portal-detail.
     AppFooterComponent,
     AppMainComponent,
     DashboardComponent,
-    PatientComponent,
-    SettingListComponent,
+     SettingListComponent,
     AddUserRoleComponent,
     ManageUsersComponent,
     UserlistComponent,
@@ -133,8 +137,18 @@ import { ClientPortalDetailComponent } from './client/view/client-portal-detail.
     UserRoleListComponent,
     ManagePharmaciesComponent,
     PharmacieslistComponent,
+    MaritalStatuslistComponent,
     ClientPortalListComponent,
-    ClientPortalDetailComponent
+    ClientPortalDetailComponent,
+<<<<<<< HEAD
+    PatientComponent,
+    AddReligionComponent,
+    ReligionListComponent
+
+   // ManageUserRoleService
+=======
+    AddMaritalstatusComponent,
+>>>>>>> a7458218f357857ca5d740dabd4dfec8128be7f5
 
 
 

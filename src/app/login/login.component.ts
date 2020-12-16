@@ -8,13 +8,13 @@ import {MessageService} from 'primeng/api';
   selector: 'app-user-login',
   templateUrl: './login.component.html',
   providers: [MessageService],
-  
+
 })
 export class UserLoginComponent implements OnInit {
   error: any;
   headers: string[];
   loggedIn: boolean = false;
-  
+
   userdata: UserData = {
     username: '',
     password: '',
@@ -24,13 +24,13 @@ export class UserLoginComponent implements OnInit {
 
 
   }
-   
+
 
   constructor(private messageService: MessageService, private authservice: UserAuthenticationService, private route: ActivatedRoute,
     private router: Router ) { }
 
   ngOnInit(): void {
-   
+
   }
 
   userLogin(): void {
@@ -48,7 +48,7 @@ export class UserLoginComponent implements OnInit {
       this.router.navigate(['dashboard']);
       this.loggedIn = true;
       }
-      
+
     },
     error => {
       this.addError("Authentication Failed.","Invalid username/password");
@@ -57,7 +57,7 @@ export class UserLoginComponent implements OnInit {
     );
   }
 
-  
+
 
   addSuccess(title:string,message:string) {
     this.messageService.add({severity:'success', summary:title, detail:message});

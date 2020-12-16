@@ -12,7 +12,7 @@
 					<button pButton pRipple label="Back" icon="pi pi-chevron-left" class="p-button-help p-mb-2" (click)="goBack()"></button>
 				</ng-template>
             </p-toolbar>
-            <p-table #dt [value]="allergiesList" [rows]="10" [paginator]="true" [globalFilterFields]="['allergies','']"
+            <p-table #dt [value]="allergiesList" [rows]="10" [paginator]="true" [globalFilterFields]="['name','code']"
          [rowHover]="true" dataKey="id"
             styleClass="p-datatable-customers"
             currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
@@ -58,24 +58,44 @@
                     </td>
                     
                     <td>
-                        <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="editProduct(product)"></button>
+                        <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="editAllergies(allergies)"></button>
                         <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="deleteProduct(product)"></button>
                     </td>
                 </tr>
             </ng-template>
             <ng-template pTemplate="summary">
                 <div class="p-d-flex p-ai-center p-jc-between">
-                    In total there are {{products ? products.length : 0 }} products.
+                    In total there are {{allergiesList ? allergiesList.length : 0 }} allergies.
                 </div>
             </ng-template>
         </p-table>   
-            
-            
-
-            
             </div>
 
-
+            <p-dialog [(visible)]="allergiesDialog" [style]="{width: '650px'}" header="Allergies Details" [modal]="true" styleClass="p-fluid">
+           
+                <ng-template pTemplate="content">
+                    <div class="p-col-12 p-fluid p-formgrid p-grid">
+                    <div class="p-col-12 p-field">
+                        <label for="name">Name</label>
+                        <input id="name" pInputText [(ngModel)]="selectedAllergies.name">
+                    </div>
+                    <div class="p-col-6 p-field">
+                        <label for="code">Code</label>
+                        <input id="code" pInputText [(ngModel)]="selectedAllergies.code">
+                    </div>
+                    
+            <div class="p-col-12 p-field">
+                <label for="description">Description </label>
+                <textarea id="description" pInputText [(ngModel)]="selectedAllergies.description" required rows="3" cols="20"></textarea>
+            </div>
+                    </div>
+                    </ng-template>
+    
+                    <ng-template pTemplate="footer">
+                        <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="hideAllergiesDialog()"></button>
+                        <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="updateAllergies()"></button>
+                    </ng-template>
+                    </p-dialog>
         </div>
         </div>
 

@@ -6,7 +6,6 @@ import { catchError, retry } from 'rxjs/operators';
 import { UserRoleData } from '../domain/user.role.data';
 import { environment } from '../../../environments/environment';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -18,13 +17,10 @@ export class ManageUserRoleService {
     console.log(data);
     return this.http.post<UserRoleData>(this.getBaseApiUrl()+'postuserrole',data);
   }
-  createUserRole(data): Observable<any>{
-    console.log(data);
-    return this.http.post<UserRoleData>(this.getBaseApiUrl()+'postuserrole',data);
-  }
 
-  getUserRole():Observable<any>{
+   getUserRole():Observable<any>{
     return this.http.get<UserRoleData>(this.getBaseApiUrl()+'listuserrole');
+
   }
 
   private getBaseApiUrl(): string {
@@ -41,5 +37,7 @@ export class ManageUserRoleService {
     .then(data => data);
 }
 }
+
+
 
 

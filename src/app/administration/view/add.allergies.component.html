@@ -25,16 +25,13 @@
 
         <div class="p-col-4 p-field">
             <label for="code">Code </label>
-            <input id="code" type="code" pInputText aria-describedby="code-help" 
+            <input id="code" type="code" pInputText [(ngModel)]="allergiescreatedata.code" aria-describedby="code-help" 
             placeholder="Enter Allergy Code" required>
-            <!--small id="lastname-help">Enter your Surname/Lastname.</small-->
         </div>
-
-        
 
         <div class="p-col-8 p-field">
             <label for="description">Allergy Description </label>
-            <textarea rows="5" cols="30" placeholder="Enter Allergies Description" pInputTextarea ></textarea>
+            <textarea rows="5" cols="30" placeholder="Enter Allergies Description" [(ngModel)]="allergiescreatedata.description" pInputTextarea ></textarea>
         </div>
 
         

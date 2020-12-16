@@ -10,7 +10,7 @@ import { environment } from '../../../environments/environment';
   providedIn: 'root'
 })
 export class UserAuthenticationService {
-  
+
   constructor(private http: HttpClient) { }
 
 getUserByUsernamePassword(username:string,password:string): Observable<any> {

@@ -78,10 +78,42 @@
             </ng-template>
         </p-table>   
             
-            
-
-            
             </div>
+            <p-dialog [(visible)]="laboratoriesDialog" [style]="{width: '650px'}" header="Laboratories Details" [modal]="true" styleClass="p-fluid">
+           
+                <ng-template pTemplate="content">
+                    <div class="p-col-12 p-fluid p-formgrid p-grid">
+                    <div class="p-col-12 p-field">
+                        <label for="name">Name</label>
+                        <input id="name" pInputText [(ngModel)]="selectedLaboratories.name">
+                    </div>
+                    <div class="p-col-6 p-field">
+                        <label for="code">Code</label>
+                        <input id="code" pInputText [(ngModel)]="selectedLaboratories.code">
+                    </div>
+                    <div class="p-col-6 p-field">
+                        <label for="contact_phone_number">Contact Phone Number</label>
+                        <input id="contact_phone_number" pInputText [(ngModel)]="selectedLaboratories.contact_phone_number">
+                    </div>
+            
+            <div class="p-col-6 p-field">
+                <label for="created_by">Created By</label>
+                <input id="created_by" pInputText [(ngModel)]="selectedLaboratories.created_by">
+            </div>
+           
+            <div class="p-col-12 p-field">
+                <label for="description">Description </label>
+                <textarea id="description" pInputText [(ngModel)]="selectedLaboratories.description" required rows="3" cols="20"></textarea>
+            </div>
+                    </div>
+                    </ng-template>
+    
+                    <ng-template pTemplate="footer">
+                        <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="hideLaboratoriesDialog()"></button>
+                        <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="updateLaboratories()"></button>
+                    </ng-template>
+                    </p-dialog>
+    
 
 
         </div>
