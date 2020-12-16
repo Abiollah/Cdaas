@@ -16,6 +16,8 @@ export class UserAuthenticationService {
 getUserByUsernamePassword(username:string,password:string): Observable<any> {
  //  const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
   return this.http.get<UserData>(this.getBaseApiUrl()+'userlogin?username='+username+'&password='+password);
+  //return this.http.post<UserData>(`${environment.apiBaseUrl}/ulogin`,{username,password});
+  
   /*.pipe(retry(3),
   catchError(this.handleError)
   );*/

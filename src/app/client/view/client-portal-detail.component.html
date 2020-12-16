@@ -1,11 +1,11 @@
-<p-card header="Advanced Card" subheader="Card Subheader" styleClass="p-card-shadow">
+<p-card header="Client Intake Form" subheader="Basic Biodata" styleClass="p-card-shadow">
     <p-tabView orientation="left" >
         <p-tabPanel header="Patient Demographic" leftIcon="pi pi-user-plus">
   
           <div class="p-fluid p-formgrid p-grid">
             <div class="p-field p-col-12 p-md-4" >
               <label for="patient_id">Patient Id</label>
-              <input id="patient_id" type="text" pInputText>
+              <input id="patient_id" type="text" pInputText [(ngModel)]="viewedClient.hospitalNum">
             </div><br>
             <div class="p-field p-col-12 p-md-3" style="margin-left: 2%">
               <label for="RegistrationDate">Registration Date</label>
@@ -15,20 +15,20 @@
             <label for="DateOfBirth">Date of Birth</label>
             <input id="DateOfBirth" type="date" pInputText>
           </div>
-        </div>
+        </div> 
         <div class="p-fluid p-formgrid p-grid">
           <div class="p-field p-col-12 p-md-4" >
             <label for="surname">Surname</label>
-            <input id="surname" type="text" pInputText>
+            <input id="surname" type="text" pInputText [(ngModel)]="viewedClient.surname">
           </div><br>
           <div class="p-field p-col-12 p-md-3" style="margin-left: 2%">
             <label for="firstname">First Name</label>
-            <input id="firstname" type="text" pInputText>
+            <input id="firstname" type="text" pInputText [(ngModel)]="viewedClient.firstname">
   
         </div>
         <div class="p-field p-col-12 p-md-3" style="margin-left: 2%">
           <label for="othername">Other Name</label>
-          <input id="othername" type="text" pInputText>
+          <input id="othername" type="text" pInputText [(ngModel)]="viewedClient.otherNames">
         </div>
       </div>
       <div class="p-fluid p-formgrid p-grid">

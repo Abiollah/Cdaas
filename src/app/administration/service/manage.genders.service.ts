@@ -2,7 +2,7 @@ import { Injectable,isDevMode} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
+import { catchError, map, retry } from 'rxjs/operators';
 import { GenderData } from '../domain/gender.data';
 import { environment } from '../../../environments/environment';
 
@@ -12,7 +12,7 @@ import { environment } from '../../../environments/environment';
 })
 
 export class ManageGendersService {
-
+  
   constructor(private http: HttpClient) { }
 
   createGender(data): Observable<any>{
@@ -23,7 +23,10 @@ export class ManageGendersService {
   getGenders():Observable<any>{
     return this.http.get<GenderData>(this.getBaseApiUrl()+'listgenders');
   }
-  private getBaseApiUrl(): string {
+
+   
+
+  protected getBaseApiUrl(): string {
     return isDevMode ? environment.apiBaseUrl : environment.apiBaseUrl;
     }
 }

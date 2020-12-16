@@ -11,6 +11,8 @@ import { ClientExtendedInfo } from '../domain/client.portal.data';
   providedIn: 'root'
 })
 export class ClientPortalService {
+  public papi: number;
+  public selectedClients: ClientExtendedInfo;
 
   constructor(private http: HttpClient) { }
 

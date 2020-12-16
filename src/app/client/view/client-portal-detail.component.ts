@@ -1,17 +1,18 @@
-import { Component, OnInit, ViewChild,AfterViewInit,Input } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import {AppBreadcrumbService} from '../../app.breadcrumb.service';
 import { ClientPortalListComponent } from './client.portal.list.component';
+import {ClientPortalService} from '../service/client.portal.service';
+import { ClientExtendedInfo } from '../domain/client.portal.data';
 
 @Component({
   selector: 'app-client-portal-detail',
-  templateUrl: './client-portal-detail.component.html',
-  styleUrls: ['./client-portal-detail.component.scss']
+  templateUrl: './client-portal-detail.component.html'
 })
 
-export class ClientPortalDetailComponent implements OnInit, AfterViewInit {
-  //@ViewChild(ClientPortalListComponent) cpl;
-  @Input() papi: number; 
-  constructor(private breadcrumbService: AppBreadcrumbService) { 
+export class ClientPortalDetailComponent implements OnInit {
+  viewedClient: ClientExtendedInfo;
+  constructor(private breadcrumbService: AppBreadcrumbService, 
+    private clientPortalService:ClientPortalService) { 
     this.breadcrumbService.setItems([
       { label: 'Dashboard', routerLink: ['/dashboard'] },
       { label: 'Client Portal Record', routerLink: ['/cportal'] },
@@ -20,14 +21,12 @@ export class ClientPortalDetailComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-   console.log("Got here as "+this.papi);
+    this.viewedClient = this.clientPortalService.selectedClients;
+   console.log("Got here as "+this.clientPortalService.selectedClients.hospitalNum);
   }
 
-  ngAfterViewInit(){
-    console.log("Got here asxx "+this.papi);
-   // this.testm = this.cpl.testd;
-  //  console.log("Got here asx "+this.cpl);
+ 
 
-  }
+  
 
 }

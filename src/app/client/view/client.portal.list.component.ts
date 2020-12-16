@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,OnDestroy } from '@angular/core';
 import {ClientPortalService} from '../service/client.portal.service';
 import {MessageService, MenuItem} from 'primeng/api';
 import {AppBreadcrumbService} from '../../app.breadcrumb.service';
@@ -11,23 +11,25 @@ import { Router } from '@angular/router';
   templateUrl: './client.portal.list.component.html',
   providers: [MessageService]
 })
-export class ClientPortalListComponent implements OnInit {
+export class ClientPortalListComponent implements OnInit,OnDestroy {
 
 clientExtInfo: ClientExtendedInfo[];
-selectedClients: ClientExtendedInfo[];
+selectedClients: ClientExtendedInfo;
 loading: boolean;
 totalRecords: number;
 cols: any[];
 exportColumns: any[];
 clientExtInfoActionItems: MenuItem[];
 swithClientInfo: boolean = true;
-testd: number = Date.now();
+papi: number = Date.now();
 
-  constructor(private messageService: MessageService,private router: Router,private clientPortalService:ClientPortalService, 
+  constructor(private messageService: MessageService,
+    private router: Router,
+    private clientPortalService:ClientPortalService, 
     private breadcrumbService: AppBreadcrumbService) { 
       this.breadcrumbService.setItems([
         { label: 'Dashboard', routerLink: ['/dashboard'] },
-        { label: 'Client Portal Record', routerLink: ['ßß/cportal'] }
+        { label: 'Client Portal Record', routerLink: ['/cportal'] }
          ]);
     }
 
@@ -37,11 +39,11 @@ testd: number = Date.now();
     }
     this.clientExtInfoActionItems =[
       {label: 'View Detail', icon:'pi pi-user', routerLink:['/##/cportald']},
-      {label: 'Enrol Program', icon:'pi pi-refresh', routerLink:['/##/cportald']}
+      {label: 'Enrol Program', icon:'pi pi-refresh', command: () => {
+        this.viewClient(this.selectedClients)},routerLink:['/##/cportald']}
      
     ]
  
-    console.log("Got testd "+this.testd);
     this.getClientExtendedInfo();
 
   }
@@ -54,6 +56,18 @@ testd: number = Date.now();
    }
     );
     this.loading = true;
+  }
+
+
+  ngOnDestroy() {
+    this.clientPortalService.papi = this.papi; 
+    this.clientPortalService.selectedClients = this.selectedClients;
+  }
+
+  viewClient(client: ClientExtendedInfo){
+    console.log("Got here");
+    this.selectedClients = {...client};
+   // this.router.navigate(['/##/cportald']);
   }
 
   exportExcel() {

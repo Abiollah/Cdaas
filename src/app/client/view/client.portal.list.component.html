@@ -122,14 +122,18 @@
                 </td>
                 <td>
                     <p-splitButton label="More..." [model]="clientExtInfoActionItems"
-                     styleClass="p-button-info p-mr-2 p-mb-2"></p-splitButton>
+                     styleClass="p-button-info p-mr-2 p-mb-2"> </p-splitButton>
                      </td>
+                     <td>
+                        <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="viewClient(client)"></button>
+                        
+                    </td>
             </tr>
         </ng-template>
         
         <ng-template pTemplate="emptymessage">
             <tr>
-                <td colspan="5">No customers found.</td>
+                <td colspan="5">No client found.</td>
             </tr>
         </ng-template>
         <ng-template pTemplate="summary">
