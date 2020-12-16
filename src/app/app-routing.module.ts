@@ -21,7 +21,13 @@ import { PharmacieslistComponent } from './administration/view/pharmacieslist.co
 import {ClientPortalListComponent} from './client/view/client.portal.list.component';
 import {UserRoleListComponent} from './administration/view/user-role-list.component';
 import {AuthGuardService} from './administration/service/auth-guard.service';
+import { MaritalStatuslistComponent } from './administration/view/marital-statuslist.component';
+import { AddMaritalstatusComponent } from './administration/view/add.maritalstatus.component';
 import { ClientPortalDetailComponent } from './client/view/client-portal-detail.component';
+import { ManageOccupationComponent } from './administration/view/add.occupation.component';
+import { OccupationlistComponent } from './administration/view/occupationlist.component';
+import { ManageQualificationComponent } from './administration/view/add.qualification.component';
+import { QualificationlistComponent } from './administration/view/qualificationlist.component';
 
 const routes: Routes = [
     {path: '', component: UserLoginComponent},
@@ -45,9 +51,14 @@ const routes: Routes = [
     {path: 'userlist', component: UserlistComponent},
     {path: 'addPharmacies', component: ManagePharmaciesComponent},
     {path: 'pharmacieslist', component: PharmacieslistComponent},
+    {path: 'maritalstatuslist', component: MaritalStatuslistComponent},
     {path: 'cportal', component: ClientPortalListComponent},
     {path: '##/cportald', component: ClientPortalDetailComponent},
+<<<<<<< HEAD
     {path: 'religion', component: AddReligionComponent}
+=======
+    {path: 'addmaritalstatus', component: AddMaritalstatusComponent},
+>>>>>>> a7458218f357857ca5d740dabd4dfec8128be7f5
 ]
 },
 

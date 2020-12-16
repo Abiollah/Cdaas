@@ -4,16 +4,22 @@ import { LaboratoriesData, LaboratoriesDataCreate } from '../domain/laboratories
 import {ManageLaboratoriesService} from '../service/manage.laboratories.service';
 import { Location } from '@angular/common';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import {MessageService,Message} from 'primeng/api';
 
 @Component({
   selector: 'app-laboratorieslist',
   templateUrl: './laboratorieslist.component.html',
-  styleUrls: ['./laboratorieslist.component.scss']
+  styleUrls: ['./laboratorieslist.component.scss'],
+  providers: [MessageService]
 })
 export class LaboratorieslistComponent implements OnInit {
-
   laboratoriesList:any;
-  constructor(private router: Router,private location: Location,private managelaboratoriesService:ManageLaboratoriesService, private breadcrumbService: AppBreadcrumbService) {
+  selectedLaboratories: LaboratoriesData;
+  laboratoriesDialog: boolean;
+
+
+ 
+  constructor(private messageService: MessageService,private router: Router,private location: Location,private managelaboratoriesService:ManageLaboratoriesService, private breadcrumbService: AppBreadcrumbService) {
     this.breadcrumbService.setItems([
       { label: 'Dashboard', routerLink: ['/dashboard'] },
       { label: 'Metadata', routerLink: ['/metadata'] },
@@ -28,8 +34,8 @@ export class LaboratorieslistComponent implements OnInit {
   }
 
   LaboratoriesList():void{
-    this.managelaboratoriesService.getLaboratories().subscribe(data => {
-      this.laboratoriesList = data;
+    this.managelaboratoriesService.getLaboratoriess().subscribe(data => {
+      this.LaboratoriesList = data;
       console.log(data);
     }
     );
@@ -41,5 +47,38 @@ export class LaboratorieslistComponent implements OnInit {
     goBack(){
       this.location.back();
     }
+
+    editLaboratories(laboratories: LaboratoriesData){
+      this.selectedLaboratories = {...laboratories};
+      this.laboratoriesDialog=true;
+     }
+     updateLaboratories(){
+       this.managelaboratoriesService.createLaboratories(this.selectedLaboratories).subscribe(
+         response => {console.log(response);
+           this.laboratoriesList.push(this.selectedLaboratories);
+           this.ngOnInit();
+           this.addSuccess("Success!","Laboratory updated successfully");
+           
+           
+       }, 
+       error => {console.log(error)});
+       this.addError("Failed!","Laboratory creation failed.");
+ 
+       this.laboratoriesDialog = false;
+     }
+ 
+     addSuccess(title:string,message:string) {
+       this.messageService.add({severity:'success', summary:title, detail:message});
+       
+     
+     }
+     addError(title:string,message:string) {
+       this.messageService.add({severity:'error', summary:title, detail:message});
+       
+     }
+ 
+     hideUserDialog(){
+       this.laboratoriesDialog = false;
+     }
 
 }

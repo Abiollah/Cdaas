@@ -4,22 +4,22 @@
         <div class="card">
 			<p-toolbar styleClass="p-mb-4">
 				<ng-template pTemplate="left">
-					<button pButton pRipple label="Add Gender" icon="pi pi-plus" class="p-mr-2 p-mb-2" (click)="goToAddGender()"></button>
-					<button pButton pRipple label="Delete Gender" icon="pi pi-trash" class="p-mb-2" (click)="deleteSelectedProducts()" [disabled]="!selectedProducts || !selectedProducts.length"></button>
+					<button pButton pRipple label="Add Marital Status" icon="pi pi-plus" class="p-mr-2 p-mb-2" (click)="goToAddMaritalStatus()"></button>
+					<button pButton pRipple label="Delete Marital Status" icon="pi pi-trash" class="p-mb-2" (click)="deleteSelectedProducts()" [disabled]="!selectedProducts || !selectedProducts.length"></button>
 				</ng-template>
 
 				<ng-template pTemplate="right">
 					<button pButton pRipple label="Back" icon="pi pi-chevron-left" class="p-button-help p-mb-2" (click)="goBack()"></button>
 				</ng-template>
             </p-toolbar>
-            <p-table #dt [value]="genderList" [rows]="10" [paginator]="true" [globalFilterFields]="['name','code','description']"
+            <p-table #dt [value]="maritalStatusList" [rows]="10" [paginator]="true" [globalFilterFields]="['username','code, description']"
          [rowHover]="true" dataKey="id"
             styleClass="p-datatable-customers"
             currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
    
             <ng-template pTemplate="caption">
                 <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between table-header">
-                    <h5 class="p-m-0">Gender Listing</h5>
+                    <h5 class="p-m-0">Marital Status Listing</h5>
                     <span class="p-input-icon-left">
                     <i class="pi pi-search"></i>
                     <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')" placeholder="Search..." />
@@ -31,7 +31,7 @@
                     <th style="width: 3rem">
                         <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
                     </th>
-                    <th pSortableColumn="gender_id">id <p-sortIcon field="gender_id"></p-sortIcon></th>
+                    <th pSortableColumn="name">id <p-sortIcon field="maritalStatus_id"></p-sortIcon></th>
                     <th pSortableColumn="name">Name<p-sortIcon field="name"></p-sortIcon></th>
                     <th pSortableColumn="code">Code <p-sortIcon field="code"></p-sortIcon></th>
                     <th pSortableColumn="description">Description <p-sortIcon field="description"></p-sortIcon></th>
@@ -39,44 +39,44 @@
                     
                 </tr>
             </ng-template>
-            <ng-template pTemplate="body" let-gender>
+            <ng-template pTemplate="body" let-maritalstatus>
                 <tr>
                     <td>
                         <p-tableCheckbox [value]="gender"></p-tableCheckbox>
                     </td>
                     <td><span class="p-column-title"></span>
-                        {{gender.gender_id}}
+                        {{maritalstatus.gender_id}}
                     </td>
                     <td><span class="p-column-title"></span>
-                        {{gender.name}}
+                     {{maritalstatus.name}}
                     </td>
                     <td><span class="p-column-title"></span>
-                        {{gender.code}}
+                        {{maritalstatus.code}}
                     </td>
                     <td><span class="p-column-title"></span>
-                        {{gender.description}}
+                        {{maritalstatus.description}}
                     </td>
                     
                     <td>
-                        <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="editGender(gender)"></button>
+                        <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="editProduct(product)"></button>
                         <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="deleteProduct(product)"></button>
                     </td>
                 </tr>
             </ng-template>
             <ng-template pTemplate="summary">
                 <div class="p-d-flex p-ai-center p-jc-between">
-                    In total there are {{genderList ? genderList.length : 0 }} genders.
+                    In total there are {{products ? products.length : 0 }} products.
                 </div>
             </ng-template>
         </p-table>   
             
+            
+
+            
             </div>
 
-             
+
         </div>
         </div>
-
-
-
 
 

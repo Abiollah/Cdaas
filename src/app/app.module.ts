@@ -95,12 +95,17 @@ import { GenderlistComponent } from './administration/view/genderlist.component'
 import { AddGendersComponent } from './administration/view/add.genders.component';
 import { UserRoleListComponent } from './administration/view/user-role-list.component';
 import { ManagePharmaciesComponent } from './administration/view/add.pharmacies.component';
-import { PharmacieslistComponent } from './administration/view/pharmacieslist.component'
+import { PharmacieslistComponent } from './administration/view/pharmacieslist.component';
+import { MaritalStatuslistComponent } from './administration/view/marital-statuslist.component';
 import { ClientPortalListComponent } from './client/view/client.portal.list.component';
 import { ClientPortalDetailComponent } from './client/view/client-portal-detail.component';
+<<<<<<< HEAD
 import { PatientComponent } from './client/view/patient.registration.component';
 import { AddReligionComponent } from './administration/view/add-religion.component';
 import { ReligionListComponent } from './administration/view/religion.list.component';
+=======
+import { AddMaritalstatusComponent } from './administration/view/add.maritalstatus.component';
+>>>>>>> a7458218f357857ca5d740dabd4dfec8128be7f5
 
 
 
@@ -132,13 +137,18 @@ import { ReligionListComponent } from './administration/view/religion.list.compo
     UserRoleListComponent,
     ManagePharmaciesComponent,
     PharmacieslistComponent,
+    MaritalStatuslistComponent,
     ClientPortalListComponent,
     ClientPortalDetailComponent,
+<<<<<<< HEAD
     PatientComponent,
     AddReligionComponent,
     ReligionListComponent
 
    // ManageUserRoleService
+=======
+    AddMaritalstatusComponent,
+>>>>>>> a7458218f357857ca5d740dabd4dfec8128be7f5
 
 
 

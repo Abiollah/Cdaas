@@ -2,15 +2,22 @@ import { Component, OnInit } from '@angular/core';
 import {AppBreadcrumbService} from '../../app.breadcrumb.service';
 import { GenderData, GenderDataCreate } from '../domain/gender.data';
 import {ManageGendersService} from '../service/manage.genders.service';
+import { GenderlistComponent } from '../view/genderlist.component';
 import { Location } from '@angular/common';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import {MessageService} from 'primeng/api';
+
 
 @Component({
   selector: 'app-add.genders',
   templateUrl: './add.genders.component.html',
   providers: [MessageService]
 })
+
 export class AddGendersComponent implements OnInit {
+
+  //private genderlistcomponent:GenderlistComponent = new GenderlistComponent();
+      
 
   gendercreatedata: GenderData = {
     name: '',
@@ -21,23 +28,27 @@ export class AddGendersComponent implements OnInit {
    // created_date: null
     
   };
-  
-    constructor(private messageService: MessageService,private location: Location,private managegenderService:ManageGendersService, private breadcrumbService: AppBreadcrumbService) { 
+
+
+    constructor(private messageService: MessageService,private router: Router,private location: Location,private managegenderService:ManageGendersService, private breadcrumbService: AppBreadcrumbService) { 
       this.breadcrumbService.setItems([
         { label: 'Dashboard', routerLink: ['/dashboard'] },
-        { label: 'METADATA', routerLink: ['/metadata'] },
-        { label: 'GENDER', routerLink: ['/gender'] }    ]);
+        { label: 'METADATA', routerLink: ['/metadatalist'] },
+        { label: 'GENDER', routerLink: ['/genderlist'] }    ]);
     }
   
     ngOnInit(): void {
-      
+      if(sessionStorage.getItem('username') == null){
+        this.addError("Session Expired.","Your current session has expired. Re-login.");
+        this.router.navigate(['']);
+      }
     }
   
   addGender(){
   this.gendercreatedata.created_by = +sessionStorage.getItem('userid');
   //this.gendercreatedata.created_date= new Date();
   this.managegenderService.createGender(this.gendercreatedata).subscribe(
-    data => {
+  data => {
       this.addSuccess("Success!","Gender added successfully.");
   }, 
   error => {

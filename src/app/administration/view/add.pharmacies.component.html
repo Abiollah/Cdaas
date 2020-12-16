@@ -25,21 +25,21 @@
 
         <div class="p-col-4 p-field">
             <label for="code">Code </label>
-            <input id="code" type="code" pInputText aria-describedby="code-help" 
+            <input id="code" type="code" pInputText  [(ngModel)]="pharmaciescreatedata.code" aria-describedby="code-help" 
             placeholder="Enter Pharmacy Code" required>
           
         </div>
 
         <div class="p-col-4 p-field">
             <label for="contact_phone_number">Contact Phone Number </label>
-            <input id="contact_phone_number" type="contact_phonenumber" pInputText aria-describedby="contact_phone_number-help" 
+            <input id="contact_phone_number" type="contact_phone_number" pInputText  [(ngModel)]="pharmaciescreatedata.contact_phone_number" aria-describedby="contact_phone_number-help" 
             placeholder="Enter Contact Phone Number " required>
           
         </div>
 
         <div class="p-col-8 p-field">
             <label for="description"> Description </label>
-            <textarea rows="5" cols="30" placeholder="Enter Pharmacy Description" pInputTextarea ></textarea>
+            <textarea rows="5" cols="30" placeholder="Enter Pharmacy Description" [(ngModel)]="pharmaciescreatedata.description" pInputTextarea ></textarea>
         </div>
 
         
