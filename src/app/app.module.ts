@@ -98,13 +98,18 @@ import { AddGendersComponent } from './administration/view/add.genders.component
 import { ManageUserRoleService } from './administration/service/manage.user.role.service';
 import { UserRoleListComponent } from './administration/view/user-role-list.component';
 import { ManagePharmaciesComponent } from './administration/view/add.pharmacies.component';
-import { PharmacieslistComponent } from './administration/view/pharmacieslist.component'
+import { PharmacieslistComponent } from './administration/view/pharmacieslist.component';
+import { MaritalStatuslistComponent } from './administration/view/marital-statuslist.component';
 import { ClientPortalListComponent } from './client/view/client.portal.list.component';
 import { ClientPortalDetailComponent } from './client/view/client-portal-detail.component';
+<<<<<<< HEAD
 import { ManageOccupationComponent } from './administration/view/add.occupation.component';
 import { OccupationlistComponent } from './administration/view/occupationlist.component';
 import { ManageQualificationComponent } from './administration/view/add.qualification.component';
 import { QualificationlistComponent } from './administration/view/qualificationlist.component';
+=======
+import { AddMaritalstatusComponent } from './administration/view/add.maritalstatus.component';
+>>>>>>> b59394151ad47e4a5ddd447bae79be8fac149ef9
 
 
 
@@ -137,12 +142,17 @@ import { QualificationlistComponent } from './administration/view/qualificationl
     UserRoleListComponent,
     ManagePharmaciesComponent,
     PharmacieslistComponent,
+    MaritalStatuslistComponent,
     ClientPortalListComponent,
     ClientPortalDetailComponent,
+<<<<<<< HEAD
     ManageOccupationComponent,
     OccupationlistComponent,
     ManageQualificationComponent,
     QualificationlistComponent
+=======
+    AddMaritalstatusComponent,
+>>>>>>> b59394151ad47e4a5ddd447bae79be8fac149ef9
 
 
 

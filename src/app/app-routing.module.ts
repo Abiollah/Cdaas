@@ -19,6 +19,8 @@ import { ManagePharmaciesComponent } from './administration/view/add.pharmacies.
 import { PharmacieslistComponent } from './administration/view/pharmacieslist.component';
 import {ClientPortalListComponent} from './client/view/client.portal.list.component';
 import {AuthGuardService} from './administration/service/auth-guard.service';
+import { MaritalStatuslistComponent } from './administration/view/marital-statuslist.component';
+import { AddMaritalstatusComponent } from './administration/view/add.maritalstatus.component';
 import { ClientPortalDetailComponent } from './client/view/client-portal-detail.component';
 import { ManageOccupationComponent } from './administration/view/add.occupation.component';
 import { OccupationlistComponent } from './administration/view/occupationlist.component';
@@ -45,12 +47,17 @@ const routes: Routes = [
     {path: 'userlist', component: UserlistComponent},
     {path: 'addPharmacies', component: ManagePharmaciesComponent},
     {path: 'pharmacieslist', component: PharmacieslistComponent},
+    {path: 'maritalstatuslist', component: MaritalStatuslistComponent},
     {path: 'cportal', component: ClientPortalListComponent},
     {path: '##/cportald', component: ClientPortalDetailComponent},
+<<<<<<< HEAD
     {path: 'addOccupation', component: ManageOccupationComponent},
     {path: 'occupationlist', component: OccupationlistComponent},
     {path: 'addQualification', component: ManageQualificationComponent},
     {path: 'qualificationlist', component: QualificationlistComponent},
+=======
+    {path: 'addmaritalstatus', component: AddMaritalstatusComponent},
+>>>>>>> b59394151ad47e4a5ddd447bae79be8fac149ef9
 ]
 },
 

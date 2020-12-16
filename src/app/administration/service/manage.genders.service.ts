@@ -6,7 +6,6 @@ import { catchError, retry } from 'rxjs/operators';
 import { GenderData } from '../domain/gender.data';
 import { environment } from '../../../environments/environment';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -23,6 +22,17 @@ export class ManageGendersService {
   getGenders():Observable<any>{
     return this.http.get<GenderData>(this.getBaseApiUrl()+'listgenders');
   }
+
+  updateGender(data){
+    return this.http.post<GenderData>(this.getBaseApiUrl() +'postgenders',data);
+  }
+
+  getGender() {
+    return this.http.get<any>(this.getBaseApiUrl()+'listgenders')
+    .toPromise()
+    .then(res => res.data as GenderData)
+    .then(data => data);
+}
   private getBaseApiUrl(): string {
     return isDevMode ? environment.apiBaseUrl : environment.apiBaseUrl;
     }

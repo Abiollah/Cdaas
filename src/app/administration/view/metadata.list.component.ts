@@ -35,7 +35,7 @@ export class MetadataListComponent implements OnInit {
               {
                   label: 'Add/Manage Marital Status',
                   icon: 'pi pi-fw pi-user-edit',
-                  routerLink: '/maritalstatus'
+                  routerLink: '/maritalstatuslist'
               },
               {
                   label: 'Add/Manage Relationships',
