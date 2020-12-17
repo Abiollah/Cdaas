@@ -99,18 +99,12 @@ import { PharmacieslistComponent } from './administration/view/pharmacieslist.co
 import { MaritalStatuslistComponent } from './administration/view/marital-statuslist.component';
 import { ClientPortalListComponent } from './client/view/client.portal.list.component';
 import { ClientPortalDetailComponent } from './client/view/client-portal-detail.component';
-<<<<<<< HEAD
 import { PatientComponent } from './client/view/patient.registration.component';
 import { AddReligionComponent } from './administration/view/add-religion.component';
 import { ReligionListComponent } from './administration/view/religion.list.component';
-=======
 import { AddMaritalstatusComponent } from './administration/view/add.maritalstatus.component';
-<<<<<<< HEAD
 import { ManageQualificationComponent } from './administration/view/add.qualification.component';
 import { QualificationlistComponent } from './administration/view/qualificationlist.component';
-=======
->>>>>>> a7458218f357857ca5d740dabd4dfec8128be7f5
->>>>>>> d71f45bfff82c132a528970bb537ff72f4baf8fd
 
 
 
@@ -145,21 +139,15 @@ import { QualificationlistComponent } from './administration/view/qualificationl
     MaritalStatuslistComponent,
     ClientPortalListComponent,
     ClientPortalDetailComponent,
-<<<<<<< HEAD
     PatientComponent,
     AddReligionComponent,
-    ReligionListComponent
+    ReligionListComponent,
 
    // ManageUserRoleService
-=======
     AddMaritalstatusComponent,
-<<<<<<< HEAD
     ManageQualificationComponent,
     QualificationlistComponent,
     
-=======
->>>>>>> a7458218f357857ca5d740dabd4dfec8128be7f5
->>>>>>> d71f45bfff82c132a528970bb537ff72f4baf8fd
 
 
 

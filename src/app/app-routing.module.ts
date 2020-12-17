@@ -53,19 +53,15 @@ const routes: Routes = [
     {path: 'maritalstatuslist', component: MaritalStatuslistComponent},
     {path: 'cportal', component: ClientPortalListComponent},
     {path: '##/cportald', component: ClientPortalDetailComponent},
-<<<<<<< HEAD
-    {path: 'religion', component: AddReligionComponent}
-=======
+
+    {path: 'religion', component: AddReligionComponent},
+
     {path: 'addmaritalstatus', component: AddMaritalstatusComponent},
-<<<<<<< HEAD
     {path: 'addQualification', component: ManageQualificationComponent},
     {path: 'qualificationlist', component: QualificationlistComponent},
-=======
->>>>>>> a7458218f357857ca5d740dabd4dfec8128be7f5
->>>>>>> d71f45bfff82c132a528970bb537ff72f4baf8fd
+
 ]
 },
-
 ];
 
 @NgModule({
