@@ -11,10 +11,9 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
   selector: 'app-manage-users',
   templateUrl: './add.users.component.html',
   providers: [MessageService]
-  
 })
 export class ManageUsersComponent implements OnInit {
-  
+
 
 usercreatedata: UserData = {
 

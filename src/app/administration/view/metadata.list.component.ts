@@ -16,7 +16,7 @@ export class MetadataListComponent implements OnInit {
   clinicalManagement: MenuItem[];
 
 
-  constructor(private breadcrumbService: AppBreadcrumbService) { 
+  constructor(private breadcrumbService: AppBreadcrumbService) {
     this.breadcrumbService.setItems([
       { label: 'Administration', routerLink: ['/administration'] },
       { label: 'Metadata', routerLink: ['/metadata'] }
@@ -111,7 +111,7 @@ this.clinicalManagement = [
           }
       ]
   },
-  
+
 ];
   }
 
