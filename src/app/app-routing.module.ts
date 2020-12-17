@@ -50,14 +50,7 @@ const routes: Routes = [
     {path: 'maritalstatuslist', component: MaritalStatuslistComponent},
     {path: 'cportal', component: ClientPortalListComponent},
     {path: '##/cportald', component: ClientPortalDetailComponent},
-<<<<<<< HEAD
-    {path: 'addOccupation', component: ManageOccupationComponent},
-    {path: 'occupationlist', component: OccupationlistComponent},
-    {path: 'addQualification', component: ManageQualificationComponent},
-    {path: 'qualificationlist', component: QualificationlistComponent},
-=======
     {path: 'addmaritalstatus', component: AddMaritalstatusComponent},
->>>>>>> b59394151ad47e4a5ddd447bae79be8fac149ef9
 ]
 },
 
