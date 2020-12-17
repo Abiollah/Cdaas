@@ -22,10 +22,9 @@ import {AuthGuardService} from './administration/service/auth-guard.service';
 import { MaritalStatuslistComponent } from './administration/view/marital-statuslist.component';
 import { AddMaritalstatusComponent } from './administration/view/add.maritalstatus.component';
 import { ClientPortalDetailComponent } from './client/view/client-portal-detail.component';
-import { ManageOccupationComponent } from './administration/view/add.occupation.component';
-import { OccupationlistComponent } from './administration/view/occupationlist.component';
 import { ManageQualificationComponent } from './administration/view/add.qualification.component';
 import { QualificationlistComponent } from './administration/view/qualificationlist.component';
+
 
 const routes: Routes = [
     {path: '', component: UserLoginComponent},
@@ -51,6 +50,8 @@ const routes: Routes = [
     {path: 'cportal', component: ClientPortalListComponent},
     {path: '##/cportald', component: ClientPortalDetailComponent},
     {path: 'addmaritalstatus', component: AddMaritalstatusComponent},
+    {path: 'addQualification', component: ManageQualificationComponent},
+    {path: 'qualificationlist', component: QualificationlistComponent},
 ]
 },
 

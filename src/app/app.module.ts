@@ -103,6 +103,8 @@ import { MaritalStatuslistComponent } from './administration/view/marital-status
 import { ClientPortalListComponent } from './client/view/client.portal.list.component';
 import { ClientPortalDetailComponent } from './client/view/client-portal-detail.component';
 import { AddMaritalstatusComponent } from './administration/view/add.maritalstatus.component';
+import { ManageQualificationComponent } from './administration/view/add.qualification.component';
+import { QualificationlistComponent } from './administration/view/qualificationlist.component';
 
 
 
@@ -139,6 +141,9 @@ import { AddMaritalstatusComponent } from './administration/view/add.maritalstat
     ClientPortalListComponent,
     ClientPortalDetailComponent,
     AddMaritalstatusComponent,
+    ManageQualificationComponent,
+    QualificationlistComponent,
+    
 
 
 
