@@ -4,7 +4,7 @@ export interface QualificationData{
     code: string;
     description: string;
     created_by: number;
-    created_date: Date;
+    
     
 }
 
@@ -13,6 +13,6 @@ export interface QualificationDataCreate{
     name: string;
     code: string;
     description: string;
-    created_by: Date;
+    
    
 }   
