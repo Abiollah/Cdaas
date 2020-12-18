@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Add.QualificationComponent } from './add.qualification.component';
+import { LanguagelistComponent } from './languagelist.component';
 
-describe('Add.QualificationComponent', () => {
-  let component: Add.QualificationComponent;
-  let fixture: ComponentFixture<Add.QualificationComponent>;
+describe('LanguagelistComponent', () => {
+  let component: LanguagelistComponent;
+  let fixture: ComponentFixture<LanguagelistComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ Add.QualificationComponent ]
+      declarations: [ LanguagelistComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(Add.QualificationComponent);
+    fixture = TestBed.createComponent(LanguagelistComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

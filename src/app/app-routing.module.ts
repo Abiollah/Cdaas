@@ -26,6 +26,8 @@ import { AddMaritalstatusComponent } from './administration/view/add.maritalstat
 import { ClientPortalDetailComponent } from './client/view/client-portal-detail.component';
 import { ManageQualificationComponent } from './administration/view/add.qualification.component';
 import { QualificationlistComponent } from './administration/view/qualificationlist.component';
+import { ManageLanguageComponent } from './administration/view/add.language.component';
+import { LanguagelistComponent } from './administration/view/languagelist.component';
 
 
 const routes: Routes = [
@@ -53,12 +55,12 @@ const routes: Routes = [
     {path: 'maritalstatuslist', component: MaritalStatuslistComponent},
     {path: 'cportal', component: ClientPortalListComponent},
     {path: '##/cportald', component: ClientPortalDetailComponent},
-
     {path: 'religion', component: AddReligionComponent},
-
     {path: 'addmaritalstatus', component: AddMaritalstatusComponent},
     {path: 'addQualification', component: ManageQualificationComponent},
     {path: 'qualificationlist', component: QualificationlistComponent},
+    {path: 'addLanguage', component: ManageLanguageComponent},
+    {path: 'languagelist', component: LanguagelistComponent},
 
 ]
 },
