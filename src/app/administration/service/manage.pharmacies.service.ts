@@ -1,23 +1,38 @@
-import { Injectable } from '@angular/core';
+import { Injectable,isDevMode } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { PharmaciesData } from '../domain/pharmacies.data';
+import { environment } from '../../../environments/environment';
 
-const apiBaseUrl = "http://localhost:4040/api/v1/";
+
 @Injectable({
   providedIn: 'root'
 })
 export class ManagePharmaciesService {
 
   constructor(private http: HttpClient) { }
-  createPhamacies(data): Observable<any>{
+  createUpdatePhamarcies(data): Observable<any>{
     console.log(data);
-    return this.http.post<PharmaciesData>(apiBaseUrl+'postpharmacies',data);
+    return this.http.post<PharmaciesData>(this.getBaseApiUrl()+'postpharmacies',data);
   }
 
-  getPharmacies():Observable<any>{
-    return this.http.get<PharmaciesData>(apiBaseUrl+'listpharmacies');
+  getPharmacciess():Observable<any>{
+    return this.http.get<PharmaciesData>(this.getBaseApiUrl()+'listpharmacies');
+  }
+
+  updatePharmacies(data){
+    return this.http.post<PharmaciesData>(this.getBaseApiUrl()+'postpharmacies',data);
+  }
+
+  getPharmacies() {
+    return this.http.get<any>(this.getBaseApiUrl()+'listpharmacies')
+    .toPromise()
+    .then(res => res.data as PharmaciesData)
+    .then(data => data);
+}
+private getBaseApiUrl(): string {
+  return isDevMode ? environment.apiBaseUrl : environment.apiBaseUrl;
   }
 }

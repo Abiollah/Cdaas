@@ -10,16 +10,12 @@ import { environment } from '../../../environments/environment';
   providedIn: 'root'
 })
 export class UserAuthenticationService {
-  
+
   constructor(private http: HttpClient) { }
 
 getUserByUsernamePassword(username:string,password:string): Observable<any> {
  //  const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
   return this.http.get<UserData>(this.getBaseApiUrl()+'userlogin?username='+username+'&password='+password);
-  /*.pipe(retry(3),
-  catchError(this.handleError)
-  );*/
-  
 }
 userLogin(data): Observable<any>{
   console.log(data);
