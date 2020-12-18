@@ -73,8 +73,43 @@
             </div>
 
              
+           <p-dialog [(visible)]="genderDialog" [style]="{width: '650px'}" header="Gender Details" [modal]="true" styleClass="p-fluid">
+           
+            <ng-template pTemplate="content">
+				<div class="p-col-12 p-fluid p-formgrid p-grid">
+				<div class="p-col-12 p-field">
+					<label for="name">Name</label>
+					<input id="name" type="name" pInputText [(ngModel)]="selectedGender.name">
+                </div>
+                <div class="p-col-6 p-field">
+					<label for="code">Code</label>
+					<input id="code" type="code" pInputText [(ngModel)]="selectedGender.code">
+                </div>
+                <div class="p-col-6 p-field">
+					<label for="description"> Description </label>
+					<input id="description" type="description" pInputText [(ngModel)]="selectedGender.description">
+                </div>
+                <div class="p-col-6 p-field">
+                        <label for="created_by">Created_By</label>
+                        <input id="created_by" type="created_by" pInputText [(ngModel)]="selectedGender.created_by">
+                    </div>
+                    <div class="p-col-6 p-field">
+                        <label for="created_date">Created_Date</label>
+                        <input id="created_date" type="created_date" pInputText [(ngModel)]="selectedGender.created_date">
+                    </div>
+
+                </div>
+                </ng-template>
+
+                <ng-template pTemplate="footer">
+                    <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="hideGenderDialog()"></button>
+                    <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="updateGender()"></button>
+                </ng-template>
+                </p-dialog>
+
         </div>
         </div>
+        
 
 
 

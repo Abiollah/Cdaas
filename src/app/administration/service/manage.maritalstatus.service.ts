@@ -23,7 +23,7 @@ export class ManageMaritalstatusService {
   }
 
   updateMaritalStatus(data){
-    return this.http.post<MaritalStatusData>(this.getBaseApiUrl() +'postmaritalstatus',data);
+    return this.http.post<MaritalStatusData>(this.getBaseApiUrl()+'postmaritalstatus',data);
   }
 
   getMaritalStatus() {

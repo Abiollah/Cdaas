@@ -74,5 +74,9 @@ export class GenderlistComponent implements OnInit {
       
     }
 
+    hideGenderDialog(){
+      this.genderDialog = false;
+    }
+
 
 }

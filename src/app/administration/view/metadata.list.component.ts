@@ -19,7 +19,7 @@ export class MetadataListComponent implements OnInit {
   constructor(private breadcrumbService: AppBreadcrumbService) { 
     this.breadcrumbService.setItems([
       { label: 'Administration', routerLink: ['/administration'] },
-      { label: 'Metadata', routerLink: ['/metadata'] }
+      { label: 'Metadata', routerLink: ['/metadatalist'] }
   ]);
   }
 
