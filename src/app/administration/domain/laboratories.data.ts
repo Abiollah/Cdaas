@@ -1,5 +1,5 @@
 export interface LaboratoriesData{
-    facility_id: number;
+    laboratory_id: number;
     name: string;
     code: string;
     description: string;
@@ -9,7 +9,7 @@ export interface LaboratoriesData{
 }
 
 export interface LaboratoriesDataCreate{
-    facility_id: number;
+    laboratory_id: number;
     name: string;
     code: string;
     description: string;

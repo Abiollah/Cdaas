@@ -107,6 +107,8 @@ import { ManageQualificationComponent } from './administration/view/add.qualific
 import { QualificationlistComponent } from './administration/view/qualificationlist.component';
 import { ManageLanguageComponent } from './administration/view/add.language.component';
 import { LanguagelistComponent } from './administration/view/languagelist.component';
+import { ManageNationalityComponent } from './administration/view/add.nationality.component';
+import { NationalitylistComponent } from './administration/view/nationalitylist.component';
 
 
 
@@ -151,6 +153,8 @@ import { LanguagelistComponent } from './administration/view/languagelist.compon
     QualificationlistComponent,
     ManageLanguageComponent,
     LanguagelistComponent,
+    ManageNationalityComponent,
+    NationalitylistComponent,
     
 
 
