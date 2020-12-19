@@ -19,7 +19,7 @@ export class MetadataListComponent implements OnInit {
   constructor(private breadcrumbService: AppBreadcrumbService) {
     this.breadcrumbService.setItems([
       { label: 'Administration', routerLink: ['/administration'] },
-      { label: 'Metadata', routerLink: ['/metadata'] }
+      { label: 'Metadata', routerLink: ['/metadatalist'] }
   ]);
   }
 
@@ -60,13 +60,33 @@ export class MetadataListComponent implements OnInit {
               {
                   label: 'Add/Manage Religion',
                   icon: 'pi pi-fw pi-user-edit',
-                  routerLink: '/religion'
+                  routerLink: '/religionlist'
               },
               {
                   label: 'Add/Manage Next of Kin',
                   icon: 'pi pi-fw pi-user-edit',
-                  routerLink: '/nextofkin'
-              }
+                  routerLink: '/nextofkinlist'
+              },
+              {
+                label: 'Add/Manage Nationality',
+                icon: 'pi pi-fw pi-user-edit',
+                routerLink: '/nationalitylist'
+            },
+            {
+                label: 'Add/Manage State of Origin',
+                icon: 'pi pi-fw pi-user-edit',
+                routerLink: '/stateoforiginlist'
+            },
+            {
+                label: 'Add/Manage Local Government Area',
+                icon: 'pi pi-fw pi-user-edit',
+                routerLink: '/localgovernmentarealist'
+            },
+            {
+                label: 'Add/Manage Target Group',
+                icon: 'pi pi-fw pi-user-edit',
+                routerLink: '/targetgrouplist'
+            }
           ]
       },
   ];
@@ -87,6 +107,21 @@ export class MetadataListComponent implements OnInit {
                 label: 'Add/Manage Heirarchy Groups',
                 icon: 'pi pi-fw pi-user-edit',
                 routerLink: '/heirarchygroups'
+            },
+            {
+                label: 'Add/Manage Referred From',
+                icon: 'pi pi-fw pi-user-edit',
+                routerLink: '/referredfromlist'
+            },
+            {
+                label: 'Add/Manage Facility Name',
+                icon: 'pi pi-fw pi-user-edit',
+                routerLink: '/facilitynamelist'
+            },
+            {
+                label: 'Add/Manage Facility Type',
+                icon: 'pi pi-fw pi-user-edit',
+                routerLink: '/facilitytypelist'
             }
         ]
     },
