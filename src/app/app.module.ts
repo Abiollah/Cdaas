@@ -105,6 +105,8 @@ import { ReligionListComponent } from './administration/view/religion.list.compo
 import { AddMaritalstatusComponent } from './administration/view/add.maritalstatus.component';
 import { ManageQualificationComponent } from './administration/view/add.qualification.component';
 import { QualificationlistComponent } from './administration/view/qualificationlist.component';
+import { ManageLanguageComponent } from './administration/view/add.language.component';
+import { LanguagelistComponent } from './administration/view/languagelist.component';
 
 
 
@@ -147,6 +149,8 @@ import { QualificationlistComponent } from './administration/view/qualificationl
     AddMaritalstatusComponent,
     ManageQualificationComponent,
     QualificationlistComponent,
+    ManageLanguageComponent,
+    LanguagelistComponent,
     
 
 

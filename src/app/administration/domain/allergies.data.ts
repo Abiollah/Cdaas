@@ -1,10 +1,10 @@
 export interface AllergiesData{
-    allergies_id: number;
-    name: string;
-    code: string;
-    description: string;
-    created_by: number;
-    created_date: Date;
+    allergies_id?: number;
+    name?: string;
+    code?: string;
+    description?: string;
+    created_by?: number;
+    created_date?: number;
     
 }
 
@@ -13,6 +13,7 @@ export interface AllergiesDataCreate{
     name: string;
     code: string;
     description: string;
-    created_by: Date;
+    created_by: number;
+    created_date?: number;
    
 }   

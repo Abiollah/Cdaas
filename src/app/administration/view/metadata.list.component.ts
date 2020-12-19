@@ -45,7 +45,7 @@ export class MetadataListComponent implements OnInit {
               {
                   label: 'Add/Manage Language',
                   icon: 'pi pi-fw pi-user-edit',
-                  routerLink: '/language'
+                  routerLink: '/languagelist'
               },
               {
                   label: 'Add/Manage Occupation',

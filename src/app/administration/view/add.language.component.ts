@@ -1,37 +1,33 @@
 import { Component, OnInit } from '@angular/core';
 import {AppBreadcrumbService} from '../../app.breadcrumb.service';
-import { AllergiesData, AllergiesDataCreate } from '../domain/allergies.data';
-import {ManageAllergiesService} from '../service/manage.allergies.service';
+import { LanguageData, LanguageDataCreate } from '../domain/language.data';
+import {ManageLanguageService} from '../service/manage.language.service';
 import { Location } from '@angular/common';
 import {MessageService} from 'primeng/api';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
-
 @Component({
-  selector: 'app-manage-allergies',
-  templateUrl: './add.allergies.component.html',
+  selector: 'app-add.language',
+  templateUrl: './add.language.component.html',
   providers: [MessageService]
-  
 })
-export class ManageAllergiesComponent implements OnInit {
-  
+export class ManageLanguageComponent implements OnInit {
 
-allergiescreatedata: AllergiesData = {
-
-  allergies_id:0,
+  languagecreatedata: LanguageData = {
+    language_id:0,
   name: '',
   code: '',
   description: '',
   created_by:0,
   created_date: 0,
-  
-};
 
-  constructor(private router: Router,private messageService: MessageService,private location: Location,private manageallergiesService:ManageAllergiesService, private breadcrumbService: AppBreadcrumbService) {
+  };
+
+  constructor(private router: Router,private messageService: MessageService,private location: Location,private managelanguageService:ManageLanguageService, private breadcrumbService: AppBreadcrumbService) {
     this.breadcrumbService.setItems([
       { label: 'Dashboard', routerLink: ['/dashboard'] },
       { label: 'Metadata', routerLink: ['/metadatalist'] },
-      { label: 'Add Allergies', routerLink: ['/addAllergieslist'] }    ]);
+      { label: 'Add Language', routerLink: ['/addLanguagelist'] }    ]);
   }
 
   ngOnInit(): void {
@@ -41,15 +37,15 @@ allergiescreatedata: AllergiesData = {
     }
   }
 
-addAllergies(){
-  this.allergiescreatedata.created_by = +sessionStorage.getItem("userid");
-  this.allergiescreatedata.created_date = Date.now();
-  this.manageallergiesService.createUpdateAllergies(this.allergiescreatedata).subscribe(
+addLanguage(){
+  this.languagecreatedata.created_by = +sessionStorage.getItem("userid");
+  this.languagecreatedata.created_date = Date.now();
+  this.managelanguageService.createUpdateLanguage(this.languagecreatedata).subscribe(
     data => {
-      this.addSuccess("Success!","Allergy added successfully.");
+      this.addSuccess("Success!","Language added successfully.");
   }, 
   error => {
-  this.addError("Failed!","Could not add Allergy.");
+  this.addError("Failed!","Could not add Language.");
   }
   
   );
@@ -72,3 +68,4 @@ addAllergies(){
   
   }
   
+
