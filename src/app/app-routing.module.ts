@@ -30,6 +30,9 @@ import { ManageLanguageComponent } from './administration/view/add.language.comp
 import { LanguagelistComponent } from './administration/view/languagelist.component';
 import { ManageNationalityComponent } from './administration/view/add.nationality.component';
 import { NationalitylistComponent } from './administration/view/nationalitylist.component';
+import { ManageTargetgroupComponent } from './administration/view/add.targetgroup.component';
+import { TargetgrouplistComponent } from './administration/view/targetgrouplist.component'
+
 
 
 const routes: Routes = [
@@ -65,6 +68,9 @@ const routes: Routes = [
     {path: 'languagelist', component: LanguagelistComponent},
     {path: 'addNationality', component: ManageNationalityComponent},
     {path: 'nationalitylist', component: NationalitylistComponent},
+    {path: 'addTargetgroup', component: ManageTargetgroupComponent},
+    {path: 'targetgrouplist', component: TargetgrouplistComponent}
+    
 
 ]
 },

@@ -9,7 +9,8 @@ import {MessageService,Message} from 'primeng/api';
 @Component({
   selector: 'app-nationalitylist',
   templateUrl: './nationalitylist.component.html',
-  styleUrls: ['./nationalitylist.component.scss']
+  styleUrls: ['./nationalitylist.component.scss'],
+  providers: [MessageService]
 })
 export class NationalitylistComponent implements OnInit {
   nationalityList:any;

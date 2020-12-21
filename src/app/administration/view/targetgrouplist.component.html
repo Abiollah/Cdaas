@@ -4,22 +4,22 @@
         <div class="card">
 			<p-toolbar styleClass="p-mb-4">
 				<ng-template pTemplate="left">
-					<button pButton pRipple label="Add Qualification" icon="pi pi-plus" class="p-mr-2 p-mb-2" (click)="goToAddQualification()"></button>
-					<button pButton pRipple label="Delete Qualification" icon="pi pi-trash" class="p-mb-2" (click)="deleteSelectedProducts()" [disabled]="!selectedProducts || !selectedProducts.length"></button>
+					<button pButton pRipple label="Add Target-Group" icon="pi pi-plus" class="p-mr-2 p-mb-2" (click)="goToAddTargetgroup()"></button>
+					<button pButton pRipple label="Delete Target-Group" icon="pi pi-trash" class="p-mb-2" (click)="deleteSelectedProducts()" [disabled]="!selectedProducts || !selectedProducts.length"></button>
 				</ng-template>
 
 				<ng-template pTemplate="right">
 					<button pButton pRipple label="Back" icon="pi pi-chevron-left" class="p-button-help p-mb-2" (click)="goBack()"></button>
 				</ng-template>
             </p-toolbar>
-            <p-table #dt [value]="qualificationList" [rows]="10" [paginator]="true" [globalFilterFields]="['name','code']"
+            <p-table #dt [value]="targetgroupList" [rows]="10" [paginator]="true" [globalFilterFields]="['name','code']"
          [rowHover]="true" dataKey="id"
             styleClass="p-datatable-customers"
             currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
    
             <ng-template pTemplate="caption">
                 <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between table-header">
-                    <h5 class="p-m-0">Qualification Listing</h5>
+                    <h5 class="p-m-0">Target-Group Listing</h5>
                     <span class="p-input-icon-left">
                     <i class="pi pi-search"></i>
                     <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')" placeholder="Search..." />
@@ -31,7 +31,7 @@
                     <th style="width: 3rem">
                         <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
                     </th>
-                    <th pSortableColumn="qualification_id"> id <p-sortIcon field="qualification_id"></p-sortIcon></th>
+                    <th pSortableColumn="target_group_id"> id <p-sortIcon field="target_group_id"></p-sortIcon></th>
                     <th pSortableColumn="name"> Name<p-sortIcon field="name"></p-sortIcon></th>
                     <th pSortableColumn="code "> Code <p-sortIcon field="code"></p-sortIcon></th>
                     <th pSortableColumn="description">  Description <p-sortIcon field="description"></p-sortIcon></th>
@@ -39,61 +39,61 @@
                     <th>Action</th>
                 </tr>
             </ng-template>
-            <ng-template pTemplate="body" let-qualification>
+            <ng-template pTemplate="body" let-targetgroup>
                 <tr>
                     <td>
-                        <p-tableCheckbox [value]="qualification"></p-tableCheckbox>
+                        <p-tableCheckbox [value]="targetgroup"></p-tableCheckbox>
                     </td>
                     <td><span class="p-column-title"></span>
-                        {{qualification.qualification_id}}
+                        {{targetgroup.target_group_id}}
                     </td>
                     <td><span class="p-column-title"></span>
-                        {{qualification.name}}
+                        {{targetgroup.name}}
                     </td>
                     <td><span class="p-column-title"></span>
-                        {{qualification.code}}
+                        {{targetgroup.code}}
                     </td>
                     <td><span class="p-column-title"></span>
-                        {{qualification.description}}
+                        {{targetgroup.description}}
                     </td>
                     
                     <td>
-                        <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="editQualification(qualification)"></button>
+                        <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="editTargetgroup(targetgroup)"></button>
                         <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="deleteProduct(product)"></button>
                     </td>
                 </tr>
             </ng-template>
             <ng-template pTemplate="summary">
                 <div class="p-d-flex p-ai-center p-jc-between">
-                    In total there are {{qualificationList ? qualificationList.length : 0 }} qualification.
+                    In total there are {{targetgroupList ? targetgroupList.length : 0 }} targetgroup.
                 </div>
             </ng-template>
         </p-table>   
             </div>
 
-            <p-dialog [(visible)]="qualificationDialog" [style]="{width: '650px'}" header="Qualification Details" [modal]="true" styleClass="p-fluid">
+            <p-dialog [(visible)]="targetgroupDialog" [style]="{width: '650px'}" header="Target-Group Details" [modal]="true" styleClass="p-fluid">
            
                 <ng-template pTemplate="content">
                     <div class="p-col-12 p-fluid p-formgrid p-grid">
                     <div class="p-col-12 p-field">
                         <label for="name">Name</label>
-                        <input id="name" pInputText [(ngModel)]="selectedQualification.name">
+                        <input id="name" pInputText [(ngModel)]="selectedTargetgroup.name">
                     </div>
                     <div class="p-col-6 p-field">
                         <label for="code">Code</label>
-                        <input id="code" pInputText [(ngModel)]="selectedQualification.code">
+                        <input id="code" pInputText [(ngModel)]="selectedTargetgroup.code">
                     </div>
                     
             <div class="p-col-12 p-field">
                 <label for="description">Description </label>
-                <textarea id="description" pInputText [(ngModel)]="selectedQualification.description" required rows="3" cols="20"></textarea>
+                <textarea id="description" pInputText [(ngModel)]="selectedTargetgroup.description" required rows="3" cols="20"></textarea>
             </div>
                     </div>
                     </ng-template>
     
                     <ng-template pTemplate="footer">
-                        <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="hideQualificationDialog()"></button>
-                        <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="updateQualification()"></button>
+                        <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="hideTargetgroupDialog()"></button>
+                        <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="updateTargetgroup()"></button>
                     </ng-template>
 </p-dialog>
         </div>
