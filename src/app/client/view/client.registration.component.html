@@ -1,18 +1,8 @@
-<a [routerLink]="['/registration']"></a>
+<p-toast></p-toast>
 <div class="card">
-  <p-fieldset legend="New Client">
-
   <p-tabView orientation="left" >
       <p-tabPanel header="Patient Demographic" leftIcon="pi pi-user-plus">
-        <p-toolbar styleClass="p-mb-4">
-          <ng-template pTemplate="left">
-              <button pButton pRipple label="Save" icon="pi pi-plus" class="p-mr-2 p-mb-2"
-              (click)="addClient()"></button>
-              <button pButton pRipple label="Clear" icon="pi pi-trash" class="p-mb-2"></button>
-          </ng-template>
-
-
-      </p-toolbar>
+        
         <div class="card">
         <p-panel header="Client Information" [toggleable]="true">
           <div class="p-fluid p-formgrid p-grid">
@@ -51,13 +41,15 @@
       <div class="p-fluid p-formgrid p-grid">
       <div class="p-field p-col-12 p-md-4">
       <label for="marital_status">Marital Status</label>
-      <p-dropdown inputId="marital_status" [(ngModel)]="clientcreatedata.marital_status"></p-dropdown>
+      <p-dropdown inputId="marital_status" [options]="maritalstatusMap" [(ngModel)]="selectedMaritalStatus"
+      optionLabel="name" placeholder="--Select--"></p-dropdown>
 
         </div>
        <br>
       <div class="p-field p-col-12 p-md-3" style="margin-left: 2%">
         <label for="gender">Gender</label>
-              <p-dropdown inputId="gender" [(ngModel)]="clientcreatedata.gender"></p-dropdown>
+        <p-dropdown inputId="gender" [options]="genderMap" [(ngModel)]="selectedGender"
+        optionLabel="name" placeholder="Choose a Gender"></p-dropdown>
 
     </div>
     <div class="p-field p-col-12 p-md-3" style="margin-left: 2%">
@@ -86,17 +78,21 @@
      <div class="p-fluid p-formgrid p-grid">
       <div class="p-field p-col-12 p-md-4">
         <label for="occupation">Occupation</label>
-       <p-dropdown inputId="occupation" [(ngModel)]="clientcreatedata.occupation"></p-dropdown>
-
+        <p-dropdown [options]="occupationMap" [(ngModel)]="selectedOccupation"
+        optionLabel="name" placeholder="-Select-"></p-dropdown>
     </div><br>
     <div class="p-field p-col-12 p-md-3" style="margin-left: 2%">
       <label for="facility_name">Facility Name</label>
-            <p-dropdown inputId="facility_name" [(ngModel)]="clientcreatedata.facility_name"></p-dropdown>
-
+      <p-dropdown [options]="heirarchyunitsMap" [(ngModel)]="selectedHeirarchyUnit"
+      optionLabel="name" placeholder="-Select-" [filter]="true" filterBy="name" [showClear]="true"></p-dropdown>
+      <button pButton pRipple type="button" type="button" 
+      class="p-button-text p-mr-2 p-mb-2"
+      label="Choose..." (click) = "loadHeirarchyUnits()"></button>
   </div>
   <div class="p-field p-col-12 p-md-3" style="margin-left: 2%">
     <label for="qualification">Qualification</label>
-           <p-dropdown inputId="qualification" [(ngModel)]="clientcreatedata.qualification"></p-dropdown>
+    <p-dropdown [options]="qualificationMap" [(ngModel)]="selectedQualification" optionValue="name"
+    optionLabel="name" placeholder="-Select-"></p-dropdown>
 
   </div>
 
@@ -124,7 +120,12 @@
       </div>
       </div>
 
-      </p-panel></div>
+      </p-panel>
+      <p-dialog [(visible)]="facilityDialog" [style]="{width: '650px'}" 
+      header="Facility List" [modal]="true" styleClass="p-fluid">
+      <p-tree [value]="heirarchyunitsTree"  [(selection)]="selectedHeirarchyUnits"></p-tree>
+    </p-dialog>
+    </div>
 
 
         <p-panel header="Next of Kin Information" [toggleable]="true">
@@ -511,7 +512,7 @@
 
     </p-tabPanel>
       </p-tabView>
-    </p-fieldset>
+     
     </div>
 
 

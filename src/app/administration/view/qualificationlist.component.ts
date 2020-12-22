@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {AppBreadcrumbService} from '../../app.breadcrumb.service';
-import { QualificationData, QualificationDataCreate } from '../domain/qualification.data';
+import { QualificationData } from '../domain/qualification.data';
 import {ManageQualificationService} from '../service/manage.qualification.service';
 import { Location } from '@angular/common';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import {MessageService,Message} from 'primeng/api';
+import { Router } from '@angular/router';
+import {MessageService} from 'primeng/api';
 
 @Component({
   selector: 'app-qualificationlist',
@@ -38,7 +38,7 @@ export class QualificationlistComponent implements OnInit {
 
 
     goToAddQualification(){
-      this.router.navigate(['addQualification']);
+      this.router.navigate(['/addQualification']);
     }
     goBack(){
       this.location.back();

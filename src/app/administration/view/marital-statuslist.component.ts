@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AppBreadcrumbService} from '../../app.breadcrumb.service';
-import { MaritalStatusData, MaritalStatusDataCreate } from '../domain/maritalstatus.data';
+import { MaritalStatusData } from '../domain/maritalstatus.data';
 import {ManageMaritalstatusService} from '../service/manage.maritalstatus.service';
 import { Location } from '@angular/common';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';

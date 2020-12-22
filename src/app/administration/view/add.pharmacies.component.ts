@@ -20,7 +20,7 @@ export class ManagePharmaciesComponent implements OnInit {
     description: '',
     contact_phone_number: '',
     created_by:0,
-    created_date: null,
+    created_date: null
     
   };
 

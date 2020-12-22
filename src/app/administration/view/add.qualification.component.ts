@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {AppBreadcrumbService} from '../../app.breadcrumb.service';
-import { QualificationData, QualificationDataCreate } from '../domain/qualification.data';
+import { QualificationData } from '../domain/qualification.data';
 import {ManageQualificationService} from '../service/manage.qualification.service';
 import { Location } from '@angular/common';
 import {MessageService} from 'primeng/api';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add.qualification',
@@ -15,16 +15,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 })
 export class ManageQualificationComponent implements OnInit {
  
-  qualificationcreatedata: QualificationData = {
-
-    qualification_id:0,
-    name: '',
-    code: '',
-    description: '',
-    created_by:0,
-   
-    
-  };
+  qualificationcreatedata = {} as QualificationData;
 
   constructor(private router: Router,private messageService: MessageService,private location: Location,private managequalificationService:ManageQualificationService, private breadcrumbService: AppBreadcrumbService) {
     this.breadcrumbService.setItems([
@@ -42,12 +33,12 @@ export class ManageQualificationComponent implements OnInit {
 
   addQualification(){
     this.qualificationcreatedata.created_by = +sessionStorage.getItem("userid");
-  //  this.qualificationcreatedata.created_date = new Date();
+    this.qualificationcreatedata.created_date = Date.now();
     this.managequalificationService.createUpdateQualification(this.qualificationcreatedata).subscribe(
-      data => {
+      () => {
         this.addSuccess("Success!","Qualification added successfully.");
     }, 
-    error => {
+    () => {
     this.addError("Failed!","Could not add Qualification.");
     }
     

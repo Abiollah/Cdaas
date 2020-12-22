@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppMainComponent } from './app.main.component';
 import {UserLoginComponent} from './login/login.component';
 import { DashboardComponent } from './report/view/dashboard.component';
-import { PatientComponent } from './client/view/patient.registration.component';
+import { ClientRegistrationComponent } from './client/view/client.registration.component';
 import  {SettingListComponent } from './administration/view/setting.list.component'
 import {ManageUsersComponent} from './administration/view/add.users.component'
 import {UserlistComponent} from './administration/view/userlist.component'
@@ -34,7 +34,7 @@ const routes: Routes = [
     {path: '', component: AppMainComponent,
     children: [
     {path: 'dashboard', component: DashboardComponent},
-    {path: 'registration', component: PatientComponent},
+    {path: 'registration', component: ClientRegistrationComponent},
     {path: 'setting', component: SettingListComponent},
     {path: 'userrole', component: AddUserRoleComponent},
     {path: 'addUser', component: ManageUsersComponent},
@@ -54,11 +54,7 @@ const routes: Routes = [
     {path: 'maritalstatuslist', component: MaritalStatuslistComponent},
     {path: 'cportal', component: ClientPortalListComponent},
     {path: '##/cportald', component: ClientPortalDetailComponent},
-<<<<<<< HEAD
-    {path: 'religion', component: AddReligionComponent}
-=======
     {path: 'addmaritalstatus', component: AddMaritalstatusComponent},
->>>>>>> a7458218f357857ca5d740dabd4dfec8128be7f5
 ]
 },
 

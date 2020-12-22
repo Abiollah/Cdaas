@@ -10,13 +10,3 @@ export interface MaritalStatusData{
    
     
 }
-
-export interface MaritalStatusDataCreate{
-    name: string;
-    description: string;
-    code: string;
-    marital_status_id: number;
-    created_by: number;
-    created_date: Date;
-    
-}

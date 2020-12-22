@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AppBreadcrumbService} from '../../app.breadcrumb.service';
-import { GenderData, GenderDataCreate } from '../domain/gender.data';
+import { GenderData } from '../domain/gender.data';
 import {ManageGendersService} from '../service/manage.genders.service';
 import { GenderlistComponent } from '../view/genderlist.component';
 import { Location } from '@angular/common';
@@ -19,15 +19,7 @@ export class AddGendersComponent implements OnInit {
   //private genderlistcomponent:GenderlistComponent = new GenderlistComponent();
       
 
-  gendercreatedata: GenderData = {
-    name: '',
-    description: '',
-    gender_id: 0,
-    code: '',
-    created_by: 0,
-   // created_date: null
-    
-  };
+  gender = {} as GenderData;
 
 
     constructor(private messageService: MessageService,private router: Router,private location: Location,private managegenderService:ManageGendersService, private breadcrumbService: AppBreadcrumbService) { 
@@ -45,9 +37,9 @@ export class AddGendersComponent implements OnInit {
     }
   
   addGender(){
-  this.gendercreatedata.created_by = +sessionStorage.getItem('userid');
-  //this.gendercreatedata.created_date= new Date();
-  this.managegenderService.createGender(this.gendercreatedata).subscribe(
+  this.gender.created_by = +sessionStorage.getItem('userid');
+  this.gender.created_date= new Date();
+  this.managegenderService.createGender(this.gender).subscribe(
   data => {
       this.addSuccess("Success!","Gender added successfully.");
   }, 

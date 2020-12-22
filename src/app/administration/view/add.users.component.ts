@@ -14,21 +14,15 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 })
 export class ManageUsersComponent implements OnInit {
 
+  usercreatedata = {} as UserData;
 
-usercreatedata: UserData = {
-
-  username: '',
-  password: '',
-  loginstatus: false,
-  user_type_id: 0,
-  userid:0,
-};
 
   constructor(private router: Router,private messageService: MessageService,private location: Location,private manageuserService:ManageUsersService, private breadcrumbService: AppBreadcrumbService) {
     this.breadcrumbService.setItems([
       { label: 'Dashboard', routerLink: ['/dashboard'] },
       { label: 'Access Control Management', routerLink: ['/setting'] },
       { label: 'Add User', routerLink: ['/addUser'] }    ]);
+      
   }
 
   ngOnInit(): void {
@@ -36,6 +30,7 @@ usercreatedata: UserData = {
       this.addError("Session Expired.","Your current session has expired. Re-login.");
       this.router.navigate(['']);
     }
+    
   }
 
 addUser(){

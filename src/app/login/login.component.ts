@@ -34,9 +34,11 @@ export class UserLoginComponent implements OnInit {
   }
 
   userLogin(): void {
+    console.log("Got here");
     this.authservice.getUserByUsernamePassword(this.userdata.username,this.userdata.password)
     .subscribe(
     data => {
+     // console.log("Got data "+data);
       if(!data.loginstatus){
         this.addError("Authentication Failed.","You are not authorized to use the application.");
         this.router.navigate(['']);

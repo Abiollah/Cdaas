@@ -32,7 +32,7 @@ export class UserlistComponent implements OnInit {
   UserList():void{
     this.manageuserService.getUsers().subscribe(data => {
       this.userList = data;
-      console.log(data);
+     // console.log(data);
     }
     );
     }

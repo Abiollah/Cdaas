@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {AppBreadcrumbService} from '../../app.breadcrumb.service';
-import { MaritalStatusData, MaritalStatusDataCreate } from '../domain/maritalstatus.data';
+import { MaritalStatusData } from '../domain/maritalstatus.data';
 import {ManageMaritalstatusService} from '../service/manage.maritalstatus.service';
 //import { GenderlistComponent } from '../view/genderlist.component';
 import { Location } from '@angular/common';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Router } from '@angular/router';
 import {MessageService} from 'primeng/api';
 
 
@@ -17,15 +17,7 @@ import {MessageService} from 'primeng/api';
 export class AddMaritalstatusComponent implements OnInit {
       
 
- maritalstatuscreatedata: MaritalStatusData = {
-  name: '',
-  description: '',
-  marital_status_id: 0,
-  code: '',
-  created_by: 0,
-  created_date: null,
-  
-};
+ maritalstatuscreatedata= {} as MaritalStatusData ;
 
 
   constructor(private messageService: MessageService,private router: Router,private location: Location,private managemaritalstatusservice:ManageMaritalstatusService, private breadcrumbService: AppBreadcrumbService) { 
@@ -47,10 +39,10 @@ addmaritalstatus(){
   this.maritalstatuscreatedata.created_by = +sessionStorage.getItem('userid');
   this.maritalstatuscreatedata.created_date = new Date();
   this.managemaritalstatusservice.createMaritalStatus(this.maritalstatuscreatedata).subscribe(
-  data => {
+  () => {
     this.addSuccess("Success!","Marital Status added successfully.");
     },
-  error => {
+  () => {
   this.addError("Failed!","Could not add marital status.");
   }
   

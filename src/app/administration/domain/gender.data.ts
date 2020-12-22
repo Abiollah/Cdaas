@@ -6,16 +6,9 @@ export interface GenderData{
     code: string;
     gender_id:number;
     created_by: number;
-   // created_date: Date;
+    created_date: Date;
     
 }
 
-export interface GenderDataCreate{
-    name: string;
-    description: string;
-    code: string;
-    gender_id: number;
-    created_by: number;
-   // created_date: Date;
+
     
-}
