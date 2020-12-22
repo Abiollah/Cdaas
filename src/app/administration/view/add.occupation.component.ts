@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {AppBreadcrumbService} from '../../app.breadcrumb.service';
-import { OccupationData } from '../domain/occupation.data';
+import { OccupationData, OccupationDataCreate } from '../domain/occupation.data';
 import {ManageOccupationService} from '../service/manage.occupation.service';
 import { Location } from '@angular/common';
 import {MessageService} from 'primeng/api';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-add.occupation',
@@ -13,7 +13,15 @@ import { Router } from '@angular/router';
 })
 export class ManageOccupationComponent implements OnInit {
 
-  occupationdata = {} as OccupationData;
+  occupationcreateddata: OccupationData = {
+
+    //occupation_id: 0,
+    name: '',
+    code: '',
+    description: '',
+    created_by:0,
+    created_date: null,
+  };
 
   constructor(private router: Router,private messageService: MessageService,private location: Location,private manageoccupationService:ManageOccupationService, private breadcrumbService: AppBreadcrumbService) {
     this.breadcrumbService.setItems([
@@ -30,13 +38,13 @@ export class ManageOccupationComponent implements OnInit {
   }
 
   addOccupation(){
-    this.occupationdata.created_by = +sessionStorage.getItem("userid");
-    this.occupationdata.created_date = Date.now();
-    this.manageoccupationService.createUpdateOccupation(this.occupationdata).subscribe(
-      () => {
+    this.occupationcreateddata.created_by = +sessionStorage.getItem("userid");
+    this.occupationcreateddata.created_date = new Date();
+    this.manageoccupationService.createUpdateOccupation(this.occupationcreateddata).subscribe(
+      data => {
         this.addSuccess("Success!","Occupation added successfully.");
     }, 
-    () => {
+    error => {
     this.addError("Failed!","Could not add Occupation.");
     }
     

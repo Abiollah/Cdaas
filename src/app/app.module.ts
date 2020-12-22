@@ -99,13 +99,23 @@ import { PharmacieslistComponent } from './administration/view/pharmacieslist.co
 import { MaritalStatuslistComponent } from './administration/view/marital-statuslist.component';
 import { ClientPortalListComponent } from './client/view/client.portal.list.component';
 import { ClientPortalDetailComponent } from './client/view/client-portal-detail.component';
-import { AddMaritalstatusComponent } from './administration/view/add.maritalstatus.component';
 import { ClientRegistrationComponent } from './client/view/client.registration.component';
-import { QualificationlistComponent } from './administration/view/qualificationlist.component';
-import { AddReligionComponent } from './administration/view/add-religion.component';
 import { OccupationlistComponent } from './administration/view/occupationlist.component';
-import { ManageOccupationComponent } from './administration/view/add.occupation.component';
+//import { ManageOccupationComponent } from './administration/view/add.occupation.component';
+//import { PatientComponent } from './client/view/patient.registration.component';
+import { AddReligionComponent } from './administration/view/add-religion.component';
+import { ReligionListComponent } from './administration/view/religion.list.component';
+import { AddMaritalstatusComponent } from './administration/view/add.maritalstatus.component';
 import { ManageQualificationComponent } from './administration/view/add.qualification.component';
+import { QualificationlistComponent } from './administration/view/qualificationlist.component';
+import { ManageLanguageComponent } from './administration/view/add.language.component';
+import { LanguagelistComponent } from './administration/view/languagelist.component';
+import { ManageNationalityComponent } from './administration/view/add.nationality.component';
+import { NationalitylistComponent } from './administration/view/nationalitylist.component';
+import { ManageTargetgroupComponent } from './administration/view/add.targetgroup.component';
+import { TargetgrouplistComponent } from './administration/view/targetgrouplist.component'
+//import { PatientComponent } from './client/patient.registration.component';
+
 
 
 
@@ -145,8 +155,23 @@ import { ManageQualificationComponent } from './administration/view/add.qualific
     QualificationlistComponent,
     AddReligionComponent,
     OccupationlistComponent,
-    ManageOccupationComponent,
-    ManageQualificationComponent
+    ManageQualificationComponent,
+    //PatientComponent,
+    AddReligionComponent,
+    ReligionListComponent,
+
+   // ManageUserRoleService
+    AddMaritalstatusComponent,
+    ManageQualificationComponent,
+    QualificationlistComponent,
+    ManageLanguageComponent,
+    LanguagelistComponent,
+    ManageNationalityComponent,
+    NationalitylistComponent,
+    ManageTargetgroupComponent,
+    TargetgrouplistComponent
+    
+    
 
 
 

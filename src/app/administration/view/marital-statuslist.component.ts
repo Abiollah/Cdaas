@@ -4,7 +4,7 @@ import { MaritalStatusData } from '../domain/maritalstatus.data';
 import {ManageMaritalstatusService} from '../service/manage.maritalstatus.service';
 import { Location } from '@angular/common';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import {MessageService,Message} from 'primeng/api';
+import {MessageService} from 'primeng/api';
 
 @Component({
   selector: 'app-marital-statuslist',
@@ -15,7 +15,10 @@ import {MessageService,Message} from 'primeng/api';
 
 export class MaritalStatuslistComponent implements OnInit {
   maritalStatusList:any;
-  constructor(private router: Router, private location: Location, private manageMaritalstatusService:ManageMaritalstatusService, private breadcrumbService: AppBreadcrumbService) {
+  selectedMaritalStatus:MaritalStatusData;
+  maritalstatusDialog: boolean;
+
+  constructor(private messageService: MessageService, private router: Router, private location: Location, private manageMaritalstatusService:ManageMaritalstatusService, private breadcrumbService: AppBreadcrumbService) {
     this.breadcrumbService.setItems([
       { label: 'Dashboard', routerLink: ['/dashboard'] },
       { label: 'metadata', routerLink: ['/metadatalist'] },
@@ -39,6 +42,38 @@ export class MaritalStatuslistComponent implements OnInit {
 
     goBack(){
       this.location.back();
+    }
+
+    editMaritalStatus(maritalstatus: MaritalStatusData){
+      this.selectedMaritalStatus = {...maritalstatus};
+      this.maritalstatusDialog=true;
+     }
+
+     updateMaritalstatus(){
+       this.manageMaritalstatusService.updateMaritalStatus(this.selectedMaritalStatus).subscribe(
+         () => {
+           this.addSuccess("Success!","User information updated successfully.");
+           
+       }, 
+       () => {
+         this.addError("Failed!","Could not update user information.");
+         this.maritalstatusDialog = false;
+       });
+       
+     }
+
+     addSuccess(title:string,message:string) {
+      this.messageService.add({severity:'success', summary:title, detail:message});
+      
+    
+    }
+    addError(title:string,message:string) {
+      this.messageService.add({severity:'error', summary:title, detail:message});
+      
+    }
+
+    hideMaritalStatusDialog(){
+      this.maritalstatusDialog = false;
     }
 
 }

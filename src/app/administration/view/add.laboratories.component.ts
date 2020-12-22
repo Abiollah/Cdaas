@@ -14,7 +14,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 export class ManageLaboratoriesComponent implements OnInit {
 
   laboratoriescreatedata: LaboratoriesData = {
-    facility_id:0,
+    laboratory_id:0,
     name: '',
     code: '',
     description: '',

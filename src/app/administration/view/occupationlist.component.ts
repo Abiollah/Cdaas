@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AppBreadcrumbService} from '../../app.breadcrumb.service';
 import { OccupationData } from '../domain/occupation.data';
-import {ManageOccupationService} from '../service/manage.occupation.service';
+import {ManageOccupationService} from '../../administration/service/manage.occupation.service';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import {MessageService} from 'primeng/api';

@@ -12,7 +12,7 @@
 					<button pButton pRipple label="Back" icon="pi pi-chevron-left" class="p-button-help p-mb-2" (click)="goBack()"></button>
 				</ng-template>
             </p-toolbar>
-            <p-table #dt [value]="maritalStatusList" [rows]="10" [paginator]="true" [globalFilterFields]="['username','code, description']"
+            <p-table #dt [value]="maritalStatusList" [rows]="10" [paginator]="true" [globalFilterFields]="['name','code, description']"
          [rowHover]="true" dataKey="id"
             styleClass="p-datatable-customers"
             currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
@@ -58,22 +58,54 @@
                     </td>
                     
                     <td>
-                        <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="editProduct(product)"></button>
+                        <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="editMaritalStatus(maritalstatus)"></button>
                         <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="deleteProduct(product)"></button>
                     </td>
                 </tr>
             </ng-template>
             <ng-template pTemplate="summary">
                 <div class="p-d-flex p-ai-center p-jc-between">
-                    In total there are {{products ? products.length : 0 }} products.
+                    In total there are {{products ? products.length : 0 }} maritalstatus.
                 </div>
             </ng-template>
         </p-table>   
-            
-            
-
-            
+                       
             </div>
+
+            <p-dialog [(visible)]="maritalstatusDialog" [style]="{width: '650px'}" header="MaritalStatus Details" [modal]="true" styleClass="p-fluid">
+           
+                <ng-template pTemplate="content">
+                    <div class="p-col-12 p-fluid p-formgrid p-grid">
+                    <div class="p-col-12 p-field">
+                        <label for="name">id</label>
+                        <input id="name" pInputText [(ngModel)]="selectedMaritalStatus.name">
+                    </div>
+                    <div class="p-col-6 p-field">
+                        <label for="code">Code</label>
+                        <input id="code" type="code" pInputText [(ngModel)]="selectedMaritalStatus.code">
+                    </div>
+                    <div class="p-col-6 p-field">
+                        <label for="description">Description </label>
+                        <input id="description" type="description" pInputText [(ngModel)]="selectedMaritalStatus.description">
+                    </div>
+
+                    <div class="p-col-6 p-field">
+                        <label for="created_by">Created_By</label>
+                        <input id="created_by" pInputText [(ngModel)]="selectedMaritalStatus.created_by">
+                    </div>
+                    <div class="p-col-6 p-field">
+                        <label for="created_date">Created_Date</label>
+                        <input id="created_date" pInputText [(ngModel)]="selectedMaritalStatus.created_by">
+                    </div>
+                    </div>
+
+                    </ng-template>
+    
+                    <ng-template pTemplate="footer">
+                        <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="hideMaritalStatusDialog()"></button>
+                        <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="updateMaritalstatus()"></button>
+                    </ng-template>
+                    </p-dialog>
 
 
         </div>
