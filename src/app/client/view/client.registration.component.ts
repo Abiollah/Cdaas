@@ -4,8 +4,8 @@ import { ClientData } from '../domain/client.data';
 import {ManageClientService} from '../service/manage.client.service';
 import { Location } from '@angular/common';
 import {MessageService,TreeNode} from 'primeng/api';
-import {TreeModule} from 'primeng/tree';
 import { Router } from '@angular/router';
+import { jqxTreeComponent } from 'jqwidgets-ng/jqxtree';
 import { GenderData } from '../../administration/domain/gender.data';
 import { ManageGendersService } from 'src/app/administration/service/manage.genders.service';
 import { MetadataConfigService } from 'src/app/administration/service/metadata-config.service';
@@ -13,6 +13,7 @@ import { MaritalStatusData } from 'src/app/administration/domain/maritalstatus.d
 import { OccupationData } from 'src/app/administration/domain/occupation.data';
 import { QualificationData } from 'src/app/administration/domain/qualification.data';
 import { HeirarchyUnitsData, hpak } from 'src/app/administration/domain/heirarchyunits.data';
+import { ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-patient.registration',
@@ -22,7 +23,7 @@ import { HeirarchyUnitsData, hpak } from 'src/app/administration/domain/heirarch
 
 })
 export class ClientRegistrationComponent implements OnInit {
-
+  @ViewChild('heirarchyUnitId', { static: false }) heirarchyUnitId: jqxTreeComponent;
   clientcreatedata = {} as  ClientData;
   facilityDialog: boolean;
   
@@ -36,73 +37,14 @@ export class ClientRegistrationComponent implements OnInit {
   selectedQualification: QualificationData;
   heirarchyunitsMap: HeirarchyUnitsData[];
   selectedHeirarchyUnit: HeirarchyUnitsData;
+  heirarchyunitsTree:any[];
+ 
+  source: any;
+  records: any;
+  dataAdapter: any;
+
 
   
-  
-
-  heirarchyunitsTree: TreeNode[];
-  heirarchyunitsChildrenTree: TreeNode[];
-  selectedHeirarchyUnits: TreeNode;
-  
-  hu: HeirarchyUnitsData[][];
-  
-  data: HeirarchyUnitsData[] = [];
-
-  _object = Object;
-
-  responseData: any = [
-    {
-        "id": 2,
-        "parentid": 0,
-        "name": "TR"
-        
-    },
-    {
-      "id": 3,
-      "parentid": 2,
-        "name": "CR1"
-     },
-    {
-      "id": 4,
-        "parentid": 2,
-        "name": "CR2"
-     },
-    {
-      "id": 5,
-        "parentid": 3,
-        "name": "CCR1",
-           },
-    {
-      "id": 6,
-        "parentid": 2,
-        "name": "CR3",
-     },
-    {
-      "id": 7,
-        "parentid": 6,
-        "name": "CCR2",
-           },
-    {
-      "id": 8,
-        "parentid": 7,
-        "name": "CCCR1",
-          },
-    {
-      "id": 9,
-        "parentid": 8,
-        "name": "CCCCR1",
-           },
-    {
-      "id": 11,
-        "parentid": 2,
-               "name": "CR5",
-           },
-    {
-      "id": 12,
-        "parentid": 11,
-        "name": "CCCCCCR1",
-            }
-]
 
 
 
@@ -142,10 +84,37 @@ export class ClientRegistrationComponent implements OnInit {
   }
   loadHeirarchyUnits(){
     this.facilityDialog=true;
-   this.HTree();
+    this.buildHeirarchyTree();
   }
   
   
+  private buildHeirarchyTree(){
+    
+    this.source = {
+      datatype: 'json',
+      datafields: [
+          { name: 'heirarchyunitid' },
+          { name: 'parentid' },
+          { name: 'name' }
+          
+      ],
+      id: 'heirarchyunitid',
+      localdata: this.heirarchyunitsMap
+  };
+  this.dataAdapter = new jqx.dataAdapter(this.source, { autoBind: true });
+  this.records = this.dataAdapter.getRecordsHierarchy('heirarchyunitid', 'parentid', 'items', 
+  [{ name: 'name', map: 'label' },
+  { name: 'heirarchyunitid', map: 'value' }]);
+
+  }
+
+  heirarchyOnSelect(event: any): void{
+    this.clientcreatedata.facility_name = this.heirarchyUnitId.getItem(event.args.element).label;
+    this.clientcreatedata.facility_id = +this.heirarchyUnitId.getItem(event.args.element).value;
+
+    console.log("Got selected as "+this.heirarchyUnitId.getItem(event.args.element).value);
+    this.facilityDialog=false;
+  }
   
   private HTree(){
     this.recursiveList(0);
@@ -192,6 +161,7 @@ HeirarchyUnitSubList(i: number): HeirarchyUnitsData[] {
  
   return heirarchyUnitSubList2;
 }
+
 
   addClient(){
     this.clientcreatedata.created_by = +sessionStorage.getItem('userid');
