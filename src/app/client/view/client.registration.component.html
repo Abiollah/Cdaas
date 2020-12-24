@@ -83,8 +83,9 @@
     </div><br>
     <div class="p-field p-col-12 p-md-3" style="margin-left: 2%">
       <label for="facility_name">Facility Name</label>
-      <p-dropdown [options]="heirarchyunitsMap" [(ngModel)]="selectedHeirarchyUnit"
-      optionLabel="name" placeholder="-Select-" [filter]="true" filterBy="name" [showClear]="true"></p-dropdown>
+      <!--p-dropdown [options]="heirarchyunitsMap" [(ngModel)]="selectedHeirarchyUnit"
+      optionLabel="name" placeholder="-Select-" [filter]="true" filterBy="name" [showClear]="true"></p-dropdown-->
+      <input readonly id="facilityname" type="text" pInputText [(ngModel)]="clientcreatedata.facility_name">
       <button pButton pRipple type="button" type="button" 
       class="p-button-text p-mr-2 p-mb-2"
       label="Choose..." (click) = "loadHeirarchyUnits()"></button>
@@ -123,7 +124,8 @@
       </p-panel>
       <p-dialog [(visible)]="facilityDialog" [style]="{width: '650px'}" 
       header="Facility List" [modal]="true" styleClass="p-fluid">
-      <p-tree [value]="heirarchyunitsTree"  [(selection)]="selectedHeirarchyUnits"></p-tree>
+      <jqxTree #heirarchyUnitId [source]="records" (onSelect)="heirarchyOnSelect($event)"></jqxTree>
+
     </p-dialog>
     </div>
 
