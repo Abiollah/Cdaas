@@ -14,6 +14,7 @@ export interface ClientData{
   occupation?: string;
   qualification?: string;
   facility_name?: string;
+  facility_id?: number;
   referred_from?: string;
   nationality?: string;
   state_of_origin?: string;
