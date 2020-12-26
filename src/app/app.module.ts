@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import { jqxTreeModule } from 'jqwidgets-ng/jqxtree';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserLoginComponent } from './login/login.component';
@@ -251,8 +250,7 @@ import { TargetgrouplistComponent } from './administration/view/targetgrouplist.
         TreeModule,
         TreeTableModule,
         VirtualScrollerModule,
-        FontAwesomeModule,
-        jqxTreeModule
+        FontAwesomeModule
 
 
   ],
