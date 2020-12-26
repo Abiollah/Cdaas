@@ -116,6 +116,7 @@ import { NationalitylistComponent } from './administration/view/nationalitylist.
 import { ManageTargetgroupComponent } from './administration/view/add.targetgroup.component';
 import { TargetgrouplistComponent } from './administration/view/targetgrouplist.component'
 //import { PatientComponent } from './client/patient.registration.component';
+import {DividerModule} from 'primeng/divider';
 
 
 
@@ -252,7 +253,8 @@ import { TargetgrouplistComponent } from './administration/view/targetgrouplist.
         TreeTableModule,
         VirtualScrollerModule,
         FontAwesomeModule,
-        jqxTreeModule
+        jqxTreeModule,
+        DividerModule
 
 
   ],

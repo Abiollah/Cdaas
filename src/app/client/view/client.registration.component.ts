@@ -63,13 +63,13 @@ export class ClientRegistrationComponent implements OnInit {
 }
 
   ngOnInit(): void {
-    if(sessionStorage.getItem('username') == null){
-    this.addError("Session Expired.","Your current session has expired. Re-login.");
-      this.router.navigate(['']);
-    }
-    else{
-      this.loadConfigMetadata();
-    }
+  //  if(sessionStorage.getItem('username') == null){
+  //  this.addError("Session Expired.","Your current session has expired. Re-login.");
+    //  this.router.navigate(['']);
+   // }
+    //else{
+     // this.loadConfigMetadata();
+   // }
     
    
     
