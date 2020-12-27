@@ -52,7 +52,8 @@ export class UserlistComponent implements OnInit {
       this.manageuserService.createUpdateUser(this.selectedUser).subscribe(
         () => {
           this.addSuccess("Success!","User information updated successfully.");
-          
+          this.UserList();
+          this.userDialog = false;
       }, 
       () => {
         this.addError("Failed!","Could not update user information.");

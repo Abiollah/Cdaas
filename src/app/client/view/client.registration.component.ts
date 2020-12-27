@@ -5,15 +5,14 @@ import {ManageClientService} from '../service/manage.client.service';
 import { Location } from '@angular/common';
 import {MessageService,TreeNode} from 'primeng/api';
 import { Router } from '@angular/router';
-import { jqxTreeComponent } from 'jqwidgets-ng/jqxtree';
 import { GenderData } from '../../administration/domain/gender.data';
 import { ManageGendersService } from 'src/app/administration/service/manage.genders.service';
 import { MetadataConfigService } from 'src/app/administration/service/metadata-config.service';
 import { MaritalStatusData } from 'src/app/administration/domain/maritalstatus.data';
 import { OccupationData } from 'src/app/administration/domain/occupation.data';
 import { QualificationData } from 'src/app/administration/domain/qualification.data';
-import { HeirarchyUnitsData, hpak } from 'src/app/administration/domain/heirarchyunits.data';
-import { ViewChild } from '@angular/core';
+import { HeirarchyUnitsData } from 'src/app/administration/domain/heirarchyunits.data';
+import { AssessmentQuestions, AssessmentType } from 'src/app/administration/domain/assessments.data';
 
 @Component({
   selector: 'app-patient.registration',
@@ -23,9 +22,9 @@ import { ViewChild } from '@angular/core';
 
 })
 export class ClientRegistrationComponent implements OnInit {
-  @ViewChild('heirarchyUnitId', { static: false }) heirarchyUnitId: jqxTreeComponent;
   clientcreatedata = {} as  ClientData;
   facilityDialog: boolean;
+  loading: boolean;
   
   genderMap: GenderData[];
   selectedGender: GenderData;
@@ -36,30 +35,30 @@ export class ClientRegistrationComponent implements OnInit {
   qualificationMap: QualificationData[];
   selectedQualification: QualificationData;
   heirarchyunitsMap: HeirarchyUnitsData[];
-  selectedHeirarchyUnit: HeirarchyUnitsData;
   heirarchyunitsTree:any[];
- 
-  source: any;
-  records: any;
-  dataAdapter: any;
+  selectedHeirarchyUnit: HeirarchyUnitsData;
+  assessmentTypeMap: AssessmentType[];
+  selectedAssessmentType: AssessmentType;
+  assessmentTypePreMap: AssessmentType[];
+  selectedAssessmentQuestion: AssessmentQuestions;
 
-
+  assessmentQuestionMap = { assessmentType: {} } as unknown as AssessmentQuestions[];
+  assessmentQuestions: AssessmentQuestions[];
   
 
-
-
+  
   constructor(private router: Router,
    private messageService: MessageService,
     private location: Location,
     private manageclientService:ManageClientService, 
     private breadcrumbService: AppBreadcrumbService,
-    private manageGenderService: ManageGendersService,
     private metadataConfigService: MetadataConfigService) {
     this.breadcrumbService.setItems([
         { label: 'Dashboard', routerLink: ['/dashboard'] },
         { label: 'Register KP', routerLink: ['/registration'] },
         { label: 'View KP Client', routerLink: ['/viewkp'] }
     ]);
+    
 }
 
   ngOnInit(): void {
@@ -74,93 +73,81 @@ export class ClientRegistrationComponent implements OnInit {
    
     
   }
-  protected loadConfigMetadata(){
+   protected loadConfigMetadata(){
    this.metadataConfigService.getGenderList().subscribe(p => {this.genderMap = p});
    this.metadataConfigService.getMaritalStatusList().subscribe(p => {this.maritalstatusMap = p});
    this.metadataConfigService.getOccupationList().subscribe(p => {this.occupationMap = p});
    this.metadataConfigService.getQualificationList().subscribe(p => {this.qualificationMap = p});
    this.metadataConfigService.getHeirarchyUnitsList().subscribe(p => {this.heirarchyunitsMap = p});
+   this.metadataConfigService.getAssessmentTypeList().subscribe(p => {this.assessmentTypeMap = p});
+   this.metadataConfigService.getAssessmentQuestionList().subscribe(p => {this.assessmentQuestionMap = p});
+   
 
   }
   loadHeirarchyUnits(){
+    
     this.facilityDialog=true;
-    this.buildHeirarchyTree();
-  }
-  
-  
-  private buildHeirarchyTree(){
-    
-    this.source = {
-      datatype: 'json',
-      datafields: [
-          { name: 'heirarchyunitid' },
-          { name: 'parentid' },
-          { name: 'name' }
-          
-      ],
-      id: 'heirarchyunitid',
-      localdata: this.heirarchyunitsMap
-  };
-  this.dataAdapter = new jqx.dataAdapter(this.source, { autoBind: true });
-  this.records = this.dataAdapter.getRecordsHierarchy('heirarchyunitid', 'parentid', 'items', 
-  [{ name: 'name', map: 'label' },
-  { name: 'heirarchyunitid', map: 'value' }]);
-
-  }
-
-  heirarchyOnSelect(event: any): void{
-    this.clientcreatedata.facility_name = this.heirarchyUnitId.getItem(event.args.element).label;
-    this.clientcreatedata.facility_id = +this.heirarchyUnitId.getItem(event.args.element).value;
-
-    console.log("Got selected as "+this.heirarchyUnitId.getItem(event.args.element).value);
-    this.facilityDialog=false;
-  }
-  
-  private HTree(){
-    this.recursiveList(0);
-
-  }
-
-  private recursiveList(id:number){
-    var heirarchyUnitSubList: HeirarchyUnitsData[] = [];
-    heirarchyUnitSubList = this.HeirarchyUnitSubList(id);
-
-
-    for (var hus of heirarchyUnitSubList){
-     this.heirarchyunitsTree = [{
-       label: hus.name,
-       data: hus.heirarchyunitid,
-       "children" : [
-         {
-          label: hus.name,
-          data: hus.heirarchyunitid,
-       }
-      ]
-      }
-     
-    ]
-    this.recursiveList(hus.heirarchyunitid);
-    }
-    
+    this.buildHeirarchyTree(this.heirarchyunitsMap);
     
   }
 
-HeirarchyUnitSubList(i: number): HeirarchyUnitsData[] {
-  var heirarchyUnitSubList2: HeirarchyUnitsData[] = [];
-  
-  if (this.heirarchyunitsMap.length > 0){
-    for(var pp of this.heirarchyunitsMap){
-      if(pp.parentid == i){
-       heirarchyUnitSubList2.push(pp);
-       
-      }
+  onAssessmentSelection(){
+    this.rsp = 0;
+    this.assessmentQuestions = [];
+    this.assessmentQuestionMap.filter(p=> {
+      if (p.assessment_type_id === this.selectedAssessmentType.assessment_type_id){
+        this.assessmentQuestions.push(p);
       
-    }
+      }
+      })
+  }
+
+  rsp: number;
+  
+  calculateResponses(){
+    
+     this.rsp = 0;
+    this.assessmentQuestions.forEach(p=> {
+    
+      if(p.default_response){
+        this.rsp = this.rsp+1;
+      }
+    });
+   
+  }
+
+  saveResponses(){
     
   }
- 
-  return heirarchyUnitSubList2;
-}
+  
+
+  heirarchyOnSelect(): void{
+   this.clientcreatedata.facility_id = +this.selectedHeirarchyUnit.heirarchyunitid;
+   this.clientcreatedata.facility_name = this.selectedHeirarchyUnit.name;
+   this.facilityDialog = false;
+  }
+
+  roots: TreeNode[] = [];
+  
+  private buildHeirarchyTree(list) {
+    this.roots = [];
+    var map = {}, node, i;
+    
+    for (i = 0; i < list.length; i += 1) {
+      map[list[i].heirarchyunitid] = i; // initialize the map
+      list[i].children = []; // initialize the children
+    }
+    
+    for (i = 0; i < list.length; i += 1) {
+      node = list[i];
+      if (node.parentid !== 0) {
+        list[map[node.parentid]].children.push(node);
+      } else {
+        this.roots.push(node);
+      }
+    }
+    return this.roots;
+  }
 
 
   addClient(){
