@@ -16,16 +16,9 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 export class ManageAllergiesComponent implements OnInit {
   
 
-allergiescreatedata: AllergiesData = {
+allergiescreatedata = {} as AllergiesData;
 
-  allergies_id:0,
-  name: '',
-  code: '',
-  description: '',
-  created_by:0,
-  created_date: 0,
   
-};
 
   constructor(private router: Router,private messageService: MessageService,private location: Location,private manageallergiesService:ManageAllergiesService, private breadcrumbService: AppBreadcrumbService) {
     this.breadcrumbService.setItems([

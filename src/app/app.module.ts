@@ -113,7 +113,18 @@ import { LanguagelistComponent } from './administration/view/languagelist.compon
 import { ManageNationalityComponent } from './administration/view/add.nationality.component';
 import { NationalitylistComponent } from './administration/view/nationalitylist.component';
 import { ManageTargetgroupComponent } from './administration/view/add.targetgroup.component';
-import { TargetgrouplistComponent } from './administration/view/targetgrouplist.component'
+import { TargetgrouplistComponent } from './administration/view/targetgrouplist.component';
+import { ManageRefferedfromComponent } from './administration/view/add.refferedfrom.component';
+import { RefferedfromlistComponent } from './administration/view/refferedfromlist.component';
+import { ManagePregnancyComponent } from './administration/view/add.pregnancy.component';
+import { PregnancylistComponent } from './administration/view/pregnancylist.component';
+import { ManageEnrollmentsettingComponent } from './administration/view/add.enrollmentsetting.component';
+import { EnrollmentsettinglistComponent } from './administration/view/enrollmentsettinglist.component';
+import { ManageCareentrypointComponent } from './administration/view/add.careentrypoint.component';
+import { ManageHivstatusatregistrationComponent } from './administration/view/add.hivstatusatregistration.component';
+import { CareentrypointlistComponent } from './administration/view/careentrypointlist.component';
+import { HivStatusAtRegistrationlistComponent } from './administration/view/hivstatusatregistrationlist.component'
+
 //import { PatientComponent } from './client/patient.registration.component';
 
 
@@ -169,7 +180,17 @@ import { TargetgrouplistComponent } from './administration/view/targetgrouplist.
     ManageNationalityComponent,
     NationalitylistComponent,
     ManageTargetgroupComponent,
-    TargetgrouplistComponent
+    TargetgrouplistComponent,
+    ManageRefferedfromComponent,
+    RefferedfromlistComponent,
+    ManagePregnancyComponent,
+    PregnancylistComponent,
+    ManageEnrollmentsettingComponent,
+    EnrollmentsettinglistComponent,
+    ManageCareentrypointComponent,
+    ManageHivstatusatregistrationComponent,
+    CareentrypointlistComponent,
+    HivStatusAtRegistrationlistComponent
     
     
 
