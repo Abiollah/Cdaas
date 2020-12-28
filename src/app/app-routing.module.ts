@@ -37,7 +37,12 @@ import { RefferedfromlistComponent } from './administration/view/refferedfromlis
 import { ManagePregnancyComponent } from './administration/view/add.pregnancy.component';
 import { PregnancylistComponent } from './administration/view/pregnancylist.component';
 import { ManageEnrollmentsettingComponent } from './administration/view/add.enrollmentsetting.component';
-import { EnrollmentsettinglistComponent } from './administration/view/enrollmentsettinglist.component'
+import { EnrollmentsettinglistComponent } from './administration/view/enrollmentsettinglist.component';
+import { ManageHivstatusatregistrationComponent } from './administration/view/add.hivstatusatregistration.component';
+import { HivStatusAtRegistrationlistComponent } from './administration/view/hivstatusatregistrationlist.component';
+import { ManageCareentrypointComponent } from './administration/view/add.careentrypoint.component';
+import { CareentrypointlistComponent } from './administration/view/careentrypointlist.component'
+
 
 
 
@@ -82,7 +87,11 @@ const routes: Routes = [
     {path: 'addPregnancy', component: ManagePregnancyComponent},
     {path: 'pregnancylist', component: PregnancylistComponent},
     {path: 'addEnrollmentSetting', component: ManageEnrollmentsettingComponent},
-    {path: 'enrollmentist', component: EnrollmentsettinglistComponent}
+    {path: 'enrollmensettingtlist', component: EnrollmentsettinglistComponent},
+    {path: 'addHivstatusatregistration', component: ManageHivstatusatregistrationComponent},
+    {path: 'hivstatusatregistrationlist', component: HivStatusAtRegistrationlistComponent},
+    {path: 'addCareentrypoint', component: ManageCareentrypointComponent},
+    {path: 'careentrypointlist', component: CareentrypointlistComponent}
     
 
 ]
