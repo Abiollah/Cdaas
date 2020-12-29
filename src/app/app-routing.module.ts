@@ -32,6 +32,7 @@ import { ManageNationalityComponent } from './administration/view/add.nationalit
 import { NationalitylistComponent } from './administration/view/nationalitylist.component';
 import { ManageTargetgroupComponent } from './administration/view/add.targetgroup.component';
 import { TargetgrouplistComponent } from './administration/view/targetgrouplist.component'
+import { ClientServiceDashboardComponent } from './client/view/client-service-dashboard.component';
 
 
 
@@ -70,7 +71,8 @@ const routes: Routes = [
     {path: 'addNationality', component: ManageNationalityComponent},
     {path: 'nationalitylist', component: NationalitylistComponent},
     {path: 'addTargetgroup', component: ManageTargetgroupComponent},
-    {path: 'targetgrouplist', component: TargetgrouplistComponent}
+    {path: 'targetgrouplist', component: TargetgrouplistComponent},
+    {path: '##/sportal', component: ClientServiceDashboardComponent}
     
 
 ]

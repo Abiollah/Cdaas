@@ -113,7 +113,10 @@ import { LanguagelistComponent } from './administration/view/languagelist.compon
 import { ManageNationalityComponent } from './administration/view/add.nationality.component';
 import { NationalitylistComponent } from './administration/view/nationalitylist.component';
 import { ManageTargetgroupComponent } from './administration/view/add.targetgroup.component';
-import { TargetgrouplistComponent } from './administration/view/targetgrouplist.component'
+import { TargetgrouplistComponent } from './administration/view/targetgrouplist.component';
+import { ClientServiceDashboardComponent } from './client/view/client-service-dashboard.component'
+
+
 //import { PatientComponent } from './client/patient.registration.component';
 
 
@@ -169,7 +172,8 @@ import { TargetgrouplistComponent } from './administration/view/targetgrouplist.
     ManageNationalityComponent,
     NationalitylistComponent,
     ManageTargetgroupComponent,
-    TargetgrouplistComponent
+    TargetgrouplistComponent,
+    ClientServiceDashboardComponent
     
     
 
