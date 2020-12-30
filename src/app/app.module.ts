@@ -85,7 +85,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AddUserRoleComponent } from './administration/view/add.user.role.component';
 import {ManageUsersComponent} from './administration/view/add.users.component';
 import { UserlistComponent } from './administration/view/userlist.component';
-
 import { ManageAllergiesComponent } from './administration/view/add.allergies.component';
 import { AllergieslistComponent } from './administration/view/allergieslist.component';
 import { ManageLaboratoriesComponent } from './administration/view/add.laboratories.component';
@@ -115,8 +114,16 @@ import { NationalitylistComponent } from './administration/view/nationalitylist.
 import { ManageTargetgroupComponent } from './administration/view/add.targetgroup.component';
 import { TargetgrouplistComponent } from './administration/view/targetgrouplist.component';
 import { ClientServiceDashboardComponent } from './client/view/client-service-dashboard.component'
-
-
+import { ManageRefferedfromComponent } from './administration/view/add.refferedfrom.component';
+import { RefferedfromlistComponent } from './administration/view/refferedfromlist.component';
+import { ManagePregnancyComponent } from './administration/view/add.pregnancy.component';
+import { PregnancylistComponent } from './administration/view/pregnancylist.component';
+import { ManageEnrollmentsettingComponent } from './administration/view/add.enrollmentsetting.component';
+import { EnrollmentsettinglistComponent } from './administration/view/enrollmentsettinglist.component';
+import { ManageCareentrypointComponent } from './administration/view/add.careentrypoint.component';
+import { ManageHivstatusatregistrationComponent } from './administration/view/add.hivstatusatregistration.component';
+import { CareentrypointlistComponent } from './administration/view/careentrypointlist.component';
+import { HivStatusAtRegistrationlistComponent } from './administration/view/hivstatusatregistrationlist.component'
 //import { PatientComponent } from './client/patient.registration.component';
 
 
@@ -173,7 +180,17 @@ import { ClientServiceDashboardComponent } from './client/view/client-service-da
     NationalitylistComponent,
     ManageTargetgroupComponent,
     TargetgrouplistComponent,
-    ClientServiceDashboardComponent
+    ClientServiceDashboardComponent,
+    ManageRefferedfromComponent,
+    RefferedfromlistComponent,
+    ManagePregnancyComponent,
+    PregnancylistComponent,
+    ManageEnrollmentsettingComponent,
+    EnrollmentsettinglistComponent,
+    ManageCareentrypointComponent,
+    ManageHivstatusatregistrationComponent,
+    CareentrypointlistComponent,
+    HivStatusAtRegistrationlistComponent
     
     
 

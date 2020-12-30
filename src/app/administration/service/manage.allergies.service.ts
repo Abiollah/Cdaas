@@ -6,8 +6,6 @@ import { catchError, retry } from 'rxjs/operators';
 import { AllergiesData } from '../domain/allergies.data';
 import { environment } from '../../../environments/environment';
 
-
-
 @Injectable({
   providedIn: 'root'
 })
