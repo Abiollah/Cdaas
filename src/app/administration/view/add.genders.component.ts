@@ -15,8 +15,6 @@ import {MessageService} from 'primeng/api';
 })
 
 export class AddGendersComponent implements OnInit {
-
-  //private genderlistcomponent:GenderlistComponent = new GenderlistComponent();
       
 
   gender = {} as GenderData;
@@ -30,10 +28,10 @@ export class AddGendersComponent implements OnInit {
     }
   
     ngOnInit(): void {
-      if(sessionStorage.getItem('username') == null){
+      /*if(sessionStorage.getItem('username') == null){
         this.addError("Session Expired.","Your current session has expired. Re-login.");
         this.router.navigate(['']);
-      }
+      }*/
     }
   
   addGender(){

@@ -41,7 +41,9 @@ import { EnrollmentsettinglistComponent } from './administration/view/enrollment
 import { ManageHivstatusatregistrationComponent } from './administration/view/add.hivstatusatregistration.component';
 import { HivStatusAtRegistrationlistComponent } from './administration/view/hivstatusatregistrationlist.component';
 import { ManageCareentrypointComponent } from './administration/view/add.careentrypoint.component';
-import { CareentrypointlistComponent } from './administration/view/careentrypointlist.component'
+import { CareentrypointlistComponent } from './administration/view/careentrypointlist.component';
+import { HeirarchylistComponent } from './administration/view/heirarchylist.component';
+import { AddHeirarchyComponent } from './administration/view/add-heirarchy.component'
 
 
 
@@ -91,7 +93,9 @@ const routes: Routes = [
     {path: 'addHivstatusatregistration', component: ManageHivstatusatregistrationComponent},
     {path: 'hivstatusatregistrationlist', component: HivStatusAtRegistrationlistComponent},
     {path: 'addCareentrypoint', component: ManageCareentrypointComponent},
-    {path: 'careentrypointlist', component: CareentrypointlistComponent}
+    {path: 'careentrypointlist', component: CareentrypointlistComponent },
+    {path: 'heirarchylist', component: HeirarchylistComponent },
+    {path: 'addHeirarchy', component: AddHeirarchyComponent }
     
 
 ]
