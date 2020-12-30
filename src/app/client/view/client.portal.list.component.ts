@@ -37,7 +37,9 @@ swithClientInfo: boolean = true;
       this.router.navigate(['']);
     }
     this.clientExtInfoActionItems =[
-      {label: 'View Detail', icon:'pi pi-user', routerLink:['/##/cportald']},
+      {label: 'OPD Detail', icon:'pi pi-user', routerLink:['/##/cportald']},
+      {label: 'View Detail', icon:'pi pi-info', routerLink:['/##/cportald']},
+      {label: 'Program Dashboard', icon:'pi pi-user', routerLink:['/##/sportal']},
       {label: 'Enrol Program', icon:'pi pi-refresh',routerLink:['/##/cportald']}
      
     ]

@@ -31,7 +31,8 @@ import { LanguagelistComponent } from './administration/view/languagelist.compon
 import { ManageNationalityComponent } from './administration/view/add.nationality.component';
 import { NationalitylistComponent } from './administration/view/nationalitylist.component';
 import { ManageTargetgroupComponent } from './administration/view/add.targetgroup.component';
-import { TargetgrouplistComponent } from './administration/view/targetgrouplist.component';
+import { TargetgrouplistComponent } from './administration/view/targetgrouplist.component'
+import { ClientServiceDashboardComponent } from './client/view/client-service-dashboard.component';
 import { ManageRefferedfromComponent } from './administration/view/add.refferedfrom.component';
 import { RefferedfromlistComponent } from './administration/view/refferedfromlist.component';
 import { ManagePregnancyComponent } from './administration/view/add.pregnancy.component';
@@ -44,6 +45,8 @@ import { ManageCareentrypointComponent } from './administration/view/add.careent
 import { CareentrypointlistComponent } from './administration/view/careentrypointlist.component';
 import { HeirarchylistComponent } from './administration/view/heirarchylist.component';
 import { AddHeirarchyComponent } from './administration/view/add-heirarchy.component'
+
+
 
 
 
@@ -84,6 +87,7 @@ const routes: Routes = [
     {path: 'nationalitylist', component: NationalitylistComponent},
     {path: 'addTargetgroup', component: ManageTargetgroupComponent},
     {path: 'targetgrouplist', component: TargetgrouplistComponent},
+    {path: '##/sportal', component: ClientServiceDashboardComponent},
     {path: 'addRefferedfrom', component: ManageRefferedfromComponent},
     {path: 'refferedfromlist', component: RefferedfromlistComponent},
     {path: 'addPregnancy', component: ManagePregnancyComponent},
@@ -93,7 +97,7 @@ const routes: Routes = [
     {path: 'addHivstatusatregistration', component: ManageHivstatusatregistrationComponent},
     {path: 'hivstatusatregistrationlist', component: HivStatusAtRegistrationlistComponent},
     {path: 'addCareentrypoint', component: ManageCareentrypointComponent},
-    {path: 'careentrypointlist', component: CareentrypointlistComponent },
+    {path: 'careentrypointlist', component: CareentrypointlistComponent},
     {path: 'heirarchylist', component: HeirarchylistComponent },
     {path: 'addHeirarchy', component: AddHeirarchyComponent }
     
