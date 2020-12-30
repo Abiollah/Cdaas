@@ -131,7 +131,7 @@ export class MetadataListComponent implements OnInit {
             {
                 label: 'Add/Manage Heirarchy',
                 icon: 'pi pi-fw pi-plus',
-                routerLink: '/heirarchy'
+                routerLink: '/heirarchylist'
             },
             {
                 label: 'Add/Manage Heirarchy Units',
