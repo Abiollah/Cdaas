@@ -31,6 +31,8 @@ import { LanguagelistComponent } from './administration/view/languagelist.compon
 import { ManageNationalityComponent } from './administration/view/add.nationality.component';
 import { NationalitylistComponent } from './administration/view/nationalitylist.component';
 import { ManageTargetgroupComponent } from './administration/view/add.targetgroup.component';
+import { TargetgrouplistComponent } from './administration/view/targetgrouplist.component'
+import { ClientServiceDashboardComponent } from './client/view/client-service-dashboard.component';
 import { TargetgrouplistComponent } from './administration/view/targetgrouplist.component';
 import { ManageRefferedfromComponent } from './administration/view/add.refferedfrom.component';
 import { RefferedfromlistComponent } from './administration/view/refferedfromlist.component';
@@ -42,6 +44,7 @@ import { ManageHivstatusatregistrationComponent } from './administration/view/ad
 import { HivStatusAtRegistrationlistComponent } from './administration/view/hivstatusatregistrationlist.component';
 import { ManageCareentrypointComponent } from './administration/view/add.careentrypoint.component';
 import { CareentrypointlistComponent } from './administration/view/careentrypointlist.component'
+
 
 
 
@@ -82,6 +85,7 @@ const routes: Routes = [
     {path: 'nationalitylist', component: NationalitylistComponent},
     {path: 'addTargetgroup', component: ManageTargetgroupComponent},
     {path: 'targetgrouplist', component: TargetgrouplistComponent},
+    {path: '##/sportal', component: ClientServiceDashboardComponent},
     {path: 'addRefferedfrom', component: ManageRefferedfromComponent},
     {path: 'refferedfromlist', component: RefferedfromlistComponent},
     {path: 'addPregnancy', component: ManagePregnancyComponent},
