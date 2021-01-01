@@ -22,7 +22,7 @@ export class ClientPortalDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.viewedClient = this.clientPortalService.selectedClients;
-   console.log("Got here as "+this.clientPortalService.selectedClients.hospitalNum);
+   //console.log("Got here as "+this.clientPortalService.selectedClients.hospitalNum);
   }
 
  

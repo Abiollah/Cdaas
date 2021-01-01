@@ -4,12 +4,23 @@
           
         </button>
     
-        <p-menu #menu id="config_menu" [model]="items" [popup]="true"></p-menu>
+        <p-menu #menu id="config_menu" [model]="userActionOptions" [popup]="true"></p-menu>
    
     </ng-template>
-<p-card header="Stats">
-    Name: 
-</p-card>
+
+    <div class="p-col-12">
+     <div class="p-d-flex p-p-3">
+        <p class="p-mr-2"><strong>Hospital No.<mark>{{viewedClient.hospitalNum}}</mark></strong></p>
+        <p class="p-mr-2"><strong>Client Id.<mark>{{viewedClient.patientId}}</mark></strong></p>
+        <p class="p-mr-2"><strong>Full Name. <mark>{{viewedClient.surname}} {{viewedClient.firstname}} {{viewedClient.otherNames}}</mark> </strong></p>
+        <p class="p-mr-2"><strong>Age.<mark>23</mark></strong></p>
+        <p class="p-mr-2"><strong>Dependants.<mark>6</mark></strong></p>
+        <p class="p-mr-2"><strong>Email.<mark>{{viewedClient.email != null  ? viewedClient.email : 'N/A' }}</mark></strong></p>
+        <p class="p-mr-2"><strong>Phone.<mark>{{viewedClient.phone_number != null  ? viewedClient.phone_number : 'N/A'}}</mark></strong></p>
+
+</div>
+    </div>
+   
 </p-panel>
 <br/>
 <p-card >
@@ -27,16 +38,65 @@
          <p-tabPanel header="Allergies" leftIcon="pi pi-bookmark">
             <div class="p-grid">
                 <div class="p-col-12">
-                    <p-toolbar styleClass="p-mb-4">
-                        <ng-template pTemplate="left">
-                            <button pButton pRipple label="Add Allergy" icon="pi pi-plus" class="p-mr-2 p-mb-2"></button>
+                    <div class="p-d-flex p-p-3">
+                        <button pButton pRipple type="button" icon="pi pi-plus" label="Add Allergy" class="p-button-text p-mr-2" 
+                        (click)="goToAddDialog('allergy')"></button>
+                        <p-splitButton label="Trends" icon="pi pi-eye" class="p-ml-auto p-button-text" [model]="userProgramOptions"></p-splitButton>
+
+                    </div>
+                    
+                    <div class="p-col-12 p-xl-12">
+                    <p-table  [paginator]="true" [rows]="5" styleClass="p-datatable-customers">
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th pSortableColumn="id">ID
+                                    <p-sortIcon field="id"></p-sortIcon>
+                                </th>
+                                <th pSortableColumn="allergens">Allergens
+                                    <p-sortIcon field="allergens"></p-sortIcon>
+                                </th>
+                                <th pSortableColumn="price">Allergy
+                                    <p-sortIcon field="price"></p-sortIcon>
+                                </th>
+                                <th pSortableColumn="severity">Severity
+                                    <p-sortIcon field="severity"></p-sortIcon>
+                                </th>
+                                <th pSortableColumn="observation">Observations
+                                    <p-sortIcon field="observation"></p-sortIcon>
+                                </th>
+                                <th pSortableColumn="seenby">Seen By
+                                    <p-sortIcon field="seenby"></p-sortIcon>
+                                </th>
+                                <th></th>
+                            </tr>
                         </ng-template>
-        
-                        <ng-template pTemplate="right">
-                            <p-splitButton label="Trends" icon="pi pi-eye" [model]="items"></p-splitButton>
+                        <ng-template pTemplate="body" let-product>
+                            <tr>
+                                <td>
+                                    <span class="p-column-title">Id</span>
+                                    {{product.id}}</td>
+                                <td>
+                                    <span class="p-column-title">Allergens</span>
+                                    {{product.category}}</td>
+                                <td>
+                                    <span class="p-column-title">Allergy</span>
+                                    {{product.price | currency:'USD'}}</td>
+                                <td>
+                                    <span class="p-column-title">Severity</span>
+                            </td>
+                            <td>
+                                    <span class="p-column-title">Observations</span>
+                            </td>
+                            <td>
+                                <span class="p-column-title">Seen By</span>
+                        </td>
+                                <td style="text-align: center">
+                                    <button pButton type="button" icon="pi pi-search"></button>
+                                </td>
+                            </tr>
                         </ng-template>
-                        
-                    </p-toolbar>
+                    </p-table>
+</div>
 
                     </div>
                 </div>
@@ -45,14 +105,58 @@
          <p-tabPanel header="Vital Signs" leftIcon="pi pi-bell">
             Vital Signs
          </p-tabPanel>
-         <p-tabPanel header="Visit History" leftIcon="pi pi-chart-bar">
+         <p-tabPanel header="Clinics" leftIcon="pi pi-chart-bar">
             Visit History
          </p-tabPanel>
-         <p-tabPanel header="Diagnoses" leftIcon="pi pi-eye-slash">
+         <p-tabPanel header="Diagnoses/Investigations" leftIcon="pi pi-eye-slash">
             Visit History
          </p-tabPanel>
          <p-tabPanel header="Radiology" leftIcon="pi pi-camera">
             Visit History
          </p-tabPanel>
+                <p-tabPanel header="Laboratory/Tests" leftIcon="pi pi-camera">
+            Visit History
+         </p-tabPanel>
+                <p-tabPanel header="Drugs" leftIcon="pi pi-camera">
+            Visit History
+         </p-tabPanel>
     </p-tabView>
+
+    <p-dialog [(visible)]="allergyDialog" [style]="{width: '650px'}" header="New Client Allergy/Reaction" [modal]="true" styleClass="p-fluid">
+      <ng-template pTemplate="content">
+<div class="p-col-12 p-fluid p-formgrid p-grid">
+<div class="p-col-6 p-field">
+					<label for="allergen"><b>Allergens</b></label>
+<p-dropdown  optionLabel="name" placeholder="--Select--" 
+                  
+                  ></p-dropdown>
+                  </div>
+    <div class="p-col-6 p-field">
+					<label for="allergy">Type of Allergy</label>
+<p-dropdown [options]="allergyMap" optionLabel="name" placeholder="--Select--" 
+                  
+                  ></p-dropdown>
+                  </div>
+
+                   <div class="p-col-6 p-field">
+					<label for="severity">Severity</label>
+<p-dropdown  optionLabel="name" placeholder="--Select--" 
+                  
+                  ></p-dropdown>
+                  </div>
+<div class="p-col-6 p-field"></div>
+<div class="p-col-12 p-field">
+					<label for="observation">Observation</label>
+<textarea id="observation" pInputText required rows="3" cols="20"></textarea>
+
+        </div>
+
+</div>
+      </ng-template>
+      <ng-template pTemplate="footer">
+                    <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="hideUserDialog()"></button>
+                    <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="updateUser()"></button>
+                </ng-template>
+    </p-dialog>
+
 </p-card>
