@@ -123,7 +123,9 @@ import { EnrollmentsettinglistComponent } from './administration/view/enrollment
 import { ManageCareentrypointComponent } from './administration/view/add.careentrypoint.component';
 import { ManageHivstatusatregistrationComponent } from './administration/view/add.hivstatusatregistration.component';
 import { CareentrypointlistComponent } from './administration/view/careentrypointlist.component';
-import { HivStatusAtRegistrationlistComponent } from './administration/view/hivstatusatregistrationlist.component'
+import { HivStatusAtRegistrationlistComponent } from './administration/view/hivstatusatregistrationlist.component';
+import { ManageSeverityComponent } from './administration/view/add.severity.component';
+import { SeveritylistComponent } from './administration/view/severitylist.component'
 
 //import { PatientComponent } from './client/patient.registration.component';
 
@@ -190,7 +192,9 @@ import { HivStatusAtRegistrationlistComponent } from './administration/view/hivs
     ManageCareentrypointComponent,
     ManageHivstatusatregistrationComponent,
     CareentrypointlistComponent,
-    HivStatusAtRegistrationlistComponent
+    HivStatusAtRegistrationlistComponent,
+    ManageSeverityComponent,
+    SeveritylistComponent
     
     
 

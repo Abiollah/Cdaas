@@ -116,11 +116,6 @@ export class MetadataListComponent implements OnInit {
                 label: 'Add/Manage Enrollment Setting',
                 icon: 'pi pi-fw pi-user-edit',
                 routerLink: '/enrollmensettingtlist'
-            },
-            {
-                label: 'Add/Manage KP Target Group',
-                icon: 'pi pi-fw pi-user-edit',
-                routerLink: '/kptargetgrouplist'
             }
           ]
       },

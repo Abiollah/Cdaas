@@ -26,12 +26,12 @@ export class ManageUsersComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if(sessionStorage.getItem('username') == null){
-      this.addError("Session Expired.","Your current session has expired. Re-login.");
-      this.router.navigate(['']);
-    }
+    // if(sessionStorage.getItem('username') == null){
+      //this.addError("Session Expired.","Your current session has expired. Re-login.");
+     // this.router.navigate(['']);
+   // }
     
-  }
+  } 
 
 addUser(){
 this.usercreatedata.created_date =  Date.now();
