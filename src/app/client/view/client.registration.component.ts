@@ -12,12 +12,15 @@ import { MaritalStatusData } from 'src/app/administration/domain/maritalstatus.d
 import { OccupationData } from 'src/app/administration/domain/occupation.data';
 import { QualificationData } from 'src/app/administration/domain/qualification.data';
 import { HeirarchyUnitsData } from 'src/app/administration/domain/heirarchyunits.data';
-import { AssessmentQuestions, AssessmentType } from 'src/app/administration/domain/assessments.data';
+import { AssessmentQuestions, AssessmentResponses, AssessmentType } from 'src/app/administration/domain/assessments.data';
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
+import {ConfirmationService} from 'primeng/api';
+
 
 @Component({
   selector: 'app-patient.registration',
   templateUrl: './client.registration.component.html',
-  providers:[MessageService]
+  providers:[MessageService,ConfirmationService]
  // styleUrls: ['./patient.registration.component.scss']
 
 })
@@ -52,7 +55,8 @@ export class ClientRegistrationComponent implements OnInit {
     private location: Location,
     private manageclientService:ManageClientService, 
     private breadcrumbService: AppBreadcrumbService,
-    private metadataConfigService: MetadataConfigService) {
+    private metadataConfigService: MetadataConfigService,
+    private confirmationService: ConfirmationService) {
     this.breadcrumbService.setItems([
         { label: 'Dashboard', routerLink: ['/dashboard'] },
         { label: 'Register KP', routerLink: ['/registration'] },
@@ -78,7 +82,7 @@ export class ClientRegistrationComponent implements OnInit {
    this.metadataConfigService.getMaritalStatusList().subscribe(p => {this.maritalstatusMap = p});
    this.metadataConfigService.getOccupationList().subscribe(p => {this.occupationMap = p});
    this.metadataConfigService.getQualificationList().subscribe(p => {this.qualificationMap = p});
-   this.metadataConfigService.getHeirarchyUnitsList().subscribe(p => {this.heirarchyunitsMap = p});
+   this.metadataConfigService.getHeirarchyUnitsListById(1).subscribe(p => {this.heirarchyunitsMap = p});
    this.metadataConfigService.getAssessmentTypeList().subscribe(p => {this.assessmentTypeMap = p});
    this.metadataConfigService.getAssessmentQuestionList().subscribe(p => {this.assessmentQuestionMap = p});
    
@@ -115,11 +119,58 @@ export class ClientRegistrationComponent implements OnInit {
     });
    
   }
+  
+  assessmentResponse = {} as AssessmentResponses;
+  assessmentResponses: AssessmentResponses[] = [];
 
   saveResponses(){
+    if(this.assessmentQuestions.length > 0){
+      this.assessmentResponses = [];
+      this.assessmentQuestions.forEach(p=>{
+        this.assessmentResponse.client_code = ('1231/321/45');
+        this.assessmentResponse.assessment_question_id = p.assessment_question_id;
+        this.assessmentResponse.value = p.default_response ? 1 : 0;
+        this.assessmentResponse.created_by = +sessionStorage.getItem('userid');
+        this.assessmentResponse.created_date = Date.now();
+
+        this.assessmentResponses.push(this.assessmentResponse);
+        this.assessmentResponse = {} as AssessmentResponses;
+        
+      })
+      
+      
+
+    this.manageclientService.createUpdateAssessmentResponses(this.assessmentResponses)
+    .subscribe(
+      data => {
+        this.addSuccess("Success.","Assessment submitted successfully.");
+  },
+  error => {
+    this.addError("Unsuccessful.","Assessment could not be submitted successfully.");
+    });
+  }
+  else{
+    this.addError("Unsuccessful.","You must make at least one selection.");
+  } 
+      
     
   }
-  
+  position: string;
+confirmSaveAssessment(position: string){
+  this.position = position;
+  this.confirmationService.confirm({
+    message: 'Do you want to submit the responses for <b>'+this.selectedAssessmentType.name+'?',
+    header: 'Submit Assessment',
+    icon: 'pi pi-info-circle',
+    accept: () => {
+      this.saveResponses();
+    },
+    reject: () => {
+      this.addSuccess("Cancelled.","Action cancelled or suspended.");
+    },
+    key: "positionDialog"
+});
+}
 
   heirarchyOnSelect(): void{
    this.clientcreatedata.facility_id = +this.selectedHeirarchyUnit.heirarchyunitid;

@@ -1,0 +1,58 @@
+<p-panel header="Summary & Stats"  [toggleable]="true">
+    <ng-template pTemplate="icons">
+       
+        <button icon="pi pi-cog" pButton class="p-panel-header-icon p-link" (click)="menu.toggle($event)">
+          
+        </button>
+        
+        <p-menu #menu id="config_menu" [model]="items" [popup]="true"></p-menu>
+</ng-template>
+<p-card header="Stats">
+    Name: 
+</p-card>
+</p-panel>
+<br/>
+<p-card >
+    <p-tabView >
+        <p-tabPanel header="Appointments" leftIcon="pi pi-calendar-plus">
+            <div class="p-grid">
+                <div class="p-col-12">
+                    <div class="card">
+                        <h5>Calendar</h5>
+                        <p-fullCalendar [options]="options"></p-fullCalendar>
+                    </div>
+                </div>
+            </div>
+         </p-tabPanel>
+         <p-tabPanel header="Allergies" leftIcon="pi pi-bookmark">
+            <div class="p-grid">
+                <div class="p-col-12">
+                    <p-toolbar styleClass="p-mb-4">
+                        <ng-template pTemplate="left">
+                            <button pButton pRipple label="Add Allergy" icon="pi pi-plus" class="p-mr-2 p-mb-2"></button>
+                        </ng-template>
+        
+                        <ng-template pTemplate="right">
+                            <p-splitButton label="Trends" icon="pi pi-eye" [model]="items"></p-splitButton>
+                        </ng-template>
+                        
+                    </p-toolbar>
+
+                    </div>
+                </div>
+            
+         </p-tabPanel>
+         <p-tabPanel header="Vital Signs" leftIcon="pi pi-bell">
+            Vital Signs
+         </p-tabPanel>
+         <p-tabPanel header="Visit History" leftIcon="pi pi-chart-bar">
+            Visit History
+         </p-tabPanel>
+         <p-tabPanel header="Diagnoses" leftIcon="pi pi-eye-slash">
+            Visit History
+         </p-tabPanel>
+         <p-tabPanel header="Radiology" leftIcon="pi pi-camera">
+            Visit History
+         </p-tabPanel>
+    </p-tabView>
+</p-card>

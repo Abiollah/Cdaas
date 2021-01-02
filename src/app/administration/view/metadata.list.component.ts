@@ -116,6 +116,11 @@ export class MetadataListComponent implements OnInit {
                 label: 'Add/Manage Enrollment Setting',
                 icon: 'pi pi-fw pi-user-edit',
                 routerLink: '/enrollmensettingtlist'
+            },
+            {
+                label: 'Add/Manage KP Target Group',
+                icon: 'pi pi-fw pi-user-edit',
+                routerLink: '/kptargetgrouplist'
             }
           ]
       },
@@ -126,7 +131,7 @@ export class MetadataListComponent implements OnInit {
             {
                 label: 'Add/Manage Heirarchy',
                 icon: 'pi pi-fw pi-plus',
-                routerLink: '/heirarchy'
+                routerLink: '/heirarchylist'
             },
             {
                 label: 'Add/Manage Heirarchy Units',
