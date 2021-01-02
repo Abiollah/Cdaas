@@ -128,6 +128,12 @@ import { ManageSeverityComponent } from './administration/view/add.severity.comp
 import { SeveritylistComponent } from './administration/view/severitylist.component';
 import { HeirarchylistComponent } from './administration/view/heirarchylist.component';
 import { AddHeirarchyComponent } from './administration/view/add-heirarchy.component';
+import { ManageTbstatusComponent } from './administration/view/add.tbstatus.component';
+import { TbstatuslistComponent } from './administration/view/tbstatuslist.component';
+import { ManageTestComponent } from './administration/view/add.test.component';
+import { TestlistComponent } from './administration/view/testlist.component';
+import { ManageTestgroupComponent } from './administration/view/add.testgroup.component';
+import { TestgrouplistComponent } from './administration/view/testgrouplist.component'
 
 //import { PatientComponent } from './client/patient.registration.component';
 
@@ -199,7 +205,13 @@ import { AddHeirarchyComponent } from './administration/view/add-heirarchy.compo
     ManageSeverityComponent,
     SeveritylistComponent,
     HeirarchylistComponent,
-    AddHeirarchyComponent
+    AddHeirarchyComponent,
+    ManageTbstatusComponent,
+    TbstatuslistComponent,
+    ManageTestComponent,
+    TestlistComponent,
+    ManageTestgroupComponent,
+    TestgrouplistComponent
     
     
 
