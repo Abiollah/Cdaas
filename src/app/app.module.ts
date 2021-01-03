@@ -19,6 +19,7 @@ import {ColorPickerModule} from 'primeng/colorpicker';
 import {ContextMenuModule} from 'primeng/contextmenu';
 import {DataViewModule} from 'primeng/dataview';
 import {DialogModule} from 'primeng/dialog';
+import {DividerModule} from 'primeng/divider';
 import {DropdownModule} from 'primeng/dropdown';
 import {FieldsetModule} from 'primeng/fieldset';
 import {FileUploadModule} from 'primeng/fileupload';
@@ -241,6 +242,7 @@ import { TestgrouplistComponent } from './administration/view/testgrouplist.comp
         ContextMenuModule,
         DataViewModule,
         DialogModule,
+        DividerModule,
         DropdownModule,
         FieldsetModule,
         FileUploadModule,

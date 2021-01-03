@@ -1,3 +1,6 @@
+<p-tabView >
+        <p-tabPanel header="Allergies" leftIcon="fa fa-pills">
+
 <div class="p-grid">
 	<div class="p-col-12">
 
@@ -9,10 +12,13 @@
 				</ng-template>
 
 				<ng-template pTemplate="right">
+                <button pButton pRipple type="button" icon="pi pi-download" label="Import" class="p-button-text p-mr-2" 
+                        >
+                        </button>
 					<button pButton pRipple label="Back" icon="pi pi-chevron-left" class="p-button-help p-mb-2" (click)="goBack()"></button>
 				</ng-template>
             </p-toolbar>
-            <p-table #dt [value]="allergiesList" [rows]="10" [paginator]="true" [globalFilterFields]="['name','code']"
+            <p-table #dt [value]="allergiesList" [rows]="10" [paginator]="true" [globalFilterFields]="['name','code','description']"
          [rowHover]="true" dataKey="id"
             styleClass="p-datatable-customers"
             currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
@@ -98,5 +104,11 @@
                     </p-dialog>
         </div>
         </div>
-
+</p-tabPanel>
+<p-tabPanel header="Allergens" leftIcon="fa fa-frown">
+</p-tabPanel>
+<p-tabPanel header="Severity" leftIcon="fa fa-heartbeat">
+</p-tabPanel>
+</p-tabView >
+        
 
