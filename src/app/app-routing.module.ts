@@ -47,12 +47,12 @@ import { ManageSeverityComponent } from './administration/view/add.severity.comp
 import { SeveritylistComponent } from './administration/view/severitylist.component';
 import { HeirarchylistComponent } from './administration/view/heirarchylist.component';
 import { AddHeirarchyComponent } from './administration/view/add-heirarchy.component';
+import { TesttypelistComponent } from './administration/view/testtypelist.component';
+import { AddTesttypeComponent } from './administration/view/add-testtype.component';
 import { ManageTbstatusComponent } from './administration/view/add.tbstatus.component';
 import { TbstatuslistComponent } from './administration/view/tbstatuslist.component';
 import { ManageTestgroupComponent } from './administration/view/add.testgroup.component';
 import { TestgrouplistComponent } from './administration/view/testgrouplist.component'
-
-
 
 
 
@@ -110,6 +110,8 @@ const routes: Routes = [
     {path: 'severitylist', component: SeveritylistComponent},
     {path: 'heirarchylist', component: HeirarchylistComponent },
     {path: 'addHeirarchy', component: AddHeirarchyComponent },
+    {path: 'testtypelist', component: TesttypelistComponent },
+    { path: 'addtesttype', component: AddTesttypeComponent },
     {path: 'addTbstatus', component: ManageTbstatusComponent},
     {path: 'tbstatuslist', component: TbstatuslistComponent},
     {path: 'addTestgroup', component: ManageTestgroupComponent},
