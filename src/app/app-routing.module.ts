@@ -44,7 +44,9 @@ import { HivStatusAtRegistrationlistComponent } from './administration/view/hivs
 import { ManageCareentrypointComponent } from './administration/view/add.careentrypoint.component';
 import { CareentrypointlistComponent } from './administration/view/careentrypointlist.component';
 import { HeirarchylistComponent } from './administration/view/heirarchylist.component';
-import { AddHeirarchyComponent } from './administration/view/add-heirarchy.component'
+import { AddHeirarchyComponent } from './administration/view/add-heirarchy.component';
+import { TesttypelistComponent } from './administration/view/testtypelist.component';
+import { AddTesttypeComponent } from './administration/view/add-testtype.component'
 
 
 
@@ -99,8 +101,10 @@ const routes: Routes = [
     {path: 'addCareentrypoint', component: ManageCareentrypointComponent},
     {path: 'careentrypointlist', component: CareentrypointlistComponent},
     {path: 'heirarchylist', component: HeirarchylistComponent },
-    {path: 'addHeirarchy', component: AddHeirarchyComponent }
-    
+    {path: 'addHeirarchy', component: AddHeirarchyComponent },
+    {path: 'testtypelist', component: TesttypelistComponent },
+    { path: 'addtesttype', component: AddTesttypeComponent }
+
 
 ]
 },

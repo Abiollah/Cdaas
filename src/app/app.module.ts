@@ -125,7 +125,9 @@ import { ManageHivstatusatregistrationComponent } from './administration/view/ad
 import { CareentrypointlistComponent } from './administration/view/careentrypointlist.component';
 import { HivStatusAtRegistrationlistComponent } from './administration/view/hivstatusatregistrationlist.component';
 import { HeirarchylistComponent } from './administration/view/heirarchylist.component';
-import { AddHeirarchyComponent } from './administration/view/add-heirarchy.component'
+import { AddHeirarchyComponent } from './administration/view/add-heirarchy.component';
+import { TesttypelistComponent } from './administration/view/testtypelist.component';
+import { AddTesttypeComponent } from './administration/view/add-testtype.component'
 
 //import { PatientComponent } from './client/patient.registration.component';
 
@@ -195,7 +197,9 @@ import { AddHeirarchyComponent } from './administration/view/add-heirarchy.compo
     CareentrypointlistComponent,
     HivStatusAtRegistrationlistComponent,
     HeirarchylistComponent,
-    AddHeirarchyComponent
+    AddHeirarchyComponent,
+    TesttypelistComponent,
+    AddTesttypeComponent
     
     
 

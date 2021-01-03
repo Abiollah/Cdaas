@@ -1,9 +1,9 @@
 import { Component, OnInit,ViewChild } from '@angular/core';
 import {CardModule} from 'primeng/card';
 import {TabViewModule} from 'primeng/tabview';
-import dayGridPlugin from '@fullcalendar/daygrid';
-import timeGridPlugin from '@fullcalendar/timegrid';
-import interactionPlugin from '@fullcalendar/interaction';
+//import dayGridPlugin from '@fullcalendar/daygrid';
+//import timeGridPlugin from '@fullcalendar/timegrid';
+//import interactionPlugin from '@fullcalendar/interaction';
 import {MenuItem} from 'primeng/api';
 import {MessageService} from 'primeng/api';
 
@@ -65,7 +65,7 @@ export class ClientServiceDashboardComponent implements OnInit {
 
     this.changedEvent = {title: '', start: null, end: '', allDay: null};
     this.options = {
-      plugins: [ dayGridPlugin, timeGridPlugin, interactionPlugin ],
+//      plugins: [ dayGridPlugin, timeGridPlugin, interactionPlugin ],
       defaultDate: '2017-02-01',
       header: {
           left: 'prev,next',
