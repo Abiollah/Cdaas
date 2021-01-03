@@ -43,8 +43,16 @@ import { ManageHivstatusatregistrationComponent } from './administration/view/ad
 import { HivStatusAtRegistrationlistComponent } from './administration/view/hivstatusatregistrationlist.component';
 import { ManageCareentrypointComponent } from './administration/view/add.careentrypoint.component';
 import { CareentrypointlistComponent } from './administration/view/careentrypointlist.component';
+import { ManageSeverityComponent } from './administration/view/add.severity.component';
+import { SeveritylistComponent } from './administration/view/severitylist.component';
 import { HeirarchylistComponent } from './administration/view/heirarchylist.component';
-import { AddHeirarchyComponent } from './administration/view/add-heirarchy.component'
+import { AddHeirarchyComponent } from './administration/view/add-heirarchy.component';
+import { ManageTbstatusComponent } from './administration/view/add.tbstatus.component';
+import { TbstatuslistComponent } from './administration/view/tbstatuslist.component';
+import { ManageTestgroupComponent } from './administration/view/add.testgroup.component';
+import { TestgrouplistComponent } from './administration/view/testgrouplist.component'
+
+
 
 
 
@@ -98,8 +106,14 @@ const routes: Routes = [
     {path: 'hivstatusatregistrationlist', component: HivStatusAtRegistrationlistComponent},
     {path: 'addCareentrypoint', component: ManageCareentrypointComponent},
     {path: 'careentrypointlist', component: CareentrypointlistComponent},
+    {path: 'addSeverity', component: ManageSeverityComponent},
+    {path: 'severitylist', component: SeveritylistComponent},
     {path: 'heirarchylist', component: HeirarchylistComponent },
-    {path: 'addHeirarchy', component: AddHeirarchyComponent }
+    {path: 'addHeirarchy', component: AddHeirarchyComponent },
+    {path: 'addTbstatus', component: ManageTbstatusComponent},
+    {path: 'tbstatuslist', component: TbstatuslistComponent},
+    {path: 'addTestgroup', component: ManageTestgroupComponent},
+    {path: 'testgrouplist', component: TestgrouplistComponent}
     
 
 ]
