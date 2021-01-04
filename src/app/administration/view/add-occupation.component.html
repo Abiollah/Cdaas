@@ -16,22 +16,22 @@
 
         <div class="p-grid p-formgrid p-fluid">
            
-        <div class="p-col-4 p-field">
-            <label for="name">Occupation Name</label>
-            <input id="name" type="name" pInputText [(ngModel)]="occupationcreateddata.name" aria-describedby="name-help" 
+        <div class="p-col-5 p-field">
+            <label for="name">Name</label>
+            <input id="name" type="name" pInputText [(ngModel)]="occupation.name" aria-describedby="name-help" 
             placeholder="Enter Occupation Name">
 
         </div>
 
-        <div class="p-col-4 p-field">
+        <div class="p-col-5 p-field">
             <label for="code">Code </label>
-            <input id="code" type="code" pInputText [(ngModel)]="occupationcreateddata.code" aria-describedby="code-help" 
+            <input id="code" type="code" pInputText [(ngModel)]="occupation.code" aria-describedby="code-help" 
             placeholder="Enter Occupation Code" required>
         </div>
 
-        <div class="p-col-8 p-field">
-            <label for="description">Allergy Description </label>
-            <textarea rows="5" cols="30" placeholder="Enter Occupation Description" [(ngModel)]="occupationcreateddata.description" pInputTextarea ></textarea>
+        <div class="p-col-10 p-field">
+            <label for="description">Description </label>
+            <textarea rows="5" cols="30" placeholder="Enter Occupation Description" [(ngModel)]="occupation.description" pInputTextarea ></textarea>
         </div>
 
         

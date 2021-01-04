@@ -19,7 +19,7 @@ import { ViewChild } from '@angular/core';
   selector: 'app-patient.registration',
   templateUrl: './client.registration.component.html',
   providers:[MessageService]
- // styleUrls: ['./patient.registration.component.scss']
+  //styleUrls: ['./patient.registration.component.scss']
 
 })
 export class ClientRegistrationComponent implements OnInit {
@@ -57,19 +57,19 @@ export class ClientRegistrationComponent implements OnInit {
     private metadataConfigService: MetadataConfigService) {
     this.breadcrumbService.setItems([
         { label: 'Dashboard', routerLink: ['/dashboard'] },
-        { label: 'Register KP', routerLink: ['/registration'] },
+       // { label: 'Register KP', routerLink: ['/registration'] },
         { label: 'View KP Client', routerLink: ['/viewkp'] }
     ]);
 }
 
   ngOnInit(): void {
-  //  if(sessionStorage.getItem('username') == null){
-  //  this.addError("Session Expired.","Your current session has expired. Re-login.");
-    //  this.router.navigate(['']);
-   // }
-    //else{
-     // this.loadConfigMetadata();
-   // }
+    if(sessionStorage.getItem('username') == null){
+    this.addError("Session Expired.","Your current session has expired. Re-login.");
+      this.router.navigate(['']);
+   }
+    else{
+      this.loadConfigMetadata();
+   }
     
    
     
@@ -165,7 +165,8 @@ HeirarchyUnitSubList(i: number): HeirarchyUnitsData[] {
 
   addClient(){
     this.clientcreatedata.created_by = +sessionStorage.getItem('userid');
-    this.manageclientService.createUpdateClient(this.clientcreatedata)
+    this.clientcreatedata.registered_date = new Date();
+    this.manageclientService.createClient(this.clientcreatedata)
     .subscribe(
     () => {
       this.addSuccess("Success","Client registration successfully.");
@@ -176,6 +177,11 @@ this.addError("Unsuccessful.","Could not register client.");
 
     );
     }
+
+
+   
+
+
     goBack(){
     this.location.back();
     }

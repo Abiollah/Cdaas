@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AppBreadcrumbService} from '../../app.breadcrumb.service';
-import { NationalityData, NationalityDataCreate } from '../domain/nationality.data';
+import { NationalityData } from '../domain/nationality.data';
 import {ManageNationalityService} from '../service/manage.nationality.service';
 import { Location } from '@angular/common';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
@@ -9,7 +9,7 @@ import {MessageService,Message} from 'primeng/api';
 @Component({
   selector: 'app-nationalitylist',
   templateUrl: './nationalitylist.component.html',
-  styleUrls: ['./nationalitylist.component.scss'],
+ // styleUrls: ['./nationalitylist.component.scss'],
   providers: [MessageService]
 })
 export class NationalitylistComponent implements OnInit {
@@ -24,55 +24,59 @@ export class NationalitylistComponent implements OnInit {
       { label: 'List Nationality', routerLink: ['/nationalitylist'] }    ]);
    }
 
-  ngOnInit(): void {
+   ngOnInit(): void {
     this.NationalityList();
   }
-
   NationalityList():void{
-    this.managenationalityService.getNationalitys().subscribe(data => {
+    this.managenationalityService.getNationalities().subscribe(data => {
       this.nationalityList = data;
       console.log(data);
     }
     );
     }
-      goToAddNationality(){
-        this.router.navigate(['addNationality']);
-      }
-      goBack(){
-        this.location.back();
-      }
-      editNationality(nationality: NationalityData){
+
+    goToAddNationality(){
+      this.router.navigate(['addNationality']);
+    }
+
+    goBack(){
+      this.location.back();
+    }
+
+    editNationality(nationality: NationalityData){
       this.selectedNationality = {...nationality};
       this.nationalityDialog=true;
      }
+
      updateNationality(){
-       this.managenationalityService.createUpdateNationality(this.selectedNationality).subscribe(
-        () => {
-          this.addSuccess("Success!","Nationality information updated successfully.");
-             
-       }, 
-       () => {
-       this.addError("Failed!","Nationality creation failed.");
-       this.nationalityDialog = false;
-     });
+      this.managenationalityService.createNationality(this.selectedNationality).subscribe(
+        response => {console.log(response);
+          this.nationalityList.push(this.selectedNationality);
+          this.ngOnInit();
+          this.addSuccess("Success!","Nationality updated successfully");
+          
+          
+      }, 
+
+     error => {console.log(error)});
+      this.addError("Failed!","Nationality creation failed.");
+
+      this.nationalityDialog = false;
     }
- 
-     addSuccess(title:string,message:string) {
-       this.messageService.add({severity:'success', summary:title, detail:message});
-       
-     
-     }
-     addError(title:string,message:string) {
-       this.messageService.add({severity:'error', summary:title, detail:message});
-       
-     }
- 
-     hideUserDialog(){
-       this.nationalityDialog = false;
-     }
-  
 
-}
+    addSuccess(title:string,message:string) {
+      this.messageService.add({severity:'success', summary:title, detail:message});
+      
+    
+    }
+    addError(title:string,message:string) {
+      this.messageService.add({severity:'error', summary:title, detail:message});
+      
+    }
 
+    hideGenderDialog(){
+      this.nationalityDialog = false;
+    }
+  }
 
 

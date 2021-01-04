@@ -14,24 +14,18 @@ export class ManageClientService {
 
   constructor(private http: HttpClient) { }
 
-  createUpdateClient(data): Observable<any>{
+  createClient(data): Observable<any>{
     console.log(data);
     return this.http.post<ClientData>(this.getBaseApiUrl()+'postclinicalregistration',data);
   }
 
-    getClient():Observable<any>{
-      return this.http.get<ClientData>(this.getBaseApiUrl()+'listclinicalregistration');
-    }
-    updateClient(data){
-      return this.http.post<ClientData>(this.getBaseApiUrl()+'postclinicalregistration',data);
-    }
-    getClients() {
-      return this.http.get<any>(this.getBaseApiUrl()+'listclinicalregistration')
-      .toPromise()
-      .then(res => res.data as ClientData)
-      .then(data => data);
+  getClient():Observable<any>{
+    return this.http.get<ClientData>(this.getBaseApiUrl()+'listclinicalregistration');
   }
-  private getBaseApiUrl(): string {
+
+   
+
+  protected getBaseApiUrl(): string {
     return isDevMode ? environment.apiBaseUrl : environment.apiBaseUrl;
     }
 

@@ -12,29 +12,20 @@ import { environment } from '../../../environments/environment';
 export class ManageNationalityService {
 
   constructor(private http: HttpClient) { }
-  createUpdateNationality(data): Observable<any>{
+  createNationality(data): Observable<any>{
     console.log(data);
     return this.http.post<NationalityData>(this.getBaseApiUrl()+'postnationalities',data);
   }
 
-  getNationalitys():Observable<any>{
+  getNationalities():Observable<any>{
     return this.http.get<NationalityData>(this.getBaseApiUrl()+'listnationalities');
   }
 
-  updateNationality(data){
-    return this.http.post<NationalityData>(this.getBaseApiUrl()+'postnationalities',data);
-  }
+   
 
-  getNationality() {
-    return this.http.get<any>(this.getBaseApiUrl()+'listnationalities')
-    .toPromise()
-    .then(res => res.data as NationalityData)
-    .then(data => data);
-}
-
-private getBaseApiUrl(): string {
-  return isDevMode ? environment.apiBaseUrl : environment.apiBaseUrl;
-  }
+  protected getBaseApiUrl(): string {
+    return isDevMode ? environment.apiBaseUrl : environment.apiBaseUrl;
+    }
 }
 
 

@@ -33,7 +33,7 @@
     <h5>KP Information</h5>
   
     <p-table #dt [value]="clientExtInfo" [rows]="20" 
-    [paginator]="true" [globalFilterFields]="['surname','hospitalNum','patientId']"
+    [paginator]="true" [globalFilterFields]="['lastname','client_code','firstname']"
          [rowHover]="true" dataKey="patientId" [(selection)]="selectedClients"
             styleClass="p-datatable-customers"
             currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
@@ -57,11 +57,11 @@
                 <th style="width: 3rem">
                     <p-tableHeaderCheckbox>Select</p-tableHeaderCheckbox>
                 </th>
-                <th>Client Id</th>
+                <th>Client Code</th>
                 <th>Client Name</th>
-                <th>Hospital No</th>
                 <th>Date of Birth</th>
                 <th>Date of Registration</th>
+                <th>Email Address</th>
                 <th>Phone No</th>
                 <th>Action</th>
             </tr>
@@ -70,21 +70,21 @@
                     
                 </th>
                 <th>
-                    <p-columnFilter type="text" field="patientId"></p-columnFilter>
+                    <p-columnFilter type="text" field="client_code"></p-columnFilter>
                 </th>
                 <th>
                     
-                    <p-columnFilter type="text" field="surname" ></p-columnFilter>
+                    <p-columnFilter type="text" field="lastname" ></p-columnFilter>
                
                 </th>
                 <th>
-                    <p-columnFilter type="text" field="hospitalNum"></p-columnFilter>
+                    <p-columnFilter type="text" field="firstname"></p-columnFilter>
                 </th>
                 <th>
-                    <p-columnFilter type="text" field="Date of Birth"></p-columnFilter>
+                    <p-columnFilter type="text" field="othername"></p-columnFilter>
                 </th>
                 <th>
-                    <p-columnFilter type="text" field="Date of Registration"></p-columnFilter>
+                    <p-columnFilter type="text" field="date_of_birth"></p-columnFilter>
                 </th>
                 <th>
                     <p-columnFilter type="text" field="Phone number"></p-columnFilter>
@@ -102,19 +102,19 @@
                     <p-tableCheckbox [value]="client"></p-tableCheckbox>
                 </td>
                 <td>
-                    {{client.patientId}}
+                    {{client.client_code}}
                 </td>
                 <td>
-                    {{client.surname}} - {{client.firstname}} -{{client.otherNames}}
+                    {{client.lastname}} - {{client.firstname}} -{{client.othername}}
                 </td>
                 <td>
-                    {{client.hospitalNum}}
+                    {{client.date_of_birth}}
                 </td>
                 <td>
-                    {{client.dateBirth}}
+                    {{client.registered_date}}
                 </td>
                 <td>
-                    {{client.dateRegistration}}
+                    {{client.email}}
                 </td>
                 <td>
                     {{client.phone_number}}

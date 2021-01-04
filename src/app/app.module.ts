@@ -117,6 +117,10 @@ import { ManageTargetgroupComponent } from './administration/view/add.targetgrou
 import { TargetgrouplistComponent } from './administration/view/targetgrouplist.component'
 //import { PatientComponent } from './client/patient.registration.component';
 import {DividerModule} from 'primeng/divider';
+import {MatDividerModule} from '@angular/material/divider';
+import { IgxDividerModule } from "igniteui-angular";
+
+import { AddOccupationComponent } from './administration/view/add-occupation.component';
 
 
 
@@ -156,7 +160,7 @@ import {DividerModule} from 'primeng/divider';
     ClientRegistrationComponent,
     QualificationlistComponent,
     AddReligionComponent,
-    OccupationlistComponent,
+    OccupationlistComponent, 
     ManageQualificationComponent,
     //PatientComponent,
     AddReligionComponent,
@@ -171,7 +175,9 @@ import {DividerModule} from 'primeng/divider';
     ManageNationalityComponent,
     NationalitylistComponent,
     ManageTargetgroupComponent,
-    TargetgrouplistComponent
+    TargetgrouplistComponent,
+    AddOccupationComponent
+   
     
     
 
@@ -183,7 +189,9 @@ import {DividerModule} from 'primeng/divider';
     AppRoutingModule,
     BrowserAnimationsModule,
     BrowserModule,
-        FormsModule,
+    FormsModule,
+    MatDividerModule,
+    IgxDividerModule,
         AppRoutingModule,
         AccordionModule,
         AutoCompleteModule,

@@ -16,6 +16,7 @@ import  {AddUserRoleComponent } from './administration/view/add.user.role.compon
 import {MetadataListComponent} from './administration/view/metadata.list.component';
 import { GenderlistComponent } from './administration/view/genderlist.component';
 import { AddGendersComponent } from './administration/view/add.genders.component';
+import { AddOccupationComponent } from './administration/view/add-occupation.component';
 import { ManagePharmaciesComponent } from './administration/view/add.pharmacies.component';
 import { PharmacieslistComponent } from './administration/view/pharmacieslist.component';
 import {ClientPortalListComponent} from './client/view/client.portal.list.component';
@@ -31,9 +32,8 @@ import { LanguagelistComponent } from './administration/view/languagelist.compon
 import { ManageNationalityComponent } from './administration/view/add.nationality.component';
 import { NationalitylistComponent } from './administration/view/nationalitylist.component';
 import { ManageTargetgroupComponent } from './administration/view/add.targetgroup.component';
-import { TargetgrouplistComponent } from './administration/view/targetgrouplist.component'
-
-
+import { TargetgrouplistComponent } from './administration/view/targetgrouplist.component';
+import { OccupationlistComponent } from './administration/view/occupationlist.component';
 
 const routes: Routes = [
     {path: '', component: UserLoginComponent},
@@ -52,6 +52,7 @@ const routes: Routes = [
     {path: 'metadatalist', component: MetadataListComponent},
     {path: 'genderlist', component: GenderlistComponent},
     {path: 'addGender', component: AddGendersComponent},
+   {path: 'addOccupation', component: AddOccupationComponent},
     {path: 'userrolelist', component: UserRoleListComponent},
     {path: '##/kpportal', component: ClientPortalListComponent},
     {path: 'userlist', component: UserlistComponent},
@@ -70,8 +71,8 @@ const routes: Routes = [
     {path: 'addNationality', component: ManageNationalityComponent},
     {path: 'nationalitylist', component: NationalitylistComponent},
     {path: 'addTargetgroup', component: ManageTargetgroupComponent},
-    {path: 'targetgrouplist', component: TargetgrouplistComponent}
-    
+    {path: 'targetgrouplist', component: TargetgrouplistComponent},
+    {path: 'occupationlist', component: OccupationlistComponent},
 
 ]
 },
