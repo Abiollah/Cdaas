@@ -50,7 +50,10 @@ import { AddHeirarchyComponent } from './administration/view/add-heirarchy.compo
 import { ManageTbstatusComponent } from './administration/view/add.tbstatus.component';
 import { TbstatuslistComponent } from './administration/view/tbstatuslist.component';
 import { ManageTestgroupComponent } from './administration/view/add.testgroup.component';
-import { TestgrouplistComponent } from './administration/view/testgrouplist.component'
+import { TestgrouplistComponent } from './administration/view/testgrouplist.component';
+import { ManageAllergensComponent } from './administration/view/add.allergens.component';
+import { AllergenslistComponent } from './administration/view/allergenslist.component'
+
 
 
 
@@ -113,7 +116,10 @@ const routes: Routes = [
     {path: 'addTbstatus', component: ManageTbstatusComponent},
     {path: 'tbstatuslist', component: TbstatuslistComponent},
     {path: 'addTestgroup', component: ManageTestgroupComponent},
-    {path: 'testgrouplist', component: TestgrouplistComponent}
+    {path: 'testgrouplist', component: TestgrouplistComponent},
+    {path: 'addAllergens', component: ManageAllergensComponent},
+    {path: 'allergenslist', component: AllergenslistComponent}
+
     
 
 ]

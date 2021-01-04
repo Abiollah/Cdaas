@@ -116,11 +116,6 @@ export class MetadataListComponent implements OnInit {
                 label: 'Add/Manage Enrollment Setting',
                 icon: 'pi pi-fw pi-user-edit',
                 routerLink: '/enrollmensettingtlist'
-            },
-            {
-                label: 'Add/Manage KP Target Group',
-                icon: 'pi pi-fw pi-user-edit',
-                routerLink: '/kptargetgrouplist'
             }
           ]
       },
@@ -170,6 +165,11 @@ this.clinicalManagement = [
               routerLink: '/allergieslist'
           },
           {
+            label: 'Add/Manage Allergens',
+            icon: 'pi pi-fw pi-user-edit',
+            routerLink: '/allergenslist'
+        },
+          {
               label: 'Add/Manage Laboratories',
               icon: 'pi pi-fw pi-user-edit',
               routerLink: '/laboratorieslist'
@@ -178,7 +178,22 @@ this.clinicalManagement = [
               label: 'Add/Manage Pharmacies',
               icon: 'pi pi-fw pi-user-edit',
               routerLink: '/pharmacieslist'
-          }
+          },
+          {
+            label: 'Add/Manage Test',
+            icon: 'pi pi-fw pi-user-edit',
+            routerLink: '/testlist'
+        },
+        {
+            label: 'Add/Manage Test Group',
+            icon: 'pi pi-fw pi-user-edit',
+            routerLink: '/testgrouplist'
+        },
+        {
+            label: 'Add/Manage Severity',
+            icon: 'pi pi-fw pi-user-edit',
+            routerLink: '/severitylist'
+        }
       ]
   },
 

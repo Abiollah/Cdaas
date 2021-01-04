@@ -133,7 +133,9 @@ import { TbstatuslistComponent } from './administration/view/tbstatuslist.compon
 import { ManageTestComponent } from './administration/view/add.test.component';
 import { TestlistComponent } from './administration/view/testlist.component';
 import { ManageTestgroupComponent } from './administration/view/add.testgroup.component';
-import { TestgrouplistComponent } from './administration/view/testgrouplist.component'
+import { TestgrouplistComponent } from './administration/view/testgrouplist.component';
+import { ManageAllergensComponent } from './administration/view/add.allergens.component';
+import { AllergenslistComponent } from './administration/view/allergenslist.component'
 
 //import { PatientComponent } from './client/patient.registration.component';
 
@@ -211,7 +213,9 @@ import { TestgrouplistComponent } from './administration/view/testgrouplist.comp
     ManageTestComponent,
     TestlistComponent,
     ManageTestgroupComponent,
-    TestgrouplistComponent
+    TestgrouplistComponent,
+    ManageAllergensComponent,
+    AllergenslistComponent
     
     
 
