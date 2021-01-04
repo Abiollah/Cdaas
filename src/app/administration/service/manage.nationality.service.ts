@@ -22,6 +22,17 @@ export class ManageNationalityService {
   }
 
    
+  updateNationality(data){
+    return this.http.post<NationalityData>(this.getBaseApiUrl()+'postnationalities',data);
+  }
+
+  getNationality() {
+    return this.http.get<any>(this.getBaseApiUrl()+'listnationalities')
+    .toPromise()
+    .then(res => res.data as NationalityData)
+    .then(data => data);
+}
+
 
   protected getBaseApiUrl(): string {
     return isDevMode ? environment.apiBaseUrl : environment.apiBaseUrl;

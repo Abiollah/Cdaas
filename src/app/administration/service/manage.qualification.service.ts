@@ -22,6 +22,18 @@ export class ManageQualificationService {
   getQualifications():Observable<any>{
     return this.http.get<QualificationData>(this.getBaseApiUrl()+'listqualifications');
   }
+  updateQualification(data){
+    return this.http.post<QualificationData>(this.getBaseApiUrl()+'postqualifications',data);
+  }
+
+  getQualification() {
+    return this.http.get<any>(this.getBaseApiUrl()+'listqualifications')
+    .toPromise()
+    .then(res => res.data as QualificationData)
+    .then(data => data);
+}
+
+
   protected getBaseApiUrl(): string {
     return isDevMode ? environment.apiBaseUrl : environment.apiBaseUrl;
     }

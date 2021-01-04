@@ -38,7 +38,8 @@ export class AddMaritalstatusComponent implements OnInit {
 addmaritalstatus(){
   this.maritalstatuscreatedata.created_by = +sessionStorage.getItem('userid');
   this.maritalstatuscreatedata.created_date = new Date();
-  this.managemaritalstatusservice.createMaritalStatus(this.maritalstatuscreatedata).subscribe(
+  this.managemaritalstatusservice.createMaritalStatus(
+    this.maritalstatuscreatedata).subscribe(
   () => {
     this.addSuccess("Success!","Marital Status added successfully.");
     },

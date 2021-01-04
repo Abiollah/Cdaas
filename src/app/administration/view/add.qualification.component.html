@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <p-toast></p-toast>
 <div class="p-col-12">
     <h5>Add Qualification</h5>
@@ -41,3 +42,48 @@
     </div>
 </div>
 
+=======
+<p-toast></p-toast>
+<div class="p-col-12">
+    <h5>Add Qualification</h5>
+    <div class="card">
+        <p-toolbar styleClass="p-mb-4">
+            <ng-template pTemplate="left">
+                <button pButton pRipple label="Save" icon="pi pi-plus" class="p-mr-2 p-mb-2" 
+                (click)="addQualification()"></button>
+                <button pButton pRipple label="Clear" icon="pi pi-trash" class="p-mb-2"></button>
+            </ng-template>
+
+            <ng-template pTemplate="right">
+                <button pButton pRipple label="Back" (click)="goBack()" icon="pi pi-chevron-left" class="p-button-help p-mb-2"></button>
+            </ng-template>
+        </p-toolbar>
+
+        <div class="p-grid p-formgrid p-fluid">
+           
+        <div class="p-col-4 p-field">
+            <label for="name">Qualification Name</label>
+            <input id="name" type="name" pInputText [(ngModel)]="qualificationcreatedata.name" aria-describedby="name-help" 
+            placeholder="Enter Qualification Name">
+
+        </div>
+
+        <div class="p-col-4 p-field">
+            <label for="code">Code </label>
+            <input id="code" type="code" pInputText [(ngModel)]="qualificationcreatedata.code" aria-describedby="code-help" 
+            placeholder="Enter Qualification Code" required>
+        </div>
+
+        <div class="p-col-8 p-field">
+            <label for="description">Qualification Description </label>
+            <textarea rows="5" cols="30" placeholder="Enter Qualification Description" [(ngModel)]="qualificationcreatedata.description" pInputTextarea ></textarea>
+        </div>
+
+        
+    </div>
+      
+        
+    </div>
+</div>
+
+>>>>>>> 265c9420503ddc683af487c8c5c4da58d0401b19

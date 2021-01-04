@@ -86,6 +86,36 @@ export class MetadataListComponent implements OnInit {
                 label: 'Add/Manage Target Group',
                 icon: 'pi pi-fw pi-user-edit',
                 routerLink: '/targetgrouplist'
+            },
+            {
+                label: 'Add/Manage Care Entry Point',
+                icon: 'pi pi-fw pi-user-edit',
+                routerLink: '/careentrypointlist'
+            },
+            {
+                label: 'Add/Manage Hiv Status At Registration',
+                icon: 'pi pi-fw pi-user-edit',
+                routerLink: '/hivstatusatregistrationlist'
+            },
+            {
+                label: 'Add/Manage Reffered From',
+                icon: 'pi pi-fw pi-user-edit',
+                routerLink: '/refferedfromlist'
+            },
+            {
+                label: 'Add/Manage Pregnancy',
+                icon: 'pi pi-fw pi-user-edit',
+                routerLink: '/pregnancylist'
+            },
+            {
+                label: 'Add/Manage TB Status',
+                icon: 'pi pi-fw pi-user-edit',
+                routerLink: '/tbstatuslist'
+            },
+            {
+                label: 'Add/Manage Enrollment Setting',
+                icon: 'pi pi-fw pi-user-edit',
+                routerLink: '/enrollmensettingtlist'
             }
           ]
       },
@@ -96,7 +126,7 @@ export class MetadataListComponent implements OnInit {
             {
                 label: 'Add/Manage Heirarchy',
                 icon: 'pi pi-fw pi-plus',
-                routerLink: '/heirarchy'
+                routerLink: '/heirarchylist'
             },
             {
                 label: 'Add/Manage Heirarchy Units',
@@ -135,6 +165,11 @@ this.clinicalManagement = [
               routerLink: '/allergieslist'
           },
           {
+            label: 'Add/Manage Allergens',
+            icon: 'pi pi-fw pi-user-edit',
+            routerLink: '/allergenslist'
+        },
+          {
               label: 'Add/Manage Laboratories',
               icon: 'pi pi-fw pi-user-edit',
               routerLink: '/laboratorieslist'
@@ -143,7 +178,22 @@ this.clinicalManagement = [
               label: 'Add/Manage Pharmacies',
               icon: 'pi pi-fw pi-user-edit',
               routerLink: '/pharmacieslist'
-          }
+          },
+          {
+            label: 'Add/Manage Test',
+            icon: 'pi pi-fw pi-user-edit',
+            routerLink: '/testlist'
+        },
+        {
+            label: 'Add/Manage Test Group',
+            icon: 'pi pi-fw pi-user-edit',
+            routerLink: '/testgrouplist'
+        },
+        {
+            label: 'Add/Manage Severity',
+            icon: 'pi pi-fw pi-user-edit',
+            routerLink: '/severitylist'
+        }
       ]
   },
 

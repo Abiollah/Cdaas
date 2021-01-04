@@ -21,7 +21,6 @@ cols: any[];
 exportColumns: any[];
 clientExtInfoActionItems: MenuItem[];
 swithClientInfo: boolean = true;
-papi: number = Date.now();
 
   constructor(private messageService: MessageService,
     private router: Router,
@@ -38,9 +37,10 @@ papi: number = Date.now();
       this.router.navigate(['']);
     }
     this.clientExtInfoActionItems =[
-      {label: 'View Detail', icon:'pi pi-user', routerLink:['/##/cportald']},
-      {label: 'Enrol Program', icon:'pi pi-refresh', command: () => {
-        this.viewClient(this.selectedClients)},routerLink:['/##/cportald']}
+      {label: 'OPD Detail', icon:'pi pi-user', routerLink:['/##/cportald']},
+      {label: 'View Detail', icon:'pi pi-info', routerLink:['/##/cportald']},
+      {label: 'Program Dashboard', icon:'pi pi-user', routerLink:['/##/sportal']},
+      {label: 'Enrol Program', icon:'pi pi-refresh',routerLink:['/##/cportald']}
      
     ]
  
@@ -60,12 +60,10 @@ papi: number = Date.now();
 
 
   ngOnDestroy() {
-    this.clientPortalService.papi = this.papi; 
     this.clientPortalService.selectedClients = this.selectedClients;
   }
 
   viewClient(client: ClientExtendedInfo){
-    console.log("Got here");
     this.selectedClients = {...client};
    // this.router.navigate(['/##/cportald']);
   }

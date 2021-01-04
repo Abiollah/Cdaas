@@ -5,6 +5,7 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { ClientData } from '../domain/client.data';
 import { environment } from '../../../environments/environment';
+import { AssessmentResponses } from 'src/app/administration/domain/assessments.data';
 
 
 @Injectable({
@@ -19,6 +20,7 @@ export class ManageClientService {
     return this.http.post<ClientData>(this.getBaseApiUrl()+'postclinicalregistration',data);
   }
 
+<<<<<<< HEAD
   getClient():Observable<any>{
     return this.http.get<ClientData>(this.getBaseApiUrl()+'listclinicalregistration');
   }
@@ -26,6 +28,27 @@ export class ManageClientService {
    
 
   protected getBaseApiUrl(): string {
+=======
+    getClient():Observable<any>{
+      return this.http.get<ClientData>(this.getBaseApiUrl()+'listclinicalregistration');
+    }
+    updateClient(data){
+      return this.http.post<ClientData>(this.getBaseApiUrl()+'postclinicalregistration',data);
+    }
+    getClients() {
+      return this.http.get<any>(`${environment.apiBaseUrl}`+'listclinicalregistration')
+      .toPromise()
+      .then(res => res.data as ClientData)
+      .then(data => data);
+  }
+
+  createUpdateAssessmentResponses(data): Observable<any>{
+    console.log(data);
+    return this.http.post<AssessmentResponses>(`${environment.apiBaseUrl}`+'postassessmentresponses',data);
+  }
+
+  private getBaseApiUrl(): string {
+>>>>>>> 265c9420503ddc683af487c8c5c4da58d0401b19
     return isDevMode ? environment.apiBaseUrl : environment.apiBaseUrl;
     }
 

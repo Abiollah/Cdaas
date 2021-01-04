@@ -7,6 +7,7 @@ import { MaritalStatusData } from '../domain/maritalstatus.data';
 import { OccupationData } from '../domain/occupation.data';
 import { QualificationData } from '../domain/qualification.data';
 import { HeirarchyUnitsData } from '../domain/heirarchyunits.data';
+import { AssessmentQuestions, AssessmentType } from '../domain/assessments.data';
 
 @Injectable({
   providedIn: 'root'
@@ -39,6 +40,15 @@ getHeirarchyUnitsList(): Observable<any>{
 }
 getHeirarchyUnitsListById(id: number): Observable<any>{
   return this.http.get<HeirarchyUnitsData[]>(`${environment.apiBaseUrl}`+'listheirarchyunitsbyparentid?parentid='+id);  
+  
+}
+getAssessmentTypeList(): Observable<any>{
+  return this.http.get<AssessmentType[]>(`${environment.apiBaseUrl}`+'listassessmenttype');  
+  
+}
+
+getAssessmentQuestionList(): Observable<any>{
+  return this.http.get<AssessmentQuestions[]>(`${environment.apiBaseUrl}`+'listassessmentquestions');  
   
 }
 

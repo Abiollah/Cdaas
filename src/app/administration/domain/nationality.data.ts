@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Time } from '@angular/common';
 
 export interface NationalityData{
@@ -9,3 +10,25 @@ export interface NationalityData{
     created_date: Date;
     
 }
+=======
+export interface NationalityData{
+    nationality_id?: number;
+    name?: string;
+    code?: string;
+    description?: string;
+    created_by?: number;
+    created_date?: number;
+    
+}
+
+export interface NationalityDataCreate{
+    nationality_id: number;
+    name: string;
+    code: string;
+    description: string;
+    created_by: number;
+    created_date: number;
+    
+   
+}   
+>>>>>>> 265c9420503ddc683af487c8c5c4da58d0401b19

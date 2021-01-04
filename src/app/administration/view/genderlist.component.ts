@@ -53,13 +53,13 @@ export class GenderlistComponent implements OnInit {
         response => {console.log(response);
           this.genderList.push(this.selectedGender);
           this.ngOnInit();
-          this.addSuccess("Success!","Occupation updated successfully");
+          this.addSuccess("Success!","gender updated successfully");
           
           
       }, 
 
      error => {console.log(error)});
-      this.addError("Failed!","Occupation creation failed.");
+      this.addError("Failed!","gender creation failed.");
 
       this.genderDialog = false;
     }

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ClientPortalDetailComponent } from './client-portal-detail.component';
+import { TestgrouplistComponent } from './testgrouplist.component';
 
-describe('ClientPortalDetailComponent', () => {
-  let component: ClientPortalDetailComponent;
-  let fixture: ComponentFixture<ClientPortalDetailComponent>;
+describe('TestgrouplistComponent', () => {
+  let component: TestgrouplistComponent;
+  let fixture: ComponentFixture<TestgrouplistComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ClientPortalDetailComponent ]
+      declarations: [ TestgrouplistComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ClientPortalDetailComponent);
+    fixture = TestBed.createComponent(TestgrouplistComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

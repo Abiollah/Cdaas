@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import { jqxTreeModule } from 'jqwidgets-ng/jqxtree';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserLoginComponent } from './login/login.component';
@@ -20,6 +19,7 @@ import {ColorPickerModule} from 'primeng/colorpicker';
 import {ContextMenuModule} from 'primeng/contextmenu';
 import {DataViewModule} from 'primeng/dataview';
 import {DialogModule} from 'primeng/dialog';
+import {DividerModule} from 'primeng/divider';
 import {DropdownModule} from 'primeng/dropdown';
 import {FieldsetModule} from 'primeng/fieldset';
 import {FileUploadModule} from 'primeng/fileupload';
@@ -86,7 +86,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AddUserRoleComponent } from './administration/view/add.user.role.component';
 import {ManageUsersComponent} from './administration/view/add.users.component';
 import { UserlistComponent } from './administration/view/userlist.component';
-
 import { ManageAllergiesComponent } from './administration/view/add.allergies.component';
 import { AllergieslistComponent } from './administration/view/allergieslist.component';
 import { ManageLaboratoriesComponent } from './administration/view/add.laboratories.component';
@@ -114,9 +113,32 @@ import { LanguagelistComponent } from './administration/view/languagelist.compon
 import { ManageNationalityComponent } from './administration/view/add.nationality.component';
 import { NationalitylistComponent } from './administration/view/nationalitylist.component';
 import { ManageTargetgroupComponent } from './administration/view/add.targetgroup.component';
-import { TargetgrouplistComponent } from './administration/view/targetgrouplist.component'
-//import { PatientComponent } from './client/patient.registration.component';
-import {DividerModule} from 'primeng/divider';
+import { TargetgrouplistComponent } from './administration/view/targetgrouplist.component';
+import { ClientServiceDashboardComponent } from './client/view/client-service-dashboard.component'
+import { ManageRefferedfromComponent } from './administration/view/add.refferedfrom.component';
+import { RefferedfromlistComponent } from './administration/view/refferedfromlist.component';
+import { ManagePregnancyComponent } from './administration/view/add.pregnancy.component';
+import { PregnancylistComponent } from './administration/view/pregnancylist.component';
+import { ManageEnrollmentsettingComponent } from './administration/view/add.enrollmentsetting.component';
+import { EnrollmentsettinglistComponent } from './administration/view/enrollmentsettinglist.component';
+import { ManageCareentrypointComponent } from './administration/view/add.careentrypoint.component';
+import { ManageHivstatusatregistrationComponent } from './administration/view/add.hivstatusatregistration.component';
+import { CareentrypointlistComponent } from './administration/view/careentrypointlist.component';
+import { HivStatusAtRegistrationlistComponent } from './administration/view/hivstatusatregistrationlist.component';
+import { ManageSeverityComponent } from './administration/view/add.severity.component';
+import { SeveritylistComponent } from './administration/view/severitylist.component';
+import { HeirarchylistComponent } from './administration/view/heirarchylist.component';
+import { AddHeirarchyComponent } from './administration/view/add-heirarchy.component';
+import { TesttypelistComponent } from './administration/view/testtypelist.component';
+import { AddTesttypeComponent } from './administration/view/add-testtype.component'
+import { ManageTbstatusComponent } from './administration/view/add.tbstatus.component';
+import { TbstatuslistComponent } from './administration/view/tbstatuslist.component';
+import { ManageTestComponent } from './administration/view/add.test.component';
+import { TestlistComponent } from './administration/view/testlist.component';
+import { ManageTestgroupComponent } from './administration/view/add.testgroup.component';
+import { TestgrouplistComponent } from './administration/view/testgrouplist.component';
+import { ManageAllergensComponent } from './administration/view/add.allergens.component';
+import { AllergenslistComponent } from './administration/view/allergenslist.component';
 import {MatDividerModule} from '@angular/material/divider';
 import { IgxDividerModule } from "igniteui-angular";
 
@@ -176,8 +198,32 @@ import { AddOccupationComponent } from './administration/view/add-occupation.com
     NationalitylistComponent,
     ManageTargetgroupComponent,
     TargetgrouplistComponent,
-    AddOccupationComponent
-   
+    AddOccupationComponent,   
+    ClientServiceDashboardComponent,
+    ManageRefferedfromComponent,
+    RefferedfromlistComponent,
+    ManagePregnancyComponent,
+    PregnancylistComponent,
+    ManageEnrollmentsettingComponent,
+    EnrollmentsettinglistComponent,
+    ManageCareentrypointComponent,
+    ManageHivstatusatregistrationComponent,
+    CareentrypointlistComponent,
+    HivStatusAtRegistrationlistComponent,
+    ManageSeverityComponent,
+    SeveritylistComponent,
+    HeirarchylistComponent,
+    AddHeirarchyComponent,
+    TesttypelistComponent,
+    AddTesttypeComponent,
+    ManageTbstatusComponent,
+    TbstatuslistComponent,
+    ManageTestComponent,
+    TestlistComponent,
+    ManageTestgroupComponent,
+    TestgrouplistComponent,
+    ManageAllergensComponent,
+    AllergenslistComponent
     
     
 
@@ -209,6 +255,7 @@ import { AddOccupationComponent } from './administration/view/add-occupation.com
         ContextMenuModule,
         DataViewModule,
         DialogModule,
+        DividerModule,
         DropdownModule,
         FieldsetModule,
         FileUploadModule,
@@ -261,8 +308,9 @@ import { AddOccupationComponent } from './administration/view/add-occupation.com
         TreeTableModule,
         VirtualScrollerModule,
         FontAwesomeModule,
-        jqxTreeModule,
-        DividerModule
+        //jqxTreeModule,
+        DividerModule,
+        FontAwesomeModule
 
 
   ],
