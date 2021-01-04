@@ -1,19 +1,37 @@
 import { Component, OnInit,OnDestroy } from '@angular/core';
 import {ClientPortalService} from '../service/client.portal.service';
-import {MessageService, MenuItem} from 'primeng/api';
+import {MessageService, MenuItem,LazyLoadEvent} from 'primeng/api';
 import {AppBreadcrumbService} from '../../app.breadcrumb.service';
 import {ClientExtendedInfo} from '../domain/client.portal.data';
 import { Router } from '@angular/router';
 
 
+
 @Component({
   selector: 'app-client-portal-list',
   templateUrl: './client.portal.list.component.html',
+  styles: [`
+  :host ::ng-deep .custom-scrolltop{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 4px;
+    background-color: var(--primary-color);
+
+    &:hover {
+        background-color: var(--primary-color);
+    }
+
+    .p-scrolltop-icon {
+        font-size: 1rem;
+        color: var(--primary-color-text);
+    }
+}`],
   providers: [MessageService]
 })
 export class ClientPortalListComponent implements OnInit,OnDestroy {
 
 clientExtInfo: ClientExtendedInfo[];
+clientExtInfoLazy: ClientExtendedInfo[];
 selectedClients: ClientExtendedInfo;
 loading: boolean;
 totalRecords: number;
@@ -45,7 +63,7 @@ swithClientInfo: boolean = true;
     ]
  
     this.getClientExtendedInfo();
-
+    
   }
 
   getClientExtendedInfo(){
@@ -55,8 +73,20 @@ swithClientInfo: boolean = true;
      this.totalRecords = this.clientExtInfo.length;
    }
     );
-    this.loading = true;
+  //  this.loading = true;
   }
+
+ /* loadClientDataLazily(event: LazyLoadEvent) {  
+    this.loading = true;
+
+    setTimeout(() => {
+        if (this.clientExtInfoLazy) {
+            this.clientExtInfo = this.clientExtInfoLazy.slice(event.first, (event.first + event.rows));
+            this.loading = false;
+        }
+    }, 1000);
+}*/
+
 
 
   ngOnDestroy() {

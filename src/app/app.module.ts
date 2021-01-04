@@ -52,10 +52,12 @@ import {RadioButtonModule} from 'primeng/radiobutton';
 import {RatingModule} from 'primeng/rating';
 import {RippleModule} from 'primeng/ripple';
 import {ScrollPanelModule} from 'primeng/scrollpanel';
+import {ScrollTopModule} from 'primeng/scrolltop';
 import {SelectButtonModule} from 'primeng/selectbutton';
 import {SidebarModule} from 'primeng/sidebar';
 import {SlideMenuModule} from 'primeng/slidemenu';
 import {SliderModule} from 'primeng/slider';
+import {SkeletonModule} from 'primeng/skeleton';
 import {SplitButtonModule} from 'primeng/splitbutton';
 import {StepsModule} from 'primeng/steps';
 import {TabMenuModule} from 'primeng/tabmenu';
@@ -260,10 +262,12 @@ import { AddHeirarchyComponent } from './administration/view/add-heirarchy.compo
         RatingModule,
         RippleModule,
         ScrollPanelModule,
+        ScrollTopModule,
         SelectButtonModule,
         SidebarModule,
         SlideMenuModule,
         SliderModule,
+        SkeletonModule,
         SplitButtonModule,
         StepsModule,
         TableModule,
