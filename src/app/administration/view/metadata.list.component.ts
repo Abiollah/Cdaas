@@ -117,6 +117,11 @@ export class MetadataListComponent implements OnInit {
                 icon: 'pi pi-fw pi-user-edit',
                 routerLink: '/enrollmensettingtlist'
             },
+              {
+                  label: 'Add/Manage Test Type',
+                  icon: 'pi pi-fw pi-user-edit',
+                  routerLink: '/testtypelist'
+              },
             {
                 label: 'Add/Manage KP Target Group',
                 icon: 'pi pi-fw pi-user-edit',

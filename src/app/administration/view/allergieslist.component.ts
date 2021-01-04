@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AppBreadcrumbService} from '../../app.breadcrumb.service';
-import { AllergiesData, AllergiesDataCreate } from '../domain/allergies.data';
+import { AllergiesData } from '../domain/allergies.data';
 import {ManageAllergiesService} from '../service/manage.allergies.service';
 import { Location } from '@angular/common';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
