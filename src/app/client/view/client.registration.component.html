@@ -1,6 +1,4 @@
 <p-toast></p-toast>
-<p-confirmDialog [style]="{width: '40vw'}" key="positionDialog" [position]="position" [baseZIndex]="10000" 
-rejectButtonStyleClass="p-button-outlined"></p-confirmDialog>
 <div class="card">
   <p-tabView orientation="left" >
       <p-tabPanel header="Patient Demographic" leftIcon="pi pi-user-plus">
@@ -63,21 +61,6 @@ rejectButtonStyleClass="p-button-outlined"></p-confirmDialog>
       <p-dropdown inputId="gender_id" [options]="genderMap" [(ngModel)]="selectedGender"
       optionLabel="name" placeholder="Choose a Gender"></p-dropdown>
 
-<<<<<<< HEAD
-=======
-     <div class="p-fluid p-formgrid p-grid">
-      <div class="p-field p-col-12 p-md-4">
-        <label for="occupation">Occupation</label>
-        <p-dropdown [options]="occupationMap" [(ngModel)]="selectedOccupation"
-        optionLabel="name" placeholder="-Select-"></p-dropdown>
-    </div><br>
-    <div class="p-field p-col-12 p-md-3" style="margin-left: 2%">
-      <label for="facility_name">Facility Name</label>
-      <input readonly id="facilityname" type="text" pInputText [(ngModel)]="clientcreatedata.facility_name">
-      <button pButton pRipple type="button" type="button" 
-      class="p-button-text p-mr-2 p-mb-2"
-      label="Choose..." (click) = "loadHeirarchyUnits()"></button>
->>>>>>> 265c9420503ddc683af487c8c5c4da58d0401b19
   </div>
   <div class="p-field p-col-12 p-md-4" >
     <label for="email">Email Address</label>
@@ -147,7 +130,7 @@ rejectButtonStyleClass="p-button-outlined"></p-confirmDialog>
     </div>
     <p-dialog [(visible)]="facilityDialog" [style]="{width: '650px'}" 
       header="Facility List" [modal]="true" styleClass="p-fluid">
-      <jqxTree #heirarchyUnitId [source]="records" (onSelect)="heirarchyOnSelect($event)"></jqxTree>
+     <!-- <jqxTree #heirarchyUnitId [source]="records" (onSelect)="heirarchyOnSelect($event)"></jqxTree>-->
 
     </p-dialog>
     </fieldset>
@@ -180,26 +163,11 @@ rejectButtonStyleClass="p-button-outlined"></p-confirmDialog>
           <label for="next_of_kin_phone_number">Phone Number</label>
           <input id="next_of_kin_phone_number" type="number" pInputText [(ngModel)]="clientcreatedata.next_of_kin_phone_number">
 
-<<<<<<< HEAD
       </div>
       <div class="p-field p-col-12 p-md-4" >
         <label for="next_of_kin_alt_phone_number">Alt. Phone Number</label>
         <input id="next_of_kin_alt_phone_number" type="number" pInputText [(ngModel)]="clientcreatedata.next_of_kin_alt_phone_number">
 
-=======
-      </p-panel>
-      <p-dialog [(visible)]="facilityDialog" [style]="{width: '650px'}" 
-      header="Facility List" [modal]="true" styleClass="p-fluid">
-      <p-tree [value]="roots" selectionMode="single" scrollHeight="600px"
-      [(selection)]="selectedHeirarchyUnit"
-      (onNodeSelect)="heirarchyOnSelect()" [filter]="true" filterMode="strict">
-        <ng-template let-node pTemplate="default">
-          <b>{{node.name}}</b>
-      </ng-template>
-
-      </p-tree>
-    </p-dialog>
->>>>>>> 265c9420503ddc683af487c8c5c4da58d0401b19
     </div>
       </div>
       <div class="p-fluid p-formgrid p-grid">
@@ -220,75 +188,167 @@ rejectButtonStyleClass="p-button-outlined"></p-confirmDialog>
       </div>
     </fieldset>
     </div>
-
-
-        
-
-
       </p-tabPanel>
       <p-tabPanel header="HIV Pre-Test Information" leftIcon="pi pi-user">
-        <div class="p-col-12">
-          <div class="card">
-              <div class="p-fluid">
-                <div class="p-field p-grid">
-                  <label class="p-col-12 p-mb-2 p-md-2 p-mb-md-0">Assessment Type</label>
-                  <div class="p-col-6 p-md-3">
-                  <p-dropdown  optionLabel="name" placeholder="--Select--" 
-                  [options]="assessmentTypeMap" (onChange)="onAssessmentSelection()"
-                  [(ngModel)]="selectedAssessmentType"
-                  ></p-dropdown>
-                </div>
-                <div class="p-col-5">
-                  {{selectedAssessmentType ? selectedAssessmentType.name : ''}} Score: {{rsp ? rsp : 0}} of {{assessmentQuestions ? assessmentQuestions.length : 0}} 
-                </div>
-                <div class="p-col-1">
-                <button pButton label="Save" (click)="confirmSaveAssessment('top')"></button>
-              </div>
-              </div>
-              </div>
-<br/>
-              <p-table [value]="assessmentQuestions" [paginator]="true" [rows]="10" 
-              [(selection)]="selectedAssessmentQuestion" (onRowSelect)="calculateResponses()">
-                  <ng-template pTemplate="header">
-                      <tr>
-                          <th pSortableColumn="id" style="width: 20%;">ID
-                              <p-sortIcon field="id"></p-sortIcon>
-                          </th>
-                          <th pSortableColumn="questions" style="width: 50%;text-align: center">Assessment Questions
-                              <p-sortIcon field="category"></p-sortIcon>
-                          </th>
-                          
-                          <th pSortableColumn="responses" style="width: 30%;text-align: center">Responses
-                              <p-sortIcon field="responses"></p-sortIcon>
-                          </th>
-                          <th></th>
-                      </tr>
-                  </ng-template>
-                  <ng-template pTemplate="body" let-question>
-                      <tr>
-                          <td >
-                              
-                              {{question.assessment_question_id}}</td>
-                          <td style="width: 50%;text-align: center">
-                             
-                              {{question.name}}</td>
-                          
-                          <td style="text-align: center">
-                          
-                            <p-toggleButton (onChange)="calculateResponses()" onLabel="Yes" offLabel="No" [(ngModel)]="question.default_response"></p-toggleButton>
-                          </td>
-                      </tr>
-                  </ng-template>
-                  <ng-template pTemplate="summary">
-                    <div class="p-d-flex p-ai-center p-jc-between">
-                      {{selectedAssessmentType ? selectedAssessmentType.name : ''}} Score: {{rsp ? rsp : 0}} of {{assessmentQuestions ? assessmentQuestions.length : 0}} 
-                    </div>
-                </ng-template>
-              </p-table>
-          </div>
-      </div>
 
-         
+
+          <p-accordion>
+              <p-accordionTab header="HIV Pre-Test Information" [selected]="true">
+                <div class="p-fluid p-formgrid p-grid">
+                  <div class="p-field p-col-12 p-md-4" >
+                    <label for="clientcode">Client's Code</label>
+                    <p-inputMask inputId="clientcode" mask="9999/99/99" ></p-inputMask>
+
+
+                  </div><br>
+                  <div class="p-field p-col-12 p-md-3" style="margin-left: 2%">
+                    <label for="RegistrationDate">Registration Date</label>
+                    <input id="RegistrationDate" type="date" pInputText>
+                </div>
+                <div class="p-field p-col-12 p-md-3" style="margin-left: 2%">
+                  <label for="DateOfBirth">Date of Birth</label>
+                  <input id="DateOfBirth" type="date" pInputText>
+                </div>
+              </div>
+              <div class="p-fluid p-formgrid p-grid">
+                <div class="p-field p-col-12 p-md-4" >
+                  <label for="surname">Surname</label>
+                  <input id="surname" type="text" pInputText>
+                </div><br>
+                <div class="p-field p-col-12 p-md-3" style="margin-left: 2%">
+                  <label for="firstname">First Name</label>
+                  <input id="firstname" type="text" pInputText>
+
+              </div>
+              <div class="p-field p-col-12 p-md-3" style="margin-left: 2%">
+                <label for="othername">Other Name</label>
+                <input id="othername" type="text" pInputText>
+              </div>
+            </div>
+            <div class="p-fluid p-formgrid p-grid">
+            <div class="p-field p-col-12 p-md-4">
+            <label for="maritalStatus">Marital Status</label>
+            <p-dropdown inputId="maritalStatus" ></p-dropdown>
+
+              </div>
+             <br>
+            <div class="p-field p-col-12 p-md-3" style="margin-left: 2%">
+              <label for="gender">Gender</label>
+                    <p-dropdown inputId="gender" ></p-dropdown>
+
+          </div>
+          <div class="p-field p-col-12 p-md-3" style="margin-left: 2%">
+            <label for="emailaddress">Email Address</label>
+                <input id="emailaddress" type="email" pInputText>
+
+        </div>
+            </div>
+            <div class="p-fluid p-formgrid p-grid">
+              <div class="p-field p-col-12 p-md-4" >
+                <label for="address">Residential Address</label>
+              <input id="address" type="text" pInputText>
+
+            </div><br>
+            <div class="p-field p-col-12 p-md-3" style="margin-left: 2%">
+              <label for="phonenumber">Phone Number</label>
+              <input id="phonenumber" type="text" pInputText>
+            </div>
+            <div class="p-field p-col-12 p-md-3" style="margin-left: 2%">
+              <label for="altphonenumber">Alt Phone Number</label>
+              <input id="altphonenumber" type="text" pInputText>
+
+            </div>
+            </div>
+
+           <div class="p-fluid p-formgrid p-grid">
+            <div class="p-field p-col-12 p-md-4">
+              <label for="occupation">Occupation</label>
+             <p-dropdown inputId="occupation" ></p-dropdown>
+
+          </div><br>
+          <div class="p-field p-col-12 p-md-3" style="margin-left: 2%">
+            <label for="facility_name">Facility Name</label>
+                  <p-dropdown inputId="facility_name" ></p-dropdown>
+
+        </div>
+        <div class="p-field p-col-12 p-md-3" style="margin-left: 2%">
+          <label for="referredFrom">Referred From</label>
+                 <p-dropdown inputId="referredFrom" ></p-dropdown>
+
+        </div>
+
+          </div>
+
+            <div class="p-fluid p-formgrid p-grid">
+              <div class="p-field p-col-12 p-md-4" >
+                <label for="nationality">Nationality</label>
+                <p-dropdown inputId="nationality" ></p-dropdown>
+              </div><br>
+              <div class="p-field p-col-12 p-md-3" style="margin-left: 2%">
+                <label for="stateOfOrigin">State of Origin</label>
+                <p-dropdown inputId="stateOfOrigin" ></p-dropdown>
+
+            </div>
+            <div class="p-field p-col-12 p-md-3" style="margin-left: 2%" >
+              <label for="lga">Local Govt. Area</label>
+              <p-dropdown inputId="lga" ></p-dropdown>
+            </div>
+            </div><br>
+
+              </p-accordionTab>
+              <p-accordionTab header="Next of Kin Information">
+                <div class="p-fluid p-formgrid p-grid">
+                  <div class="p-field p-col-12 p-md-4">
+                    <label for="next_of_kin_surname">Surname</label>
+                    <input id="next_of_kin_surname" type="text" pInputText>
+                  </div><br>
+                  <div class="p-field p-col-12 p-md-3">
+                    <label for="next_of_kin_firstname">First Name</label>
+                    <input id="next_of_kin_firstname" type="text" pInputText>
+
+                </div>
+                <div class="p-field p-col-12 p-md-3" >
+                  <label for="next_of_kin_othername">Other Name</label>
+                  <input id="next_of_kin_othername" type="text" pInputText>
+                </div>
+                </div>
+
+                <div class="p-fluid p-formgrid p-grid">
+                  <div class="p-field p-col-12 p-md-4" >
+                    <label for="next_of_kin_gender">Gender</label>
+                    <p-dropdown inputId="next_of_kin_gender"></p-dropdown>
+                  </div><br>
+                  <div class="p-field p-col-12 p-md-3" >
+                    <label for="next_of_kin_phone_number">Phone Number</label>
+                    <input id="next_of_kin_phone_number" type="text" pInputText>
+
+                </div>
+                <div class="p-field p-col-12 p-md-3" >
+                  <label for="next_of_kin_alt_phone_number">Alt. Phone Number</label>
+                  <input id="next_of_kin_alt_phone_number" type="text" pInputText>
+
+              </div>
+                </div>
+                <div class="p-fluid p-formgrid p-grid">
+                  <div class="p-field p-col-12 p-md-4" >
+                    <label for="next_of_kin_address">Address</label>
+                    <input id="next_of_kin_address" type="text" pInputText>
+                  </div><br>
+                  <div class="p-field p-col-12 p-md-3" >
+                    <label for="next_of_kin_relationship">Relationship</label>
+                    <p-dropdown inputId="next_of_kin_relationship"></p-dropdown>
+
+                </div>
+                <div class="p-field p-col-12 p-md-3" >
+                  <label for="next_of_kin_occupation">Occupation</label>
+                  <p-dropdown inputId="next_of_kin_occupation"></p-dropdown>
+
+              </div>
+                </div>
+                <p-button label="SAVE" class="p-mr-2 p-mb-2"></p-button>
+              </p-accordionTab>
+
+          </p-accordion>
 
 
 
@@ -296,7 +356,163 @@ rejectButtonStyleClass="p-button-outlined"></p-confirmDialog>
       <p-tabPanel header="HIV Post-Test Information" leftIcon="pi pi-user">
 
 
-  
+        <p-accordion>
+            <p-accordionTab header="HIV Post-Test Information" [selected]="true">
+              <div class="p-fluid p-formgrid p-grid">
+                <div class="p-field p-col-12 p-md-4" >
+                  <label for="clientcode">Client's Code</label>
+                  <p-inputMask inputId="clientcode" mask="9999/99/99" ></p-inputMask>
+
+
+                </div><br>
+                <div class="p-field p-col-12 p-md-3" style="margin-left: 2%">
+                  <label for="RegistrationDate">Registration Date</label>
+                  <input id="RegistrationDate" type="date" pInputText>
+              </div>
+              <div class="p-field p-col-12 p-md-3" style="margin-left: 2%">
+                <label for="DateOfBirth">Date of Birth</label>
+                <input id="DateOfBirth" type="date" pInputText>
+              </div>
+            </div>
+            <div class="p-fluid p-formgrid p-grid">
+              <div class="p-field p-col-12 p-md-4" >
+                <label for="surname">Surname</label>
+                <input id="surname" type="text" pInputText>
+              </div><br>
+              <div class="p-field p-col-12 p-md-3" style="margin-left: 2%">
+                <label for="firstname">First Name</label>
+                <input id="firstname" type="text" pInputText>
+
+            </div>
+            <div class="p-field p-col-12 p-md-3" style="margin-left: 2%">
+              <label for="othername">Other Name</label>
+              <input id="othername" type="text" pInputText>
+            </div>
+          </div>
+          <div class="p-fluid p-formgrid p-grid">
+          <div class="p-field p-col-12 p-md-4">
+          <label for="maritalStatus">Marital Status</label>
+          <p-dropdown inputId="maritalStatus" ></p-dropdown>
+
+            </div>
+           <br>
+          <div class="p-field p-col-12 p-md-3" style="margin-left: 2%">
+            <label for="gender">Gender</label>
+                  <p-dropdown inputId="gender" ></p-dropdown>
+
+        </div>
+        <div class="p-field p-col-12 p-md-3" style="margin-left: 2%">
+          <label for="emailaddress">Email Address</label>
+              <input id="emailaddress" type="email" pInputText>
+
+      </div>
+          </div>
+          <div class="p-fluid p-formgrid p-grid">
+            <div class="p-field p-col-12 p-md-4" >
+              <label for="address">Residential Address</label>
+            <input id="address" type="text" pInputText>
+
+          </div><br>
+          <div class="p-field p-col-12 p-md-3" style="margin-left: 2%">
+            <label for="phonenumber">Phone Number</label>
+            <input id="phonenumber" type="text" pInputText>
+          </div>
+          <div class="p-field p-col-12 p-md-3" style="margin-left: 2%">
+            <label for="altphonenumber">Alt Phone Number</label>
+            <input id="altphonenumber" type="text" pInputText>
+
+          </div>
+          </div>
+
+         <div class="p-fluid p-formgrid p-grid">
+          <div class="p-field p-col-12 p-md-4">
+            <label for="occupation">Occupation</label>
+           <p-dropdown inputId="occupation" ></p-dropdown>
+
+        </div><br>
+        <div class="p-field p-col-12 p-md-3" style="margin-left: 2%">
+          <label for="facility_name">Facility Name</label>
+                <p-dropdown inputId="facility_name" ></p-dropdown>
+
+      </div>
+      <div class="p-field p-col-12 p-md-3" style="margin-left: 2%">
+        <label for="referredFrom">Referred From</label>
+               <p-dropdown inputId="referredFrom" ></p-dropdown>
+
+      </div>
+
+        </div>
+
+          <div class="p-fluid p-formgrid p-grid">
+            <div class="p-field p-col-12 p-md-4" >
+              <label for="nationality">Nationality</label>
+              <p-dropdown inputId="nationality" ></p-dropdown>
+            </div><br>
+            <div class="p-field p-col-12 p-md-3" style="margin-left: 2%">
+              <label for="stateOfOrigin">State of Origin</label>
+              <p-dropdown inputId="stateOfOrigin" ></p-dropdown>
+
+          </div>
+          <div class="p-field p-col-12 p-md-3" style="margin-left: 2%" >
+            <label for="lga">Local Govt. Area</label>
+            <p-dropdown inputId="lga" ></p-dropdown>
+          </div>
+          </div><br>
+
+            </p-accordionTab>
+            <p-accordionTab header="Next of Kin Information">
+              <div class="p-fluid p-formgrid p-grid">
+                <div class="p-field p-col-12 p-md-4">
+                  <label for="next_of_kin_surname">Surname</label>
+                  <input id="next_of_kin_surname" type="text" pInputText>
+                </div><br>
+                <div class="p-field p-col-12 p-md-3">
+                  <label for="next_of_kin_firstname">First Name</label>
+                  <input id="next_of_kin_firstname" type="text" pInputText>
+
+              </div>
+              <div class="p-field p-col-12 p-md-3" >
+                <label for="next_of_kin_othername">Other Name</label>
+                <input id="next_of_kin_othername" type="text" pInputText>
+              </div>
+              </div>
+
+              <div class="p-fluid p-formgrid p-grid">
+                <div class="p-field p-col-12 p-md-4" >
+                  <label for="next_of_kin_gender">Gender</label>
+                  <p-dropdown inputId="next_of_kin_gender"></p-dropdown>
+                </div><br>
+                <div class="p-field p-col-12 p-md-3" >
+                  <label for="next_of_kin_phone_number">Phone Number</label>
+                  <input id="next_of_kin_phone_number" type="text" pInputText>
+
+              </div>
+              <div class="p-field p-col-12 p-md-3" >
+                <label for="next_of_kin_alt_phone_number">Alt. Phone Number</label>
+                <input id="next_of_kin_alt_phone_number" type="text" pInputText>
+
+            </div>
+              </div>
+              <div class="p-fluid p-formgrid p-grid">
+                <div class="p-field p-col-12 p-md-4" >
+                  <label for="next_of_kin_address">Address</label>
+                  <input id="next_of_kin_address" type="text" pInputText>
+                </div><br>
+                <div class="p-field p-col-12 p-md-3" >
+                  <label for="next_of_kin_relationship">Relationship</label>
+                  <p-dropdown inputId="next_of_kin_relationship"></p-dropdown>
+
+              </div>
+              <div class="p-field p-col-12 p-md-3" >
+                <label for="next_of_kin_occupation">Occupation</label>
+                <p-dropdown inputId="next_of_kin_occupation"></p-dropdown>
+
+            </div>
+              </div>
+              <p-button label="SAVE" class="p-mr-2 p-mb-2"></p-button>
+            </p-accordionTab>
+
+        </p-accordion>
 
 
 

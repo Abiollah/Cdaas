@@ -141,7 +141,7 @@ import { ManageAllergensComponent } from './administration/view/add.allergens.co
 import { AllergenslistComponent } from './administration/view/allergenslist.component';
 import {MatDividerModule} from '@angular/material/divider';
 import { IgxDividerModule } from "igniteui-angular";
-
+//import { jqxTreeModule } from "jqxtree";
 import { AddOccupationComponent } from './administration/view/add-occupation.component';
 
 

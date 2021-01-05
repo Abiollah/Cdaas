@@ -20,15 +20,6 @@ export class ManageClientService {
     return this.http.post<ClientData>(this.getBaseApiUrl()+'postclinicalregistration',data);
   }
 
-<<<<<<< HEAD
-  getClient():Observable<any>{
-    return this.http.get<ClientData>(this.getBaseApiUrl()+'listclinicalregistration');
-  }
-
-   
-
-  protected getBaseApiUrl(): string {
-=======
     getClient():Observable<any>{
       return this.http.get<ClientData>(this.getBaseApiUrl()+'listclinicalregistration');
     }
@@ -48,7 +39,6 @@ export class ManageClientService {
   }
 
   private getBaseApiUrl(): string {
->>>>>>> 265c9420503ddc683af487c8c5c4da58d0401b19
     return isDevMode ? environment.apiBaseUrl : environment.apiBaseUrl;
     }
 

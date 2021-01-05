@@ -20,13 +20,8 @@ import {ConfirmationService} from 'primeng/api';
 @Component({
   selector: 'app-patient.registration',
   templateUrl: './client.registration.component.html',
-<<<<<<< HEAD
-  providers:[MessageService]
-  //styleUrls: ['./patient.registration.component.scss']
-=======
   providers:[MessageService,ConfirmationService]
  // styleUrls: ['./patient.registration.component.scss']
->>>>>>> 265c9420503ddc683af487c8c5c4da58d0401b19
 
 })
 export class ClientRegistrationComponent implements OnInit {
