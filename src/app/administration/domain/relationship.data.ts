@@ -6,7 +6,7 @@ export interface RelationshipData{
     code: string;
     relationship_id:number;
     created_by: number;
-   // created_date: Date;
+    created_date: Date;
     
 }
 
@@ -16,6 +16,6 @@ export interface RelationshipDataCreate{
     code: string;
     relationship_id: number;
     created_by: number;
-   // created_date: Date;
+    created_date: Date;
     
 }

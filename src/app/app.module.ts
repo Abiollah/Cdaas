@@ -19,6 +19,7 @@ import {ColorPickerModule} from 'primeng/colorpicker';
 import {ContextMenuModule} from 'primeng/contextmenu';
 import {DataViewModule} from 'primeng/dataview';
 import {DialogModule} from 'primeng/dialog';
+import {DividerModule} from 'primeng/divider';
 import {DropdownModule} from 'primeng/dropdown';
 import {FieldsetModule} from 'primeng/fieldset';
 import {FileUploadModule} from 'primeng/fileupload';
@@ -124,8 +125,20 @@ import { ManageCareentrypointComponent } from './administration/view/add.careent
 import { ManageHivstatusatregistrationComponent } from './administration/view/add.hivstatusatregistration.component';
 import { CareentrypointlistComponent } from './administration/view/careentrypointlist.component';
 import { HivStatusAtRegistrationlistComponent } from './administration/view/hivstatusatregistrationlist.component';
+import { ManageSeverityComponent } from './administration/view/add.severity.component';
+import { SeveritylistComponent } from './administration/view/severitylist.component';
 import { HeirarchylistComponent } from './administration/view/heirarchylist.component';
-import { AddHeirarchyComponent } from './administration/view/add-heirarchy.component'
+import { AddHeirarchyComponent } from './administration/view/add-heirarchy.component';
+import { TesttypelistComponent } from './administration/view/testtypelist.component';
+import { AddTesttypeComponent } from './administration/view/add-testtype.component'
+import { ManageTbstatusComponent } from './administration/view/add.tbstatus.component';
+import { TbstatuslistComponent } from './administration/view/tbstatuslist.component';
+import { ManageTestComponent } from './administration/view/add.test.component';
+import { TestlistComponent } from './administration/view/testlist.component';
+import { ManageTestgroupComponent } from './administration/view/add.testgroup.component';
+import { TestgrouplistComponent } from './administration/view/testgrouplist.component';
+import { RelationshiplistComponent } from './administration/view/relationshiplist.component';
+import { AddRelationshipComponent } from './administration/view/add-relationship.component'
 
 //import { PatientComponent } from './client/patient.registration.component';
 
@@ -194,8 +207,20 @@ import { AddHeirarchyComponent } from './administration/view/add-heirarchy.compo
     ManageHivstatusatregistrationComponent,
     CareentrypointlistComponent,
     HivStatusAtRegistrationlistComponent,
+    ManageSeverityComponent,
+    SeveritylistComponent,
     HeirarchylistComponent,
-    AddHeirarchyComponent
+    AddHeirarchyComponent,
+    TesttypelistComponent,
+    AddTesttypeComponent,
+    ManageTbstatusComponent,
+    TbstatuslistComponent,
+    ManageTestComponent,
+    TestlistComponent,
+    ManageTestgroupComponent,
+    TestgrouplistComponent,
+    RelationshiplistComponent,
+    AddRelationshipComponent
     
     
 
@@ -225,6 +250,7 @@ import { AddHeirarchyComponent } from './administration/view/add-heirarchy.compo
         ContextMenuModule,
         DataViewModule,
         DialogModule,
+        DividerModule,
         DropdownModule,
         FieldsetModule,
         FileUploadModule,
