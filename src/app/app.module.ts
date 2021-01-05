@@ -147,6 +147,8 @@ import { AllergenslistComponent } from './administration/view/allergenslist.comp
 //import { IgxDividerModule } from "igniteui-angular";
 //import { jqxTreeModule } from "jqxtree";
 import { AddOccupationComponent } from './administration/view/add-occupation.component';
+import { StatustypelistComponent } from './administration/view/statustypelist.component';
+import { AddStatustypeComponent } from './administration/view/add-statustype.component';
 
 
 
@@ -229,7 +231,9 @@ import { AddOccupationComponent } from './administration/view/add-occupation.com
     RelationshiplistComponent,
     AddRelationshipComponent,
     ManageAllergensComponent,
-    AllergenslistComponent
+    AllergenslistComponent,
+    StatustypelistComponent,
+    AddStatustypeComponent
     
     
 

@@ -58,7 +58,9 @@ import { TestgrouplistComponent } from './administration/view/testgrouplist.comp
 import { RelationshiplistComponent } from './administration/view/relationshiplist.component';
 import { AddRelationshipComponent } from './administration/view/add-relationship.component'
 import { ManageAllergensComponent } from './administration/view/add.allergens.component';
-import { AllergenslistComponent } from './administration/view/allergenslist.component'
+import { AllergenslistComponent } from './administration/view/allergenslist.component';
+import { StatustypelistComponent } from './administration/view/statustypelist.component';
+import { AddStatustypeComponent } from './administration/view/add-statustype.component';
 
 
 
@@ -128,7 +130,9 @@ const routes: Routes = [
     {path: 'relationshiplist', component: RelationshiplistComponent},
     {path: 'addRelationship', component: AddRelationshipComponent},
     {path: 'addAllergens', component: ManageAllergensComponent},
-    {path: 'allergenslist', component: AllergenslistComponent}
+    {path: 'allergenslist', component: AllergenslistComponent},
+    {path: 'statustypelist', component: StatustypelistComponent},
+    {path: 'addStatustype', component: AddStatustypeComponent}
 
     
 
