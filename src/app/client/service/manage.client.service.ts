@@ -15,7 +15,7 @@ export class ManageClientService {
 
   constructor(private http: HttpClient) { }
 
-  createUpdateClient(data): Observable<any>{
+  createClient(data): Observable<any>{
     console.log(data);
     return this.http.post<ClientData>(this.getBaseApiUrl()+'postclinicalregistration',data);
   }

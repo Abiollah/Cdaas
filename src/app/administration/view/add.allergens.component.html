@@ -1,11 +1,11 @@
 <p-toast></p-toast>
 <div class="p-col-12">
-    <h5>Add Qualification</h5>
+    <h5>Add Allergens</h5>
     <div class="card">
         <p-toolbar styleClass="p-mb-4">
             <ng-template pTemplate="left">
                 <button pButton pRipple label="Save" icon="pi pi-plus" class="p-mr-2 p-mb-2" 
-                (click)="addQualification()"></button>
+                (click)="addAllergens()"></button>
                 <button pButton pRipple label="Clear" icon="pi pi-trash" class="p-mb-2"></button>
             </ng-template>
 
@@ -17,21 +17,21 @@
         <div class="p-grid p-formgrid p-fluid">
            
         <div class="p-col-4 p-field">
-            <label for="name">Qualification Name</label>
-            <input id="name" type="name" pInputText [(ngModel)]="qualification.name" aria-describedby="name-help" 
-            placeholder="Enter Qualification Name">
+            <label for="name">Allergens Name</label>
+            <input id="name" type="name" pInputText [(ngModel)]="allergenscreatedata.name" aria-describedby="name-help" 
+            placeholder="Enter Allergens Name">
 
         </div>
 
         <div class="p-col-4 p-field">
             <label for="code">Code </label>
-            <input id="code" type="code" pInputText [(ngModel)]="qualification.code" aria-describedby="code-help" 
-            placeholder="Enter Qualification Code" required>
+            <input id="code" type="code" pInputText [(ngModel)]="allergenscreatedata.code" aria-describedby="code-help" 
+            placeholder="Enter Allergens Code" required>
         </div>
 
         <div class="p-col-8 p-field">
-            <label for="description">Qualification Description </label>
-            <textarea rows="5" cols="30" placeholder="Enter Qualification Description" [(ngModel)]="qualification.description" pInputTextarea ></textarea>
+            <label for="description">Allergens Description </label>
+            <textarea rows="5" cols="30" placeholder="Enter Allergens Description" [(ngModel)]="allergenscreatedata.description" pInputTextarea ></textarea>
         </div>
 
         

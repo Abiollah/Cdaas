@@ -138,9 +138,15 @@ import { TestlistComponent } from './administration/view/testlist.component';
 import { ManageTestgroupComponent } from './administration/view/add.testgroup.component';
 import { TestgrouplistComponent } from './administration/view/testgrouplist.component';
 import { RelationshiplistComponent } from './administration/view/relationshiplist.component';
-import { AddRelationshipComponent } from './administration/view/add-relationship.component'
+import { AddRelationshipComponent } from './administration/view/add-relationship.component';
 
 //import { PatientComponent } from './client/patient.registration.component';
+import { ManageAllergensComponent } from './administration/view/add.allergens.component';
+import { AllergenslistComponent } from './administration/view/allergenslist.component';
+//import {MatDividerModule} from '@angular/material/divider';
+//import { IgxDividerModule } from "igniteui-angular";
+//import { jqxTreeModule } from "jqxtree";
+import { AddOccupationComponent } from './administration/view/add-occupation.component';
 
 
 
@@ -180,7 +186,7 @@ import { AddRelationshipComponent } from './administration/view/add-relationship
     ClientRegistrationComponent,
     QualificationlistComponent,
     AddReligionComponent,
-    OccupationlistComponent,
+    OccupationlistComponent, 
     ManageQualificationComponent,
     //PatientComponent,
     AddReligionComponent,
@@ -196,6 +202,7 @@ import { AddRelationshipComponent } from './administration/view/add-relationship
     NationalitylistComponent,
     ManageTargetgroupComponent,
     TargetgrouplistComponent,
+    AddOccupationComponent,   
     ClientServiceDashboardComponent,
     ManageRefferedfromComponent,
     RefferedfromlistComponent,
@@ -220,7 +227,9 @@ import { AddRelationshipComponent } from './administration/view/add-relationship
     ManageTestgroupComponent,
     TestgrouplistComponent,
     RelationshiplistComponent,
-    AddRelationshipComponent
+    AddRelationshipComponent,
+    ManageAllergensComponent,
+    AllergenslistComponent
     
     
 
@@ -232,7 +241,9 @@ import { AddRelationshipComponent } from './administration/view/add-relationship
     AppRoutingModule,
     BrowserAnimationsModule,
     BrowserModule,
-        FormsModule,
+    FormsModule,
+    //MatDividerModule,
+    //IgxDividerModule,
         AppRoutingModule,
         AccordionModule,
         AutoCompleteModule,
@@ -302,6 +313,9 @@ import { AddRelationshipComponent } from './administration/view/add-relationship
         TreeModule,
         TreeTableModule,
         VirtualScrollerModule,
+        FontAwesomeModule,
+        //jqxTreeModule,
+        DividerModule,
         FontAwesomeModule
 
 

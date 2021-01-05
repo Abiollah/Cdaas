@@ -1,5 +1,5 @@
-export interface NationalityData{
-    nationality_id?: number;
+export interface AllergensData{
+    allergens_id?: number;
     name?: string;
     code?: string;
     description?: string;
@@ -8,13 +8,12 @@ export interface NationalityData{
     
 }
 
-export interface NationalityDataCreate{
-    nationality_id: number;
+export interface AllergensDataCreate{
+    allergens_id: number;
     name: string;
     code: string;
     description: string;
     created_by: number;
-    created_date: Date;
-    
+    created_date?: Date;
    
 }   

@@ -1,28 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 import {AppBreadcrumbService} from '../../app.breadcrumb.service';
-import { SeverityData } from '../domain/severity.data';
-import {ManageSeverityService} from '../service/manage.severity.service';
+import { AllergensData } from '../domain/allergens.data';
+import {ManageAllergensService} from '../service/manage.allergens.service';
 import { Location } from '@angular/common';
 import {MessageService} from 'primeng/api';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
+
 @Component({
-  selector: 'app-add.severity',
-  templateUrl: './add.severity.component.html',
-  styleUrls: ['./add.severity.component.scss'],
+  selector: 'app-add.allergens',
+  templateUrl: './add.allergens.component.html',
   providers: [MessageService]
 })
-export class ManageSeverityComponent implements OnInit {
+export class ManageAllergensComponent implements OnInit {
 
-  severitycreatedata = {} as SeverityData;
+  allergenscreatedata = {} as AllergensData;
 
   
 
-  constructor(private router: Router,private messageService: MessageService,private location: Location,private manageseverityService:ManageSeverityService, private breadcrumbService: AppBreadcrumbService) {
+  constructor(private router: Router,private messageService: MessageService,private location: Location,private manageallergensService:ManageAllergensService, private breadcrumbService: AppBreadcrumbService) {
     this.breadcrumbService.setItems([
       { label: 'Dashboard', routerLink: ['/dashboard'] },
       { label: 'Metadata', routerLink: ['/metadatalist'] },
-      { label: 'Add Severity', routerLink: ['/addSeveritylist'] }    ]);
+      { label: 'Add Allergens', routerLink: ['/addAllergenslist'] }    ]);
   }
 
   ngOnInit(): void {
@@ -32,15 +32,15 @@ export class ManageSeverityComponent implements OnInit {
     }
   }
 
-addSeverity(){
-  this.severitycreatedata.created_by = +sessionStorage.getItem("userid");
-  this.severitycreatedata.created_date = new Date();
-  this.manageseverityService.createUpdateSeverity(this.severitycreatedata).subscribe(
+addAllergens(){
+  this.allergenscreatedata.created_by = +sessionStorage.getItem("userid");
+  this.allergenscreatedata.created_date = new Date();
+  this.manageallergensService.createUpdateAllergens(this.allergenscreatedata).subscribe(
     data => {
-      this.addSuccess("Success!","Severity added successfully.");
+      this.addSuccess("Success!","Allergens added successfully.");
   }, 
   error => {
-  this.addError("Failed!","Could not add Severity.");
+  this.addError("Failed!","Could not add Allergens.");
   }
   
   );
@@ -63,4 +63,3 @@ addSeverity(){
   
   }
   
-

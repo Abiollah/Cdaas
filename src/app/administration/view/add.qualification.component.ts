@@ -9,19 +9,19 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-add.qualification',
   templateUrl: './add.qualification.component.html',
-  styleUrls: ['./add.qualification.component.scss'],
   providers: [MessageService]
-  
 })
 export class ManageQualificationComponent implements OnInit {
- 
-  qualificationcreatedata = {} as QualificationData;
 
-  constructor(private router: Router,private messageService: MessageService,private location: Location,private managequalificationService:ManageQualificationService, private breadcrumbService: AppBreadcrumbService) {
+  qualification = {} as QualificationData;
+
+  constructor(private router: Router,private messageService: MessageService,
+    private location: Location,private managequalificationService:ManageQualificationService, 
+    private breadcrumbService: AppBreadcrumbService) {
     this.breadcrumbService.setItems([
       { label: 'Dashboard', routerLink: ['/dashboard'] },
       { label: 'Metadata', routerLink: ['/metadatalist'] },
-      { label: 'Add Qualification', routerLink: ['/addQualificationlist'] }    ]);
+      { label: 'Qualification List', routerLink: ['/qualificationlist'] }    ]);
   }
 
   ngOnInit(): void {
@@ -31,33 +31,35 @@ export class ManageQualificationComponent implements OnInit {
     }
   }
 
-  addQualification(){
-    this.qualificationcreatedata.created_by = +sessionStorage.getItem("userid");
-    //this.qualificationcreatedata.created_date = new Date();
-    this.managequalificationService.createUpdateQualification(this.qualificationcreatedata).subscribe(
-      () => {
-        this.addSuccess("Success!","Qualification added successfully.");
-    }, 
-    () => {
-    this.addError("Failed!","Could not add Qualification.");
-    }
-    
-    );
-  }
-
-  goBack(){
-    this.location.back();
-    }
-    
-    addSuccess(title:string,message:string) {
-      this.messageService.add({severity:'success', summary:title, detail:message});
-      
-    
-    }
-    addError(title:string,message:string) {
-      this.messageService.add({severity:'error', summary:title, detail:message});
-      
-    }
-    
-
+addQualification(){
+  this.qualification.created_by = +sessionStorage.getItem('userid');
+  this.qualification.created_date= new Date();
+this.managequalificationService.createQualification(this.qualification).subscribe(
+data => {
+    this.addSuccess("Success!","Qualifiation added successfully.");
+}, 
+error => {
+this.addError("Failed!","Could not add qualification.");
 }
+
+);
+}
+  
+  goBack(){
+  this.location.back();
+  }
+  
+  addSuccess(title:string,message:string) {
+    this.messageService.add({severity:'success', summary:title, detail:message});
+    
+  
+  }
+  addError(title:string,message:string) {
+    this.messageService.add({severity:'error', summary:title, detail:message});
+    
+  }
+  
+  
+  }
+  
+
