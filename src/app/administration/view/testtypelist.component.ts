@@ -43,14 +43,14 @@ export class TesttypelistComponent implements OnInit {
     this.selectedTesttype = { ...heirarchy };
     this.testtypeDialog = true;
   }
-  updateHeirarchy() {
+  updateTesttype() {
     this.testtypeservice.createTesttype(this.selectedTesttype).subscribe(
       () => {
-        this.addSuccess("Success!", "Heirarchy information updated successfully.");
+        this.addSuccess("Success!", "Testtype information updated successfully.");
 
       },
       () => {
-        this.addError("Failed!", "Heirarchy creation failed.");
+        this.addError("Failed!", "Testtype creation failed.");
         this.testtypeDialog = false;
       });
   }
@@ -65,7 +65,7 @@ export class TesttypelistComponent implements OnInit {
 
   }
 
-  hideHeirarchyDialog() {
+  hideTesttypeDialog() {
     this.testtypeDialog = false;
   }
 
