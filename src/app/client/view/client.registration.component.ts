@@ -89,7 +89,6 @@ export class ClientRegistrationComponent implements OnInit {
 
   }
   loadHeirarchyUnits(){
-    
     this.facilityDialog=true;
     this.buildHeirarchyTree(this.heirarchyunitsMap);
     
@@ -203,8 +202,8 @@ confirmSaveAssessment(position: string){
 
   addClient(){
     this.clientcreatedata.created_by = +sessionStorage.getItem('userid');
-    this.clientcreatedata.registered_date = new Date();
-    this.manageclientService.createClient(this.clientcreatedata)
+   
+    this.manageclientService.createUpdateClient(this.clientcreatedata)
     .subscribe(
     () => {
       this.addSuccess("Success","Client registration successfully.");
