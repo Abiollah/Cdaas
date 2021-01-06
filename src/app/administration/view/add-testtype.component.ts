@@ -33,7 +33,7 @@ export class AddTesttypeComponent implements OnInit {
   }
   addTesttype() {
     this.testtype.created_by = +sessionStorage.getItem('userid');
-    //this.testtype.created_date = new Date();
+    this.testtype.created_date = new Date();
     this.testtypeservice.createTesttype(this.testtype).subscribe(
       data => {
         this.addSuccess("Success!", "Testtype added successfully.");

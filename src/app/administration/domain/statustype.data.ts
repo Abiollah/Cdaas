@@ -7,7 +7,6 @@ export interface StatusTypeData{
     code:string;
     created_by: number;
     created_date: Date;
-    
 }
 
 export interface StatusTypeDataCreate{
