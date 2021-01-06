@@ -6,7 +6,7 @@
             <ng-template pTemplate="left">
                 <button pButton pRipple label="Save" icon="pi pi-plus" class="p-mr-2 p-mb-2" 
                 (click)="addNationality()"></button>
-                <button pButton pRipple label="Clear" icon="pi pi-trash" class="p-mb-2"></button>
+                <button pButton pRipple label="Clear"  class="p-mb-2"></button>
             </ng-template>
 
             <ng-template pTemplate="right">
@@ -17,27 +17,27 @@
         <div class="p-grid p-formgrid p-fluid">
            
         <div class="p-col-4 p-field">
-            <label for="name">Nationality Name</label>
-            <input id="name" type="name" pInputText [(ngModel)]="nationalitycreatedata.name" aria-describedby="name-help" 
-            placeholder="Enter Nationality Name">
+            <label for="name">Name</label>
+            <input id="name" type="name" pInputText [(ngModel)]="nationality.name" aria-describedby="username-help" 
+            placeholder="Enter name">
 
         </div>
 
         <div class="p-col-4 p-field">
-            <label for="code">Code </label>
-            <input id="code" type="code" pInputText [(ngModel)]="nationalitycreatedata.code" aria-describedby="code-help" 
-            placeholder="Enter Nationality Code" required>
-        </div>
+            <label for="code">Code</label>
+            <input id="code" type="code" pInputText [(ngModel)]="nationality.code" aria-describedby="password-help" placeholder="Enter code">
 
-        <div class="p-col-8 p-field">
-            <label for="description">Nationality Description </label>
-            <textarea rows="5" cols="30" placeholder="Enter Nationality Description" [(ngModel)]="nationalitycreatedata.description" pInputTextarea ></textarea>
         </div>
-
+        
         
     </div>
-      
-        
+   
+        <div class="p-grid p-formgrid p-fluid">
+            <div class="p-col-8 p-field">
+                <label for="description">Description</label>
+                <textarea rows="5" cols="30" placeholder="Description" pInputTextarea  [(ngModel)]="nationality.description"></textarea>
+            </div>
+
+        </div>
     </div>
 </div>
-

@@ -9,7 +9,8 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 @Component({
   selector: 'app-add.severity',
   templateUrl: './add.severity.component.html',
-  styleUrls: ['./add.severity.component.scss']
+  styleUrls: ['./add.severity.component.scss'],
+  providers: [MessageService]
 })
 export class ManageSeverityComponent implements OnInit {
 

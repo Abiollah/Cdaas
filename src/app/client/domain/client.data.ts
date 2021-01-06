@@ -1,18 +1,20 @@
+
+
 export interface ClientData{
   client_code?: string;
-  registration_date?: number;
-  date_of_birth?: number;
-  surname?:string;
-  first_name?: string;
-  other_name?: string;
-  marital_status?: string;
-  gender?: string;
-  email_address?: string;
+  registered_date?: Date;
+  date_of_birth?: Date;
+  lastname?:string;
+  firstname?: string;
+  othername?: string;
+  marital_status_id?: string;
+  gender_id?: string;
+  email?: string;
   address?: string;
   phone_number?: number;
   alt_phone_number?: number;
-  occupation?: string;
-  qualification?: string;
+  occupation_id?: string;
+  qualification_id?: string;
   facility_name?: string;
   facility_id?: number;
   referred_from?: string;
@@ -35,19 +37,19 @@ export interface ClientData{
 
 export interface ClientDataCreate{
   client_code: string;
-  registration_date: number;
-  date_of_birth: number;
-  surname:string;
-  first_name: string;
-  other_name: string;
-  marital_status: string;
-  gender: string;
-  email_address: string;
+  registered_date: Date;
+  date_of_birth: Date;
+  lastname:string;
+  firstname: string;
+  othername: string;
+  marital_status_id: string;
+  gender_id: string;
+  email: string;
   address: string;
   phone_number: number;
   alt_phone_number: number;
-  occupation: string;
-  qualification: string;
+  occupation_id: string;
+  qualification_id: string;
   facility_name: string;
   referred_from: string;
   nationality: string;

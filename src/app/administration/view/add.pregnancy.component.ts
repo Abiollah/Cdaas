@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-add.pregnancy',
   templateUrl: './add.pregnancy.component.html',
-  styleUrls: ['./add.pregnancy.component.scss']
+  providers: [MessageService]
 })
 export class ManagePregnancyComponent implements OnInit {
 

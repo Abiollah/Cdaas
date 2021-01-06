@@ -24,7 +24,7 @@ export class QualificationlistComponent implements OnInit {
       { label: 'List Qualification', routerLink: ['/qualificationlist'] }    ]);
    }
 
-  ngOnInit(): void {
+   ngOnInit(): void {
     this.QualificationList();
   }
 
@@ -35,42 +35,47 @@ export class QualificationlistComponent implements OnInit {
     }
     );
     }
+      goToAddQualification(){
+        this.router.navigate(['addQualification']);
+      }
+      goBack(){
+        this.location.back();
+      }
+      editQualification(qualification: QualificationData){
+      this.selectedQualification = {...qualification};
+      this.qualificationDialog=true;
+     }
 
+       updateQualification(){
+      this.managequalificationService.createQualification(this.selectedQualification).subscribe(
+        response => {console.log(response);
+          this.qualificationList.push(this.selectedQualification);
+          this.ngOnInit();
+          this.addSuccess("Success!","Qualification updated successfully");
+          
+          
+      }, 
 
-    goToAddQualification(){
-      this.router.navigate(['/addQualification']);
+     error => {console.log(error)});
+      this.addError("Failed!","Qualification creation failed.");
+
+      this.qualificationDialog = false;
     }
-    goBack(){
-      this.location.back();
-    }
-    editQualification(qualification: QualificationData){
-    this.selectedQualification = {...qualification};
-    this.qualificationDialog=true;
-   }
-   updateQualification(){
-     this.managequalificationService.createUpdateQualification(this.selectedQualification).subscribe(
-      () => {
-        this.addSuccess("Success!","Qualification information updated successfully.");
-           
-     }, 
-     () => {
-     this.addError("Failed!","Qualification creation failed.");
-     this.qualificationDialog = false;
-   });
-  }
 
-   addSuccess(title:string,message:string) {
-     this.messageService.add({severity:'success', summary:title, detail:message});
+ 
+     addSuccess(title:string,message:string) {
+       this.messageService.add({severity:'success', summary:title, detail:message});
+       
      
-   
-   }
-   addError(title:string,message:string) {
-     this.messageService.add({severity:'error', summary:title, detail:message});
-     
-   }
-
-   hideUserDialog(){
-     this.qualificationDialog = false;
-   }
+     }
+     addError(title:string,message:string) {
+       this.messageService.add({severity:'error', summary:title, detail:message});
+       
+     }
+ 
+     hideUserDialog(){
+       this.qualificationDialog = false;
+     }
+  
 
 }

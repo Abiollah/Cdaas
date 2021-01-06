@@ -4,7 +4,7 @@ export interface NationalityData{
     code?: string;
     description?: string;
     created_by?: number;
-    created_date?: number;
+    created_date?: Date;
     
 }
 
@@ -14,7 +14,7 @@ export interface NationalityDataCreate{
     code: string;
     description: string;
     created_by: number;
-    created_date: number;
+    created_date: Date;
     
    
 }   

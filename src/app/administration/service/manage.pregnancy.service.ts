@@ -15,19 +15,19 @@ export class ManagePregnancyService {
 
   createUpdatePregnancy(data): Observable<any>{
     console.log(data);
-    return this.http.post<PregnancyData>(this.getBaseApiUrl()+'postpregnancys',data);
+    return this.http.post<PregnancyData>(this.getBaseApiUrl()+'postpregnancy',data);
   }
 
   getPregnancys():Observable<any>{
-    return this.http.get<PregnancyData>(this.getBaseApiUrl()+'listpregnancys');
+    return this.http.get<PregnancyData>(this.getBaseApiUrl()+'listpregnancy');
   }
 
   updatePregnancy(data){
-    return this.http.post<PregnancyData>(this.getBaseApiUrl()+'postpregnancys',data);
+    return this.http.post<PregnancyData>(this.getBaseApiUrl()+'postpregnancy',data);
   }
 
   getPregnancy() {
-    return this.http.get<any>(this.getBaseApiUrl()+'listpregnancys')
+    return this.http.get<any>(this.getBaseApiUrl()+'listpregnancy')
     .toPromise()
     .then(res => res.data as PregnancyData)
     .then(data => data);

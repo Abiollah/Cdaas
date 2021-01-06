@@ -15,19 +15,19 @@ export class ManageRefferedfromService {
 
   createUpdateRefferedfrom(data): Observable<any>{
     console.log(data);
-    return this.http.post<RefferedfromData>(this.getBaseApiUrl()+'postrefferedfroms',data);
+    return this.http.post<RefferedfromData>(this.getBaseApiUrl()+'postrefferedfrom',data);
   }
 
   getRefferedfroms():Observable<any>{
-    return this.http.get<RefferedfromData>(this.getBaseApiUrl()+'listrefferedfroms');
+    return this.http.get<RefferedfromData>(this.getBaseApiUrl()+'listrefferedfrom');
   }
 
   updateRefferedfrom(data){
-    return this.http.post<RefferedfromData>(this.getBaseApiUrl()+'postrefferedfroms',data);
+    return this.http.post<RefferedfromData>(this.getBaseApiUrl()+'postrefferedfrom',data);
   }
 
   getRefferedfrom() {
-    return this.http.get<any>(this.getBaseApiUrl()+'listrefferedfroms')
+    return this.http.get<any>(this.getBaseApiUrl()+'listrefferedfrom')
     .toPromise()
     .then(res => res.data as RefferedfromData)
     .then(data => data);

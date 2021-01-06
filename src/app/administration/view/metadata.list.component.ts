@@ -40,7 +40,7 @@ export class MetadataListComponent implements OnInit {
               {
                   label: 'Add/Manage Relationships',
                   icon: 'pi pi-fw pi-user-edit',
-                  routerLink: '/relationship'
+                  routerLink: '/relationshiplist'
               },
               {
                   label: 'Add/Manage Language',
@@ -71,11 +71,6 @@ export class MetadataListComponent implements OnInit {
                 label: 'Add/Manage Nationality',
                 icon: 'pi pi-fw pi-user-edit',
                 routerLink: '/nationalitylist'
-            },
-            {
-                label: 'Add/Manage State of Origin',
-                icon: 'pi pi-fw pi-user-edit',
-                routerLink: '/stateoforiginlist'
             },
             {
                 label: 'Add/Manage Local Government Area',
@@ -116,6 +111,11 @@ export class MetadataListComponent implements OnInit {
                 label: 'Add/Manage Enrollment Setting',
                 icon: 'pi pi-fw pi-user-edit',
                 routerLink: '/enrollmensettingtlist'
+            },
+            {
+                label: 'Add/Manage Status Type',
+                icon: 'pi pi-fw pi-user-edit',
+                routerLink: '/statustypelist'
             },
               {
                   label: 'Add/Manage Test Type',

@@ -138,9 +138,19 @@ import { TbstatuslistComponent } from './administration/view/tbstatuslist.compon
 import { ManageTestComponent } from './administration/view/add.test.component';
 import { TestlistComponent } from './administration/view/testlist.component';
 import { ManageTestgroupComponent } from './administration/view/add.testgroup.component';
-import { TestgrouplistComponent } from './administration/view/testgrouplist.component'
+import { TestgrouplistComponent } from './administration/view/testgrouplist.component';
+import { RelationshiplistComponent } from './administration/view/relationshiplist.component';
+import { AddRelationshipComponent } from './administration/view/add-relationship.component';
 
 //import { PatientComponent } from './client/patient.registration.component';
+import { ManageAllergensComponent } from './administration/view/add.allergens.component';
+import { AllergenslistComponent } from './administration/view/allergenslist.component';
+//import {MatDividerModule} from '@angular/material/divider';
+//import { IgxDividerModule } from "igniteui-angular";
+//import { jqxTreeModule } from "jqxtree";
+import { AddOccupationComponent } from './administration/view/add-occupation.component';
+import { StatustypelistComponent } from './administration/view/statustypelist.component';
+import { AddStatustypeComponent } from './administration/view/add-statustype.component';
 
 
 
@@ -180,7 +190,7 @@ import { TestgrouplistComponent } from './administration/view/testgrouplist.comp
     ClientRegistrationComponent,
     QualificationlistComponent,
     AddReligionComponent,
-    OccupationlistComponent,
+    OccupationlistComponent, 
     ManageQualificationComponent,
     //PatientComponent,
     AddReligionComponent,
@@ -196,6 +206,7 @@ import { TestgrouplistComponent } from './administration/view/testgrouplist.comp
     NationalitylistComponent,
     ManageTargetgroupComponent,
     TargetgrouplistComponent,
+    AddOccupationComponent,   
     ClientServiceDashboardComponent,
     ManageRefferedfromComponent,
     RefferedfromlistComponent,
@@ -218,7 +229,13 @@ import { TestgrouplistComponent } from './administration/view/testgrouplist.comp
     ManageTestComponent,
     TestlistComponent,
     ManageTestgroupComponent,
-    TestgrouplistComponent
+    TestgrouplistComponent,
+    RelationshiplistComponent,
+    AddRelationshipComponent,
+    ManageAllergensComponent,
+    AllergenslistComponent,
+    StatustypelistComponent,
+    AddStatustypeComponent
     
     
 
@@ -230,7 +247,9 @@ import { TestgrouplistComponent } from './administration/view/testgrouplist.comp
     AppRoutingModule,
     BrowserAnimationsModule,
     BrowserModule,
-        FormsModule,
+    FormsModule,
+    //MatDividerModule,
+    //IgxDividerModule,
         AppRoutingModule,
         AccordionModule,
         AutoCompleteModule,
@@ -302,6 +321,9 @@ import { TestgrouplistComponent } from './administration/view/testgrouplist.comp
         TreeModule,
         TreeTableModule,
         VirtualScrollerModule,
+        FontAwesomeModule,
+        //jqxTreeModule,
+        DividerModule,
         FontAwesomeModule
 
 
