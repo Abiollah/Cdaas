@@ -1,5 +1,5 @@
 export interface ClientExtendedInfo{
-patientId?: number;
+patient_id?: number;
 alt_phone_number?: string;
 dateBirth?: string;
 dateRegistration?: string;

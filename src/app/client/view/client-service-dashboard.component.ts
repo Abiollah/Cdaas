@@ -12,7 +12,8 @@ import {ManageAllergiesService} from '../../administration/service/manage.allerg
 import { AllergiesData } from 'src/app/administration/domain/allergies.data';
 @Component({
   selector: 'app-client-service-dashboard',
-  templateUrl: './client-service-dashboard.component.html'
+  templateUrl: './client-service-dashboard.component.html',
+  styleUrls: ["./client-service-dashboard.component.scss"]
 })
 export class ClientServiceDashboardComponent implements OnInit {
   viewedClient: ClientExtendedInfo;
