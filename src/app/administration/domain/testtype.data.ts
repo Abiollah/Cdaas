@@ -5,7 +5,7 @@ export interface TesttypeData {
     code?: string;
     description?: string;
     created_by?: number;
-    created_date?: number;
+    created_date?: Date;
 
 }
 
@@ -15,5 +15,6 @@ export interface TesttypeDataCreate {
     code?: string;
     description?: string;
     created_by?: number;
-    created_date?: number;
+    created_date?: Date;
+
 }   
