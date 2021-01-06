@@ -35,7 +35,7 @@ export class ManageSeverityComponent implements OnInit {
 addSeverity(){
   this.severitycreatedata.created_by = +sessionStorage.getItem("userid");
   this.severitycreatedata.created_date = new Date();
-  this.manageseverityService.createUpdateSeverity(this.severitycreatedata).subscribe(
+  this.manageseverityService.createSeverity(this.severitycreatedata).subscribe(
     data => {
       this.addSuccess("Success!","Severity added successfully.");
   }, 

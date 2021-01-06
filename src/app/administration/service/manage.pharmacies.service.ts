@@ -13,7 +13,7 @@ import { environment } from '../../../environments/environment';
 export class ManagePharmaciesService {
 
   constructor(private http: HttpClient) { }
-  createUpdatePhamarcies(data): Observable<any>{
+  createPhamarcies(data): Observable<any>{
     console.log(data);
     return this.http.post<PharmaciesData>(this.getBaseApiUrl()+'postpharmacies',data);
   }
@@ -22,17 +22,8 @@ export class ManagePharmaciesService {
     return this.http.get<PharmaciesData>(this.getBaseApiUrl()+'listpharmacies');
   }
 
-  updatePharmacies(data){
-    return this.http.post<PharmaciesData>(this.getBaseApiUrl()+'postpharmacies',data);
-  }
-
-  getPharmacies() {
-    return this.http.get<any>(this.getBaseApiUrl()+'listpharmacies')
-    .toPromise()
-    .then(res => res.data as PharmaciesData)
-    .then(data => data);
-}
-private getBaseApiUrl(): string {
+  
+protected getBaseApiUrl(): string {
   return isDevMode ? environment.apiBaseUrl : environment.apiBaseUrl;
   }
 }

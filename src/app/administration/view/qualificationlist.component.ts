@@ -20,7 +20,7 @@ export class QualificationlistComponent implements OnInit {
   constructor(private messageService: MessageService,private router: Router,private location: Location,private managequalificationService:ManageQualificationService, private breadcrumbService: AppBreadcrumbService) {
     this.breadcrumbService.setItems([
       { label: 'Dashboard', routerLink: ['/dashboard'] },
-      { label: 'Meta-data', routerLink: ['/metadata'] },
+      { label: 'Metadata', routerLink: ['/metadatalist'] },
       { label: 'List Qualification', routerLink: ['/qualificationlist'] }    ]);
    }
 
@@ -48,7 +48,7 @@ export class QualificationlistComponent implements OnInit {
     this.qualificationDialog=true;
    }
    updateQualification(){
-     this.managequalificationService.createUpdateQualification(this.selectedQualification).subscribe(
+     this.managequalificationService.createQualification(this.selectedQualification).subscribe(
       () => {
         this.addSuccess("Success!","Qualification information updated successfully.");
            

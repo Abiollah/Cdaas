@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AppBreadcrumbService} from '../../app.breadcrumb.service';
-import { AllergiesData } from '../domain/allergies.data';
+import { AllergiesData,AllergensData, SeverityData } from '../domain/allergies.data';
 import {ManageAllergiesService} from '../service/manage.allergies.service';
 import { Location } from '@angular/common';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
@@ -17,12 +17,21 @@ export class AllergieslistComponent implements OnInit {
   selectedAllergies: AllergiesData;
   allergiesDialog: boolean;
 
+  allergensList:any;
+  selectedAllergens: AllergensData;
+  allergensDialog: boolean;
+
+  severityList:any;
+  selectedSeverity: SeverityData;
+  severityDialog: boolean;
+
+
   
   constructor(private messageService: MessageService,private router: Router,private location: Location,private manageallergiesService:ManageAllergiesService, private breadcrumbService: AppBreadcrumbService) {
     this.breadcrumbService.setItems([
       { label: 'Dashboard', routerLink: ['/dashboard'] },
-      { label: 'Meta-data', routerLink: ['/metadata'] },
-      { label: 'List Allergies', routerLink: ['/allergylist'] }    ]);
+      { label: 'METADATA', routerLink: ['/metadatalist'] },
+      { label: 'List Allergies', routerLink: ['/allergieslist'] }    ]);
    }
 
   ngOnInit(): void {
@@ -39,6 +48,7 @@ export class AllergieslistComponent implements OnInit {
       goToAddAllergies(){
         this.router.navigate(['addAllergies']);
       }
+
       goBack(){
         this.location.back();
       }
@@ -47,7 +57,7 @@ export class AllergieslistComponent implements OnInit {
       this.allergiesDialog=true;
      }
      updateAllergies(){
-       this.manageallergiesService.createUpdateAllergies(this.selectedAllergies).subscribe(
+       this.manageallergiesService.createAllergies(this.selectedAllergies).subscribe(
         () => {
           this.addSuccess("Success!","Allergies information updated successfully.");
              
@@ -70,7 +80,68 @@ export class AllergieslistComponent implements OnInit {
  
      hideUserDialog(){
        this.allergiesDialog = false;
+       this.allergensDialog = false;
+       this.severityDialog = false;
+
      }
+
+     //Allergens
+
+     AllergensList():void{
+      this.manageallergiesService.getAllergenss().subscribe(data => {
+        this.AllergensList = data;
+        console.log(data);
+      }
+      );
+      }
+        goToAddAllergens(){
+          this.router.navigate(['addAllergens']);
+        }
+        
+        editAllergens(Allergens: AllergensData){
+        this.selectedAllergens = {...Allergens};
+        this.allergensDialog=true;
+       }
+       updateAllergens(){
+         this.manageallergiesService.createAllergens(this.selectedAllergens).subscribe(
+          () => {
+            this.addSuccess("Success!","Allergens information updated successfully.");
+               
+         }, 
+         () => {
+         this.addError("Failed!","Allergens creation failed.");
+         this.allergensDialog = false;
+       });
+      }
+   
+       // Severity
+
+       SeverityList():void{
+    this.manageallergiesService.getSeveritys().subscribe(data => {
+      this.severityList = data;
+      console.log(data);
+    }
+    );
+    }
+      goToAddSeverity(){
+        this.router.navigate(['addSeverity']);
+      }
+      
+      editSeverity(severity: SeverityData){
+      this.selectedSeverity = {...severity};
+      this.severityDialog=true;
+     }
+     updateSeverity(){
+       this.manageallergiesService.createSeverity(this.selectedSeverity).subscribe(
+        () => {
+          this.addSuccess("Success!","Severity information updated successfully.");
+             
+       }, 
+       () => {
+       this.addError("Failed!","Severity creation failed.");
+       this.severityDialog = false;
+     });
+    }
   
 
 }

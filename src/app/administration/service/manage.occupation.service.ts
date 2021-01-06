@@ -13,7 +13,7 @@ export class ManageOccupationService {
 
   constructor(private http: HttpClient) { }
 
-  createUpdateOccupation(data): Observable<any>{
+  createOccupation(data): Observable<any>{
     console.log(data);
     return this.http.post<OccupationData>(this.getBaseApiUrl()+'postoccupations',data);
   }
@@ -22,18 +22,9 @@ export class ManageOccupationService {
     return this.http.get<OccupationData>(this.getBaseApiUrl()+'listoccupations');
   }
 
-  updateOccupation(data){
-    return this.http.post<OccupationData>(this.getBaseApiUrl()+'postoccupations',data);
-  }
+  
 
-  getOccupation() {
-    return this.http.get<any>(this.getBaseApiUrl()+'listoccupations')
-    .toPromise()
-    .then(res => res.data as OccupationData)
-    .then(data => data);
-}
-
-private getBaseApiUrl(): string {
+protected getBaseApiUrl(): string {
   return isDevMode ? environment.apiBaseUrl : environment.apiBaseUrl;
   }
 }

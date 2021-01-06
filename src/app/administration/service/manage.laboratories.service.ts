@@ -25,18 +25,9 @@ export class ManageLaboratoriesService {
     return this.http.get<LaboratoriesData>(this.getBaseApiUrl()+'listlaboratories');
   }
 
-  updateLaboratories(data){
-    return this.http.post<LaboratoriesData>(this.getBaseApiUrl()+'postlaboratories',data);
-  }
+  
 
-  getLaboratories() {
-    return this.http.get<any>(this.getBaseApiUrl()+'listlaboratories')
-    .toPromise()
-    .then(res => res.data as LaboratoriesData)
-    .then(data => data);
-}
-
-private getBaseApiUrl(): string {
+protected getBaseApiUrl(): string {
   return isDevMode ? environment.apiBaseUrl : environment.apiBaseUrl;
   }
 }

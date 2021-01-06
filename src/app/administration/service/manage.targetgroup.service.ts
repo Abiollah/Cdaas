@@ -13,7 +13,7 @@ export class ManageTargetgroupService {
 
   constructor(private http: HttpClient) { }
 
-createUpdateTargetgroup(data): Observable<any>{
+createTargetgroup(data): Observable<any>{
     console.log(data);
     return this.http.post<TargetGroupData>(this.getBaseApiUrl()+'posttargetgroups',data);
   }
@@ -22,18 +22,9 @@ createUpdateTargetgroup(data): Observable<any>{
     return this.http.get<TargetGroupData>(this.getBaseApiUrl()+'listtargetgroups');
   }
 
-  updateTargetgroup(data){
-    return this.http.post<TargetGroupData>(this.getBaseApiUrl()+'posttargetgroups',data);
-  }
+  
 
-  getTargetgroup() {
-    return this.http.get<any>(this.getBaseApiUrl()+'listtargetgroups')
-    .toPromise()
-    .then(res => res.data as TargetGroupData)
-    .then(data => data);
-}
-
-private getBaseApiUrl(): string {
+protected getBaseApiUrl(): string {
   return isDevMode ? environment.apiBaseUrl : environment.apiBaseUrl;
   }
 }

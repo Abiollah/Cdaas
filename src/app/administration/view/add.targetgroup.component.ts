@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AppBreadcrumbService} from '../../app.breadcrumb.service';
-import { TargetGroupData, TargetGroupDataCreate } from '../domain/targetgroup.data';
+import { TargetGroupData } from '../domain/targetgroup.data';
 import {ManageTargetgroupService} from '../service/manage.targetgroup.service';
 import { Location } from '@angular/common';
 import {MessageService} from 'primeng/api';
@@ -35,7 +35,7 @@ export class ManageTargetgroupComponent implements OnInit {
   addTargetgroup(){
     this.targetgroupcreatedata.created_by = +sessionStorage.getItem("userid");
     this.targetgroupcreatedata.created_date = new Date();
-    this.managetargetgroupService.createUpdateTargetgroup(this.targetgroupcreatedata).subscribe(
+    this.managetargetgroupService.createTargetgroup(this.targetgroupcreatedata).subscribe(
       data => {
         this.addSuccess("Success!","Target-Group added successfully.");
     }, 

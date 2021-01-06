@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AppBreadcrumbService} from '../../app.breadcrumb.service';
-import { AllergiesData, AllergiesDataCreate } from '../domain/allergies.data';
+import { AllergiesData } from '../domain/allergies.data';
 import {ManageAllergiesService} from '../service/manage.allergies.service';
 import { Location } from '@angular/common';
 import {MessageService} from 'primeng/api';
@@ -23,8 +23,8 @@ allergiescreatedata = {} as AllergiesData;
   constructor(private router: Router,private messageService: MessageService,private location: Location,private manageallergiesService:ManageAllergiesService, private breadcrumbService: AppBreadcrumbService) {
     this.breadcrumbService.setItems([
       { label: 'Dashboard', routerLink: ['/dashboard'] },
-      { label: 'Metadata', routerLink: ['/metadatalist'] },
-      { label: 'Add Allergies', routerLink: ['/addAllergieslist'] }    ]);
+      { label: 'METADATA', routerLink: ['/metadatalist'] },
+      { label: 'ALLERGIES', routerLink: ['/allergieslist'] }    ]);
   }
 
   ngOnInit(): void {
@@ -37,7 +37,7 @@ allergiescreatedata = {} as AllergiesData;
 addAllergies(){
   this.allergiescreatedata.created_by = +sessionStorage.getItem("userid");
   this.allergiescreatedata.created_date = Date.now();
-  this.manageallergiesService.createUpdateAllergies(this.allergiescreatedata).subscribe(
+  this.manageallergiesService.createAllergies(this.allergiescreatedata).subscribe(
     data => {
       this.addSuccess("Success!","Allergy added successfully.");
   }, 
@@ -48,20 +48,20 @@ addAllergies(){
   );
 }
   
+  
   goBack(){
-  this.location.back();
-  }
-  
-  addSuccess(title:string,message:string) {
-    this.messageService.add({severity:'success', summary:title, detail:message});
+    this.location.back();
+    }
     
-  
-  }
-  addError(title:string,message:string) {
-    this.messageService.add({severity:'error', summary:title, detail:message});
+    addSuccess(title:string,message:string) {
+      this.messageService.add({severity:'success', summary:title, detail:message});
+      
     
-  }
-  
+    }
+    addError(title:string,message:string) {
+      this.messageService.add({severity:'error', summary:title, detail:message});
+      
+    }
   
   }
   

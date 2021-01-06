@@ -13,7 +13,7 @@ export class ManageLanguageService {
 
   constructor(private http: HttpClient) { }
 
-  createUpdateLanguage(data): Observable<any>{
+  createLanguage(data): Observable<any>{
     console.log(data);
     return this.http.post<LanguageData>(this.getBaseApiUrl()+'postlanguages',data);
   }
@@ -22,18 +22,9 @@ export class ManageLanguageService {
     return this.http.get<LanguageData>(this.getBaseApiUrl()+'listlanguages');
   }
 
-  updateLanguage(data){
-    return this.http.post<LanguageData>(this.getBaseApiUrl()+'postlanguages',data);
-  }
+  
 
-  getLanguage() {
-    return this.http.get<any>(this.getBaseApiUrl()+'listlanguages')
-    .toPromise()
-    .then(res => res.data as LanguageData)
-    .then(data => data);
-}
-
-private getBaseApiUrl(): string {
+protected getBaseApiUrl(): string {
   return isDevMode ? environment.apiBaseUrl : environment.apiBaseUrl;
   }
 }

@@ -19,7 +19,7 @@ export class RefferedfromlistComponent implements OnInit {
   constructor(private messageService: MessageService,private router: Router,private location: Location,private managerefferedfromService:ManageRefferedfromService, private breadcrumbService: AppBreadcrumbService) {
     this.breadcrumbService.setItems([
       { label: 'Dashboard', routerLink: ['/dashboard'] },
-      { label: 'Meta-data', routerLink: ['/metadata'] },
+      { label: 'Metadata', routerLink: ['/metadatalist'] },
       { label: 'List Reffered From', routerLink: ['/refferedfromlist'] }    ]);
    }
 
@@ -47,7 +47,7 @@ export class RefferedfromlistComponent implements OnInit {
     this.refferedfromDialog=true;
    }
    updateRefferedfrom(){
-     this.managerefferedfromService.createUpdateRefferedfrom(this.selectedRefferedfrom).subscribe(
+     this.managerefferedfromService.createRefferedfrom(this.selectedRefferedfrom).subscribe(
       () => {
         this.addSuccess("Success!","Reffered From information updated successfully.");
            

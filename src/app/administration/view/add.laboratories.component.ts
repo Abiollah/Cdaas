@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AppBreadcrumbService} from '../../app.breadcrumb.service';
-import { LaboratoriesData, LaboratoriesDataCreate } from '../domain/laboratories.data';
+import { LaboratoriesData } from '../domain/laboratories.data';
 import {ManageLaboratoriesService} from '../service/manage.laboratories.service';
 import { Location } from '@angular/common';
 import {MessageService} from 'primeng/api';
@@ -14,7 +14,6 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 export class ManageLaboratoriesComponent implements OnInit {
 
   laboratoriescreatedata: LaboratoriesData = {
-    laboratory_id:0,
     name: '',
     code: '',
     description: '',

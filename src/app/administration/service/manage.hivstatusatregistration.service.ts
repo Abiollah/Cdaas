@@ -13,7 +13,7 @@ export class ManageHivstatusatregistrationService {
 
   constructor(private http: HttpClient) { }
 
-  createUpdateHivStatusAtRegistration(data): Observable<any>{
+  createHivStatusAtRegistration(data): Observable<any>{
     console.log(data);
     return this.http.post<HivStatusAtRegistrationData>(this.getBaseApiUrl()+'posthivstatusatregistration',data);
   }

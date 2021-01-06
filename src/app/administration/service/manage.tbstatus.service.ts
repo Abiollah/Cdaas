@@ -14,7 +14,7 @@ export class ManageTbstatusService {
 
   constructor(private http: HttpClient) { }
 
-  createUpdateTbstatus(data): Observable<any>{
+  createTbstatus(data): Observable<any>{
     console.log(data);
     return this.http.post<TbstatusData>(this.getBaseApiUrl()+'posttbstatus',data);
   }
@@ -23,18 +23,9 @@ export class ManageTbstatusService {
     return this.http.get<TbstatusData>(this.getBaseApiUrl()+'listtbstatus');
   }
 
-  updateTbstatus(data){
-    return this.http.post<TbstatusData>(this.getBaseApiUrl()+'posttbstatus',data);
-  }
+  
 
-  getTbstatus() {
-    return this.http.get<any>(this.getBaseApiUrl()+'listtbstatus')
-    .toPromise()
-    .then(res => res.data as TbstatusData)
-    .then(data => data);
-}
-
-private getBaseApiUrl(): string {
+protected getBaseApiUrl(): string {
   return isDevMode ? environment.apiBaseUrl : environment.apiBaseUrl;
   }
 }

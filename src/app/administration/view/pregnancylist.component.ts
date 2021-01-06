@@ -19,7 +19,7 @@ export class PregnancylistComponent implements OnInit {
   constructor(private messageService: MessageService,private router: Router,private location: Location,private managepregnancyService:ManagePregnancyService, private breadcrumbService: AppBreadcrumbService) {
     this.breadcrumbService.setItems([
       { label: 'Dashboard', routerLink: ['/dashboard'] },
-      { label: 'Meta-data', routerLink: ['/metadata'] },
+      { label: 'Metadata', routerLink: ['/metadatalist'] },
       { label: 'List Pregnancy', routerLink: ['/pregnancylist'] }    ]);
    }
 
@@ -47,7 +47,7 @@ export class PregnancylistComponent implements OnInit {
     this.pregnancyDialog=true;
    }
    updatePregnancy(){
-     this.managepregnancyService.createUpdatePregnancy(this.selectedPregnancy).subscribe(
+     this.managepregnancyService.createPregnancy(this.selectedPregnancy).subscribe(
       () => {
         this.addSuccess("Success!","Pregnancy information updated successfully.");
            

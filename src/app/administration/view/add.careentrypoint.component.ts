@@ -34,7 +34,7 @@ export class ManageCareentrypointComponent implements OnInit {
 addCareentrypoint(){
   this.careentrypointcreatedata.created_by = +sessionStorage.getItem("userid");
   this.careentrypointcreatedata.created_date = new Date();
-  this.managecareentrypointService.createUpdateCareEntryPoint(this.careentrypointcreatedata).subscribe(
+  this.managecareentrypointService.createCareEntryPoint(this.careentrypointcreatedata).subscribe(
     () => {
       this.addSuccess("Success!","Care Entry Point added successfully.");
   }, 

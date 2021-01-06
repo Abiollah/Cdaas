@@ -48,7 +48,7 @@ export class AllergenslistComponent implements OnInit {
       this.allergensDialog=true;
      }
      updateAllergens(){
-       this.manageallergensService.createUpdateAllergens(this.selectedAllergens).subscribe(
+       this.manageallergensService.createAllergens(this.selectedAllergens).subscribe(
         () => {
           this.addSuccess("Success!","Allergens information updated successfully.");
              

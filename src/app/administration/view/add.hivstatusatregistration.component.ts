@@ -32,7 +32,7 @@ export class ManageHivstatusatregistrationComponent implements OnInit {
 addHivstatusatregistration(){
   this.hivstatusatregistrationcreatedata.created_by = +sessionStorage.getItem("userid");
   this.hivstatusatregistrationcreatedata.created_date = new Date();
-  this.managehivstatusatregistrationService.createUpdateHivStatusAtRegistration(this.hivstatusatregistrationcreatedata).subscribe(
+  this.managehivstatusatregistrationService.createHivStatusAtRegistration(this.hivstatusatregistrationcreatedata).subscribe(
     () => {
       this.addSuccess("Success!","Hiv Status At Registration added successfully.");
   }, 

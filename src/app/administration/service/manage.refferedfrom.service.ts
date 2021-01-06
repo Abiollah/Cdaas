@@ -13,7 +13,7 @@ export class ManageRefferedfromService {
 
   constructor(private http: HttpClient) { }
 
-  createUpdateRefferedfrom(data): Observable<any>{
+  createRefferedfrom(data): Observable<any>{
     console.log(data);
     return this.http.post<RefferedfromData>(this.getBaseApiUrl()+'postrefferedfrom',data);
   }
@@ -22,18 +22,9 @@ export class ManageRefferedfromService {
     return this.http.get<RefferedfromData>(this.getBaseApiUrl()+'listrefferedfrom');
   }
 
-  updateRefferedfrom(data){
-    return this.http.post<RefferedfromData>(this.getBaseApiUrl()+'postrefferedfrom',data);
-  }
+  
 
-  getRefferedfrom() {
-    return this.http.get<any>(this.getBaseApiUrl()+'listrefferedfrom')
-    .toPromise()
-    .then(res => res.data as RefferedfromData)
-    .then(data => data);
-}
-
-private getBaseApiUrl(): string {
+protected getBaseApiUrl(): string {
   return isDevMode ? environment.apiBaseUrl : environment.apiBaseUrl;
   }
 }

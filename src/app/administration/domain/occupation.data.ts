@@ -1,5 +1,5 @@
 export interface OccupationData{
-    occupation_id: number;
+    
     name: string;
     code: string;
     description: string;

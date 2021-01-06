@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AppBreadcrumbService} from '../../app.breadcrumb.service';
-import { NationalityData, NationalityDataCreate } from '../domain/nationality.data';
+import { NationalityData } from '../domain/nationality.data';
 import {ManageNationalityService} from '../service/manage.nationality.service';
 import { Location } from '@angular/common';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
@@ -20,7 +20,7 @@ export class NationalitylistComponent implements OnInit {
   constructor(private messageService: MessageService,private router: Router,private location: Location,private managenationalityService:ManageNationalityService, private breadcrumbService: AppBreadcrumbService) {
     this.breadcrumbService.setItems([
       { label: 'Dashboard', routerLink: ['/dashboard'] },
-      { label: 'Meta-data', routerLink: ['/metadata'] },
+      { label: 'Metadata', routerLink: ['/metadatalist'] },
       { label: 'List Nationality', routerLink: ['/nationalitylist'] }    ]);
    }
 
@@ -46,7 +46,7 @@ export class NationalitylistComponent implements OnInit {
       this.nationalityDialog=true;
      }
      updateNationality(){
-       this.managenationalityService.createUpdateNationality(this.selectedNationality).subscribe(
+       this.managenationalityService.createNationality(this.selectedNationality).subscribe(
         () => {
           this.addSuccess("Success!","Nationality information updated successfully.");
              

@@ -20,7 +20,7 @@ export class CareentrypointlistComponent implements OnInit {
   constructor(private messageService: MessageService,private router: Router,private location: Location,private managecareentrypointService:ManageCareentrypointService, private breadcrumbService: AppBreadcrumbService) {
     this.breadcrumbService.setItems([
       { label: 'Dashboard', routerLink: ['/dashboard'] },
-      { label: 'Meta-data', routerLink: ['/metadata'] },
+      { label: 'Metadata', routerLink: ['/metadatalist'] },
       { label: 'List Care Entry Point', routerLink: ['/careentrypointlist'] }    ]);
    }
 
@@ -46,7 +46,7 @@ export class CareentrypointlistComponent implements OnInit {
       this.careentrypointDialog=true;
      }
      updateCareentrypoint(){
-       this.managecareentrypointService.createUpdateCareEntryPoint(this.selectedCareentrypoint).subscribe(
+       this.managecareentrypointService.createCareEntryPoint(this.selectedCareentrypoint).subscribe(
         () => {
           this.addSuccess("Success!","Care Entry Point information updated successfully.");
              

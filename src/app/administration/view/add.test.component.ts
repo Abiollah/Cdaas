@@ -37,7 +37,7 @@ ngOnInit(): void {
 addTest(){
 this.testcreatedata.created_by = +sessionStorage.getItem("userid");
 this.testcreatedata.created_date = new Date();
-this.managetestService.createUpdateTest(this.testcreatedata).subscribe(
+this.managetestService.createTest(this.testcreatedata).subscribe(
   data => {
     this.addSuccess("Success!","Test added successfully.");
 }, 

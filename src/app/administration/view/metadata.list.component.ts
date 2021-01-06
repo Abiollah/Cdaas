@@ -14,6 +14,7 @@ export class MetadataListComponent implements OnInit {
   demographicInfoManagement: MenuItem[];
   organisationUnitsManagement: MenuItem[];
   clinicalManagement: MenuItem[];
+  hivEnrollment: MenuItem[];
 
 
   constructor(private breadcrumbService: AppBreadcrumbService) {
@@ -25,64 +26,79 @@ export class MetadataListComponent implements OnInit {
 
   ngOnInit() {
     this.demographicInfoManagement = [
-      {
-          items: [
-              {
-                  label: 'Add/Manage Genders',
-                  icon: 'pi pi-fw pi-plus',
-                  routerLink: '/genderlist'
-              },
-              {
-                  label: 'Add/Manage Marital Status',
-                  icon: 'pi pi-fw pi-user-edit',
-                  routerLink: '/maritalstatuslist'
-              },
-              {
-                  label: 'Add/Manage Relationships',
-                  icon: 'pi pi-fw pi-user-edit',
-                  routerLink: '/relationship'
-              },
-              {
-                  label: 'Add/Manage Language',
-                  icon: 'pi pi-fw pi-user-edit',
-                  routerLink: '/languagelist'
-              },
-              {
-                  label: 'Add/Manage Occupation',
-                  icon: 'pi pi-fw pi-user-edit',
-                  routerLink: '/occupationlist'
-              },
-              {
-                  label: 'Add/Manage Qualification',
-                  icon: 'pi pi-fw pi-user-edit',
-                  routerLink: '/qualificationlist'
-              },
-              {
-                  label: 'Add/Manage Religion',
-                  icon: 'pi pi-fw pi-user-edit',
-                  routerLink: '/religionlist'
-              },
-              {
-                  label: 'Add/Manage Next of Kin',
-                  icon: 'pi pi-fw pi-user-edit',
-                  routerLink: '/nextofkinlist'
-              },
-              {
-                label: 'Add/Manage Nationality',
-                icon: 'pi pi-fw pi-user-edit',
-                routerLink: '/nationalitylist'
-            },
-            {
-                label: 'Add/Manage State of Origin',
-                icon: 'pi pi-fw pi-user-edit',
-                routerLink: '/stateoforiginlist'
-            },
-            {
-                label: 'Add/Manage Local Government Area',
-                icon: 'pi pi-fw pi-user-edit',
-                routerLink: '/localgovernmentarealist'
-            },
-            {
+        {
+            label: 'Personal Information',
+            items: [
+                {
+                    label: 'Add/Manage Genders',
+                    icon: 'pi pi-fw pi-plus',
+                    routerLink: '/genderlist'
+                },
+                {
+                    label: 'Add/Manage Marital Status',
+                    icon: 'pi pi-fw pi-user-edit',
+                    routerLink: '/maritalstatuslist'
+                },{
+                    label: 'Add/Manage Relationships',
+                    icon: 'pi pi-fw pi-user-edit',
+                    routerLink: '/relationship'
+                },
+                {
+                    label: 'Add/Manage Language',
+                    icon: 'pi pi-fw pi-user-edit',
+                    routerLink: '/languagelist'
+                },
+                {
+                    label: 'Add/Manage Occupation',
+                    icon: 'pi pi-fw pi-user-edit',
+                    routerLink: '/occupationlist'
+                },{
+                    label: 'Add/Manage Qualification',
+                    icon: 'pi pi-fw pi-user-edit',
+                    routerLink: '/qualificationlist'
+                },
+                {
+                    label: 'Add/Manage Religion',
+                    icon: 'pi pi-fw pi-user-edit',
+                    routerLink: '/religionlist'
+                },
+                {
+                    label: 'Add/Manage Next of Kin',
+                    icon: 'pi pi-fw pi-user-edit',
+                    routerLink: '/nextofkinlist'
+                }
+            ]
+        },
+        {
+            label: 'Geography / Location',
+                items: [
+                    {
+                        label: 'Add/Manage Nationality',
+                        icon: 'pi pi-fw pi-user-edit',
+                        routerLink: '/nationalitylist'
+                    },
+                    {
+                        label: 'Add/Manage State of Origin',
+                        icon: 'pi pi-fw pi-user-edit',
+                        routerLink: '/stateoforiginlist'
+                    },
+                    {
+                        label: 'Add/Manage Local Government Area',
+                        icon: 'pi pi-fw pi-user-edit',
+                        routerLink: '/localgovernmentarealist'
+                    }
+
+                ]
+        },
+
+    ];
+
+
+    this.hivEnrollment = [
+            { 
+                label:'Hiv Enrollment',
+                items:[
+                    {
                 label: 'Add/Manage Target Group',
                 icon: 'pi pi-fw pi-user-edit',
                 routerLink: '/targetgrouplist'

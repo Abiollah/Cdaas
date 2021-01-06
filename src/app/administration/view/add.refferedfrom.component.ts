@@ -33,7 +33,7 @@ export class ManageRefferedfromComponent implements OnInit {
   addRefferedfrom(){
     this.refferedfromcreatedata.created_by = +sessionStorage.getItem("userid");
     this.refferedfromcreatedata.created_date = new Date();
-    this.managerefferedfromService.createUpdateRefferedfrom(this.refferedfromcreatedata).subscribe(
+    this.managerefferedfromService.createRefferedfrom(this.refferedfromcreatedata).subscribe(
       () => {
         this.addSuccess("Success!","Reffered From added successfully.");
     }, 

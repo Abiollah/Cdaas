@@ -23,7 +23,7 @@ export class TestlistComponent implements OnInit {
   constructor(private messageService: MessageService,private router: Router,private location: Location,private managetestService:ManageTestService, private breadcrumbService: AppBreadcrumbService) {
     this.breadcrumbService.setItems([
       { label: 'Dashboard', routerLink: ['/dashboard'] },
-      { label: 'Meta-data', routerLink: ['/metadata'] },
+      { label: 'Metadata', routerLink: ['/metadatalist'] },
       { label: 'List Test', routerLink: ['/testlist'] }    ]);
    }
 
@@ -49,7 +49,7 @@ export class TestlistComponent implements OnInit {
       this.testDialog=true;
      }
      updateTest(){
-       this.managetestService.createUpdateTest(this.selectedTest).subscribe(
+       this.managetestService.createTest(this.selectedTest).subscribe(
         () => {
           this.addSuccess("Success!","Test information updated successfully.");
              

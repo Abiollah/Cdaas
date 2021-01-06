@@ -14,7 +14,7 @@ export class ManageQualificationService {
 
   constructor(private http: HttpClient) { }
 
-  createUpdateQualification(data): Observable<any>{
+  createQualification(data): Observable<any>{
     console.log(data);
     return this.http.post<QualificationData>(this.getBaseApiUrl()+'postqualifications',data);
   }
@@ -23,18 +23,9 @@ export class ManageQualificationService {
     return this.http.get<QualificationData>(this.getBaseApiUrl()+'listqualifications');
   }
 
-  updateQualification(data){
-    return this.http.post<QualificationData>(this.getBaseApiUrl()+'postqualifications',data);
-  }
+  
 
-  getQualification() {
-    return this.http.get<any>(this.getBaseApiUrl()+'listqualifications')
-    .toPromise()
-    .then(res => res.data as QualificationData)
-    .then(data => data);
-}
-
-private getBaseApiUrl(): string {
+protected getBaseApiUrl(): string {
   return isDevMode ? environment.apiBaseUrl : environment.apiBaseUrl;
   }
 }

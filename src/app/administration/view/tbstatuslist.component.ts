@@ -23,7 +23,7 @@ export class TbstatuslistComponent implements OnInit {
   constructor(private messageService: MessageService,private router: Router,private location: Location,private managetbstatusService:ManageTbstatusService, private breadcrumbService: AppBreadcrumbService) {
     this.breadcrumbService.setItems([
       { label: 'Dashboard', routerLink: ['/dashboard'] },
-      { label: 'Meta-data', routerLink: ['/metadata'] },
+      { label: 'Metadata', routerLink: ['/metadatalist'] },
       { label: 'List Tbstatus', routerLink: ['/tbstatuslist'] }    ]);
    }
 
@@ -49,7 +49,7 @@ export class TbstatuslistComponent implements OnInit {
       this.tbstatusDialog=true;
      }
      updateTbstatus(){
-       this.managetbstatusService.createUpdateTbstatus(this.selectedTbstatus).subscribe(
+       this.managetbstatusService.createTbstatus(this.selectedTbstatus).subscribe(
         () => {
           this.addSuccess("Success!","TB Status information updated successfully.");
              

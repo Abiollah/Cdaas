@@ -135,10 +135,12 @@ import { ManageTbstatusComponent } from './administration/view/add.tbstatus.comp
 import { TbstatuslistComponent } from './administration/view/tbstatuslist.component';
 import { ManageTestComponent } from './administration/view/add.test.component';
 import { TestlistComponent } from './administration/view/testlist.component';
-import { ManageTestgroupComponent } from './administration/view/add.testgroup.component';
-import { TestgrouplistComponent } from './administration/view/testgrouplist.component';
+import { ManagePriorityComponent } from './administration/view/add.priority.component';
+import { PrioritylistComponent } from './administration/view/prioritylist.component';
 import { ManageAllergensComponent } from './administration/view/add.allergens.component';
-import { AllergenslistComponent } from './administration/view/allergenslist.component'
+import { AllergenslistComponent } from './administration/view/allergenslist.component';
+import { ManageStatusComponent } from './administration/view/add.status.component';
+import { StatuslistComponent } from './administration/view/statuslist.component'
 
 //import { PatientComponent } from './client/patient.registration.component';
 
@@ -217,10 +219,12 @@ import { AllergenslistComponent } from './administration/view/allergenslist.comp
     TbstatuslistComponent,
     ManageTestComponent,
     TestlistComponent,
-    ManageTestgroupComponent,
-    TestgrouplistComponent,
+    ManagePriorityComponent,
+    PrioritylistComponent,
     ManageAllergensComponent,
-    AllergenslistComponent
+    AllergenslistComponent,
+    ManageStatusComponent,
+    StatuslistComponent
     
     
 

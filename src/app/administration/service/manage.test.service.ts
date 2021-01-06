@@ -14,7 +14,7 @@ export class ManageTestService {
 
   constructor(private http: HttpClient) { }
 
-  createUpdateTest(data): Observable<any>{
+  createTest(data): Observable<any>{
     console.log(data);
     return this.http.post<TestData>(this.getBaseApiUrl()+'posttest',data);
   }
@@ -23,18 +23,9 @@ export class ManageTestService {
     return this.http.get<TestData>(this.getBaseApiUrl()+'listtest');
   }
 
-  updateTest(data){
-    return this.http.post<TestData>(this.getBaseApiUrl()+'posttest',data);
-  }
+ 
 
-  getTest() {
-    return this.http.get<any>(this.getBaseApiUrl()+'listtest')
-    .toPromise()
-    .then(res => res.data as TestData)
-    .then(data => data);
-}
-
-private getBaseApiUrl(): string {
+protected getBaseApiUrl(): string {
   return isDevMode ? environment.apiBaseUrl : environment.apiBaseUrl;
   }
 }

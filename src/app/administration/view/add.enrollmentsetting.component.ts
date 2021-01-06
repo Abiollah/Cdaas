@@ -31,7 +31,7 @@ export class ManageEnrollmentsettingComponent implements OnInit {
 addEnrollmentSetting(){
   this.enrollmentsettingcreatedata.created_by = +sessionStorage.getItem("userid");
   this.enrollmentsettingcreatedata.created_date = new Date();
-  this.manageenrollmentsettingService.createUpdateEnrollmentSetting(this.enrollmentsettingcreatedata).subscribe(
+  this.manageenrollmentsettingService.createEnrollmentSetting(this.enrollmentsettingcreatedata).subscribe(
     data => {
       this.addSuccess("Success!","Enrollment Setting added successfully.");
   }, 

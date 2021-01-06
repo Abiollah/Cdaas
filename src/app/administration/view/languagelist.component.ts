@@ -21,7 +21,7 @@ export class LanguagelistComponent implements OnInit {
   constructor(private messageService: MessageService,private router: Router,private location: Location,private managelanguageService:ManageLanguageService, private breadcrumbService: AppBreadcrumbService) {
     this.breadcrumbService.setItems([
       { label: 'Dashboard', routerLink: ['/dashboard'] },
-      { label: 'Meta-data', routerLink: ['/metadata'] },
+      { label: 'Metadata', routerLink: ['/metadatalist'] },
       { label: 'List Language', routerLink: ['/languagelist'] }    ]);
    }
 
@@ -47,7 +47,7 @@ export class LanguagelistComponent implements OnInit {
       this.languageDialog=true;
      }
      updateLanguage(){
-       this.managelanguageService.createUpdateLanguage(this.selectedLanguage).subscribe(
+       this.managelanguageService.createLanguage(this.selectedLanguage).subscribe(
         () => {
           this.addSuccess("Success!","Language information updated successfully.");
              

@@ -12,7 +12,7 @@ import { environment } from '../../../environments/environment';
 export class ManageCareentrypointService {
 
   constructor(private http: HttpClient) { }
-  createUpdateCareEntryPoint(data): Observable<any>{
+  createCareEntryPoint(data): Observable<any>{
     console.log(data);
     return this.http.post<CareEntryPointData>(this.getBaseApiUrl()+'postcareentrypoint',data);
   }
@@ -21,18 +21,8 @@ export class ManageCareentrypointService {
     return this.http.get<CareEntryPointData>(this.getBaseApiUrl()+'listcareentrypoint');
   }
 
-  updateCareEntryPoint(data){
-    return this.http.post<CareEntryPointData>(this.getBaseApiUrl()+'postcareentrypoint',data);
-  }
 
-  getCareEntryPoint() {
-    return this.http.get<any>(this.getBaseApiUrl()+'listcareentrypoint')
-    .toPromise()
-    .then(res => res.data as CareEntryPointData)
-    .then(data => data);
-}
-
-private getBaseApiUrl(): string {
+protected getBaseApiUrl(): string {
   return isDevMode ? environment.apiBaseUrl : environment.apiBaseUrl;
   }
 }

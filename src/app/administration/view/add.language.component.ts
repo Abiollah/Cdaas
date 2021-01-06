@@ -32,7 +32,7 @@ export class ManageLanguageComponent implements OnInit {
 addLanguage(){
   this.languagecreatedata.created_by = +sessionStorage.getItem("userid");
   this.languagecreatedata.created_date = Date.now();
-  this.managelanguageService.createUpdateLanguage(this.languagecreatedata).subscribe(
+  this.managelanguageService.createLanguage(this.languagecreatedata).subscribe(
     () => {
       this.addSuccess("Success!","Language added successfully.");
   }, 

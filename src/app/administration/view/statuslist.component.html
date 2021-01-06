@@ -4,22 +4,22 @@
         <div class="card">
 			<p-toolbar styleClass="p-mb-4">
 				<ng-template pTemplate="left">
-					<button pButton pRipple label="Add Test Group" icon="pi pi-plus" class="p-mr-2 p-mb-2" (click)="goToAddTestgroup()"></button>
-					<button pButton pRipple label="Delete Test Group" icon="pi pi-trash" class="p-mb-2" (click)="deleteSelectedProducts()" [disabled]="!selectedProducts || !selectedProducts.length"></button>
+					<button pButton pRipple label="Add Status" icon="pi pi-plus" class="p-mr-2 p-mb-2" (click)="goToAddStatus()"></button>
+					<button pButton pRipple label="Delete Status" icon="pi pi-trash" class="p-mb-2" (click)="deleteSelectedProducts()" [disabled]="!selectedProducts || !selectedProducts.length"></button>
 				</ng-template>
 
 				<ng-template pTemplate="right">
 					<button pButton pRipple label="Back" icon="pi pi-chevron-left" class="p-button-help p-mb-2" (click)="goBack()"></button>
 				</ng-template>
             </p-toolbar>
-            <p-table #dt [value]="testgroupList" [rows]="10" [paginator]="true" [globalFilterFields]="['name','code']"
+            <p-table #dt [value]="statusList" [rows]="10" [paginator]="true" [globalFilterFields]="['name','code']"
          [rowHover]="true" dataKey="id"
             styleClass="p-datatable-customers"
             currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
    
             <ng-template pTemplate="caption">
                 <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between table-header">
-                    <h5 class="p-m-0">Test Group Listing</h5>
+                    <h5 class="p-m-0">Status Listing</h5>
                     <span class="p-input-icon-left">
                     <i class="pi pi-search"></i>
                     <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')" placeholder="Search..." />
@@ -31,69 +31,78 @@
                     <th style="width: 3rem">
                         <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
                     </th>
-                    <th pSortableColumn="testgroup_id"> id <p-sortIcon field="testgroup_id"></p-sortIcon></th>
+                    <th pSortableColumn="status_id"> id <p-sortIcon field="status_id"></p-sortIcon></th>
                     <th pSortableColumn="name"> Name<p-sortIcon field="name"></p-sortIcon></th>
+                    <th pSortableColumn="status_type_id "> Status Type I.d <p-sortIcon field="status_type_id"></p-sortIcon></th>
                     <th pSortableColumn="code "> Code <p-sortIcon field="code"></p-sortIcon></th>
                     <th pSortableColumn="description">  Description <p-sortIcon field="description"></p-sortIcon></th>
                     
                     <th>Action</th>
                 </tr>
             </ng-template>
-            <ng-template pTemplate="body" let-testgroup>
+            <ng-template pTemplate="body" let-status>
                 <tr>
                     <td>
-                        <p-tableCheckbox [value]="testgroup"></p-tableCheckbox>
+                        <p-tableCheckbox [value]="status"></p-tableCheckbox>
                     </td>
                     <td><span class="p-column-title"></span>
-                        {{testgroup.testgroup_id}}
+                        {{status.status_id}}
                     </td>
                     <td><span class="p-column-title"></span>
-                        {{testgroup.name}}
+                        {{status.name}}
                     </td>
                     <td><span class="p-column-title"></span>
-                        {{testgroup.code}}
+                        {{status.status_type_id}}
                     </td>
                     <td><span class="p-column-title"></span>
-                        {{testgroup.description}}
+                        {{status.code}}
+                    </td>
+                    <td><span class="p-column-title"></span>
+                        {{status.description}}
                     </td>
                     
                     <td>
-                        <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="editTestgroup(testgroup)"></button>
+                        <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="editStatus(status)"></button>
                         <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="deleteProduct(product)"></button>
                     </td>
                 </tr>
             </ng-template>
             <ng-template pTemplate="summary">
                 <div class="p-d-flex p-ai-center p-jc-between">
-                    In total there are {{testgroupList ? testgroupList.length : 0 }} Testgroup.
+                    In total there are {{statusList ? statusList.length : 0 }} Status.
                 </div>
             </ng-template>
         </p-table>   
             </div>
 
-            <p-dialog [(visible)]="testgroupDialog" [style]="{width: '650px'}" header="Test Group Details" [modal]="true" styleClass="p-fluid">
+            <p-dialog [(visible)]="statusDialog" [style]="{width: '650px'}" header="Status Details" [modal]="true" styleClass="p-fluid">
            
                 <ng-template pTemplate="content">
                     <div class="p-col-12 p-fluid p-formgrid p-grid">
                     <div class="p-col-12 p-field">
                         <label for="name">Name</label>
-                        <input id="name" pInputText [(ngModel)]="selectedTestgroup.name">
+                        <input id="name" pInputText [(ngModel)]="selectedStatus.name">
+                    </div>
+
+                    <div class="p-col-12 p-field">
+                        <label for="status_type_id">Status Type Id</label>
+                        <input id="status_type_id" pInputText [(ngModel)]="selectedStatus.status_type_id">
                     </div>
                     <div class="p-col-6 p-field">
                         <label for="code">Code</label>
-                        <input id="code" pInputText [(ngModel)]="selectedTestgroup.code">
+                        <input id="code" pInputText [(ngModel)]="selectedStatus.code">
                     </div>
                     
             <div class="p-col-12 p-field">
                 <label for="description">Description </label>
-                <textarea id="description" pInputText [(ngModel)]="selectedTestgroup.description" required rows="3" cols="20"></textarea>
+                <textarea id="description" pInputText [(ngModel)]="selectedStatus.description" required rows="3" cols="20"></textarea>
             </div>
                     </div>
                     </ng-template>
     
                     <ng-template pTemplate="footer">
-                        <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="hideTestgroupDialog()"></button>
-                        <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="updateTestgroup()"></button>
+                        <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="hideStatusDialog()"></button>
+                        <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="updateStatus()"></button>
                     </ng-template>
                     </p-dialog>
         </div>

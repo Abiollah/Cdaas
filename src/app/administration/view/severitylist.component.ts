@@ -21,7 +21,7 @@ export class SeveritylistComponent implements OnInit {
   constructor(private messageService: MessageService,private router: Router,private location: Location,private manageseverityService:ManageSeverityService, private breadcrumbService: AppBreadcrumbService) {
     this.breadcrumbService.setItems([
       { label: 'Dashboard', routerLink: ['/dashboard'] },
-      { label: 'Meta-data', routerLink: ['/metadata'] },
+      { label: 'Metadata', routerLink: ['/metadatalist'] },
       { label: 'List Severity', routerLink: ['/severitylist'] }    ]);
    }
 
@@ -47,7 +47,7 @@ export class SeveritylistComponent implements OnInit {
       this.severityDialog=true;
      }
      updateSeverity(){
-       this.manageseverityService.createUpdateSeverity(this.selectedSeverity).subscribe(
+       this.manageseverityService.createSeverity(this.selectedSeverity).subscribe(
         () => {
           this.addSuccess("Success!","Severity information updated successfully.");
              

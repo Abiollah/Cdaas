@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AppBreadcrumbService} from '../../app.breadcrumb.service';
-import { TargetGroupData, TargetGroupDataCreate } from '../domain/targetgroup.data';
+import { TargetGroupData } from '../domain/targetgroup.data';
 import {ManageTargetgroupService} from '../service/manage.targetgroup.service';
 import { Location } from '@angular/common';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
@@ -21,8 +21,8 @@ export class TargetgrouplistComponent implements OnInit {
   constructor(private messageService: MessageService,private router: Router,private location: Location,private managetargetgroupService:ManageTargetgroupService, private breadcrumbService: AppBreadcrumbService) {
     this.breadcrumbService.setItems([
       { label: 'Dashboard', routerLink: ['/dashboard'] },
-      { label: 'Meta-data', routerLink: ['/metadata'] },
-      { label: 'List Target-Group', routerLink: ['/targetgrouplist'] }    ]);
+      { label: 'Metadata', routerLink: ['/metadatalist'] },
+      { label: 'List Target Group', routerLink: ['/targetgrouplist'] }    ]);
    }
 
   ngOnInit(): void {
@@ -49,7 +49,7 @@ export class TargetgrouplistComponent implements OnInit {
     this.targetgroupDialog=true;
    }
    updateTargetgroup(){
-     this.managetargetgroupService.createUpdateTargetgroup(this.selectedTargetgroup).subscribe(
+     this.managetargetgroupService.createTargetgroup(this.selectedTargetgroup).subscribe(
       () => {
         this.addSuccess("Success!","Target-Group information updated successfully.");
            

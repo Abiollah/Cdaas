@@ -14,7 +14,7 @@ export class ManageAllergensService {
 
   constructor(private http: HttpClient) { }
 
-  createUpdateAllergens(data): Observable<any>{
+  createAllergens(data): Observable<any>{
     console.log(data);
     return this.http.post<AllergensData>(this.getBaseApiUrl()+'postallergens',data);
   }
@@ -23,18 +23,7 @@ export class ManageAllergensService {
     return this.http.get<AllergensData>(this.getBaseApiUrl()+'listallergens');
   }
 
-  updateAllergens(data){
-    return this.http.post<AllergensData>(this.getBaseApiUrl()+'postallergens',data);
-  }
-
-  getAllergens() {
-    return this.http.get<any>(this.getBaseApiUrl()+'listallergens')
-    .toPromise()
-    .then(res => res.data as AllergensData)
-    .then(data => data);
-}
-
-private getBaseApiUrl(): string {
+protected getBaseApiUrl(): string {
   return isDevMode ? environment.apiBaseUrl : environment.apiBaseUrl;
   }
 }

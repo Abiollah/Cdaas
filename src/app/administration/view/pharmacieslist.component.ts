@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AppBreadcrumbService} from '../../app.breadcrumb.service';
-import { PharmaciesData, PharmaciesDataCreate } from '../domain/pharmacies.data';
+import { PharmaciesData } from '../domain/pharmacies.data';
 import {ManagePharmaciesService} from '../service/manage.pharmacies.service';
 import { Location } from '@angular/common';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
@@ -21,7 +21,7 @@ export class PharmacieslistComponent implements OnInit {
   constructor(private messageService: MessageService,private router: Router,private location: Location,private managepharmaciesService:ManagePharmaciesService, private breadcrumbService: AppBreadcrumbService) {
     this.breadcrumbService.setItems([
       { label: 'Dashboard', routerLink: ['/dashboard'] },
-      { label: 'Metadata', routerLink: ['/metadata'] },
+      { label: 'Metadata', routerLink: ['/metadatalist'] },
       { label: 'List Pharmacies', routerLink: ['/pharmacieslist'] }    ]);
 
     }
@@ -50,7 +50,7 @@ export class PharmacieslistComponent implements OnInit {
       this.pharmaciesDialog=true;
      }
      updateUser(){
-       this.managepharmaciesService.createUpdatePhamarcies(this.selectedPharmacies).subscribe(
+       this.managepharmaciesService.createPhamarcies(this.selectedPharmacies).subscribe(
         () => {
            this.addSuccess("Success!","Pharmacy updated successfully");
            

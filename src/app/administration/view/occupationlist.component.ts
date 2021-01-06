@@ -22,7 +22,7 @@ export class OccupationlistComponent implements OnInit {
   constructor(private messageService: MessageService,private router: Router,private location: Location,private manageoccupationService:ManageOccupationService, private breadcrumbService: AppBreadcrumbService) {
     this.breadcrumbService.setItems([
       { label: 'Dashboard', routerLink: ['/dashboard'] },
-      { label: 'Meta-data', routerLink: ['/metadata'] },
+      { label: 'Metadata', routerLink: ['/metadatalist'] },
       { label: 'List Occupation', routerLink: ['/occupationlist'] }    ]);
    }
 
@@ -49,7 +49,7 @@ export class OccupationlistComponent implements OnInit {
     this.occupationDialog=true;
    }
    updateOccupation(){
-     this.manageoccupationService.createUpdateOccupation(this.selectedOccupation).subscribe(
+     this.manageoccupationService.createOccupation(this.selectedOccupation).subscribe(
       () => {
         this.addSuccess("Success!","Occupation information updated successfully.");
            

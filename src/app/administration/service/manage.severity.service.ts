@@ -14,7 +14,7 @@ export class ManageSeverityService {
 
   constructor(private http: HttpClient) { }
 
-  createUpdateSeverity(data): Observable<any>{
+  createSeverity(data): Observable<any>{
     console.log(data);
     return this.http.post<SeverityData>(this.getBaseApiUrl()+'postseverity',data);
   }
@@ -23,18 +23,9 @@ export class ManageSeverityService {
     return this.http.get<SeverityData>(this.getBaseApiUrl()+'listseverity');
   }
 
-  updateSeverity(data){
-    return this.http.post<SeverityData>(this.getBaseApiUrl()+'postseverity',data);
-  }
+  
 
-  getSeverity() {
-    return this.http.get<any>(this.getBaseApiUrl()+'listseverity')
-    .toPromise()
-    .then(res => res.data as SeverityData)
-    .then(data => data);
-}
-
-private getBaseApiUrl(): string {
+protected getBaseApiUrl(): string {
   return isDevMode ? environment.apiBaseUrl : environment.apiBaseUrl;
   }
 }

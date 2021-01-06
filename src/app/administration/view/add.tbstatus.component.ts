@@ -34,7 +34,7 @@ export class ManageTbstatusComponent implements OnInit {
 addTbstatus(){
   this.tbstatuscreatedata.created_by = +sessionStorage.getItem("userid");
   this.tbstatuscreatedata.created_date = new Date();
-  this.managetbstatusService.createUpdateTbstatus(this.tbstatuscreatedata).subscribe(
+  this.managetbstatusService.createTbstatus(this.tbstatuscreatedata).subscribe(
     data => {
       this.addSuccess("Success!","TB Status added successfully.");
   }, 

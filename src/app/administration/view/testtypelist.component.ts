@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppBreadcrumbService } from '../../app.breadcrumb.service';
-import { TesttypeData, TesttypeDataCreate } from '../domain/testtype.data';
+import { TesttypeData } from '../domain/testtype.data';
 import { TesttypeService } from '../service/testtype.service';
 import { Location } from '@angular/common';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';

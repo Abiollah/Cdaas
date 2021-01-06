@@ -1,29 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import {AppBreadcrumbService} from '../../app.breadcrumb.service';
-import { TestgroupData } from '../domain/testgroup.data';
-import {ManageTestgroupService} from '../service/manage.testgroup.service';
+import { PriorityData } from '../domain/priority.data';
+import {ManagePriorityService} from '../service/manage.priority.service';
 import { Location } from '@angular/common';
 import {MessageService} from 'primeng/api';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 
 @Component({
-  selector: 'app-add.testgroup',
-  templateUrl: './add.testgroup.component.html',
-  styleUrls: ['./add.testgroup.component.scss'],
+  selector: 'app-add.priority',
+  templateUrl: './add.priority.component.html',
+  styleUrls: ['./add.priority.component.scss'],
   providers: [MessageService]
 })
-export class ManageTestgroupComponent implements OnInit {
+export class ManagePriorityComponent implements OnInit {
 
-  testgroupcreatedata = {} as TestgroupData;
+  prioritycreatedata = {} as PriorityData;
 
   
 
-  constructor(private router: Router,private messageService: MessageService,private location: Location,private managetestgroupService:ManageTestgroupService, private breadcrumbService: AppBreadcrumbService) {
+  constructor(private router: Router,private messageService: MessageService,private location: Location,private managepriorityService:ManagePriorityService, private breadcrumbService: AppBreadcrumbService) {
     this.breadcrumbService.setItems([
       { label: 'Dashboard', routerLink: ['/dashboard'] },
       { label: 'Metadata', routerLink: ['/metadatalist'] },
-      { label: 'Add Testgroup', routerLink: ['/addTestgrouplist'] }    ]);
+      { label: 'Add Priority', routerLink: ['/addPrioritylist'] }    ]);
   }
 
   ngOnInit(): void {
@@ -33,15 +33,15 @@ export class ManageTestgroupComponent implements OnInit {
     }
   }
 
-addTestgroup(){
-  this.testgroupcreatedata.created_by = +sessionStorage.getItem("userid");
-  this.testgroupcreatedata.created_date = new Date();
-  this.managetestgroupService.createUpdateTestgroup(this.testgroupcreatedata).subscribe(
+addPriority(){
+  this.prioritycreatedata.created_by = +sessionStorage.getItem("userid");
+  this.prioritycreatedata.created_date = new Date();
+  this.managepriorityService.createPriority(this.prioritycreatedata).subscribe(
     data => {
-      this.addSuccess("Success!","Test Group added successfully.");
+      this.addSuccess("Success!","Priority added successfully.");
   }, 
   error => {
-  this.addError("Failed!","Could not add Test Group.");
+  this.addError("Failed!","Could not add Priority.");
   }
   
   );

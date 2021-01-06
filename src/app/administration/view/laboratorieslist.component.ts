@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AppBreadcrumbService} from '../../app.breadcrumb.service';
-import { LaboratoriesData, LaboratoriesDataCreate } from '../domain/laboratories.data';
+import { LaboratoriesData } from '../domain/laboratories.data';
 import {ManageLaboratoriesService} from '../service/manage.laboratories.service';
 import { Location } from '@angular/common';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
@@ -22,7 +22,7 @@ export class LaboratorieslistComponent implements OnInit {
   constructor(private messageService: MessageService,private router: Router,private location: Location,private managelaboratoriesService:ManageLaboratoriesService, private breadcrumbService: AppBreadcrumbService) {
     this.breadcrumbService.setItems([
       { label: 'Dashboard', routerLink: ['/dashboard'] },
-      { label: 'Metadata', routerLink: ['/metadata'] },
+      { label: 'Metadata', routerLink: ['/metadatalist'] },
       { label: 'List Laboratories', routerLink: ['/laboratorieslist'] }    ]);
 
     }

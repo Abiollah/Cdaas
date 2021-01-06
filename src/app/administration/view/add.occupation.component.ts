@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AppBreadcrumbService} from '../../app.breadcrumb.service';
-import { OccupationData, OccupationDataCreate } from '../domain/occupation.data';
+import { OccupationData } from '../domain/occupation.data';
 import {ManageOccupationService} from '../service/manage.occupation.service';
 import { Location } from '@angular/common';
 import {MessageService} from 'primeng/api';
@@ -13,15 +13,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 })
 export class ManageOccupationComponent implements OnInit {
 
-  occupationcreateddata: OccupationData = {
-
-    //occupation_id: 0,
-    name: '',
-    code: '',
-    description: '',
-    created_by:0,
-    created_date: null,
-  };
+  occupationcreateddata = {} as OccupationData; 
 
   constructor(private router: Router,private messageService: MessageService,private location: Location,private manageoccupationService:ManageOccupationService, private breadcrumbService: AppBreadcrumbService) {
     this.breadcrumbService.setItems([
@@ -39,8 +31,8 @@ export class ManageOccupationComponent implements OnInit {
 
   addOccupation(){
     this.occupationcreateddata.created_by = +sessionStorage.getItem("userid");
-    this.occupationcreateddata.created_date = new Date();
-    this.manageoccupationService.createUpdateOccupation(this.occupationcreateddata).subscribe(
+    //this.occupationcreateddata.created_date = new Date();
+    this.manageoccupationService.createOccupation(this.occupationcreateddata).subscribe(
       data => {
         this.addSuccess("Success!","Occupation added successfully.");
     }, 

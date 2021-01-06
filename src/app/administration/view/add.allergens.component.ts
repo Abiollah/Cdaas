@@ -35,7 +35,7 @@ export class ManageAllergensComponent implements OnInit {
 addAllergens(){
   this.allergenscreatedata.created_by = +sessionStorage.getItem("userid");
   this.allergenscreatedata.created_date = new Date();
-  this.manageallergensService.createUpdateAllergens(this.allergenscreatedata).subscribe(
+  this.manageallergensService.createAllergens(this.allergenscreatedata).subscribe(
     data => {
       this.addSuccess("Success!","Allergens added successfully.");
   }, 

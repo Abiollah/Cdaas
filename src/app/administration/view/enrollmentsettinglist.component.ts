@@ -22,7 +22,7 @@ export class EnrollmentsettinglistComponent implements OnInit {
   constructor(private messageService: MessageService,private router: Router,private location: Location,private manageenrollmentsettingService:ManageEnrollmentSettingService, private breadcrumbService: AppBreadcrumbService) {
     this.breadcrumbService.setItems([
       { label: 'Dashboard', routerLink: ['/dashboard'] },
-      { label: 'Meta-data', routerLink: ['/metadata'] },
+      { label: 'Metadata', routerLink: ['/metadatalist'] },
       { label: 'List Enrollment Setting', routerLink: ['/enrollmentsettinglist'] }    ]);
    }
 
@@ -48,7 +48,7 @@ export class EnrollmentsettinglistComponent implements OnInit {
       this.enrollmentsettingDialog=true;
      }
      updateEnrollmentSetting(){
-       this.manageenrollmentsettingService.createUpdateEnrollmentSetting(this.selectedEnrollmentSetting).subscribe(
+       this.manageenrollmentsettingService.createEnrollmentSetting(this.selectedEnrollmentSetting).subscribe(
         () => {
           this.addSuccess("Success!","Enrollment Setting information updated successfully.");
              

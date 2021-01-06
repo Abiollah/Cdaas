@@ -14,7 +14,7 @@ export class ManageEnrollmentSettingService {
 
   constructor(private http: HttpClient) { }
 
-  createUpdateEnrollmentSetting(data): Observable<any>{
+  createEnrollmentSetting(data): Observable<any>{
     console.log(data);
     return this.http.post<EnrollmentSettingData>(this.getBaseApiUrl()+'postenrollmentsetting',data);
   }
@@ -23,18 +23,9 @@ export class ManageEnrollmentSettingService {
     return this.http.get<EnrollmentSettingData>(this.getBaseApiUrl()+'listenrollmentsetting');
   }
 
-  updateEnrollmentSetting(data){
-    return this.http.post<EnrollmentSettingData>(this.getBaseApiUrl()+'postenrollmentsetting',data);
-  }
+  
 
-  getEnrollmentSetting() {
-    return this.http.get<any>(this.getBaseApiUrl()+'listenrollmentsetting')
-    .toPromise()
-    .then(res => res.data as EnrollmentSettingData)
-    .then(data => data);
-}
-
-private getBaseApiUrl(): string {
+protected getBaseApiUrl(): string {
   return isDevMode ? environment.apiBaseUrl : environment.apiBaseUrl;
   }
 }

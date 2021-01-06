@@ -34,7 +34,7 @@ export class ManageQualificationComponent implements OnInit {
   addQualification(){
     this.qualificationcreatedata.created_by = +sessionStorage.getItem("userid");
     //this.qualificationcreatedata.created_date = new Date();
-    this.managequalificationService.createUpdateQualification(this.qualificationcreatedata).subscribe(
+    this.managequalificationService.createQualification(this.qualificationcreatedata).subscribe(
       () => {
         this.addSuccess("Success!","Qualification added successfully.");
     }, 

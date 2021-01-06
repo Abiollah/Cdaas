@@ -13,7 +13,7 @@ export class ManagePregnancyService {
 
   constructor(private http: HttpClient) { }
 
-  createUpdatePregnancy(data): Observable<any>{
+  createPregnancy(data): Observable<any>{
     console.log(data);
     return this.http.post<PregnancyData>(this.getBaseApiUrl()+'postpregnancy',data);
   }
@@ -22,18 +22,8 @@ export class ManagePregnancyService {
     return this.http.get<PregnancyData>(this.getBaseApiUrl()+'listpregnancy');
   }
 
-  updatePregnancy(data){
-    return this.http.post<PregnancyData>(this.getBaseApiUrl()+'postpregnancy',data);
-  }
 
-  getPregnancy() {
-    return this.http.get<any>(this.getBaseApiUrl()+'listpregnancy')
-    .toPromise()
-    .then(res => res.data as PregnancyData)
-    .then(data => data);
-}
-
-private getBaseApiUrl(): string {
+protected getBaseApiUrl(): string {
   return isDevMode ? environment.apiBaseUrl : environment.apiBaseUrl;
   }
 }

@@ -32,7 +32,7 @@ export class ManagePregnancyComponent implements OnInit {
   addPregnancy(){
     this.pregnancycreatedata.created_by = +sessionStorage.getItem("userid");
     this.pregnancycreatedata.created_date = new Date();
-    this.managepregnancyService.createUpdatePregnancy(this.pregnancycreatedata).subscribe(
+    this.managepregnancyService.createPregnancy(this.pregnancycreatedata).subscribe(
       () => {
         this.addSuccess("Success!","Pregnancy added successfully.");
     }, 

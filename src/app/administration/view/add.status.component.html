@@ -1,0 +1,50 @@
+<p-toast></p-toast>
+<div class="p-col-12">
+    <h5>Add Status</h5>
+    <div class="card">
+        <p-toolbar styleClass="p-mb-4">
+            <ng-template pTemplate="left">
+                <button pButton pRipple label="Save" icon="pi pi-plus" class="p-mr-2 p-mb-2" 
+                (click)="addStatus()"></button>
+                <button pButton pRipple label="Clear" icon="pi pi-trash" class="p-mb-2"></button>
+            </ng-template>
+
+            <ng-template pTemplate="right">
+                <button pButton pRipple label="Back" (click)="goBack()" icon="pi pi-chevron-left" class="p-button-help p-mb-2"></button>
+            </ng-template>
+        </p-toolbar>
+
+        <div class="p-grid p-formgrid p-fluid">
+           
+        <div class="p-col-4 p-field">
+            <label for="name">Status Name</label>
+            <input id="name" type="name" pInputText [(ngModel)]="statuscreatedata.name" aria-describedby="name-help" 
+            placeholder="Enter Status Name">
+
+        </div>
+
+        <div class="p-col-4 p-field">
+            <label for="status_type_id">Status Type I.d</label>
+            <input id="status_type_id" type="status_type_id" pInputText [(ngModel)]="statuscreatedata.status_type_id" aria-describedby="status_type_id-help" 
+            placeholder="Enter Status Type i.d ">
+
+        </div>
+
+        <div class="p-col-4 p-field">
+            <label for="code">Code </label>
+            <input id="code" type="code" pInputText [(ngModel)]="statuscreatedata.code" aria-describedby="code-help" 
+            placeholder="Enter Status Code" required>
+        </div>
+
+        <div class="p-col-8 p-field">
+            <label for="description">Status Description </label>
+            <textarea rows="5" cols="30" placeholder="Enter Status Description" [(ngModel)]="statuscreatedata.description" pInputTextarea ></textarea>
+        </div>
+
+        
+    </div>
+      
+        
+    </div>
+</div>
+

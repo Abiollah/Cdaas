@@ -20,7 +20,7 @@ export class HivStatusAtRegistrationlistComponent implements OnInit {
   constructor(private messageService: MessageService,private router: Router,private location: Location,private managehivstatusatregistrationService:ManageHivstatusatregistrationService, private breadcrumbService: AppBreadcrumbService) {
     this.breadcrumbService.setItems([
       { label: 'Dashboard', routerLink: ['/dashboard'] },
-      { label: 'Meta-data', routerLink: ['/metadata'] },
+      { label: 'Metadata', routerLink: ['/metadatalist'] },
       { label: 'List Hiv Status At Registration', routerLink: ['/hivstatusatregistrationlist'] }    ]);
    }
 
@@ -46,7 +46,7 @@ export class HivStatusAtRegistrationlistComponent implements OnInit {
       this.hivstatusatregistrationDialog=true;
      }
      updateHivstatusatregistration(){
-       this.managehivstatusatregistrationService.createUpdateHivStatusAtRegistration(this.selectedHivstatusatregistration).subscribe(
+       this.managehivstatusatregistrationService.createHivStatusAtRegistration(this.selectedHivstatusatregistration).subscribe(
         () => {
           this.addSuccess("Success!","Hiv Status At Registration information updated successfully.");
              

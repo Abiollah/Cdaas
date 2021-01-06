@@ -1,11 +1,11 @@
 <p-toast></p-toast>
 <div class="p-col-12">
-    <h5>Add Test Group</h5>
+    <h5>Add Priority</h5>
     <div class="card">
         <p-toolbar styleClass="p-mb-4">
             <ng-template pTemplate="left">
                 <button pButton pRipple label="Save" icon="pi pi-plus" class="p-mr-2 p-mb-2" 
-                (click)="addTestgroup()"></button>
+                (click)="addPriority()"></button>
                 <button pButton pRipple label="Clear" icon="pi pi-trash" class="p-mb-2"></button>
             </ng-template>
 
@@ -17,21 +17,21 @@
         <div class="p-grid p-formgrid p-fluid">
            
         <div class="p-col-4 p-field">
-            <label for="name">Test Group Name</label>
-            <input id="name" type="name" pInputText [(ngModel)]="testgroupcreatedata.name" aria-describedby="name-help" 
-            placeholder="Enter Test Group Name">
+            <label for="name">Priority Name</label>
+            <input id="name" type="name" pInputText [(ngModel)]="prioritycreatedata.name" aria-describedby="name-help" 
+            placeholder="Enter Priority Name">
 
         </div>
 
         <div class="p-col-4 p-field">
             <label for="code">Code </label>
-            <input id="code" type="code" pInputText [(ngModel)]="testgroupcreatedata.code" aria-describedby="code-help" 
-            placeholder="Enter Test Group Code" required>
+            <input id="code" type="code" pInputText [(ngModel)]="prioritycreatedata.code" aria-describedby="code-help" 
+            placeholder="Enter Priority Code" required>
         </div>
 
         <div class="p-col-8 p-field">
             <label for="description">Test Group Description </label>
-            <textarea rows="5" cols="30" placeholder="Enter Test group Description" [(ngModel)]="testgroupcreatedata.description" pInputTextarea ></textarea>
+            <textarea rows="5" cols="30" placeholder="Enter Priority Description" [(ngModel)]="prioritycreatedata.description" pInputTextarea ></textarea>
         </div>
 
         
