@@ -70,7 +70,7 @@
 
                         <td>
                             <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2"
-                                (click)="editGender(testtype)"></button>
+                                (click)="editTesttype(testtype)"></button>
                             <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning"
                                 (click)="deleteProduct(product)"></button>
                         </td>
@@ -118,9 +118,9 @@
 
             <ng-template pTemplate="footer">
                 <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text"
-                    (click)="hideHeirarchyDialog()"></button>
+                    (click)="hideTesttypeDialog()"></button>
                 <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text"
-                    (click)="updateHeirarchy()"></button>
+                    (click)="updateTesttype()"></button>
             </ng-template>
         </p-dialog>
 
