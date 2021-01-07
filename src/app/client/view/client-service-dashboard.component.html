@@ -1,3 +1,9 @@
+<p-scrollTop
+icon="pi pi-arrow-up"
+styleClass="custom-scrolltop"
+>
+    
+</p-scrollTop>
 <p-panel header="Summary & Stats"  [toggleable]="true">
     <ng-template pTemplate="icons">
         <button icon="pi pi-cog" pButton class="p-panel-header-icon p-link" (click)="menu.toggle($event)">
@@ -11,14 +17,14 @@
     <div class="p-col-12">
      <div class="p-d-flex p-p-3">
         <p class="p-mr-2"><strong>Hospital No.<mark>{{viewedClient.hospitalNum}}</mark></strong></p>
-        <p class="p-mr-2"><strong>Client Id.<mark>{{viewedClient.patientId}}</mark></strong></p>
+        <p class="p-mr-2"><strong>Client Id.<mark>{{viewedClient.patient_id}}</mark></strong></p>
         <p class="p-mr-2"><strong>Full Name. <mark>{{viewedClient.surname}} {{viewedClient.firstname}} {{viewedClient.otherNames}}</mark> </strong></p>
         <p class="p-mr-2"><strong>Age.<mark>23</mark></strong></p>
         <p class="p-mr-2"><strong>Dependants.<mark>6</mark></strong></p>
         <p class="p-mr-2"><strong>Email.<mark>{{viewedClient.email != null  ? viewedClient.email : 'N/A' }}</mark></strong></p>
         <p class="p-mr-2"><strong>Phone.<mark>{{viewedClient.phone_number != null  ? viewedClient.phone_number : 'N/A'}}</mark></strong></p>
 
-</div>
+</div>  
     </div>
    
 </p-panel>
@@ -125,28 +131,39 @@
     <p-dialog [(visible)]="allergyDialog" [style]="{width: '650px'}" header="New Client Allergy/Reaction" [modal]="true" styleClass="p-fluid">
       <ng-template pTemplate="content">
 <div class="p-col-12 p-fluid p-formgrid p-grid">
+    <div class="p-col-6 p-field">
+        <label for="allergy"><b>Type of Allergy</b></label>
+<p-dropdown [options]="allergyMap" optionLabel="name" placeholder="--Select--" 
+      
+      ></p-dropdown>
+      </div>
 <div class="p-col-6 p-field">
-					<label for="allergen"><b>Allergens</b></label>
+					<label for="allergen"><b>Allergen</b></label>
 <p-dropdown  optionLabel="name" placeholder="--Select--" 
                   
                   ></p-dropdown>
                   </div>
-    <div class="p-col-6 p-field">
-					<label for="allergy">Type of Allergy</label>
-<p-dropdown [options]="allergyMap" optionLabel="name" placeholder="--Select--" 
+                  <div class="p-col-6 p-field">
+					<label for="allergen"><b>Reactions/Symptoms</b></label>
+<p-dropdown  optionLabel="name" placeholder="--Select--" 
                   
                   ></p-dropdown>
                   </div>
 
                    <div class="p-col-6 p-field">
-					<label for="severity">Severity</label>
+					<label for="severity"><b>Condition</b></label>
 <p-dropdown  optionLabel="name" placeholder="--Select--" 
                   
                   ></p-dropdown>
                   </div>
-<div class="p-col-6 p-field"></div>
+                  <div class="p-col-12 p-field">
+					<label for="severity"><b>Treatment</b></label>
+                  <p-autoComplete [multiple]="true" placeholder="Type inside here for predictive treatment"></p-autoComplete>
+                
+            </div>
+                  <div class="p-col-6 p-field"></div>
 <div class="p-col-12 p-field">
-					<label for="observation">Observation</label>
+					<label for="observation"><b>Observation</b></label>
 <textarea id="observation" pInputText required rows="3" cols="20"></textarea>
 
         </div>

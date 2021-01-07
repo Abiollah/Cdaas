@@ -1,3 +1,7 @@
+<p-scrollTop
+icon="pi pi-arrow-up"
+styleClass="custom-scrolltop"
+></p-scrollTop>
 <div class="layout-dashboard">
   <div class="p-grid">
       <div class="p-col-12 p-md-6 p-xl-3">
@@ -102,7 +106,7 @@
                     <p-tableCheckbox [value]="client"></p-tableCheckbox>
                 </td>
                 <td>
-                    {{client.client_code}}
+                    {{client.patient_id}}
                 </td>
                 <td>
                     {{client.lastname}} - {{client.firstname}} -{{client.othername}}
