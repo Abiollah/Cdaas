@@ -36,6 +36,8 @@ export class AllergieslistComponent implements OnInit {
 
   ngOnInit(): void {
     this.AllergiesList();
+    this.AllergensList();
+    this.SeverityList();
   }
 
   AllergiesList():void{
@@ -89,7 +91,7 @@ export class AllergieslistComponent implements OnInit {
 
      AllergensList():void{
       this.manageallergiesService.getAllergenss().subscribe(data => {
-        this.AllergensList = data;
+        this.allergensList = data;
         console.log(data);
       }
       );

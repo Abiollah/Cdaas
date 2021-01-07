@@ -31,7 +31,7 @@ export class ManageNationalityComponent implements OnInit {
 
 addNationality(){
   this.nationalitycreatedata.created_by = +sessionStorage.getItem("userid");
-  this.nationalitycreatedata.created_date = Date.now();
+  this.nationalitycreatedata.created_date = new Date ();
   this.managenationalityService.createNationality(this.nationalitycreatedata).subscribe(
     data => {
       this.addSuccess("Success!","Nationality added successfully.");

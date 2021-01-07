@@ -23,12 +23,12 @@
 
         </div>
 
-        <div class="p-col-4 p-field">
-            <label for="status_type_id">Status Type I.d</label>
-            <input id="status_type_id" type="status_type_id" pInputText [(ngModel)]="statuscreatedata.status_type_id" aria-describedby="status_type_id-help" 
-            placeholder="Enter Status Type i.d ">
+        <div class="p-field p-col-12 p-md-4" >
+      <label for="status_type_id">Status Type</label>
+      <p-dropdown inputId="status_type_id" [options]="statustypeMap" [(ngModel)]="selectedStatusType"
+      optionLabel="name" placeholder="Choose a Status Type"></p-dropdown>
 
-        </div>
+  </div>
 
         <div class="p-col-4 p-field">
             <label for="code">Code </label>

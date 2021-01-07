@@ -1,12 +1,12 @@
 <p-toast></p-toast>
 <div class="p-col-12">
-    <h5>Add Nationality</h5>
+    <h5>Add Status Type</h5>
     <div class="card">
         <p-toolbar styleClass="p-mb-4">
             <ng-template pTemplate="left">
                 <button pButton pRipple label="Save" icon="pi pi-plus" class="p-mr-2 p-mb-2" 
-                (click)="addNationality()"></button>
-                <button pButton pRipple label="Clear"  class="p-mb-2"></button>
+                (click)="addStatusType()"></button>
+                <button pButton pRipple label="Clear" icon="pi pi-trash" class="p-mb-2"></button>
             </ng-template>
 
             <ng-template pTemplate="right">
@@ -18,14 +18,14 @@
            
         <div class="p-col-4 p-field">
             <label for="name">Name</label>
-            <input id="name" type="name" pInputText [(ngModel)]="nationalitycreatedata.name" aria-describedby="username-help" 
+            <input id="name" type="name" pInputText [(ngModel)]="statustype.name" aria-describedby="username-help" 
             placeholder="Enter name">
 
         </div>
 
         <div class="p-col-4 p-field">
             <label for="code">Code</label>
-            <input id="code" type="code" pInputText [(ngModel)]="nationalitycreatedata.code" aria-describedby="password-help" placeholder="Enter code">
+            <input id="code" type="code" pInputText [(ngModel)]="statustype.code" aria-describedby="password-help" placeholder="Enter code">
 
         </div>
         
@@ -35,7 +35,7 @@
         <div class="p-grid p-formgrid p-fluid">
             <div class="p-col-8 p-field">
                 <label for="description">Description</label>
-                <textarea rows="5" cols="30" placeholder="Description" pInputTextarea  [(ngModel)]="nationalitycreatedata.description"></textarea>
+                <textarea rows="5" cols="30" placeholder="Description" pInputTextarea  [(ngModel)]="statustype.description"></textarea>
             </div>
 
         </div>

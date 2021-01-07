@@ -4,22 +4,22 @@
         <div class="card">
 			<p-toolbar styleClass="p-mb-4">
 				<ng-template pTemplate="left">
-					<button pButton pRipple label="Add Occupation" icon="pi pi-plus" class="p-mr-2 p-mb-2" (click)="goToAddOccupation()"></button>
-					<button pButton pRipple label="Delete Occupation" icon="pi pi-trash" class="p-mb-2" (click)="deleteSelectedProducts()" [disabled]="!selectedProducts || !selectedProducts.length"></button>
+					<button pButton pRipple label="Add Relationship" icon="pi pi-plus" class="p-mr-2 p-mb-2" (click)="goToAddRelationship()"></button>
+					<button pButton pRipple label="Delete Relationship" icon="pi pi-trash" class="p-mb-2" (click)="deleteSelectedProducts()" [disabled]="!selectedProducts || !selectedProducts.length"></button>
 				</ng-template>
 
 				<ng-template pTemplate="right">
 					<button pButton pRipple label="Back" icon="pi pi-chevron-left" class="p-button-help p-mb-2" (click)="goBack()"></button>
 				</ng-template>
             </p-toolbar>
-            <p-table #dt [value]="occupationList" [rows]="10" [paginator]="true" [globalFilterFields]="['name','code','description']"
+            <p-table #dt [value]="relationshipList" [rows]="10" [paginator]="true" [globalFilterFields]="['name','code','description']"
          [rowHover]="true" dataKey="id"
             styleClass="p-datatable-customers"
             currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
    
             <ng-template pTemplate="caption">
                 <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between table-header">
-                    <h5 class="p-m-0">Occupation Listing</h5>
+                    <h5 class="p-m-0">Relationship Listing</h5>
                     <span class="p-input-icon-left">
                     <i class="pi pi-search"></i>
                     <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')" placeholder="Search..." />
@@ -31,7 +31,7 @@
                     <th style="width: 3rem">
                         <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
                     </th>
-                    <th pSortableColumn="occupation_id">id <p-sortIcon field="occupation_id"></p-sortIcon></th>
+                    <th pSortableColumn="relationship_id">id <p-sortIcon field="relationship_id"></p-sortIcon></th>
                     <th pSortableColumn="name">Name<p-sortIcon field="name"></p-sortIcon></th>
                     <th pSortableColumn="code">Code <p-sortIcon field="code"></p-sortIcon></th>
                     <th pSortableColumn="description">Description <p-sortIcon field="description"></p-sortIcon></th>
@@ -39,33 +39,33 @@
                     
                 </tr>
             </ng-template>
-            <ng-template pTemplate="body" let-occupation>
+            <ng-template pTemplate="body" let-relationship>
                 <tr>
                     <td>
-                        <p-tableCheckbox [value]="occupation"></p-tableCheckbox>
+                        <p-tableCheckbox [value]="relationship"></p-tableCheckbox>
                     </td>
                     <td><span class="p-column-title"></span>
-                        {{occupation.occupation_id}}
+                        {{relationship.relationship_id}}
                     </td>
                     <td><span class="p-column-title"></span>
-                        {{occupation.name}}
+                        {{relationship.name}}
                     </td>
                     <td><span class="p-column-title"></span>
-                        {{occupation.code}}
+                        {{relationship.code}}
                     </td>
                     <td><span class="p-column-title"></span>
-                        {{occupation.description}}
+                        {{relationship.description}}
                     </td>
                     
                     <td>
-                        <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="editOccupation(occupation)"></button>
+                        <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="editRelationship(relationship)"></button>
                         <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="deleteProduct(product)"></button>
                     </td>
                 </tr>
             </ng-template>
             <ng-template pTemplate="summary">
                 <div class="p-d-flex p-ai-center p-jc-between">
-                    In total there are {{occupationList ? occupationList.length : 0 }} occupation.
+                    In total there are {{relationshipList ? relationshipList.length : 0 }} relationships.
                 </div>
             </ng-template>
         </p-table>   
@@ -73,37 +73,37 @@
             </div>
 
              
-           <p-dialog [(visible)]="occupationDialog" [style]="{width: '650px'}" header="Occupation Details" [modal]="true" styleClass="p-fluid">
+           <p-dialog [(visible)]="relationshipDialog" [style]="{width: '650px'}" header="Relationship Details" [modal]="true" styleClass="p-fluid">
            
             <ng-template pTemplate="content">
 				<div class="p-col-12 p-fluid p-formgrid p-grid">
 				<div class="p-col-12 p-field">
 					<label for="name">Name</label>
-					<input id="name" type="name" pInputText [(ngModel)]="selectedOccupation.name">
+					<input id="name" type="name" pInputText [(ngModel)]="selectedRelationship.name">
                 </div>
                 <div class="p-col-6 p-field">
 					<label for="code">Code</label>
-					<input id="code" type="code" pInputText [(ngModel)]="selectedOccupation.code">
+					<input id="code" type="code" pInputText [(ngModel)]="selectedRelationship.code">
                 </div>
                 <div class="p-col-6 p-field">
 					<label for="description"> Description </label>
-					<input id="description" type="description" pInputText [(ngModel)]="selectedOccupation.description">
+					<input id="description" type="description" pInputText [(ngModel)]="selectedRelationship.description">
                 </div>
                 <div class="p-col-6 p-field">
                         <label for="created_by">Created_By</label>
-                        <input id="created_by" type="created_by" pInputText [(ngModel)]="selectedOccupation.created_by">
+                        <input id="created_by" type="created_by" pInputText [(ngModel)]="selectedRelationship.created_by">
                     </div>
                     <div class="p-col-6 p-field">
                         <label for="created_date">Created_Date</label>
-                        <input id="created_date" type="created_date" pInputText [(ngModel)]="selectedOccupation.created_date">
+                        <input id="created_date" type="created_date" pInputText [(ngModel)]="selectedRelationship.created_date">
                     </div>
 
                 </div>
                 </ng-template>
 
                 <ng-template pTemplate="footer">
-                    <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="hideOccupationDialog()"></button>
-                    <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="updateOccupation()"></button>
+                    <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="hideRelationshipDialog()"></button>
+                    <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="updateRelationship()"></button>
                 </ng-template>
                 </p-dialog>
 

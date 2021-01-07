@@ -22,7 +22,7 @@ export class AllergenslistComponent implements OnInit {
   constructor(private messageService: MessageService,private router: Router,private location: Location,private manageallergensService:ManageAllergensService, private breadcrumbService: AppBreadcrumbService) {
     this.breadcrumbService.setItems([
       { label: 'Dashboard', routerLink: ['/dashboard'] },
-      { label: 'Meta-data', routerLink: ['/metadata'] },
+      { label: 'Metadata', routerLink: ['/metadatalist'] },
       { label: 'List Allergens', routerLink: ['/allergenslist'] }    ]);
    }
 
@@ -32,7 +32,7 @@ export class AllergenslistComponent implements OnInit {
 
   AllergensList():void{
     this.manageallergensService.getAllergenss().subscribe(data => {
-      this.AllergensList = data;
+      this.allergensList = data;
       console.log(data);
     }
     );
@@ -43,8 +43,8 @@ export class AllergenslistComponent implements OnInit {
       goBack(){
         this.location.back();
       }
-      editAllergens(Allergens: AllergensData){
-      this.selectedAllergens = {...Allergens};
+      editAllergens(allergens: AllergensData){
+      this.selectedAllergens = {...allergens};
       this.allergensDialog=true;
      }
      updateAllergens(){

@@ -8,6 +8,8 @@ import { OccupationData } from '../domain/occupation.data';
 import { QualificationData } from '../domain/qualification.data';
 import { HeirarchyUnitsData } from '../domain/heirarchyunits.data';
 import { AssessmentQuestions, AssessmentType } from '../domain/assessments.data';
+import { StatusTypeData } from 'src/app/administration/domain/statustype.data';
+
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +22,12 @@ export class MetadataConfigService {
      return this.http.get<GenderData[]>(`${environment.apiBaseUrl}`+'listgenders');  
      
   }
+
+  getStatusTypeList(): Observable<any>{
+    return this.http.get<StatusTypeData[]>(`${environment.apiBaseUrl}`+'liststatustype');  
+    
+ }
+
   getMaritalStatusList(): Observable<any>{
     return this.http.get<MaritalStatusData[]>(`${environment.apiBaseUrl}`+'listmaritalstatus');  
     

@@ -5,7 +5,7 @@ export interface StatusData{
     code: string;
     description: string;
     created_by: number;
-    created_date: Date;
+    created_date: number;
     
 }
 

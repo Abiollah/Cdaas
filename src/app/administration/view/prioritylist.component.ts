@@ -32,7 +32,7 @@ export class PrioritylistComponent implements OnInit {
 
   PriorityList():void{
     this.managepriorityService.getPrioritys().subscribe(data => {
-      this.PriorityList = data;
+      this.priorityList = data;
       console.log(data);
     }
     );

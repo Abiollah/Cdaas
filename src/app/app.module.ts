@@ -141,8 +141,18 @@ import { ManageAllergensComponent } from './administration/view/add.allergens.co
 import { AllergenslistComponent } from './administration/view/allergenslist.component';
 import { ManageStatusComponent } from './administration/view/add.status.component';
 import { StatuslistComponent } from './administration/view/statuslist.component'
+import { RelationshiplistComponent } from './administration/view/relationshiplist.component';
+import { AddRelationshipComponent } from './administration/view/add-relationship.component';
 
 //import { PatientComponent } from './client/patient.registration.component';
+//import { ManageAllergensComponent } from './administration/view/add.allergens.component';
+//import { AllergenslistComponent } from './administration/view/allergenslist.component';
+//import {MatDividerModule} from '@angular/material/divider';
+//import { IgxDividerModule } from "igniteui-angular";
+//import { jqxTreeModule } from "jqxtree";
+import { AddOccupationComponent } from './administration/view/add-occupation.component';
+import { StatustypelistComponent } from './administration/view/statustypelist.component';
+import { AddStatustypeComponent } from './administration/view/add-statustype.component';
 
 
 
@@ -182,7 +192,7 @@ import { StatuslistComponent } from './administration/view/statuslist.component'
     ClientRegistrationComponent,
     QualificationlistComponent,
     AddReligionComponent,
-    OccupationlistComponent,
+    OccupationlistComponent, 
     ManageQualificationComponent,
     //PatientComponent,
     AddReligionComponent,
@@ -198,6 +208,7 @@ import { StatuslistComponent } from './administration/view/statuslist.component'
     NationalitylistComponent,
     ManageTargetgroupComponent,
     TargetgrouplistComponent,
+    AddOccupationComponent,   
     ClientServiceDashboardComponent,
     ManageRefferedfromComponent,
     RefferedfromlistComponent,
@@ -224,7 +235,13 @@ import { StatuslistComponent } from './administration/view/statuslist.component'
     ManageAllergensComponent,
     AllergenslistComponent,
     ManageStatusComponent,
-    StatuslistComponent
+    StatuslistComponent,
+    RelationshiplistComponent,
+    AddRelationshipComponent,
+    ManageAllergensComponent,
+    AllergenslistComponent,
+    StatustypelistComponent,
+    AddStatustypeComponent
     
     
 
@@ -236,7 +253,9 @@ import { StatuslistComponent } from './administration/view/statuslist.component'
     AppRoutingModule,
     BrowserAnimationsModule,
     BrowserModule,
-        FormsModule,
+    FormsModule,
+    //MatDividerModule,
+    //IgxDividerModule,
         AppRoutingModule,
         AccordionModule,
         AutoCompleteModule,
@@ -306,6 +325,9 @@ import { StatuslistComponent } from './administration/view/statuslist.component'
         TreeModule,
         TreeTableModule,
         VirtualScrollerModule,
+        FontAwesomeModule,
+        //jqxTreeModule,
+        DividerModule,
         FontAwesomeModule
 
 

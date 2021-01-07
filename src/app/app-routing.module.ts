@@ -16,6 +16,7 @@ import  {AddUserRoleComponent } from './administration/view/add.user.role.compon
 import {MetadataListComponent} from './administration/view/metadata.list.component';
 import { GenderlistComponent } from './administration/view/genderlist.component';
 import { AddGendersComponent } from './administration/view/add.genders.component';
+import { AddOccupationComponent } from './administration/view/add-occupation.component';
 import { ManagePharmaciesComponent } from './administration/view/add.pharmacies.component';
 import { PharmacieslistComponent } from './administration/view/pharmacieslist.component';
 import {ClientPortalListComponent} from './client/view/client.portal.list.component';
@@ -31,7 +32,8 @@ import { LanguagelistComponent } from './administration/view/languagelist.compon
 import { ManageNationalityComponent } from './administration/view/add.nationality.component';
 import { NationalitylistComponent } from './administration/view/nationalitylist.component';
 import { ManageTargetgroupComponent } from './administration/view/add.targetgroup.component';
-import { TargetgrouplistComponent } from './administration/view/targetgrouplist.component'
+import { TargetgrouplistComponent } from './administration/view/targetgrouplist.component';
+import { OccupationlistComponent } from './administration/view/occupationlist.component';
 import { ClientServiceDashboardComponent } from './client/view/client-service-dashboard.component';
 import { ManageRefferedfromComponent } from './administration/view/add.refferedfrom.component';
 import { RefferedfromlistComponent } from './administration/view/refferedfromlist.component';
@@ -61,6 +63,14 @@ import { ManageStatusComponent } from './administration/view/add.status.componen
 import { StatuslistComponent } from './administration/view/statuslist.component'
 
 
+//import { ManageTestgroupComponent } from './administration/view/add.testgroup.component';
+//import { TestgrouplistComponent } from './administration/view/testgrouplist.component';
+import { RelationshiplistComponent } from './administration/view/relationshiplist.component';
+import { AddRelationshipComponent } from './administration/view/add-relationship.component'
+//import { ManageAllergensComponent } from './administration/view/add.allergens.component';
+//import { AllergenslistComponent } from './administration/view/allergenslist.component';
+import { StatustypelistComponent } from './administration/view/statustypelist.component';
+import { AddStatustypeComponent } from './administration/view/add-statustype.component';
 
 
 
@@ -85,6 +95,7 @@ const routes: Routes = [
     {path: 'metadatalist', component: MetadataListComponent},
     {path: 'genderlist', component: GenderlistComponent},
     {path: 'addGender', component: AddGendersComponent},
+    {path: 'addOccupation', component: AddOccupationComponent},
     {path: 'userrolelist', component: UserRoleListComponent},
     {path: '##/kpportal', component: ClientPortalListComponent},
     {path: 'userlist', component: UserlistComponent},
@@ -104,6 +115,7 @@ const routes: Routes = [
     {path: 'nationalitylist', component: NationalitylistComponent},
     {path: 'addTargetgroup', component: ManageTargetgroupComponent},
     {path: 'targetgrouplist', component: TargetgrouplistComponent},
+    {path: 'occupationlist', component: OccupationlistComponent},
     {path: '##/sportal', component: ClientServiceDashboardComponent},
     {path: 'addRefferedfrom', component: ManageRefferedfromComponent},
     {path: 'refferedfromlist', component: RefferedfromlistComponent},
@@ -133,6 +145,14 @@ const routes: Routes = [
     {path: 'statuslist', component: StatuslistComponent},
 
 
+    //{path: 'addTestgroup', component: ManageTestgroupComponent},
+    //{path: 'testgrouplist', component: TestgrouplistComponent},
+    {path: 'relationshiplist', component: RelationshiplistComponent},
+    {path: 'addRelationship', component: AddRelationshipComponent},
+    //{path: 'addAllergens', component: ManageAllergensComponent},
+    //{path: 'allergenslist', component: AllergenslistComponent},
+    {path: 'statustypelist', component: StatustypelistComponent},
+    {path: 'addStatustype', component: AddStatustypeComponent}
 
     
 

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Add.StatusComponent } from './add.status.component';
+import { StatustypelistComponent } from './statustypelist.component';
 
-describe('Add.StatusComponent', () => {
-  let component: Add.StatusComponent;
-  let fixture: ComponentFixture<Add.StatusComponent>;
+describe('StatustypelistComponent', () => {
+  let component: StatustypelistComponent;
+  let fixture: ComponentFixture<StatustypelistComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ Add.StatusComponent ]
+      declarations: [ StatustypelistComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(Add.StatusComponent);
+    fixture = TestBed.createComponent(StatustypelistComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

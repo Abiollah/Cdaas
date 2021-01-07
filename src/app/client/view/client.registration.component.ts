@@ -59,7 +59,7 @@ export class ClientRegistrationComponent implements OnInit {
     private confirmationService: ConfirmationService) {
     this.breadcrumbService.setItems([
         { label: 'Dashboard', routerLink: ['/dashboard'] },
-        { label: 'Register KP', routerLink: ['/registration'] },
+       // { label: 'Register KP', routerLink: ['/registration'] },
         { label: 'View KP Client', routerLink: ['/viewkp'] }
     ]);
     
@@ -69,10 +69,10 @@ export class ClientRegistrationComponent implements OnInit {
     if(sessionStorage.getItem('username') == null){
     this.addError("Session Expired.","Your current session has expired. Re-login.");
       this.router.navigate(['']);
-    }
+   }
     else{
       this.loadConfigMetadata();
-    }
+   }
     
    
     
@@ -203,7 +203,8 @@ confirmSaveAssessment(position: string){
 
   addClient(){
     this.clientcreatedata.created_by = +sessionStorage.getItem('userid');
-    this.manageclientService.createUpdateClient(this.clientcreatedata)
+    this.clientcreatedata.registered_date = new Date();
+    this.manageclientService.createClient(this.clientcreatedata)
     .subscribe(
     () => {
       this.addSuccess("Success","Client registration successfully.");
@@ -214,6 +215,11 @@ this.addError("Unsuccessful.","Could not register client.");
 
     );
     }
+
+
+   
+
+
     goBack(){
     this.location.back();
     }

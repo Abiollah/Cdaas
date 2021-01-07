@@ -132,6 +132,21 @@ export class MetadataListComponent implements OnInit {
                 label: 'Add/Manage Enrollment Setting',
                 icon: 'pi pi-fw pi-user-edit',
                 routerLink: '/enrollmensettingtlist'
+            },
+            {
+                label: 'Add/Manage Status Type',
+                icon: 'pi pi-fw pi-user-edit',
+                routerLink: '/statustypelist'
+            },
+              {
+                  label: 'Add/Manage Test Type',
+                  icon: 'pi pi-fw pi-user-edit',
+                  routerLink: '/testtypelist'
+              },
+            {
+                label: 'Add/Manage KP Target Group',
+                icon: 'pi pi-fw pi-user-edit',
+                routerLink: '/kptargetgrouplist'
             }
           ]
       },
@@ -181,11 +196,6 @@ this.clinicalManagement = [
               routerLink: '/allergieslist'
           },
           {
-            label: 'Add/Manage Allergens',
-            icon: 'pi pi-fw pi-user-edit',
-            routerLink: '/allergenslist'
-        },
-          {
               label: 'Add/Manage Laboratories',
               icon: 'pi pi-fw pi-user-edit',
               routerLink: '/laboratorieslist'
@@ -196,19 +206,39 @@ this.clinicalManagement = [
               routerLink: '/pharmacieslist'
           },
           {
-            label: 'Add/Manage Test',
+            label: 'Add/Manage Allergens',
             icon: 'pi pi-fw pi-user-edit',
-            routerLink: '/testlist'
-        },
-        {
-            label: 'Add/Manage Test Group',
-            icon: 'pi pi-fw pi-user-edit',
-            routerLink: '/testgrouplist'
+            routerLink: '/allergenslist'
         },
         {
             label: 'Add/Manage Severity',
             icon: 'pi pi-fw pi-user-edit',
             routerLink: '/severitylist'
+        },
+        {
+            label: 'Add/Manage Test',
+            icon: 'pi pi-fw pi-user-edit',
+            routerLink: '/testlist'
+        },
+        {
+            label: 'Add/Manage Test Type',
+            icon: 'pi pi-fw pi-user-edit',
+            routerLink: '/testtypelist'
+        },
+        {
+            label: 'Add/Manage Priority',
+            icon: 'pi pi-fw pi-user-edit',
+            routerLink: '/prioritylist'
+        },
+        {
+            label: 'Add/Manage Status',
+            icon: 'pi pi-fw pi-user-edit',
+            routerLink: '/statuslist'
+        },
+        {
+            label: 'Add/Manage Status Type',
+            icon: 'pi pi-fw pi-user-edit',
+            routerLink: '/statustypelist'
         }
       ]
   },
