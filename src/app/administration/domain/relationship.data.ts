@@ -10,12 +10,3 @@ export interface RelationshipData{
     
 }
 
-export interface RelationshipDataCreate{
-    name: string;
-    description: string;
-    code: string;
-    relationship_id: number;
-    created_by: number;
-    created_date: Date;
-    
-}

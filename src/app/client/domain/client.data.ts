@@ -2,11 +2,11 @@
 
 export interface ClientData{
   client_code?: string;
-  registered_date?: Date;
-  date_of_birth?: Date;
-  lastname?:string;
+  dateRegistration?: Date;
+  dateBirth?: Date;
+  surname?:string;
   firstname?: string;
-  othername?: string;
+  otherNames?: string;
   marital_status_id?: string;
   gender_id?: string;
   email?: string;
@@ -39,9 +39,9 @@ export interface ClientDataCreate{
   client_code: string;
   registered_date: Date;
   date_of_birth: Date;
-  lastname:string;
+  surname:string;
   firstname: string;
-  othername: string;
+  otherNames: string;
   marital_status_id: string;
   gender_id: string;
   email: string;

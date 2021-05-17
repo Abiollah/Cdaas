@@ -10,6 +10,8 @@ import {ClientPortalService} from '../service/client.portal.service';
 import { ClientExtendedInfo } from '../domain/client.portal.data';
 import {ManageAllergiesService} from '../../administration/service/manage.allergies.service'
 import { AllergiesData } from 'src/app/administration/domain/allergies.data';
+import { VitalSignData } from 'src/app/administration/domain/vitalsigns.data';
+import {ManageVitalsignService} from '../../administration/service/manage.vitalsign.service'
 @Component({
   selector: 'app-client-service-dashboard',
   templateUrl: './client-service-dashboard.component.html',
@@ -25,6 +27,7 @@ export class ClientServiceDashboardComponent implements OnInit {
   clickedEvent = null;
 
   allergyDialog: boolean;
+  vitalSignDialog: boolean;
   allergyMap: AllergiesData[];
  
  
@@ -136,5 +139,8 @@ export class ClientServiceDashboardComponent implements OnInit {
    if(dialog === 'allergy'){
    this.allergyDialog = true;
    }
+   if(dialog === 'vitalsign'){
+    this.vitalSignDialog = true;
+    }
  }
 }

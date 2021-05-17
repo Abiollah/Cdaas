@@ -144,7 +144,6 @@ import { AllergenslistComponent } from './administration/view/allergenslist.comp
 import { ManageStatusComponent } from './administration/view/add.status.component';
 import { StatuslistComponent } from './administration/view/statuslist.component'
 import { RelationshiplistComponent } from './administration/view/relationshiplist.component';
-import { AddRelationshipComponent } from './administration/view/add-relationship.component';
 
 //import { PatientComponent } from './client/patient.registration.component';
 //import { ManageAllergensComponent } from './administration/view/add.allergens.component';
@@ -155,6 +154,10 @@ import { AddRelationshipComponent } from './administration/view/add-relationship
 import { AddOccupationComponent } from './administration/view/add-occupation.component';
 import { StatustypelistComponent } from './administration/view/statustypelist.component';
 import { AddStatustypeComponent } from './administration/view/add-statustype.component';
+import { ManageRelationshipComponent } from './administration/view/add.relationship.component';
+import { UploadDashboardComponent } from './upload/upload-dashboard.component';
+import { Upload2Component } from './upload/upload2.component';
+import { MmoFormComponent } from './upload/mmo-form.component';
 
 
 
@@ -238,12 +241,15 @@ import { AddStatustypeComponent } from './administration/view/add-statustype.com
     AllergenslistComponent,
     ManageStatusComponent,
     StatuslistComponent,
-    RelationshiplistComponent,
-    AddRelationshipComponent,
     ManageAllergensComponent,
     AllergenslistComponent,
     StatustypelistComponent,
-    AddStatustypeComponent
+    AddStatustypeComponent,
+    ManageRelationshipComponent,
+    RelationshiplistComponent,
+    UploadDashboardComponent,
+    Upload2Component,
+    MmoFormComponent,
     
     
 

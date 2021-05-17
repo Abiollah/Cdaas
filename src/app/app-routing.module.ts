@@ -66,11 +66,13 @@ import { StatuslistComponent } from './administration/view/statuslist.component'
 //import { ManageTestgroupComponent } from './administration/view/add.testgroup.component';
 //import { TestgrouplistComponent } from './administration/view/testgrouplist.component';
 import { RelationshiplistComponent } from './administration/view/relationshiplist.component';
-import { AddRelationshipComponent } from './administration/view/add-relationship.component'
 //import { ManageAllergensComponent } from './administration/view/add.allergens.component';
 //import { AllergenslistComponent } from './administration/view/allergenslist.component';
 import { StatustypelistComponent } from './administration/view/statustypelist.component';
 import { AddStatustypeComponent } from './administration/view/add-statustype.component';
+import { UploadDashboardComponent } from './upload/upload-dashboard.component';
+import { Upload2Component } from './upload/upload2.component';
+import { MmoFormComponent } from './upload/mmo-form.component';
 
 
 
@@ -83,7 +85,10 @@ const routes: Routes = [
     {path: '', component: AppMainComponent,
     children: [
     {path: 'dashboard', component: DashboardComponent},
-    {path: 'registration', component: ClientRegistrationComponent},
+    {path: 'registration2', component: ClientRegistrationComponent},
+    {path: 'upload', component: UploadDashboardComponent},
+    {path: 'upload2', component: Upload2Component},
+    {path: 'mmoForm', component: MmoFormComponent},
     {path: 'setting', component: SettingListComponent},
     {path: 'userrole', component: AddUserRoleComponent},
     {path: 'addUser', component: ManageUsersComponent},
@@ -148,13 +153,12 @@ const routes: Routes = [
     //{path: 'addTestgroup', component: ManageTestgroupComponent},
     //{path: 'testgrouplist', component: TestgrouplistComponent},
     {path: 'relationshiplist', component: RelationshiplistComponent},
-    {path: 'addRelationship', component: AddRelationshipComponent},
     //{path: 'addAllergens', component: ManageAllergensComponent},
     //{path: 'allergenslist', component: AllergenslistComponent},
     {path: 'statustypelist', component: StatustypelistComponent},
     {path: 'addStatustype', component: AddStatustypeComponent}
 
-    
+
 
 ]
 },

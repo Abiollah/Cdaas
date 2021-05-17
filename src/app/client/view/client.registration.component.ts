@@ -203,7 +203,7 @@ confirmSaveAssessment(position: string){
   addClient(){
     this.clientcreatedata.created_by = +sessionStorage.getItem('userid');
    
-    this.manageclientService.createUpdateClient(this.clientcreatedata)
+    this.manageclientService.createClient(this.clientcreatedata)
     .subscribe(
     () => {
       this.addSuccess("Success","Client registration successfully.");

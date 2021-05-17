@@ -41,7 +41,7 @@ export class MetadataListComponent implements OnInit {
                 },{
                     label: 'Add/Manage Relationships',
                     icon: 'pi pi-fw pi-user-edit',
-                    routerLink: '/relationship'
+                    routerLink: '/relationshiplist'
                 },
                 {
                     label: 'Add/Manage Language',

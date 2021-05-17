@@ -28,54 +28,38 @@ export class AppMenuComponent implements OnInit {
           ]
       },
       {
-          label: 'KP Client', icon: 'fa fa-user-md fa-5x', routerLink: ['/uikit'],
+          label: 'Upload', icon: 'fa fa-user-md fa-5x', routerLink: ['/uikit'],
           items: [
-              {label: 'Register KP', icon: 'pi pi-fw pi-user-plus', routerLink: ['/registration']},
-              {label: 'Initiate Appointment', icon: 'fa fa-medkit fa-5x', routerLink: ['/uikit/input']},
-              {label: 'Visit History', icon: 'fa fa-user-md fa-5x', routerLink: ['/uikit/floatlabel']},
-              {label: 'KP Portal', icon: 'fa fa-heartbeat fa-5x', routerLink: ['/cportal']}
+              {label: 'Submit Report', icon: 'pi pi-fw pi-user-plus', routerLink: ['/upload']},
+              {label: 'Submit Report 2', icon: 'pi pi-fw pi-user-plus', routerLink: ['/upload2']},
+              {label: 'MMO form', icon: 'pi pi-fw pi-user-plus', routerLink: ['/mmoForm']},
           ]
       },
 
       {
-          label: 'Laboratory', icon: 'fa fa-stethoscope fa-5x', routerLink: ['utilities'],
+          label: 'Analysis', icon: 'fa fa-stethoscope fa-5x', routerLink: ['utilities'],
           items: [
-              {label: 'Stats', icon: 'pi pi-fw pi-chart-bar', routerLink: ['utilities/display']},
-              {label: 'Lab Tests', icon: 'fa fa-thermometer fa-5x', routerLink: ['utilities/elevation']},
-              {label: 'Report', icon: 'pi pi-fw pi-briefcase', routerLink: ['utilities/flexbox']}
+              {label: 'Report', icon: 'pi pi-fw pi-chart-bar', routerLink: ['utilities/display']},
+              {label: 'Analyse Data', icon: 'fa fa-thermometer fa-5x', routerLink: ['utilities/elevation']},
+              {label: 'Power Bi', icon: 'pi pi-fw pi-briefcase', routerLink: ['utilities/flexbox']}
           ]
       },
-      {
-          label: 'Pharmacy', icon: 'fa fa-plus fa-5x', routerLink: ['/pages'],
-
-          items: [
-              {label: 'Prescription', icon: 'fa fa-stethoscope fa-5x', routerLink: ['/pages/crud'] },
-              {label: 'Prescription Dispensed', icon: 'pi pi-fw pi-calendar-plus', routerLink: ['/pages/calendar']},
-              {label: 'Report', icon: 'pi pi-fw pi-book', url: 'assets/pages/landing.html', target: '_blank'}
-          ]
-      },
-      {
-        label: 'Report', icon: 'pi pi-fw pi-folder-open', routerLink: ['/pages'],
-        items: [
-            {label: 'Patient Report', icon: 'pi pi-fw pi-user-edit', routerLink: ['/pages/crud']},
-            {label: 'Clinical Report', icon: 'pi pi-fw pi-calendar-plus', routerLink: ['/pages/calendar']},
-            {label: 'Pharmacy Report', icon: 'pi pi-fw pi-briefcase', url: 'assets/pages/landing.html', target: '_blank'},
-            {label: 'Laboratory Report', icon: 'fa fa-stethoscope fa-5x', routerLink: ['/login']}
-        ]
-    },
     {
       label: 'Administration', icon: 'pi pi-fw pi-users', routerLink: ['/pages'],
       items: [
 
           {label: 'Metadata', icon: 'pi pi-fw pi-calendar-plus', routerLink: ['/metadatalist']},
-
-
           {label: 'Settings', icon: 'pi pi-fw pi-cog', routerLink: ['/setting']},
-
-          {label: 'Interoperability', icon: 'pi pi-fw pi-share-alt', url: 'assets/pages/landing.html', target: '_blank'},
           {label: 'Support', icon: 'pi pi-fw pi-thumbs-up', routerLink: ['/login']}
       ]
-  }
+  },
+  {
+    label: 'Settings', icon: 'fa fa-plus fa-5x', routerLink: ['/pages'],
+
+    items: [
+        {label: 'Settings', icon: 'fa fa-stethoscope fa-5x', routerLink: ['/pages/crud'] }
+    ]
+},
 
 
   ];

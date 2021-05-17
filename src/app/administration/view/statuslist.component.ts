@@ -8,14 +8,15 @@ import {MessageService,Message} from 'primeng/api';
 
 
 
+
 @Component({
   selector: 'app-statuslist',
   templateUrl: './statuslist.component.html',
   styleUrls: ['./statuslist.component.scss'],
   providers: [MessageService]
 })
-export class StatuslistComponent implements OnInit {
 
+export class StatuslistComponent implements OnInit {
 
   statusList:any;
   selectedStatus: StatusData;
@@ -25,7 +26,7 @@ export class StatuslistComponent implements OnInit {
   constructor(private messageService: MessageService,private router: Router,private location: Location,private managestatusService:ManageStatusService, private breadcrumbService: AppBreadcrumbService) {
     this.breadcrumbService.setItems([
       { label: 'Dashboard', routerLink: ['/dashboard'] },
-      { label: 'Meta-data', routerLink: ['/metadata'] },
+      { label: 'Metadata', routerLink: ['/metadatalist'] },
       { label: 'List Status', routerLink: ['/statuslist'] }    ]);
    }
 
@@ -35,7 +36,7 @@ export class StatuslistComponent implements OnInit {
 
   StatusList():void{
     this.managestatusService.getStatuss().subscribe(data => {
-      this.StatusList = data;
+      this.statusList = data;
       console.log(data);
     }
     );
@@ -46,8 +47,8 @@ export class StatuslistComponent implements OnInit {
       goBack(){
         this.location.back();
       }
-      editStatus(Status: StatusData){
-      this.selectedStatus = {...Status};
+      editStatus(status: StatusData){
+      this.selectedStatus = {...status};
       this.statusDialog=true;
      }
      updateStatus(){
@@ -78,4 +79,3 @@ export class StatuslistComponent implements OnInit {
   
 
 }
-
