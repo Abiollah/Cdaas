@@ -36,8 +36,8 @@
                   <button pButton pRipple label="Back" icon="pi pi-chevron-left" class="p-button-help p-mb-2" (click)="goBack()"></button>
               </ng-template>
           </p-toolbar>
-          <p-table #occu [value]="reportList" [rows]="10" [paginator]="true" [globalFilterFields]="['name','code','description']"
-       [rowHover]="true" dataKey="report_id" [(selection)]="selectedReport"
+          <p-table #occu  [rows]="10" [paginator]="true" [globalFilterFields]="['name','code','description']"
+       [rowHover]="true" dataKey="report_id"
           styleClass="p-datatable-customers"
           currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
 
